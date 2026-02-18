@@ -1,374 +1,377 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aix en Vue - Nos Articles</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actualités — Aix en Vue</title>
+<meta name="description" content="Les dernières nouvelles, sorties et événements de l'association Aix en Vue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =========================================
+   1. BASE & VARIABLES (Identique à Index)
+   ========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --noir: #111111;
+  --papier: #F4F2EB;
+  --papier-fonce: #E8E4D9;
+  --rouge: #D80000;
+  --ocre: #C8860A;
+  --ocre-clair: #F0C060;
+  --gris: #222222;
+  --creme: #FBF8F0;
+  
+  /* Formes spécifiques Cartes */
+  --clip-standard: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+}
 
-    <style>
-      /* --- 2. VARIABLES & DESIGN SYSTEM --- */
-      :root {
-        /* Palette */
-        --noir: #111111;
-        --gris: #222222;
-        --rouge: #D80000;
-        --papier: #F4F2EB;
-        --creme: #FBF8F0;
-        --papier-fonce: #E8E4D9;
-        --ocre: #C8860A;
-        
-        /* Typo */
-        --font-title: 'Playfair Display', serif;
-        --font-body: 'Manrope', sans-serif;
+html { scroll-behavior: smooth; }
+body {
+  background: var(--papier);
+  color: var(--noir);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
 
-        /* Formes */
-        --clip-standard: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
-        --clip-image: polygon(0 0, 100% 0, 95% 95%, 5% 100%);
-      }
+/* Texture de fond */
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9997; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+}
 
-      /* --- 3. GLOBAL & TEXTURE PAPIER --- */
-      body {
-        background-color: var(--papier);
-        color: var(--gris);
-        font-family: var(--font-body);
-        margin: 0; padding: 0;
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
+/* =========================================
+   2. NAVIGATION (Identique à Index)
+   ========================================= */
+nav {
+  position:fixed; top:0; left:0; right:0;
+  z-index:500;
+  padding:1.2rem 3.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(244,242,235,.98);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  transition:box-shadow .3s;
+}
+nav::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.nav-logo {
+  font-family:'Playfair Display',serif;
+  font-size:1.45rem; font-weight:900;
+  color:var(--noir); text-decoration:none;
+  letter-spacing:-.02em;
+  display:flex; align-items:center; gap:.7rem;
+}
+.nav-logo span { color:var(--rouge); }
+.nav-logo img { height: 32px; width: auto; display: block; }
 
-      /* Simulation Texture Papier (Grain) via CSS pur */
-      body::before {
-        content: "";
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0.6;
-      }
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a {
+  color:var(--noir); text-decoration:none;
+  font-size:.9rem; font-weight:800;
+  letter-spacing:.05em; text-transform:uppercase;
+  position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0; width:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q25 1 50 3Q75 5 100 2' stroke='%23D80000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  transition:width .35s cubic-bezier(.4,0,.2,1);
+}
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+.nav-links a.active { color: var(--rouge); cursor: default; }
 
-      /* --- 4. LAYOUT --- */
-      .aix-container {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 6rem 2rem; /* Desktop padding */
-        position: relative;
-        z-index: 1;
-      }
+.nav-cta {
+  background:var(--rouge); color:white!important;
+  padding:.65rem 1.5rem; font-weight:800!important;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  transition:background .2s, transform .2s;
+}
+.nav-cta:hover { background:var(--noir)!important; transform:translateY(-1px); }
+.nav-cta::after { display:none!important; }
+.hamburger {
+  display:none; flex-direction:column; gap:6px;
+  background:none; border:none; padding:.5rem; cursor:pointer;
+}
+.hamburger span { display:block; width:28px; height:3px; background:var(--noir); border-radius:2px; }
 
-      /* Header de section */
-      .section-header {
-        text-align: center;
-        margin-bottom: 5rem;
-      }
+/* =========================================
+   3. SECTION HEADER (Journal Style)
+   ========================================= */
+.page-header {
+  padding: 8rem 2rem 4rem;
+  text-align: center;
+  background: var(--creme);
+}
+.header-eyebrow {
+  font-size:.85rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ocre); margin-bottom:1rem; display:block;
+}
+.header-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  line-height:1.1; font-weight:900; letter-spacing:-.03em;
+  color:var(--noir); margin-bottom:1rem;
+}
 
-      .eyebrow {
-        font-family: var(--font-body);
-        font-weight: 800;
-        font-size: 0.9rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--ocre);
-        display: block;
-        margin-bottom: 1rem;
-      }
+/* =========================================
+   4. GRID ACTUALITÉS & CARTES
+   ========================================= */
+.main-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 4rem 8rem;
+}
 
-      h1.main-title {
-        font-family: var(--font-title);
-        font-weight: 900;
-        font-style: italic;
-        font-size: 3.5rem;
-        color: var(--noir);
-        margin: 0;
-        line-height: 1.1;
-      }
+#annonce-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
 
-      /* --- 5. GRID & CARDS --- */
-      #annonce-list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Standard 3 colonnes */
-        gap: 3rem;
-      }
+/* Style de la carte */
+.news-card {
+  background: white;
+  display: flex; flex-direction: column;
+  position: relative;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  clip-path: var(--clip-standard);
+  height: 100%;
+  border: 1px solid rgba(0,0,0,0.05);
+}
 
-      /* Style de la carte */
-      .news-card {
-        background: #fff;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        /* Utilisation de drop-shadow au lieu de box-shadow pour respecter le clip-path */
-        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
-        transition: transform 0.3s ease, filter 0.3s ease;
-        cursor: pointer;
-        /* Forme Coin Cassé sur le conteneur */
-        clip-path: var(--clip-standard);
-        height: 100%; /* Uniform height */
-      }
+/* Ligne rouge au hover */
+.news-card::after {
+  content: ""; position: absolute; top: 0; left: 0;
+  height: 4px; width: 0%;
+  background-color: var(--rouge);
+  transition: width 0.3s ease; z-index: 10;
+}
 
-      /* Ligne rouge décorative (cachée par défaut) */
-      .news-card::after {
-        content: "";
-        position: absolute; top: 0; left: 0;
-        height: 4px; width: 0%;
-        background-color: var(--rouge);
-        transition: width 0.3s ease;
-        z-index: 10;
-      }
+.news-card:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 15px 20px rgba(0,0,0,0.1));
+}
+.news-card:hover::after { width: 100%; }
 
-      /* Hover Effects */
-      .news-card:hover {
-        transform: translateY(-8px);
-        filter: drop-shadow(0 15px 20px rgba(0,0,0,0.1));
-      }
-      .news-card:hover::after {
-        width: 100%;
-      }
+/* Image Carte */
+.card-img-wrapper {
+  height: 240px; overflow: hidden; position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 95%);
+}
+.card-img-wrapper img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.news-card:hover .card-img-wrapper img { transform: scale(1.05); }
 
-      /* Image */
-      .card-img-wrapper {
-        height: 240px;
-        overflow: hidden;
-        position: relative;
-        /* Petit effet coin cassé interne sur l'image */
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 95%);
-      }
-      
-      .card-img-wrapper img {
-        width: 100%; height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-      }
-      
-      .news-card:hover .card-img-wrapper img {
-        transform: scale(1.05);
-      }
+/* Corps Carte */
+.card-body {
+  padding: 2rem; display: flex; flex-direction: column; flex-grow: 1;
+}
+.card-meta {
+  font-size: 0.75rem; font-weight: 800; color: var(--rouge);
+  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;
+}
+.card-title {
+  font-family: 'Playfair Display', serif; font-weight: 700;
+  font-size: 1.5rem; line-height: 1.2; color: var(--noir); margin: 0 0 1rem 0;
+}
+.card-excerpt {
+  font-family: 'Manrope', sans-serif; font-size: 1rem; color: var(--gris);
+  line-height: 1.7; margin-bottom: 1.5rem; font-weight: 500;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.read-more {
+  margin-top: auto; font-weight: 800; text-transform: uppercase;
+  font-size: 0.85rem; color: var(--noir); display: flex; align-items: center; gap: 10px;
+}
+.read-more::after {
+  content: "→"; color: var(--rouge); font-size: 1.2rem; transition: transform 0.2s;
+}
+.news-card:hover .read-more::after { transform: translateX(5px); }
 
-      /* Contenu */
-      .card-body {
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
+/* --- FEATURED (À LA UNE) --- */
+.news-card.featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  min-height: 450px;
+  background-color: var(--papier-fonce);
+  border: none;
+}
+.news-card.featured .card-img-wrapper {
+  width: 55%; height: auto;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.news-card.featured .card-body {
+  width: 45%; justify-content: center; padding: 4rem;
+}
+.news-card.featured .card-title {
+  font-size: 2.8rem; font-style: italic;
+}
 
-      .card-meta {
-        font-size: 0.85rem;
-        font-weight: 700;
-        color: var(--rouge);
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 0.75rem;
-      }
+/* =========================================
+   5. LOADER & MODAL
+   ========================================= */
+#loader { text-align: center; padding: 4rem; grid-column: 1/-1; }
+.spinner {
+  width: 40px; height: 40px;
+  border: 4px solid var(--papier-fonce);
+  border-top: 4px solid var(--rouge);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-      .card-title {
-        font-family: var(--font-title);
-        font-weight: 700;
-        font-size: 1.5rem;
-        line-height: 1.2;
-        color: var(--noir);
-        margin: 0 0 1rem 0;
-      }
+/* Modal */
+#modal-overlay {
+  display: none;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(17, 17, 17, 0.95);
+  backdrop-filter: blur(5px);
+  z-index: 10000;
+  justify-content: center; align-items: center; padding: 20px;
+}
+#modal-content {
+  background: var(--papier); width: 100%; max-width: 800px; max-height: 90vh;
+  overflow-y: auto; position: relative;
+  clip-path: polygon(2% 0, 100% 0, 100% 98%, 98% 100%, 0 100%, 0 2%);
+}
+.modal-header-img { width: 100%; height: 350px; object-fit: cover; }
+.modal-body { padding: 3rem 4rem; }
+.modal-title {
+  font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900;
+  color: var(--noir); margin-top: 0; margin-bottom: 0.5rem; line-height: 1.1;
+}
+.modal-meta {
+  color: var(--ocre); font-weight: 700; text-transform: uppercase;
+  margin-bottom: 2rem; border-bottom: 2px solid var(--papier-fonce); padding-bottom: 1rem;
+}
+.modal-text { font-size: 1.15rem; color: var(--gris); line-height: 1.8; }
 
-      .card-excerpt {
-        font-family: var(--font-body);
-        font-size: 1rem; /* Min 16px for A11Y */
-        color: var(--gris);
-        line-height: 1.7;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        margin-bottom: 1.5rem;
-      }
+.close-btn {
+  position: absolute; top: 20px; right: 20px;
+  background: var(--rouge); color: white; border: none; width: 40px; height: 40px;
+  font-size: 1.5rem; font-weight: bold; cursor: pointer; z-index: 10;
+  clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
+}
 
-      /* Bouton simulé (Lien) */
-      .read-more {
-        margin-top: auto;
-        font-weight: 800;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        color: var(--noir);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .read-more::after {
-        content: "→";
-        color: var(--rouge);
-        font-size: 1.2rem;
-        transition: transform 0.2s;
-      }
-      .news-card:hover .read-more::after {
-        transform: translateX(5px);
-      }
+/* =========================================
+   6. FOOTER (Identique à Index)
+   ========================================= */
+footer {
+  background:#0D0D0D; color:var(--papier);
+  padding:5rem 4rem 2rem; position:relative; overflow:hidden;
+}
+.footer-brand {
+  font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; margin-bottom:1.2rem;
+  display:flex; align-items:center; gap:.6rem;
+}
+.footer-brand span { color:var(--rouge); }
+.footer-brand img { height: 38px; width: auto; display: block; }
+.footer-desc {
+  font-size:.95rem; color:#BBBBBB; line-height:1.75; max-width:300px; margin-bottom:1.8rem;
+}
+.social-btn {
+  width:44px; height:44px; border:1.5px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;
+  font-size:.9rem; font-weight:800; clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  transition:all .25s;
+}
+.social-btn:hover { border-color:var(--rouge); color:var(--rouge); }
+.footer-col-title {
+  font-size:.8rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ocre-clair); margin-bottom:1.5rem;
+}
+.footer-links a { color:#DDDDDD; text-decoration:none; font-size:.95rem; transition:color .2s; }
+.footer-links a:hover { color:white; text-decoration: underline; }
+.footer-links li { color:#999; font-size:.95rem; line-height:1.6; }
+.footer-bottom {
+  max-width:1300px; margin:0 auto; display:flex; justify-content:space-between;
+  align-items:center; font-size:.8rem; color:#888; flex-wrap:wrap; gap:1rem;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 4rem;
+  max-width: 1300px; margin: 0 auto 4rem;
+}
 
-      /* --- 6. FEATURED (À LA UNE) --- */
-      .news-card.featured {
-        grid-column: 1 / -1; /* Toute la largeur */
-        flex-direction: row;
-        min-height: 450px;
-        background-color: var(--creme); /* Fond différent */
-      }
+/* =========================================
+   7. RESPONSIVE
+   ========================================= */
+@media(max-width:1050px){
+  #annonce-list { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
 
-      .news-card.featured .card-img-wrapper {
-        width: 55%;
-        height: auto;
-        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* Coupe oblique verticale */
-      }
-
-      .news-card.featured .card-body {
-        width: 45%;
-        justify-content: center;
-        padding: 4rem;
-      }
-
-      .news-card.featured .card-title {
-        font-size: 2.8rem; /* Très gros titre */
-        font-style: italic;
-      }
-
-      /* --- 7. RESPONSIVE --- */
-      @media (max-width: 900px) {
-        #annonce-list {
-          grid-template-columns: repeat(2, 1fr);
-        }
-        .news-card.featured .card-title { font-size: 2rem; }
-      }
-
-      @media (max-width: 768px) {
-        .aix-container { padding: 4rem 1.5rem; }
-        
-        #annonce-list {
-          grid-template-columns: 1fr; /* 1 seule colonne mobile */
-        }
-
-        .news-card.featured {
-          flex-direction: column;
-        }
-        .news-card.featured .card-img-wrapper {
-          width: 100%; height: 250px;
-          clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
-        }
-        .news-card.featured .card-body {
-          width: auto; padding: 2rem;
-        }
-        
-        h1.main-title { font-size: 2.5rem; }
-      }
-
-      /* --- 8. MODAL (Lecture) --- */
-      #modal-overlay {
-        display: none;
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-        background-color: rgba(17, 17, 17, 0.9); /* Noir presque opaque */
-        backdrop-filter: blur(10px);
-        z-index: 10000;
-        justify-content: center; align-items: center;
-        padding: 20px;
-      }
-
-      #modal-content {
-        background: var(--papier);
-        width: 100%; max-width: 800px;
-        max-height: 90vh;
-        overflow-y: auto;
-        position: relative;
-        /* Coin cassé modal */
-        clip-path: polygon(2% 0, 100% 0, 100% 98%, 98% 100%, 0 100%, 0 2%);
-        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-      }
-
-      .modal-header-img {
-        width: 100%; height: 350px;
-        object-fit: cover;
-      }
-
-      .modal-body {
-        padding: 3rem 4rem;
-      }
-
-      .modal-title {
-        font-family: var(--font-title);
-        font-size: 2.5rem;
-        font-weight: 900;
-        color: var(--noir);
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-      }
-
-      .modal-meta {
-        font-family: var(--font-body);
-        color: var(--ocre);
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-        border-bottom: 2px solid var(--papier-fonce);
-        padding-bottom: 1rem;
-      }
-
-      .modal-text {
-        font-size: 1.15rem;
-        color: var(--gris);
-        line-height: 1.8;
-      }
-      
-      /* Close Button accessible */
-      .close-btn {
-        position: absolute; top: 20px; right: 20px;
-        background: var(--rouge); color: white;
-        border: none; width: 40px; height: 40px;
-        font-size: 1.5rem; font-weight: bold;
-        cursor: pointer; z-index: 10;
-        display: flex; justify-content: center; align-items: center;
-        transition: transform 0.2s;
-        /* Petit style coin cassé sur le bouton */
-        clip-path: polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%);
-      }
-      .close-btn:hover { transform: scale(1.1); }
-      .close-btn:focus { outline: 3px solid white; }
-
-      /* Loader */
-      #loader { text-align: center; padding: 4rem; }
-      .spinner {
-        width: 40px; height: 40px;
-        border: 4px solid var(--papier-fonce);
-        border-top: 4px solid var(--rouge);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 1rem auto;
-      }
-      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-      @media (max-width: 600px) {
-        .modal-body { padding: 2rem; }
-        .modal-title { font-size: 1.8rem; }
-      }
-    </style>
+@media(max-width:768px){
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  
+  .page-header { padding: 6rem 1.5rem 3rem; }
+  .main-content { padding: 2rem 1.5rem 5rem; }
+  
+  #annonce-list { grid-template-columns: 1fr; }
+  
+  .news-card.featured { flex-direction: column; }
+  .news-card.featured .card-img-wrapper {
+    width: 100%; height: 250px;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  }
+  .news-card.featured .card-body { width: auto; padding: 2rem; }
+  .news-card.featured .card-title { font-size: 2rem; }
+  
+  footer { padding:4rem 1.5rem 2rem; }
+  .footer-bottom { flex-direction:column; text-align:center; }
+  
+  .modal-body { padding: 2rem; }
+  .modal-title { font-size: 1.8rem; }
+}
+</style>
 </head>
 <body>
 
-<div class="aix-container">
-    
-    <header class="section-header">
-      <span class="eyebrow">Journal</span>
-      <h1 class="main-title">Aix en Vue</h1>
-      <svg width="100" height="20" viewBox="0 0 100 20" style="margin-top:10px;">
-        <path d="M5,15 Q50,5 95,15" stroke="#D80000" stroke-width="3" fill="none" stroke-linecap="round"/>
-      </svg>
-    </header>
-    
-    <div id="loader">
-      <div class="spinner"></div>
-      <p style="font-weight: 700; color: var(--ocre);">Chargement de l'encre...</p>
-      <div id="error-msg" style="color:var(--rouge); display:none;"></div>
-    </div>
-    
-    <div id="annonce-list"></div>
+<nav role="navigation" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+    Aix en <span>Vue</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#manifeste">L'association</a></li>
+    <li><a href="#" class="active" aria-current="page">Actualités</a></li>
+    <li><a href="index.html#activites">Activités</a></li>
+    <li><a href="index.html#galerie">Atelier peinture</a></li>
+    <li><a href="index.html#engager">Nous soutenir</a></li>
+    <li><a href="missions.html">Nos Missions</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Rejoindre</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-</div>
+<header class="page-header">
+  <span class="header-eyebrow">Journal de bord</span>
+  <h1 class="header-title">Nos Actualités</h1>
+  <svg width="100" height="20" viewBox="0 0 100 20" style="margin-top:10px;">
+    <path d="M5,15 Q50,5 95,15" stroke="#D80000" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </svg>
+</header>
+
+<main class="main-content">
+  <div id="loader">
+    <div class="spinner"></div>
+    <p style="font-weight: 700; color: var(--ocre);">Chargement de l'encre...</p>
+    <div id="error-msg" style="color:var(--rouge); display:none;"></div>
+  </div>
+
+  <div id="annonce-list">
+    </div>
+</main>
 
 <div id="modal-overlay" role="dialog" aria-modal="true" onclick="closeModal(event)">
   <div id="modal-content" onclick="event.stopPropagation()"> 
@@ -382,21 +385,73 @@
   </div>
 </div>
 
-<script>
-  // --- CONFIGURATION ---
-  // ⚠️ REMPLACEZ CECI PAR VOTRE URL DE DÉPLOIEMENT APP SCRIPT (exec)
-  const API_URL = "https://script.google.com/macros/s/AKfycby-ZuAUgLPOBx9Gpd-NnBHqFAF8ujkJKQhmCPVqWTonTrcq-L2KlhCH_nde6MgfVBRw/exec";
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+        Aix en <span>Vue</span>
+      </div>
+      <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles du pays d'Aix depuis 2024.</p>
+      <div class="footer-socials" style="display:flex; gap:10px;">
+        <a href="https://www.facebook.com/aix.en.vue" class="social-btn" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/aix_en_vue" class="social-btn" aria-label="Instagram">in</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigation</p>
+      <ul class="footer-links">
+        <li><a href="index.html#manifeste">L'association</a></li>
+        <li><a href="index.html#activites">Activités</a></li>
+        <li><a href="index.html#galerie">Atelier peinture</a></li>
+        <li><a href="index.html#engager">Partenariats</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:info@aixenvue.fr">info@aixenvue.fr</a></li>
+        <li><a href="tel:+33744999438">07 44 99 94 38</a></li>
+        <li><a href="https://www.aixenvue.fr" target="_blank">www.aixenvue.fr</a></li>
+        <li>Aix-en-Provence (13)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Aix en Vue — Association loi 1901</span>
+    <span>Pour et avec les déficients visuels</span>
+  </div>
+</footer>
 
+<script>
+  // 1. GESTION DU MENU MOBILE
+  const hb = document.querySelector('.hamburger'), nl = document.querySelector('.nav-links');
+  hb.addEventListener('click', () => {
+    const o = nl.style.display === 'flex';
+    Object.assign(nl.style, {
+      display: o ? 'none' : 'flex',
+      position: 'absolute', top: '68px', left: '0', right: '0',
+      flexDirection: 'column', background: 'var(--papier)',
+      padding: '1.5rem 2rem', borderBottom: '1px solid rgba(17,17,17,.08)', zIndex: '400'
+    });
+    hb.setAttribute('aria-expanded', String(!o));
+  });
+
+  // Ombre Nav au scroll
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,.07)' : 'none';
+  });
+
+  // 2. FETCH DONNÉES APPS SCRIPT
+  const API_URL = "https://script.google.com/macros/s/AKfycby-ZuAUgLPOBx9Gpd-NnBHqFAF8ujkJKQhmCPVqWTonTrcq-L2KlhCH_nde6MgfVBRw/exec";
   let allAnnonces = [];
 
   document.addEventListener('DOMContentLoaded', function() {
     fetchData();
-    
-    // Fermeture modal avec ESC (A11Y)
+    // Clavier pour Accessibilité Modal
     document.addEventListener('keydown', function(event) {
-        if (event.key === "Escape") {
-            hardCloseModal();
-        }
+        if (event.key === "Escape") hardCloseModal();
     });
   });
 
@@ -421,20 +476,20 @@
     document.getElementById('loader').style.display = 'none';
 
     if (!data || data.length === 0) {
-      listDiv.innerHTML = '<p style="text-align:center; font-size:1.2rem;">Aucun article publié.</p>';
+      listDiv.innerHTML = '<p style="text-align:center; font-size:1.2rem; grid-column:1/-1;">Aucun article publié pour le moment.</p>';
       return;
     }
 
     let html = '';
     data.forEach((ann, index) => {
-      // Nettoyage texte pour extrait
+      // Extrait texte brut
       let tempDiv = document.createElement("div");
       tempDiv.innerHTML = ann.contenu;
       let textOnly = tempDiv.textContent || tempDiv.innerText || "";
       
       // La Une (Featured) a plus de texte
       let isFeatured = (index === 0);
-      let limit = isFeatured ? 350 : 110;
+      let limit = isFeatured ? 350 : 120;
       let extrait = textOnly.length > limit ? textOnly.substring(0, limit) + "..." : textOnly;
       let featuredClass = isFeatured ? 'featured' : '';
 
@@ -460,33 +515,31 @@
   function showError(e) {
     console.error("Erreur:", e);
     const errorDiv = document.getElementById('error-msg');
-    document.querySelector('.spinner').style.display = 'none';
+    const spinner = document.querySelector('.spinner');
+    if(spinner) spinner.style.display = 'none';
+    
     errorDiv.style.display = 'block';
-    errorDiv.textContent = "Impossible de récupérer les nouvelles : " + e.message;
+    errorDiv.textContent = "Impossible de récupérer les nouvelles. Réessayez plus tard.";
   }
 
-  // --- MODAL LOGIC ---
+  // 3. LOGIQUE MODALE
   function openModal(index) {
     const ann = allAnnonces[index];
     if(!ann) return;
 
     document.getElementById('m-img').src = ann.photoUrl;
-    // Ajout alt texte pour accessibilité image modal
-    document.getElementById('m-img').alt = "Illustration de l'article : " + ann.titre;
-    
+    document.getElementById('m-img').alt = "Illustration : " + ann.titre;
     document.getElementById('m-title').textContent = ann.titre;
     
-    // Formatage Meta
     let metaHTML = `PAR ${ann.auteur} | LE ${ann.date}`;
     document.getElementById('m-meta').innerHTML = metaHTML;
-    
     document.getElementById('m-text').innerHTML = ann.contenu;
     
     const overlay = document.getElementById('modal-overlay');
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden'; 
     
-    // Focus sur le bouton fermer pour l'accessibilité
+    // Focus close btn
     setTimeout(() => document.querySelector('.close-btn').focus(), 100);
   }
 
@@ -499,11 +552,9 @@
     if (event.target.id === 'modal-overlay') hardCloseModal();
   }
 
-  // Permettre l'ouverture au clavier (Accessibilité)
   function handleEnter(e, index) {
       if(e.key === 'Enter') openModal(index);
   }
 </script>
-
 </body>
 </html>
