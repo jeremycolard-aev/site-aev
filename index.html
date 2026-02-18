@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aix en Vue — Pour et avec les déficients visuels</title>
 <meta name="description" content="Association basée à Aix-en-Provence dédiée à l'inclusion, aux activités culturelles et sportives pour les personnes déficientes visuelles.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#D80000">
+<link rel="apple-touch-icon" href="icon-192.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,7 +21,7 @@
   --ocre-clair: #F0C060;
   --bleu: #1A3A5C;
   --vert: #5C7A5C;
-  --gris: #222222; /* Gris sombre pour accessibilité */
+  --gris: #222222;
   --creme: #FBF8F0;
 }
 html { scroll-behavior: smooth; }
@@ -59,7 +62,7 @@ nav::after {
 }
 .nav-logo span { color:var(--rouge); }
 .nav-logo img {
-  height: 32px; /* Ajusté pour le logo PNG */
+  height: 32px;
   width: auto;
   display: block;
 }
@@ -513,6 +516,35 @@ footer {
   font-size:.8rem; color:#888; flex-wrap:wrap; gap:1rem;
 }
 
+/* ===== AJOUT PWA BANNER STYLE ===== */
+.pwa-banner {
+  display:none; /* Masqué par défaut */
+  position:fixed; bottom:20px; left:20px; right:20px;
+  background:var(--noir); color:white;
+  padding:1.5rem; z-index:10000;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  flex-direction:column; gap:1rem; align-items:center; text-align:center;
+  border-top:3px solid var(--rouge);
+  animation: slideUp .5s ease-out;
+}
+@keyframes slideUp { from{transform:translateY(50px);opacity:0;} to{transform:translateY(0);opacity:1;} }
+
+.pwa-btns { display:flex; gap:1rem; width:100%; justify-content:center; }
+.pwa-btn-install {
+  background:var(--rouge); color:white; border:none;
+  padding:0.7rem 1.4rem; cursor:pointer;
+  font-family:'Manrope',sans-serif; font-weight:800; text-transform:uppercase; font-size:0.8rem;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+}
+.pwa-btn-close {
+  background:transparent; color:white;
+  border:1px solid rgba(255,255,255,0.3);
+  padding:0.7rem 1.4rem; cursor:pointer;
+  font-family:'Manrope',sans-serif; font-weight:700; text-transform:uppercase; font-size:0.8rem;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1050px){
   .hero { grid-template-columns:1fr; padding:7rem 2rem 4rem; text-align:center; }
@@ -833,6 +865,14 @@ footer {
   </div>
 </footer>
 
+<div id="pwa-install-banner" class="pwa-banner" role="alert">
+  <p style="font-weight:700; margin:0;">Ajouter <strong>Aix en Vue</strong> sur votre écran d'accueil pour un accès simplifié ?</p>
+  <div class="pwa-btns">
+    <button id="pwa-close" class="pwa-btn-close">Plus tard</button>
+    <button id="pwa-install-btn" class="pwa-btn-install">Installer</button>
+  </div>
+</div>
+
 <script>
 // LOAD
 window.addEventListener('load', () => setTimeout(() => document.body.classList.add('loaded'), 80));
@@ -903,6 +943,46 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if(t) { t.scrollIntoView({behavior: 'smooth'}); nl.style.display = 'none'; }
   });
 });
+
+/* ===== AJOUT PWA : LOGIQUE JS ===== */
+let deferredPrompt;
+const pwaBanner = document.getElementById('pwa-install-banner');
+const installBtn = document.getElementById('pwa-install-btn');
+const closeBtn = document.getElementById('pwa-close');
+
+// 1. Enregistrement Service Worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW fail', err));
+}
+
+// 2. Détection de l'événement PWA
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Empêche Chrome d'afficher la barre par défaut
+  e.preventDefault();
+  deferredPrompt = e;
+  // Affiche notre bannière
+  pwaBanner.style.display = 'flex';
+});
+
+// 3. Click sur Installer
+if(installBtn) {
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`Réponse PWA: ${outcome}`);
+      deferredPrompt = null;
+      pwaBanner.style.display = 'none';
+    }
+  });
+}
+
+// 4. Click sur Fermer
+if(closeBtn) {
+  closeBtn.addEventListener('click', () => {
+    pwaBanner.style.display = 'none';
+  });
+}
 </script>
 </body>
 </html>
