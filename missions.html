@@ -140,7 +140,7 @@ nav::after {
 }
 .page-hero-photo-frame {
   position:relative;
-  clip-path:polygon(5% 0,100% 0,95% 100%,0% 100%);
+  /* clip-path supprimé ici */
   overflow:hidden;
 }
 .page-hero-photo-frame img {
@@ -240,13 +240,13 @@ body.loaded .page-hero-visual { opacity:1; transform:translateY(0) translateX(0)
 .vision-image { position:relative; }
 .vision-image img {
   width:100%; height:460px; object-fit:cover; display:block;
-  clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);
+  /* clip-path supprimé ici */
 }
 .vision-image::after {
   content:'';
   position:absolute; top:14px; left:14px; right:-14px; bottom:-14px;
   border:3px solid rgba(200,134,10,.35); z-index:-1;
-  clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);
+  /* clip-path supprimé ici */
 }
 
 /* ===== MISSIONS ===== */
@@ -324,7 +324,7 @@ body.loaded .page-hero-visual { opacity:1; transform:translateY(0) translateX(0)
 .mission-visual { position:relative; z-index:1; }
 .mission-photo {
   position:relative; overflow:hidden;
-  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  /* clip-path supprimé ici */
 }
 .mission-photo img {
   width:100%; height:480px; object-fit:cover; display:block;
@@ -343,118 +343,6 @@ body.loaded .page-hero-visual { opacity:1; transform:translateY(0) translateX(0)
 .mission-highlight strong {
   display:block; font-family:'Playfair Display',serif;
   font-size:2rem; color:var(--rouge); font-style:normal; line-height:1;
-}
-
-/* ===== IMPACT BANDE ===== */
-.impact-bande {
-  background:var(--noir); padding:6rem 4rem;
-  position:relative; overflow:hidden;
-}
-.impact-bande::before {
-  content:'IMPACT';
-  position:absolute; bottom:-.1em; left:-.05em;
-  font-family:'Playfair Display',serif;
-  font-size:32vw; font-weight:900; font-style:italic;
-  color:rgba(255,255,255,.03); line-height:1; pointer-events:none; white-space:nowrap;
-}
-.impact-inner {
-  max-width:1300px; margin:0 auto;
-  position:relative; z-index:1;
-  text-align:center;
-}
-.impact-inner .section-label { justify-content:center; color:var(--ocre-clair); }
-.impact-inner .section-label::before {
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23F0C060' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
-}
-.impact-inner .section-title { color:var(--papier); margin-bottom:1rem; }
-.impact-sub { color:#CCCCCC; font-size:1.1rem; margin-bottom:5rem; max-width:600px; margin-left:auto; margin-right:auto; }
-.impact-grid {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
-  margin-bottom:4rem;
-}
-.impact-item {
-  background:rgba(255,255,255,.04);
-  padding:3rem 2rem;
-  text-align:center;
-  position:relative; overflow:hidden;
-  transition:background .3s;
-}
-.impact-item:hover { background:rgba(255,255,255,.07); }
-.impact-item::before {
-  content:''; position:absolute; top:0; left:0; right:0; height:3px;
-  background:var(--rouge); transform:scaleX(0); transform-origin:left;
-  transition:transform .5s ease;
-}
-.impact-item:hover::before { transform:scaleX(1); }
-.impact-num {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(3rem,5vw,5rem); font-weight:900;
-  color:var(--rouge); display:block; line-height:1;
-  margin-bottom:.5rem;
-}
-.impact-lbl {
-  font-size:.8rem; font-weight:700; letter-spacing:.14em;
-  text-transform:uppercase; color:#BBBBBB; line-height:1.5;
-}
-.impact-quote {
-  border-top:1px solid rgba(255,255,255,.1);
-  padding-top:3rem;
-  font-family:'Playfair Display',serif;
-  font-size:clamp(1.5rem,3vw,2.2rem); font-style:italic;
-  color:var(--papier); line-height:1.5;
-}
-.impact-quote em { color:var(--rouge); font-style:normal; }
-
-/* ===== PARTENAIRES ===== */
-.partenaires-section {
-  padding:8rem 4rem;
-  background:var(--papier);
-  position:relative;
-}
-.partenaires-inner { max-width:1300px; margin:0 auto; }
-.partenaires-head {
-  display:grid; grid-template-columns:1fr 1fr; gap:7rem;
-  align-items:center; margin-bottom:5rem;
-}
-.partenaires-roles {
-  display:flex; flex-wrap:wrap; gap:.8rem; margin:2rem 0;
-}
-.role-tag {
-  display:inline-block; padding:.7rem 1.4rem;
-  font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-  background:var(--papier-fonce);
-  border:1.5px solid rgba(200,134,10,.3);
-  color:#915f00;
-  clip-path:polygon(0 0,100% 0,96% 100%,4% 100%);
-  transition:background .25s, color .25s;
-}
-.role-tag:hover { background:var(--rouge); color:white; border-color:var(--rouge); }
-.partenaires-text p {
-  font-size:1.05rem; line-height:1.85; color:var(--gris); margin-bottom:1rem;
-}
-.partenaires-text p strong { color:var(--noir); font-weight:800; }
-.partenaires-logos {
-  display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem;
-}
-.partner-box {
-  background:white;
-  border:1px solid rgba(0,0,0,.07);
-  padding:2rem 1.5rem;
-  text-align:center;
-  transition:transform .3s, box-shadow .3s;
-  position:relative;
-}
-.partner-box:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,.1); }
-.partner-box::before {
-  content:''; position:absolute; top:0; left:0; right:0; height:3px;
-  background:var(--rouge); transform:scaleX(0); transform-origin:left; transition:.4s;
-}
-.partner-box:hover::before { transform:scaleX(1); }
-.partner-box .partner-name {
-  font-weight:800; font-size:.9rem; color:var(--noir); margin-bottom:.3rem;
-}
-.partner-box .partner-type {
-  font-size:.75rem; color:var(--gris); letter-spacing:.05em; text-transform:uppercase; font-weight:600;
 }
 
 /* ===== CTA FINAL ===== */
@@ -587,9 +475,7 @@ footer {
   .mission-block { grid-template-columns:1fr; gap:3rem; }
   .mission-block.reverse .mission-visual { order:0; }
   .mission-number-bg { display:none; }
-  .impact-grid { grid-template-columns:1fr; }
-  .partenaires-head { grid-template-columns:1fr; gap:3rem; }
-  .partenaires-logos { grid-template-columns:1fr 1fr; }
+  /* suppression des styles liés à .impact-grid et .partenaires supprimés */
   .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
 }
 @media(max-width:768px){
@@ -598,10 +484,8 @@ footer {
   .hamburger { display:flex; }
   .breadcrumb-bar { padding:0 1.5rem; }
   .page-hero { padding:7rem 1.5rem 4rem; }
-  .vision-section, .missions-section, .impact-bande, .partenaires-section, .cta-section { padding:5rem 1.5rem; }
+  .vision-section, .missions-section, .cta-section { padding:5rem 1.5rem; }
   .mission-block { padding:4rem 0; }
-  .impact-grid { grid-template-columns:1fr 1fr; }
-  .partenaires-logos { grid-template-columns:1fr; }
   footer { padding:4rem 1.5rem 2rem; }
   .footer-bottom { flex-direction:column; text-align:center; }
   .cta-section { padding:6rem 1.5rem; }
@@ -629,7 +513,6 @@ footer {
   </button>
 </nav>
 
-<!-- Hero sombre pour page interne -->
 <header class="page-hero" role="banner">
   <div class="page-hero-content">
     <p class="hero-eyebrow"><span class="brush-dash"></span>Informer · Promouvoir · Encourager</p>
@@ -656,7 +539,6 @@ footer {
   </div>
 </header>
 
-<!-- Vision intro -->
 <section class="vision-section" aria-labelledby="vision-h">
   <div class="vision-inner">
     <div class="vision-text reveal-left">
@@ -692,18 +574,16 @@ footer {
     </div>
     <div class="vision-image reveal-right">
       <img
-        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771448514/outils_qui_permettent_l_inclusion_num%C3%A9rique_qwvv13.png"
+        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771451075/Au_dela_des_activit%C3%A9s_suufnh.png"
         alt="Outils permettant l'inclusion numérique des déficients visuels"
       >
     </div>
   </div>
 </section>
 
-<!-- Missions détaillées -->
 <section id="missions" class="missions-section" aria-labelledby="missions-h">
   <div class="missions-inner">
 
-    <!-- Mission 1 : Accessibilité -->
     <div class="mission-block">
       <div class="mission-number-bg" aria-hidden="true">01</div>
 
@@ -746,7 +626,6 @@ footer {
       </div>
     </div>
 
-    <!-- Mission 2 : Inclusion professionnelle -->
     <div class="mission-block reverse">
       <div class="mission-number-bg" aria-hidden="true">02</div>
 
@@ -793,7 +672,6 @@ footer {
       </div>
     </div>
 
-    <!-- Mission 3 : Sensibilisation -->
     <div class="mission-block">
       <div class="mission-number-bg" aria-hidden="true">03</div>
 
@@ -843,85 +721,6 @@ footer {
   </div>
 </section>
 
-<!-- Bande impact -->
-<section class="impact-bande" aria-labelledby="impact-h">
-  <div class="impact-inner">
-    <p class="section-label reveal">Nos résultats en 2025</p>
-    <h2 class="section-title reveal" id="impact-h">L'impact,<br><em style="color:var(--rouge);font-style:italic;">concret</em></h2>
-    <p class="impact-sub reveal">Des chiffres qui témoignent d'une année pleine, militante et joyeuse.</p>
-
-    <div class="impact-grid reveal">
-      <div class="impact-item">
-        <span class="impact-num" data-target="377">0</span>
-        <span class="impact-lbl">Activités organisées en 2025</span>
-      </div>
-      <div class="impact-item">
-        <span class="impact-num" data-target="72">0</span>
-        <span class="impact-lbl">Bénévoles voyants engagés</span>
-      </div>
-      <div class="impact-item">
-        <span class="impact-num" data-target="90" data-suffix="%">0</span>
-        <span class="impact-lbl">Participants mieux sensibilisés</span>
-      </div>
-    </div>
-
-    <p class="impact-quote reveal">
-      « Informer, Promouvoir, Encourager —<br>c'est notre <em>engagement simple</em>. »
-    </p>
-  </div>
-</section>
-
-<!-- Partenaires & soutiens -->
-<section class="partenaires-section" aria-labelledby="partenaires-h">
-  <div class="partenaires-inner">
-    <div class="partenaires-head">
-      <div class="reveal-left">
-        <p class="section-label">Ils nous soutiennent</p>
-        <h2 class="section-title" id="partenaires-h">Des partenaires<br>pour <em style="color:var(--rouge);font-style:italic;">amplifier</em><br>notre impact</h2>
-      </div>
-      <div class="partenaires-text reveal-right">
-        <p>Nous bénéficions du soutien d'acteurs institutionnels, culturels et privés qui partagent notre vision d'une ville inclusive.</p>
-        <p><strong>Votre organisation peut rejoindre cette dynamique</strong> — que vous soyez une entreprise, une institution culturelle ou un établissement scolaire.</p>
-        <div class="partenaires-roles">
-          <span class="role-tag">🤝 Bénévole</span>
-          <span class="role-tag">💛 Donateur</span>
-          <span class="role-tag">🏢 Entreprise</span>
-          <span class="role-tag">🎭 Culturel</span>
-          <span class="role-tag">🏫 Scolaire</span>
-        </div>
-        <a href="index.html#contact" class="btn-primary" style="margin-top:.5rem;">Devenir partenaire</a>
-      </div>
-    </div>
-    <div class="partenaires-logos reveal">
-      <div class="partner-box">
-        <div class="partner-name">Département 13</div>
-        <div class="partner-type">Collectivité</div>
-      </div>
-      <div class="partner-box">
-        <div class="partner-name">Métropole AMP</div>
-        <div class="partner-type">Collectivité</div>
-      </div>
-      <div class="partner-box">
-        <div class="partner-name">Mairie d'Aix</div>
-        <div class="partner-type">Collectivité</div>
-      </div>
-      <div class="partner-box">
-        <div class="partner-name">Harmonie Mutuelle</div>
-        <div class="partner-type">Partenaire privé</div>
-      </div>
-      <div class="partner-box">
-        <div class="partner-name">Musée Granet</div>
-        <div class="partner-type">Culture</div>
-      </div>
-      <div class="partner-box">
-        <div class="partner-name">Médiathèque Méjanes</div>
-        <div class="partner-type">Culture</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA final -->
 <section class="cta-section" aria-labelledby="cta-h">
   <div class="cta-ghost" aria-hidden="true">Vue</div>
   <div class="cta-body">
@@ -984,25 +783,7 @@ const io = new IntersectionObserver(e => e.forEach(x => {
 }), {threshold:.1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
 
-// COUNTERS
-const cio = new IntersectionObserver(entries => {
-  if(entries[0].isIntersecting) {
-    document.querySelectorAll('.impact-num').forEach(el => {
-      const target = parseInt(el.dataset.target);
-      const suffix = el.dataset.suffix || '';
-      let c = 0;
-      const step = Math.ceil(target / 60);
-      const t = setInterval(() => {
-        c = Math.min(c + step, target);
-        el.textContent = c.toLocaleString('fr-FR') + suffix;
-        if(c >= target) clearInterval(t);
-      }, 20);
-    });
-    cio.disconnect();
-  }
-}, {threshold: .1});
-const impactSection = document.querySelector('.impact-bande');
-if(impactSection) cio.observe(impactSection);
+// COUNTERS (SUPPRIMÉ car la section a été retirée)
 
 // HAMBURGER
 const hb = document.querySelector('.hamburger'), nl = document.querySelector('.nav-links');
