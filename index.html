@@ -944,24 +944,28 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ===== AJOUT PWA : LOGIQUE JS ===== */
+/* ===== AJOUT PWA : LOGIQUE JS (Version Corrigée pour GitHub Pages) ===== */
 let deferredPrompt;
 const pwaBanner = document.getElementById('pwa-install-banner');
 const installBtn = document.getElementById('pwa-install-btn');
 const closeBtn = document.getElementById('pwa-close');
 
-// 1. Enregistrement Service Worker
+// --- C'EST ICI QUE TU PLACES LE CALCUL DU CHEMIN ---
+// Cela permet de trouver /site-aev/ automatiquement
+const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+
+// 1. Enregistrement Service Worker avec le bon chemin
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW fail', err));
+  navigator.serviceWorker.register(currentPath + 'sw.js')
+    .then(() => console.log("Service Worker enregistré avec succès au scope:", currentPath))
+    .catch(err => console.log('Échec enregistrement SW:', err));
 }
 
-// 2. Détection de l'événement PWA
+// 2. Détection de l'événement PWA (ne fonctionne que sur Chrome/Android)
 window.addEventListener('beforeinstallprompt', (e) => {
-  // Empêche Chrome d'afficher la barre par défaut
   e.preventDefault();
   deferredPrompt = e;
-  // Affiche notre bannière
-  pwaBanner.style.display = 'flex';
+  pwaBanner.style.display = 'flex'; // Affiche ta bannière
 });
 
 // 3. Click sur Installer
@@ -970,7 +974,6 @@ if(installBtn) {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
-      console.log(`Réponse PWA: ${outcome}`);
       deferredPrompt = null;
       pwaBanner.style.display = 'none';
     }
