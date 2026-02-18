@@ -140,7 +140,6 @@ nav::after {
 }
 .page-hero-photo-frame {
   position:relative;
-  /* clip-path supprimé ici */
   overflow:hidden;
 }
 .page-hero-photo-frame img {
@@ -240,13 +239,11 @@ body.loaded .page-hero-visual { opacity:1; transform:translateY(0) translateX(0)
 .vision-image { position:relative; }
 .vision-image img {
   width:100%; height:460px; object-fit:cover; display:block;
-  /* clip-path supprimé ici */
 }
 .vision-image::after {
   content:'';
   position:absolute; top:14px; left:14px; right:-14px; bottom:-14px;
   border:3px solid rgba(200,134,10,.35); z-index:-1;
-  /* clip-path supprimé ici */
 }
 
 /* ===== MISSIONS ===== */
@@ -324,20 +321,21 @@ body.loaded .page-hero-visual { opacity:1; transform:translateY(0) translateX(0)
 .mission-visual { position:relative; z-index:1; }
 .mission-photo {
   position:relative; overflow:hidden;
-  /* clip-path supprimé ici */
 }
 .mission-photo img {
   width:100%; height:480px; object-fit:cover; display:block;
   transition:transform .8s ease;
 }
 .mission-photo:hover img { transform:scale(1.04); }
+
+/* MISE À JOUR DU PADDING ICI */
 .mission-highlight {
   position:absolute; bottom:-1.5rem; right:-1.5rem;
   background:var(--noir); color:white;
-  padding:1.2rem 1.8rem;
+  padding:2rem 2.5rem; /* Augmentation du padding */
   clip-path:polygon(3% 0,100% 0,97% 100%,0% 100%);
   font-family:'Playfair Display',serif; font-size:.95rem; font-style:italic;
-  line-height:1.45; max-width:200px;
+  line-height:1.45; max-width:220px; /* Légère augmentation de la largeur max pour compenser le padding */
   box-shadow:0 8px 30px rgba(0,0,0,.25);
 }
 .mission-highlight strong {
@@ -475,7 +473,6 @@ footer {
   .mission-block { grid-template-columns:1fr; gap:3rem; }
   .mission-block.reverse .mission-visual { order:0; }
   .mission-number-bg { display:none; }
-  /* suppression des styles liés à .impact-grid et .partenaires supprimés */
   .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
 }
 @media(max-width:768px){
@@ -782,8 +779,6 @@ const io = new IntersectionObserver(e => e.forEach(x => {
   if(x.isIntersecting) x.target.classList.add('visible');
 }), {threshold:.1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => io.observe(el));
-
-// COUNTERS (SUPPRIMÉ car la section a été retirée)
 
 // HAMBURGER
 const hb = document.querySelector('.hamburger'), nl = document.querySelector('.nav-links');
