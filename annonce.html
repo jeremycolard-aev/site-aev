@@ -3,351 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actualités — Aix en Vue</title>
+<meta name="description" content="Les dernières nouvelles et activités de l'association Aix en Vue.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
 <style>
-  /* --- 1. VARIABLES & RESET --- */
-  :root {
-    --noir: #111111;
-    --gris: #222222;
-    --rouge: #D80000;
-    --papier: #F4F2EB;
-    --creme: #FBF8F0;
-    --papier-fonce: #E8E4D9;
-    --ocre: #C8860A;
-    
-    --font-title: 'Playfair Display', serif;
-    --font-body: 'Manrope', sans-serif;
-  }
-
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-body);
-    background-color: transparent; /* Fond transparent pour se fondre dans le site, ou var(--papier) */
-    color: var(--gris);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* --- 2. TEXTURE PAPIER (Optionnel si le site l'a déjà, mais ajouté ici par sécurité) --- */
-  .texture-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.4;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
-  }
-
-  /* --- 3. LAYOUT & GRILLE --- */
-  .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  /* --- 4. CARTES (CARDS) --- */
-  .card {
-    background: white;
-    border: 1px solid rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Pour contenir la ligne rouge */
-  }
-
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  }
-
-  /* Ligne rouge animée au top */
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 0%;
-    height: 4px;
-    background: var(--rouge);
-    transition: width 0.3s ease;
-    z-index: 2;
-  }
-
-  .card:hover::before {
-    width: 100%;
-  }
-
-  .card-image-container {
-    width: 100%;
-    aspect-ratio: 16/10;
-    overflow: hidden;
-    /* Application du Coin Cassé sur l'image */
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); 
-    margin-bottom: 1rem;
-  }
-
-  .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-
-  .card:hover .card-img {
-    transform: scale(1.05);
-  }
-
-  .card-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-  }
-
-  .card-date {
-    font-family: var(--font-body);
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    font-weight: 700;
-    color: var(--ocre);
-    margin-bottom: 0.5rem;
-  }
-
-  .card-title {
-    font-family: var(--font-title);
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin: 0 0 1rem 0;
-    color: var(--noir);
-    line-height: 1.2;
-  }
-
-  .card-desc {
-    font-size: 1rem;
-    color: var(--gris);
-    margin-bottom: 1.5rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  /* Bouton style "Aix en Vue" */
-  .btn-card {
-    margin-top: auto;
-    align-self: flex-start;
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background: transparent;
-    border: 2px solid var(--noir);
-    color: var(--noir);
-    font-family: var(--font-body);
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 0.85rem;
-    text-decoration: none;
-    cursor: pointer;
-    /* Coin cassé sur le bouton */
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-    transition: all 0.2s ease;
-  }
-
-  .btn-card:hover {
-    background: var(--rouge);
-    border-color: var(--rouge);
-    color: white;
-    transform: translateY(-2px);
-  }
-
-  /* --- 5. FEATURED (Mis en avant) --- */
-  .featured-section {
-    margin-bottom: 4rem;
-  }
-
-  .featured-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    background: var(--creme);
-    align-items: center;
-    padding: 0; 
-  }
-
-  .featured-img-wrap {
-    width: 100%;
-    height: 100%;
-    min-height: 400px;
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
-  }
+/* =========================================
+   1. BASE & VARIABLES (COPIÉ DE INDEX)
+   ========================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --noir: #111111;
+  --papier: #F4F2EB;
+  --papier-fonce: #E8E4D9;
+  --rouge: #D80000;
+  --ocre: #C8860A;
+  --ocre-clair: #F0C060;
+  --bleu: #1A3A5C;
+  --vert: #5C7A5C;
+  --gris: #222222;
+  --creme: #FBF8F0;
   
-  .featured-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Manrope', sans-serif;
+}
 
-  .featured-content {
-    padding: 2rem 3rem 2rem 0;
-  }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--papier);
+  color: var(--noir);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
 
-  .featured-tag {
-    display: inline-block;
-    background: var(--papier-fonce);
-    padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 800;
-    color: var(--noir);
-    margin-bottom: 1rem;
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-  }
+/* Texture de fond légère */
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9997; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+}
 
-  .featured-title {
+/* =========================================
+   2. NAVIGATION (COPIÉ DE INDEX)
+   ========================================= */
+nav {
+  position:fixed; top:0; left:0; right:0;
+  z-index:500;
+  padding:1.2rem 3.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(244,242,235,.98);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  transition:box-shadow .3s;
+}
+nav::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.nav-logo {
+  font-family:var(--font-title);
+  font-size:1.45rem; font-weight:900;
+  color:var(--noir); text-decoration:none;
+  letter-spacing:-.02em;
+  display:flex; align-items:center; gap:.7rem;
+}
+.nav-logo span { color:var(--rouge); }
+.nav-logo img { height: 32px; width: auto; display: block; }
+
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a {
+  color:var(--noir); text-decoration:none;
+  font-size:.9rem; font-weight:800;
+  letter-spacing:.05em; text-transform:uppercase;
+  position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q25 1 50 3Q75 5 100 2' stroke='%23D80000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  transition:width .35s cubic-bezier(.4,0,.2,1);
+}
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:var(--rouge); color:white!important;
+  padding:.65rem 1.5rem; font-weight:800!important;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  transition:background .2s, transform .2s;
+}
+.nav-cta:hover { background:var(--noir)!important; transform:translateY(-1px); }
+.nav-cta::after { display:none!important; }
+
+.hamburger {
+  display:none; flex-direction:column; gap:6px;
+  background:none; border:none; padding:.5rem; cursor:pointer;
+}
+.hamburger span { display:block; width:28px; height:3px; background:var(--noir); border-radius:2px; }
+
+/* =========================================
+   3. ENTÊTE DE PAGE (NOUVEAU)
+   ========================================= */
+.page-header {
+    padding: 10rem 4rem 4rem;
+    text-align: center;
+    background: var(--creme);
+}
+.page-title {
     font-family: var(--font-title);
-    font-size: 2.5rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 900;
-    font-style: italic;
     margin-bottom: 1rem;
-    color: var(--noir);
-  }
+}
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--gris);
+    max-width: 600px;
+    margin: 0 auto;
+}
+.section-label {
+  font-size:.8rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ocre); display:flex; align-items:center; justify-content:center; gap:1rem; margin-bottom:1.5rem;
+}
+.section-label::before {
+  content:''; width:35px; height:4px; flex-shrink:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23C8860A' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+}
 
-  /* --- 6. LOADER --- */
-  .loader-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-  }
-  .spinner {
-    width: 50px;
-    height: 50px;
-    border: 4px solid var(--papier-fonce);
-    border-top: 4px solid var(--rouge);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin-bottom: 1rem;
-  }
-  .loader-text {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 0.8rem;
-  }
-  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+/* =========================================
+   4. SYSTÈME DE CARTES (News)
+   ========================================= */
+.container {
+  max-width: 1300px; margin: 0 auto; padding: 2rem 4rem 6rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
 
-  /* --- 7. MODAL --- */
-  .modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(17, 17, 17, 0.9); /* Noir presque opaque */
-    backdrop-filter: blur(5px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+/* Featured (La une) */
+.featured-card {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+  background: white; align-items: center;
+  border: 1px solid rgba(200,134,10,.15);
+  margin-bottom: 4rem;
+}
+.featured-img-wrap {
+  width: 100%; height: 100%; min-height: 400px;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+.featured-img-wrap img { width: 100%; height: 100%; object-fit: cover; display:block; }
+.featured-content { padding: 2rem 3rem 2rem 0; }
+.featured-tag {
+  display: inline-block; background: var(--papier-fonce);
+  padding: 0.4rem 1rem; font-size: 0.75rem; text-transform: uppercase;
+  letter-spacing: 0.1em; font-weight: 800; color: var(--noir);
+  margin-bottom: 1.5rem; clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+.featured-title {
+  font-family: var(--font-title); font-size: 2.5rem; font-weight: 900;
+  font-style: italic; margin-bottom: 1.5rem; color: var(--noir); line-height: 1.1;
+}
 
-  .modal-overlay.active {
-    display: flex;
-    opacity: 1;
-  }
+/* Cartes standard */
+.card {
+  background: white; border: 1px solid rgba(0,0,0,0.05);
+  display: flex; flex-direction: column; position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 0%; height: 4px;
+  background: var(--rouge); transition: width 0.3s ease; z-index: 2;
+}
+.card:hover::before { width: 100%; }
 
-  .modal-content {
-    background: var(--papier);
-    width: 90%;
-    max-width: 800px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    padding: 0;
-    /* Coin cassé subtil sur la modale */
-    clip-path: polygon(0 0, 100% 0, 100% 98%, 98% 100%, 0 100%);
-  }
+.card-image-container {
+  width: 100%; aspect-ratio: 16/10; overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); margin-bottom: 1rem;
+}
+.card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.card:hover .card-img { transform: scale(1.05); }
 
-  .modal-header {
-    position: relative;
-  }
+.card-content { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.card-date {
+  font-family: var(--font-body); text-transform: uppercase; font-size: 0.75rem;
+  letter-spacing: 0.1em; font-weight: 700; color: var(--ocre); margin-bottom: 0.5rem;
+}
+.card-title {
+  font-family: var(--font-title); font-weight: 700; font-size: 1.5rem;
+  margin: 0 0 1rem 0; color: var(--noir); line-height: 1.2;
+}
+.card-desc {
+  font-size: 1rem; color: var(--gris); margin-bottom: 1.5rem;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
 
-  .close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--rouge);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    font-weight: bold;
-    font-size: 1.5rem;
-    cursor: pointer;
-    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-  }
+.btn-card {
+  margin-top: auto; align-self: flex-start; display: inline-block;
+  padding: 0.8rem 1.5rem; background: transparent;
+  border: 2px solid var(--noir); color: var(--noir);
+  font-family: var(--font-body); text-transform: uppercase; font-weight: 800;
+  font-size: 0.85rem; text-decoration: none; cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); transition: all 0.2s ease;
+}
+.btn-card:hover { background: var(--rouge); border-color: var(--rouge); color: white; transform: translateY(-2px); }
 
-  .modal-body {
-    padding: 3rem;
-  }
+/* Loader */
+.loader-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; }
+.spinner {
+  width: 50px; height: 50px; border: 4px solid var(--papier-fonce);
+  border-top: 4px solid var(--rouge); border-radius: 50%;
+  animation: spin 1s linear infinite; margin-bottom: 1rem;
+}
+.loader-text { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-  .modal-body h2 {
-    font-family: var(--font-title);
-    font-size: 2.5rem;
-    margin-top: 0;
-    color: var(--noir);
-  }
+/* =========================================
+   5. MODAL
+   ========================================= */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(17, 17, 17, 0.95); backdrop-filter: blur(5px);
+  display: none; justify-content: center; align-items: center;
+  z-index: 10000; opacity: 0; transition: opacity 0.3s ease;
+}
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content {
+  background: var(--papier); width: 90%; max-width: 800px; max-height: 90vh;
+  overflow-y: auto; position: relative; padding: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 98%, 98% 100%, 0 100%);
+}
+.close-btn {
+  position: absolute; top: 1rem; right: 1rem;
+  background: var(--rouge); color: white; border: none;
+  width: 40px; height: 40px; font-weight: bold; font-size: 1.5rem; cursor: pointer;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+  display: flex; align-items: center; justify-content: center; z-index: 10;
+}
+.modal-body { padding: 3rem; }
+.modal-body h2 { font-family: var(--font-title); font-size: 2.5rem; margin-top: 0; color: var(--noir); line-height: 1.1; margin-bottom: 1.5rem;}
+.modal-img { width: 100%; height: auto; max-height: 450px; object-fit: cover; display: block; }
 
-  .modal-img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    display: block;
-  }
+/* =========================================
+   6. FOOTER (COPIÉ DE INDEX)
+   ========================================= */
+footer {
+  background:#0D0D0D; color:var(--papier);
+  padding:5rem 4rem 2rem; position:relative; overflow:hidden;
+}
+.footer-grid { display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:4rem; margin-bottom: 4rem;}
+.footer-brand {
+  font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; margin-bottom:1.2rem;
+  display:flex; align-items:center; gap:.6rem;
+}
+.footer-brand span { color:var(--rouge); }
+.footer-brand img { height: 38px; width: auto; display: block; }
+.footer-desc { font-size:.95rem; color:#BBBBBB; line-height:1.75; max-width:300px; margin-bottom:1.8rem; }
+.social-btn {
+  width:44px; height:44px; border:1.5px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center;
+  color:white; text-decoration:none; font-size:.9rem; font-weight:800;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%); transition:all .25s;
+}
+.social-btn:hover { border-color:var(--rouge); color:var(--rouge); }
+.footer-col-title { font-size:.8rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:var(--ocre-clair); margin-bottom:1.5rem; }
+.footer-links { list-style: none; }
+.footer-links a { color:#DDDDDD; text-decoration:none; font-size:.95rem; transition:color .2s; }
+.footer-links a:hover { color:white; text-decoration: underline; }
+.footer-links li { color:#999; font-size:.95rem; line-height:1.6; margin-bottom: 0.5rem; }
+.footer-bottom {
+  max-width:1300px; margin:0 auto; display:flex; justify-content:space-between;
+  align-items:center; font-size:.8rem; color:#888; flex-wrap:wrap; gap:1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;
+}
 
-  /* --- RESPONSIVE --- */
-  @media (max-width: 768px) {
-    .featured-card {
-      grid-template-columns: 1fr;
-    }
-    .featured-img-wrap {
-      min-height: 250px;
-      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-    }
-    .featured-content {
-      padding: 1.5rem;
-    }
-    .featured-title { font-size: 2rem; }
-    
-    .grid {
-      grid-template-columns: 1fr; /* Une seule colonne sur mobile */
-    }
-  }
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media(max-width:1050px){
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-img-wrap { min-height: 250px; clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+    .featured-content { padding: 2rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media(max-width:768px){
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .container { padding: 2rem 1.5rem 4rem; }
+  .grid { grid-template-columns: 1fr; }
+  .page-header { padding: 8rem 1.5rem 3rem; }
+  footer { padding: 4rem 1.5rem 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
 </style>
 </head>
 <body>
 
-<div class="texture-overlay"></div>
+<nav role="navigation" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+    Aix en <span>Vue</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="#" style="color:var(--rouge);">Actualités</a></li> <li><a href="index.html#activites">Activités</a></li>
+    <li><a href="index.html#galerie">Atelier peinture</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Rejoindre</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="page-header">
+    <p class="section-label">Blog & Nouveautés</p>
+    <h1 class="page-title">La vie de l'association</h1>
+    <p class="page-subtitle">Retour sur nos derniers événements, nos sorties et les moments forts partagés avec nos adhérents.</p>
+</header>
 
 <div class="container">
     <div id="loader" class="loader-container">
@@ -355,19 +330,77 @@
         <div class="loader-text">Récupération des actualités...</div>
     </div>
 
-    <div id="featured-container" class="featured-section"></div>
-
+    <div id="featured-container"></div>
     <div id="grid" class="grid"></div>
 </div>
 
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+        Aix en <span>Vue</span>
+      </div>
+      <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/aix.en.vue" class="social-btn" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/aix_en_vue" class="social-btn" aria-label="Instagram">in</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigation</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#activites">Activités</a></li>
+        <li><a href="index.html#galerie">Atelier peinture</a></li>
+        <li><a href="index.html#engager">Partenariats</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="mailto:info@aixenvue.fr">info@aixenvue.fr</a></li>
+        <li><a href="tel:+33744999438">07 44 99 94 38</a></li>
+        <li><a href="https://www.aixenvue.fr" target="_blank">www.aixenvue.fr</a></li>
+        <li>Aix-en-Provence (13)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Aix en Vue — Association loi 1901</span>
+    <span>Pour et avec les déficients visuels</span>
+  </div>
+</footer>
+
 <div id="modal-view" class="modal-overlay" onclick="if(event.target === this) closeModal()">
   <div class="modal-content">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <button class="close-btn" onclick="closeModal()">×</button>
       <div id="modal-inner"></div>
   </div>
 </div>
 
 <script>
+    // --- 1. SCRIPT NAVIGATION (MENU) ---
+    const hb = document.querySelector('.hamburger'), nl = document.querySelector('.nav-links');
+    hb.addEventListener('click', () => {
+      const o = nl.style.display === 'flex';
+      Object.assign(nl.style, {
+        display: o ? 'none' : 'flex',
+        position: 'absolute', top: '68px', left: '0', right: '0',
+        flexDirection: 'column', background: 'var(--papier)',
+        padding: '1.5rem 2rem', borderBottom: '1px solid rgba(17,17,17,.08)', zIndex: '400'
+      });
+      hb.setAttribute('aria-expanded', String(!o));
+    });
+
+    // Ombre du menu au scroll
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,.07)' : 'none';
+    });
+
+
+    // --- 2. SCRIPT ACTUALITÉS (Google Sheet) ---
     const API_URL = "https://script.google.com/macros/s/AKfycbwP_mfqY_V-q23bCeajm0nSOWL9kSFyq8w-lqZouPCCmsZEsBbVCmcuU_bbxj0KH2iBuQ/exec";
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -381,7 +414,7 @@
             renderPage(data);
         } catch (error) {
             console.error("Erreur :", error);
-            document.getElementById('loader').innerHTML = "<div style='color:var(--rouge)'>Erreur de chargement. Vérifiez que le script est déployé en 'Anyone'.</div>";
+            document.getElementById('loader').innerHTML = "<div style='color:var(--rouge)'>Erreur de chargement des actualités.</div>";
         }
     }
 
@@ -391,11 +424,11 @@
         const featuredContainer = document.getElementById('featured-container');
         
         if (!data || data.length === 0) {
-             grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; font-family:var(--font-title); font-style:italic;">Aucune actualité disponible.</div>';
+             grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; font-family:var(--font-title); font-style:italic;">Aucune actualité disponible pour le moment.</div>';
              return;
         }
 
-        // Le premier élément est "Featured"
+        // Le premier élément est "À la une"
         renderFeatured(data[0], featuredContainer);
         
         // Les suivants vont dans la grille
@@ -406,7 +439,6 @@
 
     function getImageUrl(photoId) {
         if (!photoId) return 'https://via.placeholder.com/800x600/E8E4D9/111111?text=Aix+en+Vue';
-        // Utilisation du lien direct Google Drive pour les images
         return `https://lh3.googleusercontent.com/d/${photoId}`; 
     }
 
@@ -422,7 +454,7 @@
                     <span class="featured-tag">À la une</span>
                     <h2 class="featured-title">${item.title}</h2>
                     <p style="margin-bottom: 2rem;">${item.description.substring(0, 150)}...</p>
-                    <button class="btn-card" onclick='openModal(${JSON.stringify(item).replace(/'/g, "&#39;")})'>
+                    <button class="btn-card" onclick='openModal(${JSON.stringify(item).replace(/'/g, "'")})'>
                         Lire l'article
                     </button>
                 </div>
@@ -444,7 +476,7 @@
                 <div class="card-date">${item.date}</div>
                 <h3 class="card-title">${item.title}</h3>
                 <p class="card-desc">${item.description}</p>
-                <button class="btn-card" onclick='openModal(${JSON.stringify(item).replace(/'/g, "&#39;")})'>
+                <button class="btn-card" onclick='openModal(${JSON.stringify(item).replace(/'/g, "'")})'>
                     Découvrir
                 </button>
             </div>
@@ -452,15 +484,15 @@
         container.appendChild(card);
     }
 
-    // --- Modal Logic ---
+    // --- 3. MODAL LOGIC ---
     function openModal(item) {
         const modal = document.getElementById('modal-view');
         const content = document.getElementById('modal-inner');
         const imageUrl = getImageUrl(item.photoId);
 
         content.innerHTML = `
-            <div style="width:100%; height:300px; overflow:hidden;">
-               <img src="${imageUrl}" class="modal-img" alt="${item.title}" style="object-fit:cover; width:100%; height:100%;">
+            <div style="width:100%; overflow:hidden;">
+               <img src="${imageUrl}" class="modal-img" alt="${item.title}">
             </div>
             <div class="modal-body">
                 <div style="color:var(--ocre); font-weight:bold; text-transform:uppercase; margin-bottom:1rem;">${item.date}</div>
@@ -470,7 +502,7 @@
         `;
         
         modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Empêche le scroll background
+        document.body.style.overflow = 'hidden'; 
     }
 
     function closeModal() {
@@ -481,5 +513,4 @@
 </script>
 
 </body>
-</html>
 </html>
