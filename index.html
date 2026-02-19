@@ -14,51 +14,51 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --noir: #111111;
-  --papier: #F4F2EB;
-  --papier-fonce: #E8E4D9;
-  --rouge: #D80000;
-  --ocre: #C8860A;
-  --ocre-clair: #F0C060;
-  --bleu: #1A3A5C;
-  --vert: #5C7A5C;
-  --gris: #222222;
-  --creme: #FBF8F0;
+  --noir: #111111;
+  --papier: #F4F2EB;
+  --papier-fonce: #E8E4D9;
+  --rouge: #D80000;
+  --ocre: #C8860A;
+  --ocre-clair: #F0C060;
+  --bleu: #1A3A5C;
+  --vert: #5C7A5C;
+  --gris: #222222;
+  --creme: #FBF8F0;
 }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--papier);
-  color: var(--noir);
-  font-family: 'Manrope', sans-serif;
-  overflow-x: hidden;
-  line-height: 1.6;
+  background: var(--papier);
+  color: var(--noir);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
 body::after {
-  content:''; position:fixed; inset:0; pointer-events:none; z-index:9997; opacity:.5;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9997; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
 }
 
 /* ===== NAV ===== */
 nav {
-  position:fixed; top:0; left:0; right:0;
-  z-index:500;
-  padding:1.2rem 3.5rem;
-  display:flex; align-items:center; justify-content:space-between;
-  background:rgba(244,242,235,.98);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  transition:box-shadow .3s;
+  position:fixed; top:0; left:0; right:0;
+  z-index:500;
+  padding:1.2rem 3.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(244,242,235,.98);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  transition:box-shadow .3s;
 }
 nav::after {
-  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .nav-logo {
-  font-family:'Playfair Display',serif;
-  font-weight:900;
-  color:var(--noir); text-decoration:none;
-  letter-spacing:-.02em;
-  display:flex; align-items:baseline; gap:.3rem;
+  font-family:'Playfair Display',serif;
+  font-weight:900;
+  color:var(--noir); text-decoration:none;
+  letter-spacing:-.02em;
+  display:flex; align-items:baseline; gap:.3rem;
 }
 .nav-logo img { height: 32px; width: auto; display: block; align-self: center; margin-right: .4rem; }
 .logo-aix { font-size:1.45rem; }
@@ -70,85 +70,85 @@ nav::after {
 
 .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
 .nav-links a {
-  color:var(--noir); text-decoration:none;
-  font-size:.85rem; font-weight:800;
-  letter-spacing:.05em; text-transform:uppercase;
-  position:relative; padding-bottom:3px;
+  color:var(--noir); text-decoration:none;
+  font-size:.85rem; font-weight:800;
+  letter-spacing:.05em; text-transform:uppercase;
+  position:relative; padding-bottom:3px;
 }
 .nav-links a::after {
-  content:''; position:absolute; bottom:0; left:0;
-  width:0; height:3px;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q25 1 50 3Q75 5 100 2' stroke='%23D80000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
-  transition:width .35s cubic-bezier(.4,0,.2,1);
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q25 1 50 3Q75 5 100 2' stroke='%23D80000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  transition:width .35s cubic-bezier(.4,0,.2,1);
 }
 .nav-links a:hover::after { width:100%; }
 .nav-cta {
-  background:var(--rouge); color:white!important;
-  padding:.65rem 1.5rem; font-weight:800!important;
-  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
-  transition:background .2s, transform .2s;
+  background:var(--rouge); color:white!important;
+  padding:.65rem 1.5rem; font-weight:800!important;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  transition:background .2s, transform .2s;
 }
 .nav-cta:hover { background:var(--noir)!important; transform:translateY(-1px); }
 .nav-cta::after { display:none!important; }
 .hamburger {
-  display:none; flex-direction:column; gap:6px;
-  background:none; border:none; padding:.5rem; cursor:pointer;
+  display:none; flex-direction:column; gap:6px;
+  background:none; border:none; padding:.5rem; cursor:pointer;
 }
 .hamburger span { display:block; width:28px; height:3px; background:var(--noir); border-radius:2px; }
 
 /* ===== HERO ===== */
 .hero {
-  min-height:100vh;
-  display:grid; grid-template-columns:1fr 1fr;
-  align-items:center;
-  padding:8rem 4rem 5rem;
-  position:relative; overflow:hidden;
-  background:var(--creme);
-  gap: 4rem;
+  min-height:100vh;
+  display:grid; grid-template-columns:1fr 1fr;
+  align-items:center;
+  padding:8rem 4rem 5rem;
+  position:relative; overflow:hidden;
+  background:var(--creme);
+  gap: 4rem;
 }
 .hero-content { position:relative; z-index:3; }
 .hero-eyebrow {
-  font-size:.85rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--ocre); margin-bottom:1.8rem;
-  display:flex; align-items:center; gap:1rem;
-  opacity:0; transform:translateY(20px); transition:all .9s ease;
+  font-size:.85rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ocre); margin-bottom:1.8rem;
+  display:flex; align-items:center; gap:1rem;
+  opacity:0; transform:translateY(20px); transition:all .9s ease;
 }
 .brush-dash {
-  display:inline-block; height:4px; width:52px;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q13 1 26 3Q39 5 52 2' stroke='%23C8860A' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+  display:inline-block; height:4px; width:52px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q13 1 26 3Q39 5 52 2' stroke='%23C8860A' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .hero-title {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(3rem,7vw,5.5rem);
-  line-height:1.1; font-weight:900; letter-spacing:-.03em;
-  color:var(--noir); margin-bottom:1.8rem;
-  opacity:0; transform:translateY(30px); transition:all 1s ease .15s;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,5.5rem);
+  line-height:1.1; font-weight:900; letter-spacing:-.03em;
+  color:var(--noir); margin-bottom:1.8rem;
+  opacity:0; transform:translateY(30px); transition:all 1s ease .15s;
 }
 .hero-title .accent { position:relative; display:inline-block; color:var(--rouge); font-style:italic; }
 .hero-title .accent::after {
-  content:'';
-  position:absolute; bottom:-6px; left:-4px; right:-4px; height:14px;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 14' preserveAspectRatio='none'%3E%3Cpath d='M4 8Q45 2 90 8Q135 14 176 5' stroke='%23D80000' stroke-width='4.5' fill='none' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E") no-repeat center/100% 100%;
-  animation:brushReveal 1.3s ease 1.2s both;
+  content:'';
+  position:absolute; bottom:-6px; left:-4px; right:-4px; height:14px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 14' preserveAspectRatio='none'%3E%3Cpath d='M4 8Q45 2 90 8Q135 14 176 5' stroke='%23D80000' stroke-width='4.5' fill='none' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  animation:brushReveal 1.3s ease 1.2s both;
 }
 @keyframes brushReveal { from{clip-path:inset(0 100% 0 0)} to{clip-path:inset(0 0 0 0)} }
 .hero-sub {
-  font-size:clamp(1rem,1.6vw,1.2rem); color:var(--gris);
-  max-width:480px; line-height:1.7; margin-bottom:3rem; font-weight: 500;
-  opacity:0; transform:translateY(20px); transition:all .9s ease .35s;
+  font-size:clamp(1rem,1.6vw,1.2rem); color:var(--gris);
+  max-width:480px; line-height:1.7; margin-bottom:3rem; font-weight: 500;
+  opacity:0; transform:translateY(20px); transition:all .9s ease .35s;
 }
 .hero-actions { display:flex; gap:1.5rem; flex-wrap:wrap; opacity:0; transform:translateY(20px); transition:all .9s ease .5s; }
 .hero-visual { position:relative; z-index:2; opacity:0; transform:translateX(30px); transition:all 1.1s ease .3s; }
 .hero-photo-frame { position:relative; clip-path:polygon(0 0,100% 0,95% 100%,5% 100%); overflow:hidden; }
 .hero-photo-frame img { width:100%; height:580px; object-fit:cover; display:block; }
 .hero-badge {
-  position:absolute; bottom:-1.5rem; left:-1.5rem;
-  background:var(--rouge); color:white;
-  padding:1.2rem 1.8rem;
-  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
-  font-family:'Playfair Display',serif; font-size:1.1rem; font-style:italic; font-weight: 700;
-  box-shadow:0 8px 30px rgba(216,0,0,.3);
-  max-width:220px; line-height:1.4;
+  position:absolute; bottom:-1.5rem; left:-1.5rem;
+  background:var(--rouge); color:white;
+  padding:1.2rem 1.8rem;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  font-family:'Playfair Display',serif; font-size:1.1rem; font-style:italic; font-weight: 700;
+  box-shadow:0 8px 30px rgba(216,0,0,.3);
+  max-width:220px; line-height:1.4;
 }
 
 /* ===== STATS ===== */
@@ -156,19 +156,19 @@ nav::after {
 .hero-stats-inner { max-width: 1300px; margin: 0 auto; text-align: center; }
 .hero-stats-inner .section-label { justify-content: center; color: var(--ocre-clair); margin-bottom: 1rem; }
 .hero-stats-inner .section-label::before {
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23F0C060' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23F0C060' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .hero-stats-inner .section-title { color: var(--papier); font-size: clamp(2rem,4vw,3.2rem); margin-bottom: 3rem; }
 .hero-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 .hero-stat-box {
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(216,0,0,0.3);
-  padding: 2rem 1.5rem; position: relative; overflow: hidden;
-  opacity:0; transform:translateY(20px); transition:all .7s ease;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(216,0,0,0.3);
+  padding: 2rem 1.5rem; position: relative; overflow: hidden;
+  opacity:0; transform:translateY(20px); transition:all .7s ease;
 }
 .hero-stat-box.visible { opacity:1; transform:translateY(0); }
 .hero-stat-box::before {
-  content:''; position:absolute; top:0; left:0; width:0; height:3px;
-  background:var(--rouge); transition:width .8s ease;
+  content:''; position:absolute; top:0; left:0; width:0; height:3px;
+  background:var(--rouge); transition:width .8s ease;
 }
 .hero-stat-box.visible::before { width:100%; }
 .hero-stat-number { font-family:'Playfair Display',serif; font-size:clamp(2.5rem,4vw,3.8rem); font-weight:900; color:var(--rouge); display:block; line-height:1; }
@@ -178,25 +178,25 @@ body.loaded .hero-eyebrow, body.loaded .hero-title, body.loaded .hero-sub, body.
 
 /* Boutons */
 .btn-primary {
-  background:var(--rouge); color:white;
-  padding:1.1rem 2.6rem;
-  font-family:'Manrope',sans-serif; font-weight:800;
-  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase;
-  text-decoration:none; border:none; cursor:pointer;
-  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
-  display:inline-block; position:relative; overflow:hidden;
-  transition:transform .25s;
+  background:var(--rouge); color:white;
+  padding:1.1rem 2.6rem;
+  font-family:'Manrope',sans-serif; font-weight:800;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase;
+  text-decoration:none; border:none; cursor:pointer;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  display:inline-block; position:relative; overflow:hidden;
+  transition:transform .25s;
 }
 .btn-primary:hover { transform:translateY(-2px); }
 .btn-outline {
-  background:transparent; color:var(--noir);
-  padding:1.1rem 2.6rem; font-family:'Manrope',sans-serif; font-weight:800;
-  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase;
-  text-decoration:none; display:inline-block; position:relative; transition:color .3s;
+  background:transparent; color:var(--noir);
+  padding:1.1rem 2.6rem; font-family:'Manrope',sans-serif; font-weight:800;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase;
+  text-decoration:none; display:inline-block; position:relative; transition:color .3s;
 }
 .btn-outline::before {
-  content:''; position:absolute; inset:0; border:2.5px solid var(--noir);
-  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:border-color .3s;
+  content:''; position:absolute; inset:0; border:2.5px solid var(--noir);
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:border-color .3s;
 }
 .btn-outline:hover { color:var(--rouge); }
 .btn-outline:hover::before { border-color:var(--rouge); }
@@ -205,12 +205,12 @@ body.loaded .hero-eyebrow, body.loaded .hero-title, body.loaded .hero-sub, body.
 .manifeste { background:var(--noir); color:var(--papier); padding:7rem 4rem; position:relative; overflow:hidden; }
 .manifeste-inner { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:7rem; align-items:center; position:relative; z-index:1; }
 .manifeste-text blockquote {
-  font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.5vw,3rem); font-style:italic; line-height:1.4;
-  color: #FFFFFF; position:relative; padding-left:2.5rem; margin-bottom:2rem;
+  font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.5vw,3rem); font-style:italic; line-height:1.4;
+  color: #FFFFFF; position:relative; padding-left:2.5rem; margin-bottom:2rem;
 }
 .manifeste-text blockquote::before {
-  content:''; position:absolute; left:0; top:0; bottom:0; width:5px;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 200' preserveAspectRatio='none'%3E%3Cpath d='M2.5 0Q4 30 2 60Q0 90 3 120Q5 150 2.5 200' stroke='%23D80000' stroke-width='4' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+  content:''; position:absolute; left:0; top:0; bottom:0; width:5px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 200' preserveAspectRatio='none'%3E%3Cpath d='M2.5 0Q4 30 2 60Q0 90 3 120Q5 150 2.5 200' stroke='%23D80000' stroke-width='4' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .manifeste-text blockquote em { color:var(--rouge); font-style:normal; }
 .manifeste-text p.citation-author { color:#E0E0E0; font-size:1rem; margin-top:1rem; font-style:italic; }
@@ -219,18 +219,18 @@ body.loaded .hero-eyebrow, body.loaded .hero-title, body.loaded .hero-sub, body.
 .manifeste-photo { position:relative; }
 .manifeste-photo img { width:100%; height:420px; object-fit:cover; clip-path:polygon(0 0,100% 0,92% 100%,8% 100%); display:block; }
 .manifeste-photo::before {
-  content:''; position:absolute; top:-12px; left:-12px; right:12px; bottom:12px;
-  border:3px solid var(--rouge); z-index:-1; clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);
+  content:''; position:absolute; top:-12px; left:-12px; right:12px; bottom:12px;
+  border:3px solid var(--rouge); z-index:-1; clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);
 }
 
 /* ===== SECTION LABELS ===== */
 .section-label {
-  font-size:.8rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--ocre); display:flex; align-items:center; gap:1rem; margin-bottom:1.8rem;
+  font-size:.8rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ocre); display:flex; align-items:center; gap:1rem; margin-bottom:1.8rem;
 }
 .section-label::before {
-  content:''; width:35px; height:4px; flex-shrink:0;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23C8860A' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+  content:''; width:35px; height:4px; flex-shrink:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23C8860A' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .section-title { font-family:'Playfair Display',serif; font-size:clamp(2.2rem,5vw,4rem); line-height:1.1; letter-spacing:-.025em; margin-bottom:1.8rem; font-weight:900; color: var(--noir); }
 .reveal { opacity:0; transform:translateY(44px); transition:opacity .9s ease, transform .9s ease; }
@@ -241,24 +241,24 @@ body.loaded .hero-eyebrow, body.loaded .hero-title, body.loaded .hero-sub, body.
 .act-head { max-width:1300px; margin:0 auto 5rem; }
 .act-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; max-width:1300px; margin:0 auto; }
 .act-card {
-  background:white; border:1px solid rgba(200,134,10,.15);
-  overflow:hidden; position:relative;
-  transition:transform .35s ease, box-shadow .35s ease;
-  display: flex; flex-direction: column;
+  background:white; border:1px solid rgba(200,134,10,.15);
+  overflow:hidden; position:relative;
+  transition:transform .35s ease, box-shadow .35s ease;
+  display: flex; flex-direction: column;
 }
 .act-card:hover { transform:translateY(-8px); box-shadow:0 20px 50px rgba(0,0,0,.12); }
 .act-card::after {
-  content:''; position:absolute; top:0; left:0; width:0; height:4px;
-  background:var(--rouge); transition:width .5s cubic-bezier(.4,0,.2,1);
+  content:''; position:absolute; top:0; left:0; width:0; height:4px;
+  background:var(--rouge); transition:width .5s cubic-bezier(.4,0,.2,1);
 }
 .act-card:hover::after { width:100%; }
 .act-img { width:100%; height:220px; object-fit:cover; display:block; }
 .act-body { padding:2rem; display:flex; flex-direction:column; flex-grow:1; }
 .act-tag {
-  display:inline-block; margin-bottom:1rem; padding:.4rem 1rem;
-  font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
-  border:1.5px solid rgba(216,0,0,.25); color:var(--rouge);
-  clip-path:polygon(0 0,100% 0,96% 100%,4% 100%); align-self: flex-start;
+  display:inline-block; margin-bottom:1rem; padding:.4rem 1rem;
+  font-size:.7rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+  border:1.5px solid rgba(216,0,0,.25); color:var(--rouge);
+  clip-path:polygon(0 0,100% 0,96% 100%,4% 100%); align-self: flex-start;
 }
 .act-title { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:800; margin-bottom:.8rem; line-height:1.2; }
 .act-desc { font-size:1rem; line-height:1.6; color:var(--gris); font-weight: 500; }
@@ -269,132 +269,132 @@ body.loaded .hero-eyebrow, body.loaded .hero-title, body.loaded .hero-sub, body.
 .galerie-head { text-align:center; padding:0 4rem; margin-bottom:5rem; position:relative; z-index:1; }
 .galerie-head .section-label { justify-content:center; color:var(--ocre-clair); }
 .galerie-head .section-label::before {
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23F0C060' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23F0C060' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .galerie-head .section-title { color:var(--papier); }
 .galerie-head p { color:#E0E0E0; font-size:1.1rem; margin-top:.5rem; max-width: 700px; margin-left: auto; margin-right: auto;}
 .galerie-content { max-width:1300px; margin:0 auto; padding:0 4rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; position:relative; z-index:1; }
 .galerie-video-wrap { position:relative; display:flex; justify-content:center; }
 .galerie-video-frame {
-  position:relative; width:100%; max-width:340px;
-  aspect-ratio:9/16; overflow:hidden;
-  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
-  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  position:relative; width:100%; max-width:340px;
+  aspect-ratio:9/16; overflow:hidden;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
 }
 .galerie-video-frame iframe { width:100%; height:100%; border:none; display:block; }
 .galerie-video-badge {
-  position:absolute; bottom:-1rem; right:-1rem;
-  background:var(--rouge); color:white; padding:.8rem 1.2rem;
-  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
-  font-family:'Playfair Display',serif; font-size:.9rem; font-style:italic; font-weight:700;
-  box-shadow:0 8px 20px rgba(216,0,0,.4); z-index:2;
+  position:absolute; bottom:-1rem; right:-1rem;
+  background:var(--rouge); color:white; padding:.8rem 1.2rem;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  font-family:'Playfair Display',serif; font-size:.9rem; font-style:italic; font-weight:700;
+  box-shadow:0 8px 20px rgba(216,0,0,.4); z-index:2;
 }
 .galerie-text-col { color:var(--papier); }
 .galerie-text-col p { color:#E0E0E0; font-size:1.05rem; line-height:1.8; margin-bottom:1.5rem; }
 .galerie-mosaic {
-  display:grid; grid-template-columns:1.4fr 1fr 1fr; grid-template-rows:300px 300px;
-  gap:4px; max-width:1300px; margin:4rem auto 0; padding:0 4rem; position:relative; z-index:1;
+  display:grid; grid-template-columns:1.4fr 1fr 1fr; grid-template-rows:300px 300px;
+  gap:4px; max-width:1300px; margin:4rem auto 0; padding:0 4rem; position:relative; z-index:1;
 }
 .g-item { position:relative; overflow:hidden; cursor:pointer; }
 .g-item:first-child { grid-row:1/3; }
 .g-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .7s ease; }
 .g-item:hover img { transform:scale(1.05); }
 .g-overlay {
-  position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 60%);
-  opacity:0; transition:opacity .4s; display:flex; align-items:flex-end; padding:1.5rem;
+  position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 60%);
+  opacity:0; transition:opacity .4s; display:flex; align-items:flex-end; padding:1.5rem;
 }
 .g-item:hover .g-overlay { opacity:1; }
 .g-lbl { font-family:'Playfair Display',serif; font-style:italic; font-size:1.1rem; color:white; font-weight: 600; }
 
 .btn-outline-light {
-  background:transparent; color:var(--papier);
-  padding:1.1rem 2.6rem; font-family:'Manrope',sans-serif; font-weight:800;
-  font-size:.9rem; letter-spacing:.08em; text-transform:uppercase;
-  text-decoration:none; display:inline-block; position:relative; transition:color .3s;
+  background:transparent; color:var(--papier);
+  padding:1.1rem 2.6rem; font-family:'Manrope',sans-serif; font-weight:800;
+  font-size:.9rem; letter-spacing:.08em; text-transform:uppercase;
+  text-decoration:none; display:inline-block; position:relative; transition:color .3s;
 }
 .btn-outline-light::before {
-  content:''; position:absolute; inset:0; border:2.5px solid rgba(244,242,235,.6);
-  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:border-color .3s;
+  content:''; position:absolute; inset:0; border:2.5px solid rgba(244,242,235,.6);
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:border-color .3s;
 }
 .btn-outline-light:hover { color:var(--rouge); }
 .btn-outline-light:hover::before { border-color:var(--rouge); }
 
 /* ===== PROJET PHOTO AIX AU-DELÀ DU REGARD 2026 ===== */
 .projet-photo-section {
-  background: var(--creme);
-  padding: 8rem 4rem;
-  position: relative; overflow: hidden;
+  background: var(--creme);
+  padding: 8rem 4rem;
+  position: relative; overflow: hidden;
 }
 .projet-photo-inner { max-width: 1300px; margin: 0 auto; }
 
 .projet-photo-header {
-  text-align: center;
-  margin-bottom: 5rem;
+  text-align: center;
+  margin-bottom: 5rem;
 }
 .projet-photo-header .section-label { justify-content: center; }
 .projet-photo-header .section-title {
-  font-size: clamp(2rem, 5vw, 3.8rem);
-  color: var(--noir);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  color: var(--noir);
 }
 .projet-photo-header p {
-  color: var(--gris); font-size: 1.1rem; line-height: 1.75;
-  max-width: 720px; margin: 0 auto;
+  color: var(--gris); font-size: 1.1rem; line-height: 1.75;
+  max-width: 720px; margin: 0 auto;
 }
 
 .projet-photo-layout {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 5rem; align-items: start;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start;
 }
 
 .projet-photo-text p {
-  color: var(--gris); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;
+  color: var(--gris); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;
 }
 
 /* Deux axes */
 .axes-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1.5rem; margin-top: 2rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-top: 2rem;
 }
 .axe-card {
-  background: white;
-  border: 1px solid rgba(200,134,10,.15);
-  padding: 1.8rem;
-  position: relative; overflow: hidden;
-  transition: transform .3s, box-shadow .3s;
+  background: white;
+  border: 1px solid rgba(200,134,10,.15);
+  padding: 1.8rem;
+  position: relative; overflow: hidden;
+  transition: transform .3s, box-shadow .3s;
 }
 .axe-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
 .axe-card::before {
-  content:''; position:absolute; top:0; left:0; width:4px; height:100%;
-  background: var(--rouge);
+  content:''; position:absolute; top:0; left:0; width:4px; height:100%;
+  background: var(--rouge);
 }
 .axe-card h4 {
-  font-family:'Playfair Display',serif;
-  font-size:1.1rem; font-weight:700; font-style:italic;
-  color:var(--rouge); margin-bottom:.65rem; padding-left:.6rem;
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem; font-weight:700; font-style:italic;
+  color:var(--rouge); margin-bottom:.65rem; padding-left:.6rem;
 }
 .axe-card p {
-  font-size:.95rem; line-height:1.65; color:var(--gris); font-weight:500; padding-left:.6rem;
+  font-size:.95rem; line-height:1.65; color:var(--gris); font-weight:500; padding-left:.6rem;
 }
 
 /* Vidéo projet photo — format 16/9 */
 .projet-photo-video-wrap {
-  position: relative; display: flex; flex-direction: column;
+  position: relative; display: flex; flex-direction: column;
 }
 .projet-photo-video-frame {
-  position: relative; width: 100%;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  clip-path: polygon(0 0,100% 0,97% 100%,3% 100%);
-  box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  position: relative; width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  clip-path: polygon(0 0,100% 0,97% 100%,3% 100%);
+  box-shadow: 0 20px 60px rgba(0,0,0,.15);
 }
 .projet-photo-video-frame iframe { width:100%; height:100%; border:none; display:block; }
 .projet-photo-video-badge {
-  position: absolute; bottom: -1rem; left: -1rem;
-  background: var(--noir); color: white;
-  padding: .8rem 1.4rem;
-  clip-path: polygon(0 0,100% 0,95% 100%,5% 100%);
-  font-family:'Playfair Display',serif; font-size:.9rem; font-style:italic; font-weight:700;
-  box-shadow: 0 8px 20px rgba(0,0,0,.25); z-index:2;
+  position: absolute; bottom: -1rem; left: -1rem;
+  background: var(--noir); color: white;
+  padding: .8rem 1.4rem;
+  clip-path: polygon(0 0,100% 0,95% 100%,5% 100%);
+  font-family:'Playfair Display',serif; font-size:.9rem; font-style:italic; font-weight:700;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25); z-index:2;
 }
 
 /* ===== PARTENAIRES ===== */
@@ -405,49 +405,49 @@ body.loaded .hero-eyebrow, body.loaded .hero-title, body.loaded .hero-sub, body.
 
 /* IMAGE PARTENAIRES CENTRÉE */
 .partenaires-img {
-  width:100%; max-width:700px;
-  display:block;
-  margin: 2rem auto;
+  width:100%; max-width:700px;
+  display:block;
+  margin: 2rem auto;
 }
 
 /* BOUTON ADHÉRER CENTRÉ */
 .engage-cta-center {
-  text-align: center;
-  margin-top: 0.5rem;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 /* ===== CTA FINAL ===== */
 .cta-section { position:relative; overflow:hidden; text-align:center; padding:10rem 4rem; background:var(--rouge); color:white; }
 .cta-ghost {
-  position:absolute; bottom:-.1em; left:-.05em;
-  font-family:'Playfair Display',serif; font-size:32vw; font-weight:900; font-style:italic;
-  color:rgba(255,255,255,.06); line-height:1; pointer-events:none; white-space:nowrap;
+  position:absolute; bottom:-.1em; left:-.05em;
+  font-family:'Playfair Display',serif; font-size:32vw; font-weight:900; font-style:italic;
+  color:rgba(255,255,255,.06); line-height:1; pointer-events:none; white-space:nowrap;
 }
 .cta-body { position:relative; z-index:1; }
 .cta-section .section-label { justify-content:center; color:rgba(255,255,255,.8); }
 .cta-section .section-label::before {
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='rgba(255,255,255,.8)' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='rgba(255,255,255,.8)' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .cta-section .section-title { color:white; font-size:clamp(2.5rem,7vw,6rem); margin-bottom:1rem; }
 .cta-sub { font-size:1.2rem; color:rgba(255,255,255,.9); font-weight: 500; max-width:520px; margin:0 auto 3.5rem; line-height:1.75; }
 .cta-btns { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; align-items:center; }
 .btn-white {
-  background:white; color:var(--rouge); padding:1.2rem 2.8rem;
-  font-family:'Manrope',sans-serif; font-weight:800; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase;
-  text-decoration:none; display:inline-block; clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:all .3s;
+  background:white; color:var(--rouge); padding:1.2rem 2.8rem;
+  font-family:'Manrope',sans-serif; font-weight:800; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase;
+  text-decoration:none; display:inline-block; clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:all .3s;
 }
 .btn-white:hover { background:var(--noir); color:white; transform:translateY(-2px); }
 .btn-ghost-w {
-  background:transparent; color:white; padding:1.2rem 2.8rem;
-  font-family:'Manrope',sans-serif; font-weight:800; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase;
-  text-decoration:none; border:2px solid rgba(255,255,255,.6); clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:all .3s; display:inline-block;
+  background:transparent; color:white; padding:1.2rem 2.8rem;
+  font-family:'Manrope',sans-serif; font-weight:800; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase;
+  text-decoration:none; border:2px solid rgba(255,255,255,.6); clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:all .3s; display:inline-block;
 }
 .btn-ghost-w:hover { border-color:white; background:rgba(255,255,255,.1); }
 .cta-socials { display:flex; gap:1rem; justify-content:center; margin-top:2rem; flex-wrap:wrap; }
 .cta-social-btn {
-  width:48px; height:48px; border:2px solid rgba(255,255,255,.5); border-radius:0;
-  display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;
-  clip-path:polygon(0 0,100% 0,94% 100%,6% 100%); transition:all .25s; background:rgba(255,255,255,.1);
+  width:48px; height:48px; border:2px solid rgba(255,255,255,.5); border-radius:0;
+  display:flex; align-items:center; justify-content:center; color:white; text-decoration:none;
+  clip-path:polygon(0 0,100% 0,94% 100%,6% 100%); transition:all .25s; background:rgba(255,255,255,.1);
 }
 .cta-social-btn:hover { border-color:white; background:rgba(255,255,255,.25); }
 .cta-social-btn svg { width:20px; height:20px; fill:white; }
@@ -459,385 +459,384 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
 .footer-brand img { height: 38px; width: auto; display: block; }
 .footer-desc { font-size:.95rem; color:#BBBBBB; line-height:1.75; max-width:400px; margin-bottom:1rem; }
 .footer-bottom {
-  max-width:100%; margin:2rem 0 0; display:flex; justify-content:space-between; align-items:center;
-  border-top:1px solid rgba(255,255,255,.1); padding-top:1.5rem; font-size:.8rem; color:#888; flex-wrap:wrap; gap:1rem;
+  max-width:100%; margin:2rem 0 0; display:flex; justify-content:space-between; align-items:center;
+  border-top:1px solid rgba(255,255,255,.1); padding-top:1.5rem; font-size:.8rem; color:#888; flex-wrap:wrap; gap:1rem;
 }
 
 /* ===== PWA ===== */
 .pwa-banner {
-  display:none; position:fixed; bottom:20px; left:20px; right:20px;
-  background:var(--noir); color:white; padding:1.5rem; z-index:10000;
-  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); box-shadow:0 10px 40px rgba(0,0,0,0.4);
-  flex-direction:column; gap:1rem; align-items:center; text-align:center;
-  border-top:3px solid var(--rouge); animation: slideUp .5s ease-out;
+  display:none; position:fixed; bottom:20px; left:20px; right:20px;
+  background:var(--noir); color:white; padding:1.5rem; z-index:10000;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  flex-direction:column; gap:1rem; align-items:center; text-align:center;
+  border-top:3px solid var(--rouge); animation: slideUp .5s ease-out;
 }
 @keyframes slideUp { from{transform:translateY(50px);opacity:0;} to{transform:translateY(0);opacity:1;} }
 .pwa-btns { display:flex; gap:1rem; width:100%; justify-content:center; }
 .pwa-btn-install {
-  background:var(--rouge); color:white; border:none; padding:0.7rem 1.4rem; cursor:pointer;
-  font-family:'Manrope',sans-serif; font-weight:800; text-transform:uppercase; font-size:0.8rem;
-  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  background:var(--rouge); color:white; border:none; padding:0.7rem 1.4rem; cursor:pointer;
+  font-family:'Manrope',sans-serif; font-weight:800; text-transform:uppercase; font-size:0.8rem;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
 }
 .pwa-btn-close {
-  background:transparent; color:white; border:1px solid rgba(255,255,255,0.3);
-  padding:0.7rem 1.4rem; cursor:pointer;
-  font-family:'Manrope',sans-serif; font-weight:700; text-transform:uppercase; font-size:0.8rem;
-  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  background:transparent; color:white; border:1px solid rgba(255,255,255,0.3);
+  padding:0.7rem 1.4rem; cursor:pointer;
+  font-family:'Manrope',sans-serif; font-weight:700; text-transform:uppercase; font-size:0.8rem;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
 }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:1050px){
-  .hero { grid-template-columns:1fr; padding:7rem 2rem 4rem; text-align:center; }
-  .hero-eyebrow { justify-content:center; }
-  .hero-sub { margin-left:auto; margin-right:auto; }
-  .hero-actions { justify-content:center; }
-  .hero-visual { display:none; }
-  .manifeste-inner { grid-template-columns:1fr; gap:3rem; }
-  .manifeste-photo { display:none; }
-  .act-grid { grid-template-columns:1fr 1fr; }
-  .galerie-mosaic { grid-template-columns:1fr 1fr; grid-template-rows:280px 280px; }
-  .galerie-mosaic .g-item:first-child { grid-row:1/3; }
-  .galerie-content { grid-template-columns:1fr; gap:3rem; }
-  .galerie-video-wrap { justify-content:center; }
-  .hero-stats-grid { grid-template-columns:1fr 1fr; }
-  .projet-photo-layout { grid-template-columns:1fr; gap:3rem; }
-  .axes-grid { grid-template-columns:1fr; }
+  .hero { grid-template-columns:1fr; padding:7rem 2rem 4rem; text-align:center; }
+  .hero-eyebrow { justify-content:center; }
+  .hero-sub { margin-left:auto; margin-right:auto; }
+  .hero-actions { justify-content:center; }
+  .hero-visual { display:none; }
+  .manifeste-inner { grid-template-columns:1fr; gap:3rem; }
+  .manifeste-photo { display:none; }
+  .act-grid { grid-template-columns:1fr 1fr; }
+  .galerie-mosaic { grid-template-columns:1fr 1fr; grid-template-rows:280px 280px; }
+  .galerie-mosaic .g-item:first-child { grid-row:1/3; }
+  .galerie-content { grid-template-columns:1fr; gap:3rem; }
+  .galerie-video-wrap { justify-content:center; }
+  .hero-stats-grid { grid-template-columns:1fr 1fr; }
+  .projet-photo-layout { grid-template-columns:1fr; gap:3rem; }
+  .axes-grid { grid-template-columns:1fr; }
 }
 
 @media(max-width:768px){
-  nav { padding:1rem 1.5rem; }
-  .nav-links { display:none; }
-  .hamburger { display:flex; }
-  .hero { padding:6rem 1.5rem 3rem; }
-  .manifeste, .activites, .galerie-section, .engage-section, .cta-section, .projet-photo-section { padding:5rem 1.5rem; }
-  .act-grid { grid-template-columns:1fr; }
-  .galerie-mosaic { grid-template-columns:1fr; grid-template-rows:auto; padding:0 1.5rem; }
-  .galerie-mosaic .g-item { height:250px; }
-  .galerie-mosaic .g-item:first-child { grid-row:auto; }
-  .galerie-content { padding:0 1.5rem; }
-  footer { padding:3rem 1.5rem 2rem; }
-  .footer-bottom { flex-direction:column; text-align:center; }
-  .cta-section { padding:6rem 1.5rem; }
-  .cta-section .section-title { font-size: 3rem; }
-  .hero-stats { padding:4rem 1.5rem; }
-  .hero-stats-grid { grid-template-columns:1fr 1fr; gap:1rem; }
-  .axes-grid { grid-template-columns:1fr; }
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .hero { padding:6rem 1.5rem 3rem; }
+  .manifeste, .activites, .galerie-section, .engage-section, .cta-section, .projet-photo-section { padding:5rem 1.5rem; }
+  .act-grid { grid-template-columns:1fr; }
+  .galerie-mosaic { grid-template-columns:1fr; grid-template-rows:auto; padding:0 1.5rem; }
+  .galerie-mosaic .g-item { height:250px; }
+  .galerie-mosaic .g-item:first-child { grid-row:auto; }
+  .galerie-content { padding:0 1.5rem; }
+  footer { padding:3rem 1.5rem 2rem; }
+  .footer-bottom { flex-direction:column; text-align:center; }
+  .cta-section { padding:6rem 1.5rem; }
+  .cta-section .section-title { font-size: 3rem; }
+  .hero-stats { padding:4rem 1.5rem; }
+  .hero-stats-grid { grid-template-columns:1fr 1fr; gap:1rem; }
+  .axes-grid { grid-template-columns:1fr; }
 }
 </style>
 </head>
 <body>
 
 <nav role="navigation" aria-label="Navigation principale">
-  <a href="#" class="nav-logo">
-    <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
-    <span class="logo-aix"><span class="red-letter">A</span>ix</span>
-    <span class="logo-en"><span class="red-letter">E</span>n</span>
-    <span class="logo-vue"><span class="red-letter">V</span>ue</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#manifeste">L'association</a></li>
-    <li><a href="missions.html">Nos missions</a></li>
-    <li><a href="annonce.html">Actualités</a></li>
-    <li><a href="#galerie">Projet</a></li>
-    <li><a href="https://www.helloasso.com/associations/aix-en-vue/formulaires/2" target="_blank" rel="noopener">Nous soutenir</a></li>
-    <li><a href="https://www.appsheet.com/start/cd603802-fda8-494d-8bb6-f647afb5f712" target="_blank" rel="noopener" class="nav-cta">Espace bénévole</a></li>
-  </ul>
-  <button class="hamburger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="#" class="nav-logo">
+    <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+    <span class="logo-aix"><span class="red-letter">A</span>ix</span>
+    <span class="logo-en"><span class="red-letter">E</span>n</span>
+    <span class="logo-vue"><span class="red-letter">V</span>ue</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#manifeste">L'association</a></li>
+    <li><a href="missions.html">Nos missions</a></li>
+    <li><a href="annonce.html">Actualités</a></li>
+    <li><a href="#activites">Activité</a></li>
+    <li><a href="#galerie">Projet</a></li>
+    <li><a href="https://www.helloasso.com/associations/aix-en-vue/formulaires/2" target="_blank" rel="noopener">Nous soutenir</a></li>
+    <li><a href="https://www.appsheet.com/start/cd603802-fda8-494d-8bb6-f647afb5f712" target="_blank" rel="noopener" class="nav-cta">Espace bénévole</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <header class="hero" role="banner">
-  <div class="hero-content">
-    <p class="hero-eyebrow"><span class="brush-dash"></span>Aix-en-Provence · Fondée en 2024</p>
-    <h1 class="hero-title">
-      Pour et avec<br>les <span class="accent">déficients</span><br>visuels.
-    </h1>
-    <p class="hero-sub">
-      Aix en Vue réunit malvoyants, non-voyants et bénévoles autour d'activités culturelles, sportives et créatives.
-      <strong>Parce que voir moins ne signifie pas vivre moins.</strong>
-    </p>
-    <div class="hero-actions">
-      <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-primary"><span>Accéder au planning</span></a>
-      <a href="#contact" class="btn-outline">Nous rejoindre</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="hero-photo-frame">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771435401/Tandem_header_yqnbuc.png" alt="Adhérents d'Aix en Vue en sortie tandem" loading="eager">
-    </div>
-    <div class="hero-badge">377 activités organisées en un an</div>
-  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow"><span class="brush-dash"></span>Aix-en-Provence · Fondée en 2024</p>
+    <h1 class="hero-title">
+      Pour et avec<br>les <span class="accent">déficients</span><br>visuels.
+    </h1>
+    <p class="hero-sub">
+      Aix en Vue réunit malvoyants, non-voyants et bénévoles autour d'activités culturelles, sportives et créatives.
+      <strong>Parce que voir moins ne signifie pas vivre moins.</strong>
+    </p>
+    <div class="hero-actions">
+      <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-primary"><span>Accéder au planning</span></a>
+      <a href="#contact" class="btn-outline">Nous rejoindre</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo-frame">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771435401/Tandem_header_yqnbuc.png" alt="Adhérents d'Aix en Vue en sortie tandem" loading="eager">
+    </div>
+    <div class="hero-badge">377 activités organisées en un an</div>
+  </div>
 </header>
 
-<!-- SECTION CHIFFRES -->
 <section class="hero-stats" aria-labelledby="stats-h">
-  <div class="hero-stats-inner">
-    <p class="section-label reveal" style="justify-content:center;">Aix en Vue en chiffres</p>
-    <h2 class="section-title reveal" id="stats-h" style="color:var(--papier);">Une année <em style="color:var(--rouge);font-style:italic;">pleine</em></h2>
-    <div class="hero-stats-grid">
-      <div class="hero-stat-box"><span class="hero-stat-number" data-target="377">0</span><span class="hero-stat-label">Activités organisées en 2025</span></div>
-      <div class="hero-stat-box"><span class="hero-stat-number" data-target="72">0</span><span class="hero-stat-label">Bénévoles voyants engagés</span></div>
-      <div class="hero-stat-box"><span class="hero-stat-number" data-target="154">0</span><span class="hero-stat-label">Membres au total fin 2025</span></div>
-      <div class="hero-stat-box"><span class="hero-stat-number" data-target="10000" data-prefix="+">0</span><span class="hero-stat-label">Pages vues sur notre site</span></div>
-    </div>
-  </div>
+  <div class="hero-stats-inner">
+    <p class="section-label reveal" style="justify-content:center;">Aix en Vue en chiffres</p>
+    <h2 class="section-title reveal" id="stats-h" style="color:var(--papier);">Une année <em style="color:var(--rouge);font-style:italic;">pleine</em></h2>
+    <div class="hero-stats-grid">
+      <div class="hero-stat-box"><span class="hero-stat-number" data-target="377">0</span><span class="hero-stat-label">Activités organisées en 2025</span></div>
+      <div class="hero-stat-box"><span class="hero-stat-number" data-target="72">0</span><span class="hero-stat-label">Bénévoles voyants engagés</span></div>
+      <div class="hero-stat-box"><span class="hero-stat-number" data-target="154">0</span><span class="hero-stat-label">Membres au total fin 2025</span></div>
+      <div class="hero-stat-box"><span class="hero-stat-number" data-target="10000" data-prefix="+">0</span><span class="hero-stat-label">Pages vues sur notre site</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- SECTION NOS MISSIONS -->
 <section id="manifeste" class="manifeste" aria-labelledby="manifeste-h">
-  <div class="manifeste-inner">
-    <div class="manifeste-text reveal">
-      <p class="section-label">Notre conviction</p>
-      <blockquote>
-        « Ce n'est pas parce que nous voyons moins<br>
-        que nous <em>vivons moins.</em> »
-      </blockquote>
-      <p class="citation-author">— Karine Centeno, Présidente fondatrice d'Aix en Vue</p>
-      <p class="manifeste-body">
-        Née au printemps 2024 d'un constat simple — les personnes déficientes visuelles sont trop souvent isolées, trop rarement accompagnées — Aix en Vue est aujourd'hui une communauté de <strong style="color:white;">154 membres</strong> qui se retrouvent chaque semaine autour d'activités adaptées, de moments de joie et d'une ambition collective : changer le regard sur le handicap visuel dans notre ville.
-      </p>
-      <div style="margin-top:2.5rem;"><a href="missions.html" class="btn-outline-light"><span>NOS MISSIONS</span></a></div>
-    </div>
-    <div class="manifeste-photo reveal">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771435751/Caf%C3%A9_blabla_c4ut6c.png" alt="Café blabla — moments de convivialité entre adhérents">
-    </div>
-  </div>
+  <div class="manifeste-inner">
+    <div class="manifeste-text reveal">
+      <p class="section-label">Notre conviction</p>
+      <blockquote>
+        « Ce n'est pas parce que nous voyons moins<br>
+        que nous <em>vivons moins.</em> »
+      </blockquote>
+      <p class="citation-author">— Karine Centeno, Présidente fondatrice d'Aix en Vue</p>
+      <p class="manifeste-body">
+        Née au printemps 2024 d'un constat simple — les personnes déficientes visuelles sont trop souvent isolées, trop rarement accompagnées — Aix en Vue est aujourd'hui une communauté de <strong style="color:white;">154 membres</strong> qui se retrouvent chaque semaine autour d'activités adaptées, de moments de joie et d'une ambition collective : changer le regard sur le handicap visuel dans notre ville.
+      </p>
+      <div style="margin-top:2.5rem;"><a href="missions.html" class="btn-outline-light"><span>NOS MISSIONS</span></a></div>
+    </div>
+    <div class="manifeste-photo reveal">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771435751/Caf%C3%A9_blabla_c4ut6c.png" alt="Café blabla — moments de convivialité entre adhérents">
+    </div>
+  </div>
 </section>
 
-<!-- SECTION ACTIVITÉS -->
 <section id="activites" class="activites" aria-labelledby="act-h">
-  <div class="act-head reveal">
-    <p class="section-label">Ce que nous proposons</p>
-    <h2 class="section-title" id="act-h">Des activités pour<br><em style="color:var(--rouge);font-style:italic;">tout vivre</em></h2>
-    <p style="color:var(--gris);font-size:1.1rem;line-height:1.7;max-width:520px;margin-top:.5rem;">377 événements en 2025. Du sport, de la culture, de la créativité — toujours adaptés, toujours accompagnés.</p>
-  </div>
-  <div class="act-grid">
-    <div class="act-card reveal">
-      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436040/Randonn%C3%A9e_ci1tfj.png" alt="Sports et plein air — randonnée accompagnée">
-      <div class="act-body"><span class="act-tag">Sports & Plein air</span><h3 class="act-title">Sports & Plein air</h3><p class="act-desc">Randonnée accompagnée, cyclisme en tandem, natation... pour rester en mouvement !</p></div>
-    </div>
-    <div class="act-card reveal">
-      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771500813/Jardin_zhierp.png" alt="Nature et jardin — jardinage participatif">
-      <div class="act-body"><span class="act-tag">Nature & Jardin</span><h3 class="act-title">Nature & Jardin</h3><p class="act-desc">Jardinage participatif, sorties en nature, découverte sensorielle... un vrai bol d'air pur !</p></div>
-    </div>
-    <div class="act-card reveal">
-      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436310/Cinema_ekid4l.png" alt="Culture et loisirs — cinéma en audiodescription">
-      <div class="act-body"><span class="act-tag">Culture & Loisirs</span><h3 class="act-title">Culture & Loisirs</h3><p class="act-desc">Cinéma en audiodescription, théâtre, opéra, visites de musées, goûters littéraires... de quoi nourrir votre curiosité !</p></div>
-    </div>
-    <div class="act-card reveal">
-      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771501310/Atelier_ecriture_tgd1ux.png" alt="Arts et expression — atelier peinture et écriture">
-      <div class="act-body"><span class="act-tag">Arts & Expression</span><h3 class="act-title">Arts & Expression</h3><p class="act-desc">Atelier peinture, photographie inclusive, ateliers d'écriture... pour révéler votre créativité !</p></div>
-    </div>
-    <div class="act-card reveal">
-      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771501816/Gym_t4wxr7.png" alt="Bien-être et santé — gymnastique douce">
-      <div class="act-body"><span class="act-tag">Bien-être & Santé</span><h3 class="act-title">Bien-être & Santé</h3><p class="act-desc">Gymnastique douce, méthode Feldenkrais, ateliers mémoire... pour se sentir bien dans son corps !</p></div>
-    </div>
-    <div class="act-card reveal">
-      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771502073/cafe_b0pjtp.png" alt="Convivialité et séjours — cafés blabla et week-ends">
-      <div class="act-body"><span class="act-tag">Convivialité & Séjours</span><h3 class="act-title">Convivialité & Séjours</h3><p class="act-desc">Cafés blabla, jeux de société, bowling, karting biplace, week-ends et séjours... le plaisir simple de se retrouver !</p></div>
-    </div>
-  </div>
-  <div class="act-inscription-wrap reveal">
-    <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-primary" style="font-size:1rem; padding:1.2rem 3rem;">Inscription</a>
-  </div>
+  <div class="act-head reveal">
+    <p class="section-label">Ce que nous proposons</p>
+    <h2 class="section-title" id="act-h">Des activités pour<br><em style="color:var(--rouge);font-style:italic;">tout vivre</em></h2>
+    <p style="color:var(--gris);font-size:1.1rem;line-height:1.7;max-width:520px;margin-top:.5rem;">377 événements en 2025. Du sport, de la culture, de la créativité — toujours adaptés, toujours accompagnés.</p>
+  </div>
+  <div class="act-grid">
+    <div class="act-card reveal">
+      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436040/Randonn%C3%A9e_ci1tfj.png" alt="Sports et plein air — randonnée accompagnée">
+      <div class="act-body"><span class="act-tag">Sports & Plein air</span><h3 class="act-title">Sports & Plein air</h3><p class="act-desc">Randonnée accompagnée, cyclisme en tandem, natation... pour rester en mouvement !</p></div>
+    </div>
+    <div class="act-card reveal">
+      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771500813/Jardin_zhierp.png" alt="Nature et jardin — jardinage participatif">
+      <div class="act-body"><span class="act-tag">Nature & Jardin</span><h3 class="act-title">Nature & Jardin</h3><p class="act-desc">Jardinage participatif, sorties en nature, découverte sensorielle... un vrai bol d'air pur !</p></div>
+    </div>
+    <div class="act-card reveal">
+      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436310/Cinema_ekid4l.png" alt="Culture et loisirs — cinéma en audiodescription">
+      <div class="act-body"><span class="act-tag">Culture & Loisirs</span><h3 class="act-title">Culture & Loisirs</h3><p class="act-desc">Cinéma en audiodescription, théâtre, opéra, visites de musées, goûters littéraires... de quoi nourrir votre curiosité !</p></div>
+    </div>
+    <div class="act-card reveal">
+      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771501310/Atelier_ecriture_tgd1ux.png" alt="Arts et expression — atelier peinture et écriture">
+      <div class="act-body"><span class="act-tag">Arts & Expression</span><h3 class="act-title">Arts & Expression</h3><p class="act-desc">Atelier peinture, photographie inclusive, ateliers d'écriture... pour révéler votre créativité !</p></div>
+    </div>
+    <div class="act-card reveal">
+      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771501816/Gym_t4wxr7.png" alt="Bien-être et santé — gymnastique douce">
+      <div class="act-body"><span class="act-tag">Bien-être & Santé</span><h3 class="act-title">Bien-être & Santé</h3><p class="act-desc">Gymnastique douce, méthode Feldenkrais, ateliers mémoire... pour se sentir bien dans son corps !</p></div>
+    </div>
+    <div class="act-card reveal">
+      <img class="act-img" src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771502073/cafe_b0pjtp.png" alt="Convivialité et séjours — cafés blabla et week-ends">
+      <div class="act-body"><span class="act-tag">Convivialité & Séjours</span><h3 class="act-title">Convivialité & Séjours</h3><p class="act-desc">Cafés blabla, jeux de société, bowling, karting biplace, week-ends et séjours... le plaisir simple de se retrouver !</p></div>
+    </div>
+  </div>
+  <div class="act-inscription-wrap reveal">
+    <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-primary" style="font-size:1rem; padding:1.2rem 3rem;">Inscription</a>
+  </div>
 </section>
 
-<!-- SECTION PROJET CÉZANNE 2025 -->
 <section id="galerie" class="galerie-section" aria-labelledby="galerie-h">
-  <div class="galerie-head reveal">
-    <p class="section-label">Projet phare</p>
-    <h2 class="section-title" id="galerie-h">PROJET CÉZANNE 2025</h2>
-    <p>En 2025, thématique Cézanne — une vingtaine d'œuvres exposées, certaines présentées à Paris au Centre Pompidou – Beaubourg.</p>
-  </div>
+  <div class="galerie-head reveal">
+    <p class="section-label">Projet phare</p>
+    <h2 class="section-title" id="galerie-h">PROJET CÉZANNE 2025</h2>
+    <p>En 2025, thématique Cézanne — une vingtaine d'œuvres exposées, certaines présentées à Paris au Centre Pompidou – Beaubourg.</p>
+  </div>
 
-  <div class="galerie-content">
-    <div class="galerie-video-wrap reveal">
-      <div class="galerie-video-frame">
-        <iframe src="https://www.youtube.com/embed/LabWyLWVpYc" title="Projet Cézanne 2025 — Aix en Vue" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-      <div class="galerie-video-badge">Projet Cézanne 2025</div>
-    </div>
-    <div class="galerie-text-col reveal">
-      <p class="section-label" style="color:var(--ocre-clair);">L'atelier peinture</p>
-      <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.4rem); color:var(--papier); margin-bottom:1.5rem; line-height:1.2;">Ils voient Cézanne <em style="color:var(--rouge);font-style:italic;">autrement</em></h3>
-      <p>En 2025, nos adhérents déficients visuels ont exploré l'univers de Cézanne à travers la peinture. Une vingtaine d'œuvres ont été créées, révélant des perceptions sensorielles et émotionnelles uniques.</p>
-      <p>Certaines de ces œuvres ont été présentées à Paris au Centre Pompidou – Beaubourg. Un projet qui illustre parfaitement la mission d'Aix en Vue : permettre à chacun de créer, d'exprimer et de partager.</p>
-      <p>En 2026, le fil rouge sera <em>« De la réalité à l'abstraction »</em> — et un projet photo pour le Bicentenaire de la Photographie.</p>
-      <div style="margin-top:2.5rem;">
-        <a href="https://drive.google.com/file/d/1m9FslVrGOgqojVdT7xshrfxJqgyPB7If/view?usp=sharing" target="_blank" rel="noopener" class="btn-outline-light">Rapport 2025</a>
-      </div>
-    </div>
-  </div>
+  <div class="galerie-content">
+    <div class="galerie-video-wrap reveal">
+      <div class="galerie-video-frame">
+        <iframe src="https://www.youtube.com/embed/LabWyLWVpYc" title="Projet Cézanne 2025 — Aix en Vue" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="galerie-video-badge">Projet Cézanne 2025</div>
+    </div>
+    <div class="galerie-text-col reveal">
+      <p class="section-label" style="color:var(--ocre-clair);">L'atelier peinture</p>
+      <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.4rem); color:var(--papier); margin-bottom:1.5rem; line-height:1.2;">Ils voient Cézanne <em style="color:var(--rouge);font-style:italic;">autrement</em></h3>
+      <p>En 2025, nos adhérents déficients visuels ont exploré l'univers de Cézanne à travers la peinture. Une vingtaine d'œuvres ont été créées, révélant des perceptions sensorielles et émotionnelles uniques.</p>
+      <p>Certaines de ces œuvres ont été présentées à Paris au Centre Pompidou – Beaubourg. Un projet qui illustre parfaitement la mission d'Aix en Vue : permettre à chacun de créer, d'exprimer et de partager.</p>
+      <p>En 2026, le fil rouge sera <em>« De la réalité à l'abstraction »</em> — et un projet photo pour le Bicentenaire de la Photographie.</p>
+      <div style="margin-top:2.5rem;">
+        <a href="https://drive.google.com/file/d/1m9FslVrGOgqojVdT7xshrfxJqgyPB7If/view?usp=sharing" target="_blank" rel="noopener" class="btn-outline-light">Rapport 2025</a>
+      </div>
+    </div>
+  </div>
 
-  <div class="galerie-mosaic">
-    <div class="g-item reveal">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436917/Nos_plus_belles_oeuvres_eidp1f.png" alt="Œuvres réalisées par les adhérents déficients visuels de l'atelier peinture Cézanne">
-      <div class="g-overlay"><span class="g-lbl">Nos plus belles œuvres 2025</span></div>
-    </div>
-    <div class="g-item reveal">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436517/benevole_peint_tg3vbw.jpg" alt="Bénévole animant l'atelier peinture avec un adhérent malvoyant">
-      <div class="g-overlay"><span class="g-lbl">Bénévole & adhérent, côte à côte</span></div>
-    </div>
-    <div class="g-item reveal">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771437225/les_b%C3%A9n%C3%A9ficiaires_pr%C3%A9sentent_leurs_oeuvres_gdoi6k.jpg" alt="Les bénéficiaires présentent fièrement leurs œuvres lors de l'exposition">
-      <div class="g-overlay"><span class="g-lbl">L'exposition publique — Nuit du Handicap</span></div>
-    </div>
-  </div>
+  <div class="galerie-mosaic">
+    <div class="g-item reveal">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436917/Nos_plus_belles_oeuvres_eidp1f.png" alt="Œuvres réalisées par les adhérents déficients visuels de l'atelier peinture Cézanne">
+      <div class="g-overlay"><span class="g-lbl">Nos plus belles œuvres 2025</span></div>
+    </div>
+    <div class="g-item reveal">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436517/benevole_peint_tg3vbw.jpg" alt="Bénévole animant l'atelier peinture avec un adhérent malvoyant">
+      <div class="g-overlay"><span class="g-lbl">Bénévole & adhérent, côte à côte</span></div>
+    </div>
+    <div class="g-item reveal">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771437225/les_b%C3%A9n%C3%A9ficiaires_pr%C3%A9sentent_leurs_oeuvres_gdoi6k.jpg" alt="Les bénéficiaires présentent fièrement leurs œuvres lors de l'exposition">
+      <div class="g-overlay"><span class="g-lbl">L'exposition publique — Nuit du Handicap</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- SECTION PROJET PHOTO AIX AU-DELÀ DU REGARD 2026 -->
 <section id="projet-photo" class="projet-photo-section" aria-labelledby="photo-h">
-  <div class="projet-photo-inner">
+  <div class="projet-photo-inner">
 
-    <div class="projet-photo-header reveal">
-      <p class="section-label" style="justify-content:center;">Projet phare 2026</p>
-      <h2 class="section-title" id="photo-h" style="font-size:clamp(2rem,5vw,3.8rem);">AIX AU-DELÀ DU REGARD</h2>
-      <p>Une exposition photographique immersive explorant la perception de la ville d'Aix-en-Provence par des photographes déficients visuels — malvoyants et non-voyants.</p>
-    </div>
+    <div class="projet-photo-header reveal">
+      <p class="section-label" style="justify-content:center;">Projet phare 2026</p>
+      <h2 class="section-title" id="photo-h" style="font-size:clamp(2rem,5vw,3.8rem);">AIX AU-DELÀ DU REGARD</h2>
+      <p>Une exposition photographique immersive explorant la perception de la ville d'Aix-en-Provence par des photographes déficients visuels — malvoyants et non-voyants.</p>
+    </div>
 
-    <div class="projet-photo-layout">
-      <div class="projet-photo-text reveal">
-        <p class="section-label">L'exposition</p>
-        <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.4rem); margin-bottom:1.5rem; line-height:1.2; color:var(--noir);">Deux axes de <em style="color:var(--rouge);font-style:italic;">création</em></h3>
-        <p>L'exposition privilégie une approche artistique et sensible, invitant le visiteur à entrer dans l'univers intérieur du photographe, sans hiérarchie entre vision et perception sensorielle.</p>
+    <div class="projet-photo-layout">
+      <div class="projet-photo-text reveal">
+        <p class="section-label">L'exposition</p>
+        <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.4rem); margin-bottom:1.5rem; line-height:1.2; color:var(--noir);">Deux axes de <em style="color:var(--rouge);font-style:italic;">création</em></h3>
+        <p>L'exposition privilégie une approche artistique et sensible, invitant le visiteur à entrer dans l'univers intérieur du photographe, sans hiérarchie entre vision et perception sensorielle.</p>
 
-        <div class="axes-grid">
-          <div class="axe-card reveal">
-            <h4>« Ce que je vois »</h4>
-            <p>Met en lumière la vision personnelle des participants sur leur ville, en traduisant leur rapport singulier à la lumière et à la forme.</p>
-          </div>
-          <div class="axe-card reveal">
-            <h4>« Ce que je ressens »</h4>
-            <p>Rend visible l'invisible en mobilisant les autres sens — toucher, son, odorat, mouvement — pour créer des images issues du ressenti, du geste ou de l'émotion.</p>
-          </div>
+        <div class="axes-grid">
+          <div class="axe-card reveal">
+            <h4>« Ce que je vois »</h4>
+            <p>Met en lumière la vision personnelle des participants sur leur ville, en traduisant leur rapport singulier à la lumière et à la forme.</p>
+          </div>
+          <div class="axe-card reveal">
+            <h4>« Ce que je ressens »</h4>
+            <p>Rend visible l'invisible en mobilisant les autres sens — toucher, son, odorat, mouvement — pour créer des images issues du ressenti, du geste ou de l'émotion.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem;">
+          <a href="https://www.helloasso.com/associations/aix-en-vue/formulaires/2" target="_blank" rel="noopener" class="btn-primary">
+            <span>Soutenir ce projet</span>
+          </a>
         </div>
-      </div>
 
-      <div class="projet-photo-video-wrap reveal">
-        <div class="projet-photo-video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/l42-XSYiwao"
-            title="Projet Photo Aix au-delà du regard 2026 — Aix en Vue"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
-        </div>
-        <div class="projet-photo-video-badge">Bicentenaire de la Photographie 2026</div>
-      </div>
-    </div>
+      </div>
 
-  </div>
+      <div class="projet-photo-video-wrap reveal">
+        <div class="projet-photo-video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/l42-XSYiwao"
+            title="Projet Photo Aix au-delà du regard 2026 — Aix en Vue"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <div class="projet-photo-video-badge">Bicentenaire de la Photographie 2026</div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<!-- SECTION PARTENAIRES & SOUTIENS -->
 <section id="engager" class="engage-section" aria-labelledby="engager-h">
-  <div class="engage-inner">
-    <div class="engage-col reveal">
-      <p class="section-label">Partenaires & soutiens</p>
-      <h2 class="section-title" id="engager-h">Construisons<br>ensemble<br><em style="color:var(--rouge);font-style:italic;">ce projet.</em></h2>
-      <p>Que vous soyez une entreprise souhaitant sensibiliser vos équipes au handicap visuel, une institution culturelle, ou simplement quelqu'un qui veut donner de son temps, <strong>votre place est ici.</strong></p>
-      <p>Nous bénéficions déjà du soutien du Département des Bouches-du-Rhône, de la Métropole Aix-Marseille-Provence, de la Mairie d'Aix-en-Provence, d'Harmonie Mutuelle, du Musée Granet, des Méjanes et de nombreux partenaires culturels.</p>
+  <div class="engage-inner">
+    <div class="engage-col reveal">
+      <p class="section-label">Partenaires & soutiens</p>
+      <h2 class="section-title" id="engager-h">Construisons<br>ensemble<br><em style="color:var(--rouge);font-style:italic;">ce projet.</em></h2>
+      <p>Que vous soyez une entreprise souhaitant sensibiliser vos équipes au handicap visuel, une institution culturelle, ou simplement quelqu'un qui veut donner de son temps, <strong>votre place est ici.</strong></p>
+      <p>Nous bénéficions déjà du soutien du Département des Bouches-du-Rhône, de la Métropole Aix-Marseille-Provence, de la Mairie d'Aix-en-Provence, d'Harmonie Mutuelle, du Musée Granet, des Méjanes et de nombreux partenaires culturels.</p>
 
-      <!-- Logo partenaires CENTRÉ -->
-      <img
-        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771505724/Nos_partenaires_os9edl.png"
-        alt="Liste des partenaires d'Aix en Vue : Ville d'Aix, Département 13, Harmonie Mutuelle, Musée Granet, Théâtre du Jeu de Paume"
-        class="partenaires-img"
-      >
+            <img
+        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771505724/Nos_partenaires_os9edl.png"
+        alt="Liste des partenaires d'Aix en Vue : Ville d'Aix, Département 13, Harmonie Mutuelle, Musée Granet, Théâtre du Jeu de Paume"
+        class="partenaires-img"
+      >
 
-      <!-- Bouton CENTRÉ -->
-      <div class="engage-cta-center">
-        <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F" class="btn-primary"><span>Adhérer</span></a>
-      </div>
-    </div>
-  </div>
+            <div class="engage-cta-center">
+        <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F" class="btn-primary"><span>Adhérer</span></a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- SECTION REJOINDRE L'AVENTURE -->
 <section class="cta-section" id="contact" aria-labelledby="cta-h">
-  <div class="cta-ghost" aria-hidden="true">Vue</div>
-  <div class="cta-body">
-    <p class="section-label reveal">Rejoignez l'aventure</p>
-    <h2 class="section-title reveal" id="cta-h">2026<br>en vue !</h2>
-    <p class="cta-sub reveal">Bénévole, adhérent, donateur ou partenaire — chaque engagement compte. Contactez-nous et faisons connaissance.</p>
-    <div class="cta-btns reveal">
-      <a href="mailto:info@aixenvue.fr" class="btn-white">info@aixenvue.fr</a>
-      <a href="tel:+33744999438" class="btn-ghost-w">07 44 99 94 38</a>
-    </div>
-    <div class="cta-socials reveal">
-      <a href="https://www.facebook.com/aix.en.vue/" target="_blank" rel="noopener" class="cta-social-btn" aria-label="Facebook Aix en Vue">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-      </a>
-      <a href="https://fr.linkedin.com/in/aix-en-vue-aev-9a4986383" target="_blank" rel="noopener" class="cta-social-btn" aria-label="LinkedIn Aix en Vue">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/aixenvue/" target="_blank" rel="noopener" class="cta-social-btn" aria-label="Instagram Aix en Vue">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      </a>
-    </div>
-  </div>
+  <div class="cta-ghost" aria-hidden="true">Vue</div>
+  <div class="cta-body">
+    <p class="section-label reveal">Rejoignez l'aventure</p>
+    <h2 class="section-title reveal" id="cta-h">2026<br>en vue !</h2>
+    <p class="cta-sub reveal">Bénévole, adhérent, donateur ou partenaire — chaque engagement compte. Contactez-nous et faisons connaissance.</p>
+    <div class="cta-btns reveal">
+      <a href="mailto:info@aixenvue.fr" class="btn-white">info@aixenvue.fr</a>
+      <a href="tel:+33744999438" class="btn-ghost-w">07 44 99 94 38</a>
+    </div>
+    <div class="cta-socials reveal">
+      <a href="https://www.facebook.com/aix.en.vue/" target="_blank" rel="noopener" class="cta-social-btn" aria-label="Facebook Aix en Vue">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://fr.linkedin.com/in/aix-en-vue-aev-9a4986383" target="_blank" rel="noopener" class="cta-social-btn" aria-label="LinkedIn Aix en Vue">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/aixenvue/" target="_blank" rel="noopener" class="cta-social-btn" aria-label="Instagram Aix en Vue">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <div style="max-width:1300px; margin:0 auto;">
-    <div class="footer-brand">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
-      <span class="logo-aix" style="font-size:2rem;"><span class="red-letter">A</span>ix</span>
-      <span class="logo-en" style="font-size:1.5rem;"><span class="red-letter">E</span>n</span>
-      <span class="logo-vue" style="font-size:1.1rem;"><span class="red-letter">V</span>ue</span>
-    </div>
-    <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles du pays d'Aix depuis 2024.</p>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 Aix en Vue — Association loi 1901</span>
-    <span>Pour et avec les déficients visuels</span>
-  </div>
+  <div style="max-width:1300px; margin:0 auto;">
+    <div class="footer-brand">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+      <span class="logo-aix" style="font-size:2rem;"><span class="red-letter">A</span>ix</span>
+      <span class="logo-en" style="font-size:1.5rem;"><span class="red-letter">E</span>n</span>
+      <span class="logo-vue" style="font-size:1.1rem;"><span class="red-letter">V</span>ue</span>
+    </div>
+    <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles du pays d'Aix depuis 2024.</p>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Aix en Vue — Association loi 1901</span>
+    <span>Pour et avec les déficients visuels</span>
+  </div>
 </footer>
 
 <div id="pwa-install-banner" class="pwa-banner" role="alert">
-  <p style="font-weight:700; margin:0;">Ajouter <strong>Aix en Vue</strong> sur votre écran d'accueil pour un accès simplifié ?</p>
-  <div class="pwa-btns">
-    <button id="pwa-close" class="pwa-btn-close">Plus tard</button>
-    <button id="pwa-install-btn" class="pwa-btn-install">Installer</button>
-  </div>
+  <p style="font-weight:700; margin:0;">Ajouter <strong>Aix en Vue</strong> sur votre écran d'accueil pour un accès simplifié ?</p>
+  <div class="pwa-btns">
+    <button id="pwa-close" class="pwa-btn-close">Plus tard</button>
+    <button id="pwa-install-btn" class="pwa-btn-install">Installer</button>
+  </div>
 </div>
 
 <script>
 window.addEventListener('load', () => setTimeout(() => document.body.classList.add('loaded'), 80));
 
 const io = new IntersectionObserver(e => e.forEach(x => {
-  if(x.isIntersecting) x.target.classList.add('visible');
+  if(x.isIntersecting) x.target.classList.add('visible');
 }), {threshold:.1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 const heroStatBoxes = document.querySelectorAll('.hero-stat-box');
 const hsbio = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      heroStatBoxes.forEach((box, i) => setTimeout(() => box.classList.add('visible'), i * 130));
-      hsbio.disconnect();
-    }
-  });
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      heroStatBoxes.forEach((box, i) => setTimeout(() => box.classList.add('visible'), i * 130));
+      hsbio.disconnect();
+    }
+  });
 }, {threshold: .1});
 if(heroStatBoxes[0]) hsbio.observe(heroStatBoxes[0].closest('.hero-stats') || heroStatBoxes[0]);
 
 const cio = new IntersectionObserver(entries => {
-  if(entries[0].isIntersecting) {
-    document.querySelectorAll('.hero-stat-number').forEach(el => {
-      const target = parseInt(el.dataset.target);
-      const prefix = el.dataset.prefix || '';
-      let c = 0;
-      const step = Math.ceil(target / 60);
-      const t = setInterval(() => {
-        c = Math.min(c + step, target);
-        el.textContent = prefix + c.toLocaleString('fr-FR');
-        if(c >= target) clearInterval(t);
-      }, 20);
-    });
-    cio.disconnect();
-  }
+  if(entries[0].isIntersecting) {
+    document.querySelectorAll('.hero-stat-number').forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      let c = 0;
+      const step = Math.ceil(target / 60);
+      const t = setInterval(() => {
+        c = Math.min(c + step, target);
+        el.textContent = prefix + c.toLocaleString('fr-FR');
+        if(c >= target) clearInterval(t);
+      }, 20);
+    });
+    cio.disconnect();
+  }
 }, {threshold: .1});
 const heroStatsSection = document.querySelector('.hero-stats');
 if(heroStatsSection) cio.observe(heroStatsSection);
@@ -846,48 +845,48 @@ const hb = document.querySelector('.hamburger');
 const nl = document.querySelector('.nav-links');
 
 function closeMenu() {
-  nl.removeAttribute('style');
-  nl.classList.remove('mobile-open');
-  hb.setAttribute('aria-expanded', 'false');
+  nl.removeAttribute('style');
+  nl.classList.remove('mobile-open');
+  hb.setAttribute('aria-expanded', 'false');
 }
 
 hb.addEventListener('click', () => {
-  const isOpen = nl.classList.contains('mobile-open');
-  if(isOpen) {
-    closeMenu();
-  } else {
-    nl.classList.add('mobile-open');
-    Object.assign(nl.style, {
-      display: 'flex', position: 'fixed',
-      top: '68px', left: '0', right: '0',
-      flexDirection: 'column', background: 'var(--papier)',
-      padding: '1.5rem 2rem', borderBottom: '2px solid var(--rouge)',
-      zIndex: '400', gap: '1.2rem'
-    });
-    hb.setAttribute('aria-expanded', 'true');
-  }
+  const isOpen = nl.classList.contains('mobile-open');
+  if(isOpen) {
+    closeMenu();
+  } else {
+    nl.classList.add('mobile-open');
+    Object.assign(nl.style, {
+      display: 'flex', position: 'fixed',
+      top: '68px', left: '0', right: '0',
+      flexDirection: 'column', background: 'var(--papier)',
+      padding: '1.5rem 2rem', borderBottom: '2px solid var(--rouge)',
+      zIndex: '400', gap: '1.2rem'
+    });
+    hb.setAttribute('aria-expanded', 'true');
+  }
 });
 
 nl.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => { if(window.innerWidth < 768) closeMenu(); });
+  a.addEventListener('click', () => { if(window.innerWidth < 768) closeMenu(); });
 });
 
 window.addEventListener('resize', () => {
-  if(window.innerWidth >= 768) { nl.removeAttribute('style'); nl.classList.remove('mobile-open'); }
+  if(window.innerWidth >= 768) { nl.removeAttribute('style'); nl.classList.remove('mobile-open'); }
 });
 
 window.addEventListener('scroll', () => {
-  document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,.07)' : 'none';
+  document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,.07)' : 'none';
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const href = a.getAttribute('href');
-    if(href === '#') return;
-    e.preventDefault();
-    const t = document.querySelector(href);
-    if(t) { t.scrollIntoView({behavior: 'smooth'}); if(window.innerWidth < 768) closeMenu(); }
-  });
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if(href === '#') return;
+    e.preventDefault();
+    const t = document.querySelector(href);
+    if(t) { t.scrollIntoView({behavior: 'smooth'}); if(window.innerWidth < 768) closeMenu(); }
+  });
 });
 
 let deferredPrompt;
@@ -897,29 +896,29 @@ const closeBtn = document.getElementById('pwa-close');
 const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register(currentPath + 'sw.js')
-    .then(() => console.log("Service Worker enregistré"))
-    .catch(err => console.log('Échec SW:', err));
+  navigator.serviceWorker.register(currentPath + 'sw.js')
+    .then(() => console.log("Service Worker enregistré"))
+    .catch(err => console.log('Échec SW:', err));
 }
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  pwaBanner.style.display = 'flex';
+  e.preventDefault();
+  deferredPrompt = e;
+  pwaBanner.style.display = 'flex';
 });
 
 if(installBtn) {
-  installBtn.addEventListener('click', async () => {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      pwaBanner.style.display = 'none';
-    }
-  });
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      pwaBanner.style.display = 'none';
+    }
+  });
 }
 if(closeBtn) {
-  closeBtn.addEventListener('click', () => { pwaBanner.style.display = 'none'; });
+  closeBtn.addEventListener('click', () => { pwaBanner.style.display = 'none'; });
 }
 </script>
 </body>
