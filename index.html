@@ -8,7 +8,8 @@
 
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#D80000">
-<link rel="apple-touch-icon" href="icon-192.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,24 +54,33 @@ nav::after {
   content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
 }
+
+/* LOGO : A, E, V en rouge majuscule, le reste en noir, "en" plus petit que "Aix", "Vue" plus petit que "en" */
 .nav-logo {
   font-family:'Playfair Display',serif;
-  font-size:1.45rem; font-weight:900;
+  font-weight:900;
   color:var(--noir); text-decoration:none;
   letter-spacing:-.02em;
-  display:flex; align-items:center; gap:.7rem;
+  display:flex; align-items:baseline; gap:.3rem;
 }
-.nav-logo span { color:var(--rouge); }
 .nav-logo img {
   height: 32px;
   width: auto;
   display: block;
+  align-self: center;
+  margin-right: .4rem;
 }
+.logo-aix { font-size:1.45rem; }
+.logo-aix .red-letter { color:var(--rouge); }
+.logo-en { font-size:1.1rem; }
+.logo-en .red-letter { color:var(--rouge); }
+.logo-vue { font-size:0.85rem; }
+.logo-vue .red-letter { color:var(--rouge); }
 
-.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
 .nav-links a {
   color:var(--noir); text-decoration:none;
-  font-size:.9rem; font-weight:800;
+  font-size:.85rem; font-weight:800;
   letter-spacing:.05em; text-transform:uppercase;
   position:relative; padding-bottom:3px;
 }
@@ -167,6 +177,48 @@ nav::after {
   font-family:'Playfair Display',serif; font-size:1.1rem; font-style:italic; font-weight: 700;
   box-shadow:0 8px 30px rgba(216,0,0,.3);
   max-width:220px; line-height:1.4;
+}
+
+/* ===== STATS CHIFFRES HERO ===== */
+.hero-stats {
+  background: var(--noir);
+  padding: 5rem 4rem;
+  position: relative;
+}
+.hero-stats-inner {
+  max-width: 1300px; margin: 0 auto;
+  text-align: center;
+}
+.hero-stats-inner .section-label { justify-content: center; color: var(--ocre-clair); margin-bottom: 1rem; }
+.hero-stats-inner .section-label::before {
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23F0C060' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.hero-stats-inner .section-title { color: var(--papier); font-size: clamp(2rem,4vw,3.2rem); margin-bottom: 3rem; }
+.hero-stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+}
+.hero-stat-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(216,0,0,0.3);
+  padding: 2rem 1.5rem;
+  position: relative; overflow: hidden;
+  opacity:0; transform:translateY(20px); transition:all .7s ease;
+}
+.hero-stat-box.visible { opacity:1; transform:translateY(0); }
+.hero-stat-box::before {
+  content:''; position:absolute; top:0; left:0; width:0; height:3px;
+  background:var(--rouge); transition:width .8s ease;
+}
+.hero-stat-box.visible::before { width:100%; }
+.hero-stat-number {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,4vw,3.8rem); font-weight:900;
+  color:var(--rouge); display:block; line-height:1;
+}
+.hero-stat-label {
+  font-size:.75rem; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:#CCCCCC;
+  margin-top:.6rem; display:block; line-height:1.4;
 }
 
 /* Loaded */
@@ -310,19 +362,12 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 }
 .act-desc { font-size:1rem; line-height:1.6; color:var(--gris); font-weight: 500; }
 
-/* --- Correction Carte Café Blabla (Responsive) --- */
-.act-card-wide {
-  grid-column: span 2;
-  flex-direction: row;
-}
-.act-card-wide .act-img {
-  width: 50%; height: auto;
-}
-.act-card-wide .act-body {
-  width: 50%; justify-content: center;
+/* Bouton inscription activités */
+.act-inscription-wrap {
+  max-width:1300px; margin:3rem auto 0; text-align:center;
 }
 
-/* ===== GALERIE PEINTURE ===== */
+/* ===== GALERIE / PROJET CEZANE ===== */
 .galerie-section {
   background:var(--noir); padding:8rem 0;
   overflow:hidden; position:relative;
@@ -338,12 +383,47 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 .galerie-head .section-title { color:var(--papier); }
 .galerie-head p { color:#E0E0E0; font-size:1.1rem; margin-top:.5rem; max-width: 700px; margin-left: auto; margin-right: auto;}
 
+/* Vidéo YouTube Short intégrée intelligemment */
+.galerie-content {
+  max-width:1300px; margin:0 auto;
+  padding:0 4rem;
+  display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
+  position:relative; z-index:1;
+}
+.galerie-video-wrap {
+  position:relative;
+  display:flex; justify-content:center;
+}
+.galerie-video-frame {
+  position:relative;
+  width:100%; max-width:340px;
+  /* Ratio YouTube Shorts 9:16 */
+  aspect-ratio:9/16;
+  overflow:hidden;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.galerie-video-frame iframe {
+  width:100%; height:100%; border:none; display:block;
+}
+.galerie-video-badge {
+  position:absolute; bottom:-1rem; right:-1rem;
+  background:var(--rouge); color:white;
+  padding:.8rem 1.2rem;
+  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
+  font-family:'Playfair Display',serif; font-size:.9rem; font-style:italic; font-weight:700;
+  box-shadow:0 8px 20px rgba(216,0,0,.4);
+  z-index:2;
+}
+.galerie-text-col { color:var(--papier); }
+.galerie-text-col p { color:#E0E0E0; font-size:1.05rem; line-height:1.8; margin-bottom:1.5rem; }
+
 .galerie-mosaic {
   display:grid;
   grid-template-columns:1.4fr 1fr 1fr;
   grid-template-rows:300px 300px;
   gap:4px;
-  max-width:1300px; margin:0 auto;
+  max-width:1300px; margin:4rem auto 0;
   padding:0 4rem;
   position:relative; z-index:1;
 }
@@ -385,7 +465,7 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 .btn-outline-light:hover { color:var(--rouge); }
 .btn-outline-light:hover::before { border-color:var(--rouge); }
 
-/* ===== STATS + CTA ===== */
+/* ===== PARTENAIRES ===== */
 .engage-section {
   padding:8rem 4rem;
   background:var(--creme);
@@ -393,43 +473,18 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 }
 .engage-inner {
   max-width:1300px; margin:0 auto;
-  display:grid; grid-template-columns:1fr 1.2fr; gap:8rem; align-items:center;
   position:relative; z-index:1;
-}
-.stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:3rem; }
-.stat-box {
-  background:var(--noir); padding:2rem 1.8rem;
-  position:relative; overflow:hidden;
-  opacity:0; transform:translateY(20px); transition:all .7s ease;
-}
-.stat-box.visible { opacity:1; transform:translateY(0); }
-.stat-box::before {
-  content:''; position:absolute; top:0; left:0; width:0; height:3px;
-  background:var(--rouge); transition:width .8s ease;
-}
-.stat-box.visible::before { width:100%; }
-.stat-number {
-  font-family:'Playfair Display',serif;
-  font-size:clamp(2.5rem,4vw,3.8rem); font-weight:900;
-  color:var(--rouge); display:block; line-height:1;
-}
-.stat-label {
-  font-size:.75rem; font-weight:700; letter-spacing:.14em;
-  text-transform:uppercase; color:#CCCCCC;
-  margin-top:.6rem; display:block; line-height:1.4;
 }
 .engage-col p {
   font-size:1.05rem; line-height:1.85; color:var(--gris); margin-bottom:1.4rem;
 }
 .engage-col strong { color:var(--noir); font-weight: 800; }
-.roles { display:flex; flex-wrap:wrap; gap:.6rem; margin:2rem 0; }
-.role-tag {
-  display:inline-block; padding:.6rem 1.2rem;
-  font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-  background:var(--papier-fonce);
-  border:1.5px solid rgba(200,134,10,.3);
-  color:#915f00;
-  clip-path:polygon(0 0,100% 0,96% 100%,4% 100%);
+
+/* Image partenaires */
+.partenaires-img {
+  width:100%; max-width:700px;
+  margin:2rem 0;
+  display:block;
 }
 
 /* ===== CTA FINAL ===== */
@@ -454,7 +509,7 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
   font-size:1.2rem; color:rgba(255,255,255,.9); font-weight: 500;
   max-width:520px; margin:0 auto 3.5rem; line-height:1.75;
 }
-.cta-btns { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; }
+.cta-btns { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; align-items:center; }
 .btn-white {
   background:white; color:var(--rouge);
   padding:1.2rem 2.8rem;
@@ -476,49 +531,49 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 }
 .btn-ghost-w:hover { border-color:white; background:rgba(255,255,255,.1); }
 
+/* Social links dans CTA */
+.cta-socials {
+  display:flex; gap:1rem; justify-content:center; margin-top:2rem; flex-wrap:wrap;
+}
+.cta-social-btn {
+  width:48px; height:48px;
+  border:2px solid rgba(255,255,255,.5);
+  border-radius:0;
+  display:flex; align-items:center; justify-content:center;
+  color:white; text-decoration:none;
+  clip-path:polygon(0 0,100% 0,94% 100%,6% 100%);
+  transition:all .25s;
+  background:rgba(255,255,255,.1);
+}
+.cta-social-btn:hover { border-color:white; background:rgba(255,255,255,.25); }
+.cta-social-btn svg { width:20px; height:20px; fill:white; }
+
 /* ===== FOOTER ===== */
 footer {
   background:#0D0D0D; color:var(--papier);
-  padding:5rem 4rem 2rem; position:relative; overflow:hidden;
+  padding:3rem 4rem 2rem; position:relative; overflow:hidden;
 }
 .footer-brand {
   font-family:'Playfair Display',serif;
   font-size:2rem; font-weight:900; margin-bottom:1.2rem;
   display:flex; align-items:center; gap:.6rem;
 }
-.footer-brand span { color:var(--rouge); }
+.footer-brand .red-letter { color:var(--rouge); }
 .footer-brand img { height: 38px; width: auto; display: block; }
-
 .footer-desc {
   font-size:.95rem; color:#BBBBBB;
-  line-height:1.75; max-width:300px; margin-bottom:1.8rem;
+  line-height:1.75; max-width:400px; margin-bottom:1rem;
 }
-.social-btn {
-  width:44px; height:44px;
-  border:1.5px solid rgba(255,255,255,.2);
-  display:flex; align-items:center; justify-content:center;
-  color:white; text-decoration:none;
-  font-size:.9rem; font-weight:800;
-  clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
-  transition:all .25s;
-}
-.social-btn:hover { border-color:var(--rouge); color:var(--rouge); }
-.footer-col-title {
-  font-size:.8rem; font-weight:800; letter-spacing:.2em;
-  text-transform:uppercase; color:var(--ocre-clair); margin-bottom:1.5rem;
-}
-.footer-links a { color:#DDDDDD; text-decoration:none; font-size:.95rem; transition:color .2s; }
-.footer-links a:hover { color:white; text-decoration: underline; }
-.footer-links li { color:#999; font-size:.95rem; line-height:1.6; }
 .footer-bottom {
-  max-width:1300px; margin:0 auto;
+  max-width:100%; margin:2rem 0 0;
   display:flex; justify-content:space-between; align-items:center;
+  border-top:1px solid rgba(255,255,255,.1); padding-top:1.5rem;
   font-size:.8rem; color:#888; flex-wrap:wrap; gap:1rem;
 }
 
 /* ===== AJOUT PWA BANNER STYLE ===== */
 .pwa-banner {
-  display:none; /* Masqué par défaut */
+  display:none;
   position:fixed; bottom:20px; left:20px; right:20px;
   background:var(--noir); color:white;
   padding:1.5rem; z-index:10000;
@@ -529,7 +584,6 @@ footer {
   animation: slideUp .5s ease-out;
 }
 @keyframes slideUp { from{transform:translateY(50px);opacity:0;} to{transform:translateY(0);opacity:1;} }
-
 .pwa-btns { display:flex; gap:1rem; width:100%; justify-content:center; }
 .pwa-btn-install {
   background:var(--rouge); color:white; border:none;
@@ -552,48 +606,33 @@ footer {
   .hero-sub { margin-left:auto; margin-right:auto; }
   .hero-actions { justify-content:center; }
   .hero-visual { display:none; }
-  
   .manifeste-inner { grid-template-columns:1fr; gap:3rem; }
   .manifeste-photo { display:none; }
-  
   .act-grid { grid-template-columns:1fr 1fr; }
-  .act-card-wide { grid-column: span 2; }
-  
   .galerie-mosaic { grid-template-columns:1fr 1fr; grid-template-rows:280px 280px; }
   .galerie-mosaic .g-item:first-child { grid-row:1/3; }
-  .engage-inner { grid-template-columns:1fr; gap:4rem; }
-  .footer-grid { grid-template-columns:1fr; gap:2.5rem; }
+  .galerie-content { grid-template-columns:1fr; gap:3rem; }
+  .galerie-video-wrap { justify-content:center; }
+  .hero-stats-grid { grid-template-columns:1fr 1fr; }
 }
 
 @media(max-width:768px){
   nav { padding:1rem 1.5rem; }
   .nav-links { display:none; }
   .hamburger { display:flex; }
-  
   .hero { padding:6rem 1.5rem 3rem; }
   .manifeste, .activites, .galerie-section, .engage-section, .cta-section { padding:5rem 1.5rem; }
-  
   .act-grid { grid-template-columns:1fr; }
-  
-  /* Café Blabla sur Mobile : redevient une carte normale empilée */
-  .act-card-wide { 
-    grid-column: auto; 
-    flex-direction: column; 
-    display: flex;
-  }
-  .act-card-wide .act-img { width: 100%; height: 220px; }
-  .act-card-wide .act-body { width: 100%; padding: 2rem; justify-content: flex-start; }
-  
   .galerie-mosaic { grid-template-columns:1fr; grid-template-rows:auto; padding:0 1.5rem; }
   .galerie-mosaic .g-item { height:250px; }
   .galerie-mosaic .g-item:first-child { grid-row:auto; }
-  
-  .stats-grid { grid-template-columns:1fr; }
-  
-  footer { padding:4rem 1.5rem 2rem; }
+  .galerie-content { padding:0 1.5rem; }
+  footer { padding:3rem 1.5rem 2rem; }
   .footer-bottom { flex-direction:column; text-align:center; }
   .cta-section { padding:6rem 1.5rem; }
   .cta-section .section-title { font-size: 3rem; }
+  .hero-stats { padding:4rem 1.5rem; }
+  .hero-stats-grid { grid-template-columns:1fr 1fr; gap:1rem; }
 }
 </style>
 </head>
@@ -602,16 +641,20 @@ footer {
 <nav role="navigation" aria-label="Navigation principale">
   <a href="#" class="nav-logo">
     <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
-    Aix en <span>Vue</span>
+    <!-- Aix : A en rouge -->
+    <span class="logo-aix"><span class="red-letter">A</span>ix</span>
+    <!-- en : E en rouge, taille plus petite -->
+    <span class="logo-en"><span class="red-letter">E</span>n</span>
+    <!-- Vue : V en rouge, encore plus petite -->
+    <span class="logo-vue"><span class="red-letter">V</span>ue</span>
   </a>
   <ul class="nav-links">
     <li><a href="#manifeste">L'association</a></li>
-    <li><a href="annonce.html" style="color:var(--rouge);">Actualités</a></li>
-    <li><a href="#activites">Activités</a></li>
-    <li><a href="#galerie">Atelier peinture</a></li>
-    <li><a href="#engager">Nous soutenir</a></li>
-    <li><a href="missions.html">Nos Missions</a></li>
-    <li><a href="#contact" class="nav-cta">Rejoindre</a></li>
+    <li><a href="missions.html">Nos missions</a></li>
+    <li><a href="annonce.html">Actualités</a></li>
+    <li><a href="#galerie">Projet</a></li>
+    <li><a href="https://www.helloasso.com/associations/aix-en-vue/formulaires/2" target="_blank" rel="noopener">Nous soutenir</a></li>
+    <li><a href="https://www.appsheet.com/start/cd603802-fda8-494d-8bb6-f647afb5f712" target="_blank" rel="noopener" class="nav-cta">Espace bénévole</a></li>
   </ul>
   <button class="hamburger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -629,8 +672,8 @@ footer {
       <strong>Parce que voir moins ne signifie pas vivre moins.</strong>
     </p>
     <div class="hero-actions">
-      <a href="#activites" class="btn-primary"><span>Découvrir nos activités</span></a>
-      <a href="#engager" class="btn-outline">Nous rejoindre</a>
+      <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-primary"><span>Accéder au planning</span></a>
+      <a href="#contact" class="btn-outline">Nous rejoindre</a>
     </div>
   </div>
 
@@ -646,6 +689,33 @@ footer {
   </div>
 </header>
 
+<!-- SECTION CHIFFRES : Aix en Vue en chiffres, une année pleine -->
+<section class="hero-stats" aria-labelledby="stats-h">
+  <div class="hero-stats-inner">
+    <p class="section-label reveal" style="justify-content:center;">Aix en Vue en chiffres</p>
+    <h2 class="section-title reveal" id="stats-h" style="color:var(--papier);">Une année <em style="color:var(--rouge);font-style:italic;">pleine</em></h2>
+    <div class="hero-stats-grid">
+      <div class="hero-stat-box">
+        <span class="hero-stat-number" data-target="377">0</span>
+        <span class="hero-stat-label">Activités organisées en 2025</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="hero-stat-number" data-target="72">0</span>
+        <span class="hero-stat-label">Bénévoles voyants engagés</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="hero-stat-number" data-target="154">0</span>
+        <span class="hero-stat-label">Membres au total fin 2025</span>
+      </div>
+      <div class="hero-stat-box">
+        <span class="hero-stat-number" data-target="10000" data-prefix="+">0</span>
+        <span class="hero-stat-label">Pages vues sur notre site</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2 : NOS MISSIONS -->
 <section id="manifeste" class="manifeste" aria-labelledby="manifeste-h">
   <div class="manifeste-inner">
     <div class="manifeste-text reveal">
@@ -659,7 +729,7 @@ footer {
         Née au printemps 2024 d'un constat simple — les personnes déficientes visuelles sont trop souvent isolées, trop rarement accompagnées — Aix en Vue est aujourd'hui une communauté de <strong style="color:white;">154 membres</strong> qui se retrouvent chaque semaine autour d'activités adaptées, de moments de joie et d'une ambition collective : changer le regard sur le handicap visuel dans notre ville.
       </p>
       <div style="margin-top:2.5rem;">
-        <a href="#engager" class="btn-outline-light"><span>Notre histoire</span></a>
+        <a href="missions.html" class="btn-outline-light"><span>NOS MISSIONS</span></a>
       </div>
     </div>
     <div class="manifeste-photo reveal">
@@ -671,6 +741,7 @@ footer {
   </div>
 </section>
 
+<!-- SECTION 3 : ACTIVITÉS (6 cartes) -->
 <section id="activites" class="activites" aria-labelledby="act-h">
   <div class="act-head reveal">
     <p class="section-label">Ce que nous proposons</p>
@@ -679,76 +750,126 @@ footer {
   </div>
 
   <div class="act-grid">
+    <!-- Carte 1 -->
     <div class="act-card reveal">
       <img class="act-img"
         src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436040/Randonn%C3%A9e_ci1tfj.png"
-        alt="Randonnée accompagnée avec des bénévoles voyants">
+        alt="Sports et plein air — randonnée accompagnée">
       <div class="act-body">
-        <span class="act-tag">Sport & Nature</span>
-        <h3 class="act-title">Randonnées & Tandem</h3>
-        <p class="act-desc">Balades en pleine nature autour du pays aixois, et sorties en tandem grâce à notre partenariat avec l'UCL de Luynes. 2 fois par mois, pour tous les niveaux.</p>
+        <span class="act-tag">Sports & Plein air</span>
+        <h3 class="act-title">Sports & Plein air</h3>
+        <p class="act-desc">Randonnée accompagnée, cyclisme en tandem, natation... pour rester en mouvement !</p>
       </div>
     </div>
 
+    <!-- Carte 2 -->
+    <div class="act-card reveal">
+      <img class="act-img"
+        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771500813/Jardin_zhierp.png"
+        alt="Nature et jardin — jardinage participatif">
+      <div class="act-body">
+        <span class="act-tag">Nature & Jardin</span>
+        <h3 class="act-title">Nature & Jardin</h3>
+        <p class="act-desc">Jardinage participatif, sorties en nature, découverte sensorielle... un vrai bol d'air pur !</p>
+      </div>
+    </div>
+
+    <!-- Carte 3 -->
     <div class="act-card reveal">
       <img class="act-img"
         src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436310/Cinema_ekid4l.png"
-        alt="Séance de cinéma en audiodescription au cinéma Cézanne">
+        alt="Culture et loisirs — cinéma en audiodescription">
       <div class="act-body">
-        <span class="act-tag">Culture</span>
-        <h3 class="act-title">Cinéma & Sorties culturelles</h3>
-        <p class="act-desc">Séances en audiodescription au cinéma Cézanne, visites de musées, concerts, théâtre, opéra… 8 à 10 sorties culturelles par mois avec nos 15 partenaires culturels aixois.</p>
+        <span class="act-tag">Culture & Loisirs</span>
+        <h3 class="act-title">Culture & Loisirs</h3>
+        <p class="act-desc">Cinéma en audiodescription, théâtre, opéra, visites de musées, goûters littéraires... de quoi nourrir votre curiosité !</p>
       </div>
     </div>
 
+    <!-- Carte 4 -->
     <div class="act-card reveal">
       <img class="act-img"
-        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436161/Atelier_numerique_cv6uzm.png"
-        alt="Atelier de sensibilisation au handicap visuel en entreprise">
+        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771501310/Atelier_ecriture_tgd1ux.png"
+        alt="Arts et expression — atelier peinture et écriture">
       <div class="act-body">
-        <span class="act-tag">Sensibilisation</span>
-        <h3 class="act-title">Ateliers en entreprise</h3>
-        <p class="act-desc">Nos bénévoles voyants et malvoyants animent des sessions de sensibilisation au handicap visuel : braille, mobilité, atelier sensoriel… Grand vainqueur d'un challenge parmi 18 associations en 2025.</p>
+        <span class="act-tag">Arts & Expression</span>
+        <h3 class="act-title">Arts & Expression</h3>
+        <p class="act-desc">Atelier peinture, photographie inclusive, ateliers d'écriture... pour révéler votre créativité !</p>
       </div>
     </div>
 
+    <!-- Carte 5 -->
     <div class="act-card reveal">
       <img class="act-img"
-        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771437322/atelier_numerique_u6gkhm.jpg"
-        alt="Atelier numérique — découverte des outils pour malvoyants">
+        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771501816/Gym_t4wxr7.png"
+        alt="Bien-être et santé — gymnastique douce">
       <div class="act-body">
-        <span class="act-tag">Numérique</span>
-        <h3 class="act-title">Atelier Numérique</h3>
-        <p class="act-desc">Applications, smartphones, synthèse vocale : nos bénévoles accompagnent les adhérents pour maîtriser les outils numériques qui changent le quotidien des personnes déficientes visuelles.</p>
+        <span class="act-tag">Bien-être & Santé</span>
+        <h3 class="act-title">Bien-être & Santé</h3>
+        <p class="act-desc">Gymnastique douce, méthode Feldenkrais, ateliers mémoire... pour se sentir bien dans son corps !</p>
       </div>
     </div>
 
-    <div class="act-card reveal act-card-wide">
+    <!-- Carte 6 -->
+    <div class="act-card reveal">
       <img class="act-img"
-        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771435751/Caf%C3%A9_blabla_c4ut6c.png"
-        alt="Café blabla — moment de convivialité entre adhérents">
+        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771502073/cafe_b0pjtp.png"
+        alt="Convivialité et séjours — cafés blabla et week-ends">
       <div class="act-body">
-        <span class="act-tag">Convivialité</span>
-        <h3 class="act-title" style="font-size:1.5rem;">Café blabla & événements</h3>
-        <p class="act-desc">Le cœur battant d'Aix en Vue : des rencontres informelles en centre-ville, des repas partagés, des sorties week-end (Cap d'Agde en 2025 !), et notre grand repas de Noël. 15 à 20 personnes à chaque fois, toujours dans la bonne humeur.</p>
+        <span class="act-tag">Convivialité & Séjours</span>
+        <h3 class="act-title">Convivialité & Séjours</h3>
+        <p class="act-desc">Cafés blabla, jeux de société, bowling, karting biplace, week-ends et séjours... le plaisir simple de se retrouver !</p>
       </div>
     </div>
+  </div>
+
+  <!-- Bouton Inscription -->
+  <div class="act-inscription-wrap reveal">
+    <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-primary" style="font-size:1rem; padding:1.2rem 3rem;">Inscription</a>
   </div>
 </section>
 
+<!-- SECTION PROJET CEZANE 2025 (anciennement Galerie / Atelier Peinture) -->
 <section id="galerie" class="galerie-section" aria-labelledby="galerie-h">
   <div class="galerie-head reveal">
-    <p class="section-label">L'atelier peinture</p>
-    <h2 class="section-title" id="galerie-h">Ils voient Cézanne<br><em style="color:var(--rouge);font-style:italic;">autrement</em></h2>
+    <p class="section-label">Projet phare</p>
+    <h2 class="section-title" id="galerie-h">PROJET CÉZANNE 2025</h2>
     <p>En 2025, thématique Cézanne — une vingtaine d'œuvres exposées, certaines présentées à Paris au Centre Pompidou – Beaubourg.</p>
   </div>
 
+  <!-- Contenu : vidéo + texte côte à côte -->
+  <div class="galerie-content">
+    <div class="galerie-video-wrap reveal">
+      <div class="galerie-video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/LabWyLWVpYc"
+          title="Projet Cézanne 2025 — Aix en Vue"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="galerie-video-badge">Projet Cézanne 2025</div>
+    </div>
+
+    <div class="galerie-text-col reveal">
+      <p class="section-label" style="color:var(--ocre-clair);">L'atelier peinture</p>
+      <h3 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3vw,2.4rem); color:var(--papier); margin-bottom:1.5rem; line-height:1.2;">Ils voient Cézanne <em style="color:var(--rouge);font-style:italic;">autrement</em></h3>
+      <p>En 2025, nos adhérents déficients visuels ont exploré l'univers de Cézanne à travers la peinture. Une vingtaine d'œuvres ont été créées, révélant des perceptions sensorielles et émotionnelles uniques.</p>
+      <p>Certaines de ces œuvres ont été présentées à Paris au Centre Pompidou – Beaubourg. Un projet qui illustre parfaitement la mission d'Aix en Vue : permettre à chacun de créer, d'exprimer et de partager.</p>
+      <p>En 2026, le fil rouge sera <em>« De la réalité à l'abstraction »</em> — et un projet photo pour le Bicentenaire de la Photographie.</p>
+      <div style="margin-top:2.5rem;">
+        <a href="https://drive.google.com/file/d/1m9FslVrGOgqojVdT7xshrfxJqgyPB7If/view?usp=sharing" target="_blank" rel="noopener" class="btn-outline-light">Rapport 2025</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mosaïque photos -->
   <div class="galerie-mosaic">
     <div class="g-item reveal">
       <img
         src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436917/Nos_plus_belles_oeuvres_eidp1f.png"
-        alt="Œuvres réalisées par les adhérents déficients visuels de l'atelier peinture Cézanne"
-        onerror="this.src='https://res.cloudinary.com/dxt4ferj4/image/upload/v1771436915/Nos_plus_belles_oeuvres_eidp1f.png'">
+        alt="Œuvres réalisées par les adhérents déficients visuels de l'atelier peinture Cézanne">
       <div class="g-overlay"><span class="g-lbl">Nos plus belles œuvres 2025</span></div>
     </div>
     <div class="g-item reveal">
@@ -764,55 +885,30 @@ footer {
       <div class="g-overlay"><span class="g-lbl">L'exposition publique — Nuit du Handicap</span></div>
     </div>
   </div>
-
-  <div class="galerie-cta reveal">
-    <p>En 2026, le fil rouge sera <em>« De la réalité à l'abstraction »</em> — et un projet photo pour le Bicentenaire de la Photographie.</p>
-    <a href="#contact" class="btn-outline-light" style="margin-top:2rem;display:inline-block;">Rejoindre l'atelier</a>
-  </div>
 </section>
 
+<!-- SECTION 4 : PARTENAIRES & SOUTIENS uniquement -->
 <section id="engager" class="engage-section" aria-labelledby="engager-h">
   <div class="engage-inner">
-    <div class="stats-col">
-      <p class="section-label reveal">Aix en Vue en chiffres</p>
-      <h2 class="section-title reveal" id="engager-h">Une année<br><em style="color:var(--rouge);font-style:italic;">pleine</em></h2>
-      <div class="stats-grid">
-        <div class="stat-box">
-          <span class="stat-number" data-target="377">0</span>
-          <span class="stat-label">Activités organisées en 2025</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-number" data-target="72">0</span>
-          <span class="stat-label">Bénévoles voyants engagés</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-number" data-target="154">0</span>
-          <span class="stat-label">Membres au total fin 2025</span>
-        </div>
-        <div class="stat-box">
-          <span class="stat-number" data-target="10000" data-prefix="+">0</span>
-          <span class="stat-label">Pages vues sur notre site</span>
-        </div>
-      </div>
-    </div>
-
     <div class="engage-col reveal">
       <p class="section-label">Partenaires & soutiens</p>
-      <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,3rem);">Construisons<br>ensemble<br><em style="color:var(--rouge);font-style:italic;">ce projet.</em></h2>
+      <h2 class="section-title" id="engager-h">Construisons<br>ensemble<br><em style="color:var(--rouge);font-style:italic;">ce projet.</em></h2>
       <p>Que vous soyez une entreprise souhaitant sensibiliser vos équipes au handicap visuel, une institution culturelle, ou simplement quelqu'un qui veut donner de son temps, <strong>votre place est ici.</strong></p>
       <p>Nous bénéficions déjà du soutien du Département des Bouches-du-Rhône, de la Métropole Aix-Marseille-Provence, de la Mairie d'Aix-en-Provence, d'Harmonie Mutuelle, du Musée Granet, des Méjanes et de nombreux partenaires culturels.</p>
-      <div class="roles">
-        <span class="role-tag">🤝 Bénévole</span>
-        <span class="role-tag">💛 Donateur</span>
-        <span class="role-tag">🏢 Partenaire entreprise</span>
-        <span class="role-tag">🎭 Institution culturelle</span>
-        <span class="role-tag">🏫 Établissement scolaire</span>
-      </div>
-      <a href="#contact" class="btn-primary"><span>Nous contacter</span></a>
+
+      <!-- Logo partenaires -->
+      <img
+        src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771503699/Screenshot_2026-02-19_13.20.01_h4xts9.png"
+        alt="Liste des partenaires d'Aix en Vue : Ville d'Aix, Département 13, Harmonie Mutuelle, Musée Granet, Théâtre du Jeu de Paume"
+        class="partenaires-img"
+      >
+
+      <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F" class="btn-primary"><span>Adhérer</span></a>
     </div>
   </div>
 </section>
 
+<!-- SECTION 5 : REJOINDRE L'AVENTURE -->
 <section class="cta-section" id="contact" aria-labelledby="cta-h">
   <div class="cta-ghost" aria-hidden="true">Vue</div>
   <div class="cta-body">
@@ -820,44 +916,42 @@ footer {
     <h2 class="section-title reveal" id="cta-h">2026<br>en vue !</h2>
     <p class="cta-sub reveal">Bénévole, adhérent, donateur ou partenaire — chaque engagement compte. Contactez-nous et faisons connaissance.</p>
     <div class="cta-btns reveal">
-      <a href="mailto:info@aixenvue.fr" class="btn-white">Devenir bénévole</a>
+      <a href="mailto:info@aixenvue.fr" class="btn-white">info@aixenvue.fr</a>
       <a href="tel:+33744999438" class="btn-ghost-w">07 44 99 94 38</a>
+    </div>
+    <!-- Réseaux sociaux -->
+    <div class="cta-socials reveal">
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/aix.en.vue/" target="_blank" rel="noopener" class="cta-social-btn" aria-label="Facebook Aix en Vue">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://fr.linkedin.com/in/aix-en-vue-aev-9a4986383" target="_blank" rel="noopener" class="cta-social-btn" aria-label="LinkedIn Aix en Vue">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/aixenvue/" target="_blank" rel="noopener" class="cta-social-btn" aria-label="Instagram Aix en Vue">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand">
-        <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
-        Aix en <span>Vue</span>
-      </div>
-      <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles du pays d'Aix depuis 2024.</p>
-      <div class="footer-socials">
-        <a href="https://www.facebook.com/aix.en.vue" class="social-btn" aria-label="Facebook">f</a>
-        <a href="https://www.instagram.com/aix_en_vue" class="social-btn" aria-label="Instagram">in</a>
-      </div>
+  <div style="max-width:1300px; margin:0 auto;">
+    <div class="footer-brand">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+      <span class="logo-aix" style="font-size:2rem;"><span class="red-letter">A</span>ix</span>
+      <span class="logo-en" style="font-size:1.5rem;"><span class="red-letter">E</span>n</span>
+      <span class="logo-vue" style="font-size:1.1rem;"><span class="red-letter">V</span>ue</span>
     </div>
-    <div>
-      <p class="footer-col-title">Navigation</p>
-      <ul class="footer-links">
-        <li><a href="#manifeste">L'association</a></li>
-        <li><a href="#activites">Activités</a></li>
-        <li><a href="#galerie">Atelier peinture</a></li>
-        <li><a href="#engager">Partenariats</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <p class="footer-col-title">Contact</p>
-      <ul class="footer-links">
-        <li><a href="mailto:info@aixenvue.fr">info@aixenvue.fr</a></li>
-        <li><a href="tel:+33744999438">07 44 99 94 38</a></li>
-        <li><a href="https://www.aixenvue.fr" target="_blank">www.aixenvue.fr</a></li>
-        <li>Aix-en-Provence (13)</li>
-      </ul>
-    </div>
+    <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles du pays d'Aix depuis 2024.</p>
   </div>
   <div class="footer-bottom">
     <span>© 2025 Aix en Vue — Association loi 1901</span>
@@ -883,24 +977,24 @@ const io = new IntersectionObserver(e => e.forEach(x => {
 }), {threshold:.1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// STAT BOXES stagger
-const statBoxes = document.querySelectorAll('.stat-box');
-const sbio = new IntersectionObserver(entries => {
+// HERO STAT BOXES stagger
+const heroStatBoxes = document.querySelectorAll('.hero-stat-box');
+const hsbio = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      statBoxes.forEach((box, i) => {
+      heroStatBoxes.forEach((box, i) => {
         setTimeout(() => box.classList.add('visible'), i * 130);
       });
-      sbio.disconnect();
+      hsbio.disconnect();
     }
   });
 }, {threshold: .1});
-if(statBoxes[0]) sbio.observe(statBoxes[0].closest('.stats-col') || statBoxes[0]);
+if(heroStatBoxes[0]) hsbio.observe(heroStatBoxes[0].closest('.hero-stats') || heroStatBoxes[0]);
 
-// COUNTERS (Correctif mobile inclus)
+// COUNTERS pour les stats hero
 const cio = new IntersectionObserver(entries => {
   if(entries[0].isIntersecting) {
-    document.querySelectorAll('.stat-number').forEach(el => {
+    document.querySelectorAll('.hero-stat-number').forEach(el => {
       const target = parseInt(el.dataset.target);
       const prefix = el.dataset.prefix || '';
       let c = 0;
@@ -914,20 +1008,53 @@ const cio = new IntersectionObserver(entries => {
     cio.disconnect();
   }
 }, {threshold: .1});
-const statsSection = document.querySelector('.engage-section');
-if(statsSection) cio.observe(statsSection);
+const heroStatsSection = document.querySelector('.hero-stats');
+if(heroStatsSection) cio.observe(heroStatsSection);
 
-// HAMBURGER
-const hb = document.querySelector('.hamburger'), nl = document.querySelector('.nav-links');
+// HAMBURGER — menu persistant sur desktop, géré proprement
+const hb = document.querySelector('.hamburger');
+const nl = document.querySelector('.nav-links');
+
+function closeMenu() {
+  nl.removeAttribute('style');
+  nl.classList.remove('mobile-open');
+  hb.setAttribute('aria-expanded', 'false');
+}
+
 hb.addEventListener('click', () => {
-  const o = nl.style.display === 'flex';
-  Object.assign(nl.style, {
-    display: o ? 'none' : 'flex',
-    position: 'absolute', top: '68px', left: '0', right: '0',
-    flexDirection: 'column', background: 'var(--papier)',
-    padding: '1.5rem 2rem', borderBottom: '1px solid rgba(17,17,17,.08)', zIndex: '400'
+  const isOpen = nl.classList.contains('mobile-open');
+  if(isOpen) {
+    closeMenu();
+  } else {
+    nl.classList.add('mobile-open');
+    Object.assign(nl.style, {
+      display: 'flex',
+      position: 'fixed',
+      top: '68px', left: '0', right: '0',
+      flexDirection: 'column',
+      background: 'var(--papier)',
+      padding: '1.5rem 2rem',
+      borderBottom: '2px solid var(--rouge)',
+      zIndex: '400',
+      gap: '1.2rem'
+    });
+    hb.setAttribute('aria-expanded', 'true');
+  }
+});
+
+// Fermer le menu mobile au clic sur un lien
+nl.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    if(window.innerWidth < 768) closeMenu();
   });
-  hb.setAttribute('aria-expanded', String(!o));
+});
+
+// Sur redimensionnement, s'assurer que le menu reste visible sur desktop
+window.addEventListener('resize', () => {
+  if(window.innerWidth >= 768) {
+    nl.removeAttribute('style');
+    nl.classList.remove('mobile-open');
+  }
 });
 
 // NAV shadow
@@ -938,37 +1065,36 @@ window.addEventListener('scroll', () => {
 // SMOOTH SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if(href === '#') return;
     e.preventDefault();
-    const t = document.querySelector(a.getAttribute('href'));
-    if(t) { t.scrollIntoView({behavior: 'smooth'}); nl.style.display = 'none'; }
+    const t = document.querySelector(href);
+    if(t) {
+      t.scrollIntoView({behavior: 'smooth'});
+      if(window.innerWidth < 768) closeMenu();
+    }
   });
 });
 
-/* ===== AJOUT PWA : LOGIQUE JS (Version Corrigée pour GitHub Pages) ===== */
+/* PWA */
 let deferredPrompt;
 const pwaBanner = document.getElementById('pwa-install-banner');
 const installBtn = document.getElementById('pwa-install-btn');
 const closeBtn = document.getElementById('pwa-close');
-
-// --- C'EST ICI QUE TU PLACES LE CALCUL DU CHEMIN ---
-// Cela permet de trouver /site-aev/ automatiquement
 const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
 
-// 1. Enregistrement Service Worker avec le bon chemin
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register(currentPath + 'sw.js')
-    .then(() => console.log("Service Worker enregistré avec succès au scope:", currentPath))
-    .catch(err => console.log('Échec enregistrement SW:', err));
+    .then(() => console.log("Service Worker enregistré"))
+    .catch(err => console.log('Échec SW:', err));
 }
 
-// 2. Détection de l'événement PWA (ne fonctionne que sur Chrome/Android)
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  pwaBanner.style.display = 'flex'; // Affiche ta bannière
+  pwaBanner.style.display = 'flex';
 });
 
-// 3. Click sur Installer
 if(installBtn) {
   installBtn.addEventListener('click', async () => {
     if (deferredPrompt) {
@@ -979,12 +1105,8 @@ if(installBtn) {
     }
   });
 }
-
-// 4. Click sur Fermer
 if(closeBtn) {
-  closeBtn.addEventListener('click', () => {
-    pwaBanner.style.display = 'none';
-  });
+  closeBtn.addEventListener('click', () => { pwaBanner.style.display = 'none'; });
 }
 </script>
 </body>
