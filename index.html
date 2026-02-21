@@ -508,6 +508,111 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
   clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
 }
 
+/* ===== DESKTOP FLOATING CTA (bottom-right, fixed) ===== */
+.floating-cta {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9000;
+  flex-direction: column;
+  gap: .75rem;
+  align-items: flex-end;
+  display: none;
+}
+.float-btn {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding: .8rem 1.4rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: .76rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  clip-path: polygon(0 0,100% 0,96% 100%,4% 100%);
+  transition: transform .22s cubic-bezier(.4,0,.2,1), box-shadow .22s, filter .22s;
+  white-space: nowrap;
+  box-shadow: 0 6px 24px rgba(0,0,0,.28);
+}
+.float-btn svg {
+  width: 16px; height: 16px;
+  stroke: white; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.float-btn:hover {
+  transform: translateX(-6px);
+  filter: brightness(1.12);
+  box-shadow: 0 12px 36px rgba(0,0,0,.35);
+}
+.float-btn--donate { background: var(--rouge); }
+.float-btn--join   { background: var(--bleu); }
+.float-btn--call   { background: #2a2a2a; }
+
+/* ===== MOBILE BOTTOM NAVIGATION BAR ===== */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 9000;
+  background: var(--noir);
+  border-top: 3px solid var(--rouge);
+  height: 64px;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+}
+.mobile-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  text-decoration: none;
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: filter .18s;
+  padding: .4rem .5rem;
+  position: relative;
+  overflow: hidden;
+}
+.mobile-nav-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: rgba(255,255,255,.35);
+  transform: scaleX(0);
+  transition: transform .2s;
+}
+.mobile-nav-btn:active::before { transform: scaleX(1); }
+.mobile-nav-btn svg {
+  width: 20px; height: 20px;
+  stroke: white; fill: none;
+  stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.mobile-nav-btn--donate { background: var(--rouge); }
+.mobile-nav-btn--join   { background: var(--bleu); }
+.mobile-nav-btn--call   { background: #1c1c1c; }
+.mobile-nav-btn:active  { filter: brightness(1.3); }
+
+/* ===== RESPONSIVE OVERRIDES ===== */
+@media(min-width: 769px) {
+  .floating-cta { display: flex; }
+  .mobile-bottom-nav { display: none !important; }
+}
+@media(max-width: 768px) {
+  .floating-cta { display: none !important; }
+  .mobile-bottom-nav { display: grid; }
+  footer { padding-bottom: calc(64px + 2rem) !important; }
+  .pwa-banner { bottom: calc(64px + 16px) !important; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:1050px){
   .hero { grid-template-columns:1fr; padding:7rem 2rem 4rem; text-align:center; }
@@ -765,18 +870,18 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
       <p>Que vous soyez une entreprise souhaitant sensibiliser vos équipes au handicap visuel, une institution culturelle, ou simplement quelqu'un qui veut donner de son temps, <strong>votre place est ici.</strong></p>
       <p>Nous bénéficions déjà du soutien du Département des Bouches-du-Rhône, de la Métropole Aix-Marseille-Provence, de la Mairie d'Aix-en-Provence, d'Harmonie Mutuelle, du Musée Granet, des Méjanes et de nombreux partenaires culturels.</p>
 
-            <img
+      <img
         src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771505724/Nos_partenaires_os9edl.png"
         alt="Liste des partenaires d'Aix en Vue : Ville d'Aix, Département 13, Harmonie Mutuelle, Musée Granet, Théâtre du Jeu de Paume"
         class="partenaires-img"
       >
 
-            <div class="engage-cta-center">
+      <div class="engage-cta-center">
         <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F" 
-   class="btn-primary" 
-   onclick="return gtag_report_conversion('mailto:info@aixenvue.fr?subject=demande%20d\'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l\'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m\'envoyer%20un%20bulletin%20d\'adh%C3%A9sion%20%3F');">
-   <span>Adhérer</span>
-</a>
+           class="btn-primary" 
+           onclick="return gtag_report_conversion('mailto:info@aixenvue.fr?subject=demande%20d\'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l\'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m\'envoyer%20un%20bulletin%20d\'adh%C3%A9sion%20%3F');">
+           <span>Adhérer</span>
+        </a>
       </div>
     </div>
   </div>
@@ -821,6 +926,58 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
     <span>Pour et avec les déficients visuels</span>
   </div>
 </footer>
+
+<!-- ===== DESKTOP: FLOATING CTA (bottom-right, fixed) ===== -->
+<div class="floating-cta" role="complementary" aria-label="Actions rapides">
+  <a href="https://www.helloasso.com/associations/aix-en-vue/formulaires/2"
+     target="_blank" rel="noopener"
+     class="float-btn float-btn--donate"
+     onclick="return gtag_report_conversion('https://www.helloasso.com/associations/aix-en-vue/formulaires/2');"
+     aria-label="Faire un don à Aix en Vue">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <span>Donner</span>
+  </a>
+  <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F"
+     class="float-btn float-btn--join"
+     onclick="return gtag_report_conversion('mailto:info@aixenvue.fr?subject=demande%20d%27adh%C3%A9sion');"
+     aria-label="Adhérer à Aix en Vue">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span>Adhérer</span>
+  </a>
+  <a href="tel:+33744999438"
+     class="float-btn float-btn--call"
+     onclick="return gtag_report_conversion('tel:+33744999438');"
+     aria-label="Appeler Aix en Vue">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.56 3.44 2 2 0 0 1 3.53 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Appeler</span>
+  </a>
+</div>
+
+<!-- ===== MOBILE: BOTTOM NAVIGATION BAR ===== -->
+<nav class="mobile-bottom-nav" role="navigation" aria-label="Actions rapides">
+  <a href="https://www.helloasso.com/associations/aix-en-vue/formulaires/2"
+     target="_blank" rel="noopener"
+     class="mobile-nav-btn mobile-nav-btn--donate"
+     onclick="return gtag_report_conversion('https://www.helloasso.com/associations/aix-en-vue/formulaires/2');"
+     aria-label="Faire un don">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <span>Donner</span>
+  </a>
+  <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F"
+     class="mobile-nav-btn mobile-nav-btn--join"
+     onclick="return gtag_report_conversion('mailto:info@aixenvue.fr?subject=demande%20d%27adh%C3%A9sion');"
+     aria-label="Adhérer">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span>Adhérer</span>
+  </a>
+  <a href="tel:+33744999438"
+     class="mobile-nav-btn mobile-nav-btn--call"
+     onclick="return gtag_report_conversion('tel:+33744999438');"
+     aria-label="Appeler">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.56 3.44 2 2 0 0 1 3.53 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Appeler</span>
+  </a>
+</nav>
 
 <div id="pwa-install-banner" class="pwa-banner" role="alert">
   <p style="font-weight:700; margin:0;">Ajouter <strong>Aix en Vue</strong> sur votre écran d'accueil pour un accès simplifié ?</p>
