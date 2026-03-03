@@ -526,6 +526,97 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
   font-family:'Manrope',sans-serif; font-weight:700; text-transform:uppercase; font-size:0.8rem;
   clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
 }
+  /* ===== MUSIC PLAYER ===== */
+.music-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 9100;
+  width: 52px;
+  height: 52px;
+  background: var(--noir);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
+  box-shadow: 0 6px 24px rgba(0,0,0,.35);
+  transition: background .25s, transform .22s;
+  outline: none;
+  padding: 0;
+}
+.music-btn:hover { background: var(--rouge); transform: translateY(-2px); }
+.music-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+.music-btn .icon-play  { display: block; }
+.music-btn .icon-pause { display: none; }
+.music-btn.playing .icon-play  { display: none; }
+.music-btn.playing .icon-pause { display: block; }
+.music-btn::after {
+  content: 'Musique';
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--noir);
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .4rem .8rem;
+  white-space: nowrap;
+  clip-path: polygon(0 0,100% 0,96% 100%,4% 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.music-btn:hover::after { opacity: 1; }
+.music-waves {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+}
+.music-btn.playing .music-waves { display: block; }
+.music-waves span {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--rouge);
+  clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
+  animation: musicPulse 2s ease-out infinite;
+  opacity: 0;
+}
+.music-waves span:nth-child(2) { animation-delay: .65s; }
+.music-waves span:nth-child(3) { animation-delay: 1.3s; }
+@keyframes musicPulse {
+  0%   { transform: scale(1);   opacity: .7; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+@media(max-width: 768px) {
+  .music-btn {
+    bottom: calc(64px + 1rem);
+    left: 1rem;
+    width: 46px;
+    height: 46px;
+  }
+}
+  <!-- ===== MUSIC PLAYER ===== -->
+<audio id="ambient-audio" loop preload="auto">
+  <source src="Chanson_aix_en_vue_KLICKAUD.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" id="music-toggle" aria-label="Activer/désactiver la musique d'ambiance">
+  <div class="music-waves"><span></span><span></span><span></span></div>
+  <svg class="icon-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="5 3 19 12 5 21 5 3" fill="white"/>
+  </svg>
+  <svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+    <line x1="8" y1="5" x2="8" y2="19"/>
+    <line x1="16" y1="5" x2="16" y2="19"/>
+  </svg>
+</button>
 
 /* ===== DESKTOP FLOATING CTA (bottom-right, fixed) ===== */
 .floating-cta {
@@ -1136,6 +1227,39 @@ if(installBtn) {
 if(closeBtn) {
   closeBtn.addEventListener('click', () => { pwaBanner.style.display = 'none'; });
 }
+  // ===== AMBIENT MUSIC =====
+(function() {
+  const audio = document.getElementById('ambient-audio');
+  const btn   = document.getElementById('music-toggle');
+  if (!audio || !btn) return;
+
+  audio.volume = 0.35;
+
+  function startPlaying() {
+    btn.classList.add('playing');
+    btn.setAttribute('aria-label', "Désactiver la musique d'ambiance");
+  }
+
+  // Tente l'autoplay, sinon attend le premier clic utilisateur
+  audio.play().then(startPlaying).catch(() => {
+    document.addEventListener('click', function onFirst() {
+      audio.play().then(startPlaying);
+      document.removeEventListener('click', onFirst);
+    }, { once: true });
+  });
+
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (audio.paused) {
+      audio.play();
+      startPlaying();
+    } else {
+      audio.pause();
+      btn.classList.remove('playing');
+      btn.setAttribute('aria-label', "Activer la musique d'ambiance");
+    }
+  });
+})();
 </script>
 </body>
 </html>
