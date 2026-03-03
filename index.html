@@ -526,7 +526,8 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
   font-family:'Manrope',sans-serif; font-weight:700; text-transform:uppercase; font-size:0.8rem;
   clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
 }
-  /* ===== MUSIC PLAYER ===== */
+
+/* ===== MUSIC PLAYER ===== */
 .music-btn {
   position: fixed;
   bottom: 2rem;
@@ -535,38 +536,43 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
   width: 52px;
   height: 52px;
   background: var(--noir);
-  color: white;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
-  box-shadow: 0 6px 24px rgba(0,0,0,.35);
-  transition: background .25s, transform .22s;
+  box-shadow: 0 6px 24px rgba(0,0,0,.4);
+  transition: background .25s, transform .22s, box-shadow .22s;
   outline: none;
   padding: 0;
 }
-.music-btn:hover { background: var(--rouge); transform: translateY(-2px); }
-.music-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+.music-btn:hover {
+  background: var(--rouge);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(216,0,0,.4);
+}
+.music-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 .music-btn .icon-play  { display: block; }
 .music-btn .icon-pause { display: none; }
 .music-btn.playing .icon-play  { display: none; }
 .music-btn.playing .icon-pause { display: block; }
+
+/* Tooltip */
 .music-btn::after {
   content: 'Musique';
   position: absolute;
-  left: calc(100% + 10px);
+  left: calc(100% + 12px);
   top: 50%;
   transform: translateY(-50%);
   background: var(--noir);
   color: white;
   font-family: 'Manrope', sans-serif;
-  font-size: .7rem;
+  font-size: .68rem;
   font-weight: 800;
-  letter-spacing: .1em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  padding: .4rem .8rem;
+  padding: .45rem .9rem;
   white-space: nowrap;
   clip-path: polygon(0 0,100% 0,96% 100%,4% 100%);
   opacity: 0;
@@ -574,6 +580,8 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
   transition: opacity .2s;
 }
 .music-btn:hover::after { opacity: 1; }
+
+/* Ondes animées quand en lecture */
 .music-waves {
   position: absolute;
   inset: 0;
@@ -592,31 +600,9 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
 .music-waves span:nth-child(2) { animation-delay: .65s; }
 .music-waves span:nth-child(3) { animation-delay: 1.3s; }
 @keyframes musicPulse {
-  0%   { transform: scale(1);   opacity: .7; }
-  100% { transform: scale(1.7); opacity: 0; }
+  0%   { transform: scale(1);   opacity: .75; }
+  100% { transform: scale(1.85); opacity: 0; }
 }
-@media(max-width: 768px) {
-  .music-btn {
-    bottom: calc(64px + 1rem);
-    left: 1rem;
-    width: 46px;
-    height: 46px;
-  }
-}
-  <!-- ===== MUSIC PLAYER ===== -->
-<audio id="ambient-audio" loop preload="auto">
-  <source src="Chanson_aix_en_vue_KLICKAUD.mp3" type="audio/mpeg">
-</audio>
-<button class="music-btn" id="music-toggle" aria-label="Activer/désactiver la musique d'ambiance">
-  <div class="music-waves"><span></span><span></span><span></span></div>
-  <svg class="icon-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="5 3 19 12 5 21 5 3" fill="white"/>
-  </svg>
-  <svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
-    <line x1="8" y1="5" x2="8" y2="19"/>
-    <line x1="16" y1="5" x2="16" y2="19"/>
-  </svg>
-</button>
 
 /* ===== DESKTOP FLOATING CTA (bottom-right, fixed) ===== */
 .floating-cta {
@@ -729,6 +715,14 @@ nav.mobile-bottom-nav::after { display: none !important; }
   nav.mobile-bottom-nav { display: grid !important; }
   footer { padding-bottom: calc(64px + 2rem) !important; }
   .pwa-banner { bottom: calc(64px + 16px) !important; }
+  /* Music btn above mobile nav */
+  .music-btn {
+    bottom: calc(64px + 1rem);
+    left: 1rem;
+    width: 46px;
+    height: 46px;
+  }
+  .music-btn::after { display: none; }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1050,6 +1044,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<!-- ===== MUSIC PLAYER ===== -->
+<audio id="ambient-audio" loop preload="auto">
+  <source src="Chanson_aix_en_vue_KLICKAUD.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" id="music-toggle" aria-label="Activer/désactiver la musique d'ambiance" title="Musique d'ambiance">
+  <div class="music-waves"><span></span><span></span><span></span></div>
+  <!-- Icône Play -->
+  <svg class="icon-play" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="6 3 20 12 6 21 6 3" fill="white"/>
+  </svg>
+  <!-- Icône Pause -->
+  <svg class="icon-pause" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+    <line x1="8" y1="5" x2="8" y2="19"/>
+    <line x1="16" y1="5" x2="16" y2="19"/>
+  </svg>
+</button>
+
 <!-- ===== DESKTOP: FLOATING CTA (bottom-right, fixed) ===== -->
 <div class="floating-cta" role="complementary" aria-label="Actions rapides">
   <a href="https://www.helloasso.com/associations/aix-en-vue/formulaires/2"
@@ -1111,13 +1122,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
+// ===== PAGE LOAD =====
 window.addEventListener('load', () => setTimeout(() => document.body.classList.add('loaded'), 80));
 
+// ===== SCROLL REVEAL =====
 const io = new IntersectionObserver(e => e.forEach(x => {
   if(x.isIntersecting) x.target.classList.add('visible');
 }), {threshold:.1, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+// ===== STATS BOX REVEAL =====
 const heroStatBoxes = document.querySelectorAll('.hero-stat-box');
 const hsbio = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -1129,6 +1143,7 @@ const hsbio = new IntersectionObserver(entries => {
 }, {threshold: .1});
 if(heroStatBoxes[0]) hsbio.observe(heroStatBoxes[0].closest('.hero-stats') || heroStatBoxes[0]);
 
+// ===== COUNTER ANIMATION =====
 const cio = new IntersectionObserver(entries => {
   if(entries[0].isIntersecting) {
     document.querySelectorAll('.hero-stat-number').forEach(el => {
@@ -1148,6 +1163,7 @@ const cio = new IntersectionObserver(entries => {
 const heroStatsSection = document.querySelector('.hero-stats');
 if(heroStatsSection) cio.observe(heroStatsSection);
 
+// ===== HAMBURGER MENU =====
 const hb = document.querySelector('.hamburger');
 const nl = document.querySelector('.nav-links');
 
@@ -1182,10 +1198,12 @@ window.addEventListener('resize', () => {
   if(window.innerWidth >= 768) { nl.removeAttribute('style'); nl.classList.remove('mobile-open'); }
 });
 
+// ===== NAV SHADOW =====
 window.addEventListener('scroll', () => {
   document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,.07)' : 'none';
 });
 
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const href = a.getAttribute('href');
@@ -1196,6 +1214,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+// ===== PWA =====
 let deferredPrompt;
 const pwaBanner = document.getElementById('pwa-install-banner');
 const installBtn = document.getElementById('pwa-install-btn');
@@ -1227,7 +1246,8 @@ if(installBtn) {
 if(closeBtn) {
   closeBtn.addEventListener('click', () => { pwaBanner.style.display = 'none'; });
 }
-  // ===== AMBIENT MUSIC =====
+
+// ===== AMBIENT MUSIC =====
 (function() {
   const audio = document.getElementById('ambient-audio');
   const btn   = document.getElementById('music-toggle');
@@ -1235,28 +1255,36 @@ if(closeBtn) {
 
   audio.volume = 0.35;
 
-  function startPlaying() {
+  function setPlaying() {
     btn.classList.add('playing');
     btn.setAttribute('aria-label', "Désactiver la musique d'ambiance");
   }
 
-  // Tente l'autoplay, sinon attend le premier clic utilisateur
-  audio.play().then(startPlaying).catch(() => {
-    document.addEventListener('click', function onFirst() {
-      audio.play().then(startPlaying);
-      document.removeEventListener('click', onFirst);
-    }, { once: true });
+  function setPaused() {
+    btn.classList.remove('playing');
+    btn.setAttribute('aria-label', "Activer la musique d'ambiance");
+  }
+
+  // Tentative autoplay au chargement
+  audio.play().then(setPlaying).catch(() => {
+    // Autoplay bloqué — on attend le premier clic utilisateur n'importe où
+    const onFirstInteraction = () => {
+      audio.play().then(setPlaying).catch(() => {});
+      document.removeEventListener('click', onFirstInteraction);
+      document.removeEventListener('touchstart', onFirstInteraction);
+    };
+    document.addEventListener('click', onFirstInteraction, { once: true });
+    document.addEventListener('touchstart', onFirstInteraction, { once: true });
   });
 
+  // Toggle au clic sur le bouton
   btn.addEventListener('click', function(e) {
     e.stopPropagation();
     if (audio.paused) {
-      audio.play();
-      startPlaying();
+      audio.play().then(setPlaying).catch(() => {});
     } else {
       audio.pause();
-      btn.classList.remove('playing');
-      btn.setAttribute('aria-label', "Activer la musique d'ambiance");
+      setPaused();
     }
   });
 })();
