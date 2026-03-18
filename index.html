@@ -1265,17 +1265,7 @@ if(closeBtn) {
     btn.setAttribute('aria-label', "Activer la musique d'ambiance");
   }
 
-  // Tentative autoplay au chargement
-  audio.play().then(setPlaying).catch(() => {
-    // Autoplay bloqué — on attend le premier clic utilisateur n'importe où
-    const onFirstInteraction = () => {
-      audio.play().then(setPlaying).catch(() => {});
-      document.removeEventListener('click', onFirstInteraction);
-      document.removeEventListener('touchstart', onFirstInteraction);
-    };
-    document.addEventListener('click', onFirstInteraction, { once: true });
-    document.addEventListener('touchstart', onFirstInteraction, { once: true });
-  });
+// Autoplay désactivé — l'utilisateur démarre manuellement
 
   // Toggle au clic sur le bouton
   btn.addEventListener('click', function(e) {
