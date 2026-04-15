@@ -183,11 +183,9 @@ nav::after {
   position:relative;
   clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);
   overflow:hidden;
-  /* Placeholder visible immédiatement */
   background: #1c1c1c;
 }
 
-/* Skeleton shimmer affiché tant que la vidéo n'est pas prête */
 .hero-photo-frame::before {
   content:'';
   position:absolute;
@@ -205,7 +203,6 @@ nav::after {
   z-index: 1;
   transition: opacity 0.7s ease;
 }
-/* Icône œil centré dans le placeholder */
 .hero-photo-frame::after {
   content: '';
   position: absolute;
@@ -219,7 +216,6 @@ nav::after {
   z-index: 2;
   transition: opacity 0.5s ease;
 }
-/* Quand la vidéo est prête : on cache le shimmer et l'icône */
 .hero-photo-frame.video-loaded::before,
 .hero-photo-frame.video-loaded::after {
   opacity: 0;
@@ -231,7 +227,6 @@ nav::after {
   100% { background-position: -200% 0; }
 }
 
-/* La vidéo démarre invisible, fade-in quand prête */
 .hero-photo-frame video {
   position: relative;
   z-index: 3;
@@ -254,7 +249,6 @@ nav::after {
   font-family:'Playfair Display',serif; font-size:1.1rem; font-style:italic; font-weight: 700;
   box-shadow:0 8px 30px rgba(216,0,0,.3);
   max-width:220px; line-height:1.4;
-  /* Badge visible immédiatement, indépendant de la vidéo */
   z-index: 4;
 }
 
@@ -461,7 +455,6 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
   color: var(--gris); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;
 }
 
-/* Deux axes */
 .axes-grid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 1.5rem; margin-top: 2rem;
@@ -487,7 +480,6 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
   font-size:.95rem; line-height:1.65; color:var(--gris); font-weight:500; padding-left:.6rem;
 }
 
-/* Vidéo projet photo — format 16/9 */
 .projet-photo-video-wrap {
   position: relative; display: flex; flex-direction: column;
 }
@@ -514,14 +506,12 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 .engage-col p { font-size:1.05rem; line-height:1.85; color:var(--gris); margin-bottom:1.4rem; }
 .engage-col strong { color:var(--noir); font-weight: 800; }
 
-/* IMAGE PARTENAIRES CENTRÉE */
 .partenaires-img {
   width:100%; max-width:700px;
   display:block;
   margin: 2rem auto;
 }
 
-/* BOUTON ADHÉRER CENTRÉ */
 .engage-cta-center {
   text-align: center;
   margin-top: 0.5rem;
@@ -540,7 +530,7 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
   background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='rgba(255,255,255,.8)' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
 }
 .cta-section .section-title { color:white; font-size:clamp(2.5rem,7vw,6rem); margin-bottom:1rem; }
-.cta-sub { font-size:1.2rem; color:rgba(255,255,255,.9); font-weight: 500; max-width:520px; margin:0 auto 3.5rem; line-height:1.75; }
+.cta-sub { font-size:1.2rem; color:rgba(255,255,255,.9); font-weight: 500; max-width:520px; margin:0 auto 2.5rem; line-height:1.75; }
 .cta-btns { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; align-items:center; }
 .btn-white {
   background:white; color:var(--rouge); padding:1.2rem 2.8rem;
@@ -562,6 +552,32 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 }
 .cta-social-btn:hover { border-color:white; background:rgba(255,255,255,.25); }
 .cta-social-btn svg { width:20px; height:20px; fill:white; }
+
+/* ===== NEWSLETTER ===== */
+.nl-form {
+  display: flex; max-width: 480px; margin: 0 auto 1rem; position: relative;
+}
+.nl-input {
+  flex: 1; padding: 1.1rem 1.5rem; border: 2px solid rgba(255,255,255,.6);
+  background: rgba(255,255,255,.1); color: white; font-family: 'Manrope', sans-serif;
+  font-size: .95rem; outline: none; transition: border-color .3s, background .3s;
+  clip-path: polygon(0 0,100% 0,98% 100%,2% 100%);
+}
+.nl-input::placeholder { color: rgba(255,255,255,.7); }
+.nl-input:focus { border-color: white; background: rgba(255,255,255,.2); }
+.nl-btn {
+  background: white; color: var(--rouge); border: none; padding: 0 1.6rem;
+  font-family: 'Manrope', sans-serif; font-weight: 800; text-transform: uppercase;
+  font-size: .85rem; cursor: pointer; clip-path: polygon(0 0,100% 0,92% 100%,8% 100%);
+  margin-left: -15px; z-index: 2; transition: transform .25s, background .3s;
+}
+.nl-btn:hover:not(:disabled) { background: var(--noir); color: white; transform: translateX(4px); }
+.nl-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+.nl-msg {
+  display: block; font-size: .85rem; font-weight: 600; margin-bottom: 2.5rem; min-height: 20px;
+}
+.nl-msg.success { color: #a8e6cf; }
+.nl-msg.error { color: #ffb3b3; }
 
 /* ===== FOOTER ===== */
 footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; position:relative; overflow:hidden; }
@@ -627,7 +643,6 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
 .music-btn.playing .icon-play  { display: none; }
 .music-btn.playing .icon-pause { display: block; }
 
-/* Tooltip */
 .music-btn::after {
   content: 'Musique';
   position: absolute;
@@ -650,7 +665,6 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
 }
 .music-btn:hover::after { opacity: 1; }
 
-/* Ondes animées quand en lecture */
 .music-waves {
   position: absolute;
   inset: 0;
@@ -784,7 +798,6 @@ nav.mobile-bottom-nav::after { display: none !important; }
   nav.mobile-bottom-nav { display: grid !important; }
   footer { padding-bottom: calc(64px + 2rem) !important; }
   .pwa-banner { bottom: calc(64px + 16px) !important; }
-  /* Music btn above mobile nav */
   .music-btn {
     bottom: calc(64px + 1rem);
     left: 1rem;
@@ -1084,7 +1097,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cta-body">
     <p class="section-label reveal">Rejoignez l'aventure</p>
     <h2 class="section-title reveal" id="cta-h">2026<br>en vue !</h2>
-    <p class="cta-sub reveal">Bénévole, adhérent, donateur ou partenaire — chaque engagement compte. Contactez-nous et faisons connaissance.</p>
+    <p class="cta-sub reveal">Bénévole, adhérent, donateur... chaque engagement compte. Vous pouvez aussi rester informé de nos actions en vous abonnant à la newsletter.</p>
+    
+    <form id="nl-form" class="nl-form reveal" aria-label="Inscription à la newsletter">
+      <input type="email" id="nl-email" class="nl-input" placeholder="Votre adresse e-mail..." required aria-required="true">
+      <button type="submit" id="nl-submit" class="nl-btn">S'inscrire</button>
+    </form>
+    <span id="nl-msg" class="nl-msg reveal"></span>
+
     <div class="cta-btns reveal">
       <a href="mailto:info@aixenvue.fr" class="btn-white" onclick="return gtag_report_conversion('mailto:info@aixenvue.fr');">info@aixenvue.fr</a>
       <a href="tel:+33744999438" class="btn-ghost-w" onclick="return gtag_report_conversion('tel:+33744999438');">07 44 99 94 38</a>
@@ -1193,26 +1213,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 window.addEventListener('load', () => setTimeout(() => document.body.classList.add('loaded'), 80));
 
 // ===== HERO VIDEO LAZY LOADING =====
-// Tous les éléments du hero s'affichent immédiatement.
-// La vidéo charge en arrière-plan et fade-in quand elle est prête.
 (function() {
   const video = document.getElementById('hero-video');
   const frame = document.getElementById('hero-frame');
   if (!video || !frame) return;
 
-  // Fallback : si déjà en cache / déjà prête (readyState >= HAVE_FUTURE_DATA)
   if (video.readyState >= 3) {
     frame.classList.add('video-loaded');
     return;
   }
 
-  // canplay = assez de données pour commencer la lecture sans interruption
   video.addEventListener('canplay', function() {
     frame.classList.add('video-loaded');
   }, { once: true });
 
-  // Fallback de sécurité : si canplay ne se déclenche jamais (ex: format non supporté),
-  // on affiche quand même après 8s pour ne pas laisser un trou indéfiniment.
   setTimeout(function() {
     frame.classList.add('video-loaded');
   }, 8000);
@@ -1368,6 +1382,53 @@ if(closeBtn) {
     }
   });
 })();
+
+// ===== NEWSLETTER SUBMISSION =====
+// ---> REMPLACER CETTE URL PAR CELLE GÉNÉRÉE PAR APPS SCRIPT <---
+const NEWSLETTER_APP_URL = 'https://script.google.com/macros/s/AKfycbzBRNAM5HU12IjflX15Ix6T8PoU1_Nm8v1e9fi3XLpsblpCLuf9NeNduHPDvPYo31bA/exec'; 
+
+const nlForm = document.getElementById('nl-form');
+const nlEmail = document.getElementById('nl-email');
+const nlSubmit = document.getElementById('nl-submit');
+const nlMsg = document.getElementById('nl-msg');
+
+if(nlForm) {
+  nlForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = nlEmail.value.trim();
+    if(!email) return;
+
+    // État de chargement
+    nlSubmit.disabled = true;
+    nlSubmit.textContent = 'Envoi...';
+    nlMsg.className = 'nl-msg';
+    nlMsg.textContent = '';
+
+    try {
+      const res = await fetch(NEWSLETTER_APP_URL, {
+        method: 'POST',
+        body: JSON.stringify({ email: email })
+      });
+      const data = await res.json();
+
+      if(data.status === 'ok') {
+        nlMsg.textContent = "Merci ! Votre inscription a bien été prise en compte.";
+        nlMsg.classList.add('success');
+        nlForm.reset();
+      } else {
+        throw new Error(data.message || 'Erreur serveur');
+      }
+    } catch(err) {
+      console.error(err);
+      nlMsg.textContent = "Une erreur est survenue. Veuillez réessayer ultérieurement.";
+      nlMsg.classList.add('error');
+    } finally {
+      // Retour à l'état initial
+      nlSubmit.disabled = false;
+      nlSubmit.textContent = "S'inscrire";
+    }
+  });
+}
 </script>
 </body>
 </html>
