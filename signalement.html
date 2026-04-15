@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signalement — Aix en Vue</title>
+<meta name="description" content="Signalez un problème de voirie, transport ou autre à l'association Aix en Vue.">
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --noir: #111111;
+  --papier: #F4F2EB;
+  --papier-fonce: #E8E4D9;
+  --rouge: #D80000;
+  --ocre: #C8860A;
+  --ocre-clair: #F0C060;
+  --bleu: #1A3A5C;
+  --vert: #5C7A5C;
+  --gris: #222222;
+  --creme: #FBF8F0;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--papier);
+  color: var(--noir);
+  font-family: 'Manrope', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9997; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
+}
+
+/* ===== NAV ===== */
+nav {
+  position:fixed; top:0; left:0; right:0;
+  z-index:500;
+  padding:1.2rem 3.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(244,242,235,.98);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  transition:box-shadow .3s;
+}
+nav::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.nav-logo {
+  font-family:'Playfair Display',serif;
+  font-weight:900;
+  color:var(--noir); text-decoration:none;
+  letter-spacing:-.02em;
+  display:flex; align-items:baseline; gap:.3rem;
+}
+.nav-logo img { height: 32px; width: auto; display: block; align-self: center; margin-right: .4rem; }
+.logo-aix { font-size:1.45rem; }
+.logo-aix .red-letter { color:var(--rouge); }
+.logo-en { font-size:1.1rem; }
+.logo-en .red-letter { color:var(--rouge); }
+.logo-vue { font-size:0.85rem; }
+.logo-vue .red-letter { color:var(--rouge); }
+.nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
+.nav-links a {
+  color:var(--noir); text-decoration:none;
+  font-size:.85rem; font-weight:800;
+  letter-spacing:.05em; text-transform:uppercase;
+  position:relative; padding-bottom:3px;
+}
+.nav-links a::after {
+  content:''; position:absolute; bottom:0; left:0;
+  width:0; height:3px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q25 1 50 3Q75 5 100 2' stroke='%23D80000' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  transition:width .35s cubic-bezier(.4,0,.2,1);
+}
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  background:var(--rouge); color:white!important;
+  padding:.65rem 1.5rem; font-weight:800!important;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  transition:background .2s, transform .2s;
+}
+.nav-cta:hover { background:var(--noir)!important; transform:translateY(-1px); }
+.nav-cta::after { display:none!important; }
+.hamburger {
+  display:none; flex-direction:column; gap:6px;
+  background:none; border:none; padding:.5rem; cursor:pointer;
+}
+.hamburger span { display:block; width:28px; height:3px; background:var(--noir); border-radius:2px; }
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  padding: 9rem 4rem 5rem;
+  background: var(--creme);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.page-header::before {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0; height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.header-eyebrow {
+  font-size:.8rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase;
+  color:var(--ocre); display:inline-flex; align-items:center; gap:.8rem; margin-bottom:1.5rem;
+  opacity:0; transform:translateY(18px); animation: fadeUp .8s ease .1s forwards;
+}
+.brush-dash {
+  display:inline-block; height:4px; width:38px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q13 1 26 3Q39 5 52 2' stroke='%23C8860A' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 900; letter-spacing: -.03em; line-height: 1.1;
+  color: var(--noir); margin-bottom: 1.4rem;
+  opacity:0; transform:translateY(24px); animation: fadeUp .9s ease .2s forwards;
+}
+.page-header h1 em { color: var(--rouge); font-style: italic; position: relative; }
+.page-header h1 em::after {
+  content:'';
+  position:absolute; bottom:-6px; left:-4px; right:-4px; height:12px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 14' preserveAspectRatio='none'%3E%3Cpath d='M4 8Q45 2 90 8Q135 14 176 5' stroke='%23D80000' stroke-width='4.5' fill='none' stroke-linecap='round' opacity='.5'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+  animation:brushReveal 1.1s ease 1s both;
+}
+@keyframes brushReveal { from{clip-path:inset(0 100% 0 0)} to{clip-path:inset(0 0 0 0)} }
+.page-header p {
+  font-size: 1.05rem; color: var(--gris); max-width: 540px; margin: 0 auto;
+  line-height: 1.75; font-weight: 500;
+  opacity:0; transform:translateY(16px); animation: fadeUp .8s ease .35s forwards;
+}
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+/* ===== FORM SECTION ===== */
+.form-section {
+  padding: 5rem 2rem 7rem;
+  max-width: 780px; margin: 0 auto;
+}
+
+/* Steps indicator */
+.steps-indicator {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin-bottom: 4rem;
+  opacity:0; animation: fadeUp .7s ease .5s forwards;
+}
+.step-item {
+  display: flex; flex-direction: column; align-items: center; gap: .5rem;
+  position: relative;
+}
+.step-num {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 900;
+  clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
+  transition: background .3s, color .3s;
+  background: var(--papier-fonce); color: #999;
+  border: 2px solid rgba(200,134,10,.2);
+}
+.step-item.active .step-num { background: var(--rouge); color: white; border-color: transparent; }
+.step-item.done .step-num { background: var(--noir); color: white; border-color: transparent; }
+.step-label {
+  font-size: .65rem; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; color: #aaa; white-space: nowrap;
+  transition: color .3s;
+}
+.step-item.active .step-label { color: var(--rouge); }
+.step-item.done .step-label { color: var(--noir); }
+.step-connector {
+  width: 60px; height: 3px; margin-bottom: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 4' preserveAspectRatio='none'%3E%3Cpath d='M0 2Q15 0 30 2Q45 4 60 1' stroke='%23ddd' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+  transition: background .3s;
+  flex-shrink: 0;
+}
+.step-connector.done {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 4' preserveAspectRatio='none'%3E%3Cpath d='M0 2Q15 0 30 2Q45 4 60 1' stroke='%23111' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+
+/* Form panels */
+.form-panel { display: none; }
+.form-panel.active { display: block; animation: panelIn .5s ease; }
+@keyframes panelIn { from { opacity:0; transform:translateX(18px); } to { opacity:1; transform:translateX(0); } }
+
+/* Form card */
+.form-card {
+  background: white;
+  border: 1px solid rgba(200,134,10,.12);
+  padding: 2.8rem 3rem;
+  position: relative;
+  box-shadow: 0 4px 30px rgba(0,0,0,.06);
+}
+.form-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: var(--rouge);
+  clip-path: url("data:...");
+}
+.form-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem; font-weight: 900; margin-bottom: .5rem;
+  color: var(--noir);
+}
+.form-card-subtitle {
+  font-size: .9rem; color: #888; font-weight: 500; margin-bottom: 2.2rem;
+  padding-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,.07);
+}
+
+/* Category chips */
+.cat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem;
+  margin-bottom: 2rem;
+}
+.cat-chip {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .6rem; padding: 1.2rem .8rem;
+  background: var(--creme); border: 2px solid transparent;
+  cursor: pointer; transition: all .22s;
+  clip-path: polygon(0 0,100% 0,97% 100%,3% 100%);
+  position: relative; overflow: hidden;
+  user-select: none;
+}
+.cat-chip:hover { border-color: rgba(216,0,0,.25); background: white; transform: translateY(-2px); }
+.cat-chip.selected { border-color: var(--rouge); background: white; }
+.cat-chip.selected::before {
+  content: '✓';
+  position: absolute; top: 6px; right: 8px;
+  font-size: .65rem; font-weight: 900; color: var(--rouge);
+}
+.cat-icon { font-size: 1.7rem; line-height: 1; }
+.cat-name {
+  font-size: .72rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--noir); text-align: center;
+  line-height: 1.3;
+}
+
+/* Field groups */
+.field-group { margin-bottom: 1.8rem; }
+.field-label {
+  display: block; font-size: .78rem; font-weight: 800;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--noir);
+  margin-bottom: .65rem;
+}
+.field-label span { color: var(--rouge); margin-left: 2px; }
+.field-label .optional {
+  font-weight: 500; text-transform: none; letter-spacing: 0;
+  font-size: .78rem; color: #aaa; margin-left: .4rem;
+}
+.field-input, .field-textarea, .field-select {
+  width: 100%; padding: 1rem 1.2rem;
+  background: var(--creme); border: 2px solid transparent;
+  font-family: 'Manrope', sans-serif; font-size: .95rem; font-weight: 500;
+  color: var(--noir); outline: none;
+  transition: border-color .25s, background .25s, box-shadow .25s;
+  clip-path: polygon(0 0,100% 0,99% 100%,1% 100%);
+}
+.field-input:focus, .field-textarea:focus, .field-select:focus {
+  border-color: var(--rouge); background: white;
+  box-shadow: 0 4px 20px rgba(216,0,0,.08);
+}
+.field-input::placeholder, .field-textarea::placeholder { color: #bbb; }
+.field-textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+
+/* Char counter */
+.field-footer { display: flex; justify-content: flex-end; margin-top: .4rem; }
+.char-count { font-size: .72rem; color: #bbb; font-weight: 600; transition: color .2s; }
+.char-count.warn { color: var(--ocre); }
+.char-count.over { color: var(--rouge); }
+
+/* Upload zone */
+.upload-zone {
+  border: 2.5px dashed rgba(200,134,10,.3);
+  background: var(--creme);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all .25s;
+  position: relative;
+  clip-path: polygon(0 0,100% 0,99% 100%,1% 100%);
+}
+.upload-zone:hover, .upload-zone.dragover {
+  border-color: var(--rouge); background: white;
+  box-shadow: 0 4px 20px rgba(216,0,0,.08);
+}
+.upload-zone input[type="file"] {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+}
+.upload-icon { font-size: 2.4rem; margin-bottom: .8rem; display: block; }
+.upload-label {
+  font-size: .9rem; font-weight: 700; color: var(--noir); margin-bottom: .3rem;
+}
+.upload-hint { font-size: .78rem; color: #aaa; font-weight: 500; }
+.upload-hint strong { color: var(--rouge); }
+.upload-preview {
+  margin-top: 1.2rem; display: none;
+  align-items: center; gap: .8rem;
+  background: white; padding: .8rem 1.2rem;
+  border: 1px solid rgba(200,134,10,.2);
+}
+.upload-preview.visible { display: flex; }
+.upload-preview-thumb {
+  width: 44px; height: 44px; object-fit: cover;
+  clip-path: polygon(0 0,100% 0,92% 100%,8% 100%);
+  flex-shrink: 0;
+}
+.upload-preview-icon {
+  width: 44px; height: 44px; background: var(--papier-fonce);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  clip-path: polygon(0 0,100% 0,92% 100%,8% 100%);
+  flex-shrink: 0;
+}
+.upload-preview-name { font-size: .82rem; font-weight: 700; color: var(--noir); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.upload-preview-size { font-size: .75rem; color: #aaa; }
+.upload-remove {
+  background: none; border: none; cursor: pointer;
+  color: #bbb; font-size: 1.2rem; padding: .2rem; transition: color .2s; flex-shrink: 0;
+}
+.upload-remove:hover { color: var(--rouge); }
+
+/* Location row */
+.location-row {
+  display: grid; grid-template-columns: 1fr auto; gap: .8rem; align-items: end;
+}
+.btn-locate {
+  background: var(--noir); color: white; border: none;
+  padding: 1rem 1.2rem; cursor: pointer; font-family: 'Manrope', sans-serif;
+  font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+  clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
+  display: flex; align-items: center; gap: .5rem; white-space: nowrap;
+  transition: background .22s, transform .22s;
+}
+.btn-locate:hover { background: var(--rouge); transform: translateY(-1px); }
+.btn-locate svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 2; flex-shrink: 0; }
+
+/* Privacy notice */
+.privacy-notice {
+  background: rgba(200,134,10,.08); border-left: 4px solid var(--ocre);
+  padding: 1rem 1.2rem; margin-bottom: 1.8rem;
+  display: flex; gap: .8rem; align-items: flex-start;
+}
+.privacy-icon { font-size: 1rem; flex-shrink: 0; margin-top: .1rem; }
+.privacy-text { font-size: .82rem; color: var(--gris); line-height: 1.6; font-weight: 500; }
+.privacy-text strong { color: var(--noir); }
+
+/* Buttons */
+.btn-primary {
+  background:var(--rouge); color:white;
+  padding:1.1rem 2.6rem;
+  font-family:'Manrope',sans-serif; font-weight:800;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase;
+  text-decoration:none; border:none; cursor:pointer;
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%);
+  display:inline-flex; align-items: center; gap: .7rem; position:relative; overflow:hidden;
+  transition:transform .25s, background .25s;
+}
+.btn-primary:hover { transform:translateY(-2px); background: #b80000; }
+.btn-primary:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+.btn-primary svg { width: 18px; height: 18px; stroke: white; fill: none; stroke-width: 2.5; flex-shrink: 0; }
+.btn-outline {
+  background:transparent; color:var(--noir);
+  padding:1.1rem 2rem; font-family:'Manrope',sans-serif; font-weight:800;
+  font-size:.9rem; letter-spacing:.05em; text-transform:uppercase;
+  text-decoration:none; display:inline-flex; align-items: center; gap: .6rem;
+  border: none; cursor: pointer; position:relative; transition:color .3s;
+}
+.btn-outline::before {
+  content:''; position:absolute; inset:0; border:2.5px solid var(--noir);
+  clip-path:polygon(0 0,100% 0,97% 100%,3% 100%); transition:border-color .3s;
+}
+.btn-outline:hover { color:var(--rouge); }
+.btn-outline:hover::before { border-color:var(--rouge); }
+.btn-outline svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; flex-shrink: 0; }
+
+.form-actions {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 2.5rem; padding-top: 1.8rem;
+  border-top: 1px solid rgba(0,0,0,.07);
+  gap: 1rem; flex-wrap: wrap;
+}
+.form-actions-right { display: flex; gap: 1rem; }
+
+/* Progress bar */
+.progress-bar-wrap { height: 3px; background: rgba(200,134,10,.15); margin-bottom: 3rem; position: relative; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--rouge); transition: width .5s cubic-bezier(.4,0,.2,1); }
+
+/* Success state */
+.success-panel {
+  display: none; text-align: center; padding: 4rem 3rem;
+  background: white; border: 1px solid rgba(200,134,10,.12);
+  box-shadow: 0 4px 30px rgba(0,0,0,.06);
+}
+.success-panel.visible { display: block; animation: panelIn .5s ease; }
+.success-check {
+  width: 72px; height: 72px; background: var(--noir); margin: 0 auto 2rem;
+  clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.success-check svg { width: 32px; height: 32px; stroke: white; fill: none; stroke-width: 3; }
+.success-id {
+  display: inline-block; background: var(--papier-fonce);
+  padding: .6rem 1.4rem; font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 700; color: var(--rouge); margin-bottom: 1.5rem;
+  clip-path: polygon(0 0,100% 0,96% 100%,4% 100%);
+  letter-spacing: .06em;
+}
+
+/* Error banner */
+.error-banner {
+  display: none; background: rgba(216,0,0,.07);
+  border-left: 4px solid var(--rouge);
+  padding: .9rem 1.2rem; margin-bottom: 1.5rem;
+  font-size: .86rem; font-weight: 600; color: var(--rouge);
+}
+.error-banner.visible { display: block; }
+
+/* Loading state */
+.loading-overlay {
+  position: absolute; inset: 0; background: rgba(244,242,235,.85);
+  display: none; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; z-index: 10;
+}
+.loading-overlay.visible { display: flex; }
+.loader {
+  width: 40px; height: 40px;
+  border: 3px solid rgba(216,0,0,.15);
+  border-top-color: var(--rouge);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loader-text {
+  font-size: .8rem; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--gris);
+}
+
+/* ===== MOBILE BOTTOM NAV ===== */
+nav.mobile-bottom-nav {
+  position: fixed !important;
+  top: auto !important; bottom: 0 !important;
+  left: 0 !important; right: 0 !important;
+  z-index: 9000 !important;
+  background: var(--noir) !important;
+  border-bottom: none !important;
+  border-top: 3px solid var(--rouge) !important;
+  padding: 0 !important; height: 64px;
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+  box-shadow: 0 -4px 20px rgba(0,0,0,.3);
+}
+nav.mobile-bottom-nav::after { display: none !important; }
+.mobile-nav-btn {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .3rem; text-decoration: none; color: white;
+  font-family: 'Manrope', sans-serif; font-size: .6rem; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+  transition: filter .18s; padding: .4rem .5rem;
+}
+.mobile-nav-btn svg { width: 20px; height: 20px; stroke: white; fill: none; stroke-width: 2; }
+.mobile-nav-btn--donate { background: var(--rouge); }
+.mobile-nav-btn--join   { background: var(--bleu); }
+.mobile-nav-btn--call   { background: #1c1c1c; }
+.mobile-nav-btn:active  { filter: brightness(1.3); }
+
+/* ===== RESPONSIVE ===== */
+@media(min-width: 769px) {
+  nav.mobile-bottom-nav { display: none !important; }
+}
+@media(max-width: 768px) {
+  nav.mobile-bottom-nav { display: grid !important; }
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .page-header { padding:7.5rem 1.5rem 4rem; }
+  .form-section { padding: 3.5rem 1rem 5rem; }
+  .form-card { padding: 1.8rem 1.4rem; }
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .location-row { grid-template-columns: 1fr; }
+  .btn-locate { width: 100%; justify-content: center; }
+  .form-actions { flex-direction: column; }
+  .form-actions .btn-outline, .form-actions .btn-primary { width: 100%; justify-content: center; }
+  footer { padding-bottom: calc(64px + 2rem) !important; }
+  .steps-indicator { gap: 0; }
+  .step-connector { width: 30px; }
+}
+@media(max-width: 400px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-connector { width: 18px; }
+}
+
+/* Footer */
+footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; position:relative; overflow:hidden; }
+.footer-brand { font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; margin-bottom:1.2rem; display:flex; align-items:center; gap:.6rem; }
+.footer-brand .red-letter { color:var(--rouge); }
+.footer-brand img { height: 38px; width: auto; display: block; }
+.footer-desc { font-size:.95rem; color:#BBBBBB; line-height:1.75; max-width:400px; margin-bottom:1rem; }
+.footer-bottom {
+  max-width:100%; margin:2rem 0 0; display:flex; justify-content:space-between; align-items:center;
+  border-top:1px solid rgba(255,255,255,.1); padding-top:1.5rem; font-size:.8rem; color:#888; flex-wrap:wrap; gap:1rem;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+    <span class="logo-aix"><span class="red-letter">A</span>ix</span>
+    <span class="logo-en"><span class="red-letter">E</span>n</span>
+    <span class="logo-vue"><span class="red-letter">V</span>ue</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#manifeste">L'association</a></li>
+    <li><a href="missions.html">Nos missions</a></li>
+    <li><a href="annonce.html">Actualités</a></li>
+    <li><a href="index.html#activites">Activité</a></li>
+    <li><a href="index.html#galerie">Projets</a></li>
+    <li><a href="https://www.helloasso.com/associations/aix-en-vue/collectes/aix-au-dela-du-regard-expo-de-photos-realisees-par-des-deficients-visuels" target="_blank" rel="noopener">Nous soutenir</a></li>
+    <li><a href="https://www.appsheet.com/start/cd603802-fda8-494d-8bb6-f647afb5f712" target="_blank" rel="noopener" class="nav-cta">Espace bénévole</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header" role="banner">
+  <p class="header-eyebrow"><span class="brush-dash"></span>Aix-en-Provence · Accessibilité</p>
+  <h1>Signaler un<br><em>problème</em></h1>
+  <p>Voirie dégradée, transport inadapté, obstacle… aidez-nous à améliorer<br>l'accessibilité pour tous les déficients visuels de notre ville.</p>
+</header>
+
+<!-- FORM SECTION -->
+<main class="form-section" id="main">
+
+  <!-- Progress bar -->
+  <div class="progress-bar-wrap" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" aria-label="Progression du formulaire">
+    <div class="progress-bar" id="progress-bar" style="width:33%"></div>
+  </div>
+
+  <!-- Steps -->
+  <div class="steps-indicator" role="list" aria-label="Étapes du formulaire">
+    <div class="step-item active" id="step-1" role="listitem">
+      <div class="step-num">1</div>
+      <span class="step-label">Catégorie</span>
+    </div>
+    <div class="step-connector" id="conn-1"></div>
+    <div class="step-item" id="step-2" role="listitem">
+      <div class="step-num">2</div>
+      <span class="step-label">Description</span>
+    </div>
+    <div class="step-connector" id="conn-2"></div>
+    <div class="step-item" id="step-3" role="listitem">
+      <div class="step-num">3</div>
+      <span class="step-label">Confirmation</span>
+    </div>
+  </div>
+
+  <!-- PANEL 1 : Catégorie + Lieu -->
+  <div class="form-panel active" id="panel-1">
+    <div class="form-card">
+      <h2 class="form-card-title">Quel type de problème ?</h2>
+      <p class="form-card-subtitle">Choisissez la catégorie la plus proche de votre signalement</p>
+
+      <div class="cat-grid" role="group" aria-label="Catégorie du problème">
+        <div class="cat-chip selected" data-cat="Voirie" tabindex="0" role="radio" aria-checked="true">
+          <span class="cat-icon">🛣️</span>
+          <span class="cat-name">Voirie</span>
+        </div>
+        <div class="cat-chip" data-cat="Transport" tabindex="0" role="radio" aria-checked="false">
+          <span class="cat-icon">🚌</span>
+          <span class="cat-name">Transport</span>
+        </div>
+        <div class="cat-chip" data-cat="Trottoir & obstacle" tabindex="0" role="radio" aria-checked="false">
+          <span class="cat-icon">⚠️</span>
+          <span class="cat-name">Trottoir &amp; obstacle</span>
+        </div>
+        <div class="cat-chip" data-cat="Signalétique" tabindex="0" role="radio" aria-checked="false">
+          <span class="cat-icon">🔊</span>
+          <span class="cat-name">Signalétique</span>
+        </div>
+        <div class="cat-chip" data-cat="Éclairage" tabindex="0" role="radio" aria-checked="false">
+          <span class="cat-icon">💡</span>
+          <span class="cat-name">Éclairage</span>
+        </div>
+        <div class="cat-chip" data-cat="Autre" tabindex="0" role="radio" aria-checked="false">
+          <span class="cat-icon">📋</span>
+          <span class="cat-name">Autre</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="field-location">Localisation<span class="optional">(facultatif)</span></label>
+        <div class="location-row">
+          <input
+            id="field-location"
+            class="field-input"
+            type="text"
+            placeholder="Rue, quartier, arrêt de bus…"
+            autocomplete="street-address"
+          >
+          <button class="btn-locate" id="btn-geolocate" type="button" title="Utiliser ma position GPS" aria-label="Utiliser ma position GPS">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><path d="M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
+            GPS
+          </button>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <span></span>
+        <div class="form-actions-right">
+          <button class="btn-primary" id="btn-next-1" type="button">
+            Suivant
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL 2 : Description + Photo + Email -->
+  <div class="form-panel" id="panel-2">
+    <div class="form-card" style="position:relative;">
+      <div class="loading-overlay" id="loading-overlay">
+        <div class="loader"></div>
+        <p class="loader-text">Envoi en cours…</p>
+      </div>
+
+      <h2 class="form-card-title">Décrivez le problème</h2>
+      <p class="form-card-subtitle">Plus votre description est précise, plus vite nous pourrons agir</p>
+
+      <div class="error-banner" id="error-banner" role="alert">
+        Une erreur est survenue. Vérifiez votre connexion et réessayez.
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="field-desc">Description<span>*</span></label>
+        <textarea
+          id="field-desc"
+          class="field-textarea"
+          placeholder="Décrivez le problème rencontré : nature de l'obstacle, localisation précise, danger potentiel…"
+          maxlength="1000"
+          rows="5"
+          aria-required="true"
+        ></textarea>
+        <div class="field-footer">
+          <span class="char-count" id="char-count">0 / 1000</span>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Justificatif<span class="optional">(photo ou document)</span></label>
+        <div class="upload-zone" id="upload-zone">
+          <input type="file" id="file-input" accept="image/*,.pdf,.doc,.docx" aria-label="Choisir un fichier">
+          <span class="upload-icon">📎</span>
+          <p class="upload-label">Glissez un fichier ici ou cliquez pour parcourir</p>
+          <p class="upload-hint">Photo, PDF · Max <strong>10 Mo</strong></p>
+        </div>
+        <div class="upload-preview" id="upload-preview">
+          <div class="upload-preview-icon" id="preview-icon">📄</div>
+          <img class="upload-preview-thumb" id="preview-thumb" src="" alt="" style="display:none;">
+          <div style="flex:1; min-width:0;">
+            <p class="upload-preview-name" id="preview-name"></p>
+            <p class="upload-preview-size" id="preview-size"></p>
+          </div>
+          <button class="upload-remove" id="upload-remove" type="button" aria-label="Supprimer le fichier">✕</button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="field-email">Votre e-mail<span class="optional">(pour être recontacté)</span></label>
+        <input
+          id="field-email"
+          class="field-input"
+          type="email"
+          placeholder="votre@email.fr"
+          autocomplete="email"
+        >
+      </div>
+
+      <div class="privacy-notice" role="note">
+        <span class="privacy-icon">🔒</span>
+        <p class="privacy-text">
+          <strong>Confidentialité :</strong> Vos données sont uniquement utilisées pour traiter votre signalement.
+          L'adresse e-mail reste facultative et ne sera jamais partagée. Conformément au RGPD.
+        </p>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-outline" id="btn-prev-2" type="button">
+          <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Retour
+        </button>
+        <div class="form-actions-right">
+          <button class="btn-primary" id="btn-submit" type="button">
+            Envoyer le signalement
+            <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS PANEL -->
+  <div class="success-panel" id="success-panel" role="status" aria-live="polite">
+    <div class="success-check">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <p class="success-id" id="success-id">Réf. #AEV-XXXX</p>
+    <h2 style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:900; margin-bottom:.8rem;">Signalement envoyé !</h2>
+    <p style="color:var(--gris); font-size:1rem; line-height:1.7; max-width:420px; margin:0 auto 2rem; font-weight:500;">
+      Merci pour votre contribution. Notre équipe a bien reçu votre signalement et le traitera dans les meilleurs délais.
+    </p>
+    <a href="index.html" class="btn-primary" style="display:inline-flex;">
+      Retour à l'accueil
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div style="max-width:1300px; margin:0 auto;">
+    <div class="footer-brand">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+      <span class="logo-aix" style="font-size:2rem;"><span class="red-letter">A</span>ix</span>
+      <span class="logo-en" style="font-size:1.5rem;"><span class="red-letter">E</span>n</span>
+      <span class="logo-vue" style="font-size:1.1rem;"><span class="red-letter">V</span>ue</span>
+    </div>
+    <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles du pays d'Aix depuis 2024.</p>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Aix en Vue — Association loi 1901</span>
+    <span>Pour et avec les déficients visuels</span>
+    <span>Site propulsé par <a href="https://www.assopage.fr" target="_blank" rel="noopener" style="color:#888; text-decoration:underline;">www.assopage.fr</a></span>
+  </div>
+</footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav" role="navigation" aria-label="Actions rapides">
+  <a href="https://www.helloasso.com/associations/aix-en-vue/collectes/aix-au-dela-du-regard-expo-de-photos-realisees-par-des-deficients-visuels"
+     target="_blank" rel="noopener" class="mobile-nav-btn mobile-nav-btn--donate" aria-label="Faire un don">
+    <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <span>Donner</span>
+  </a>
+  <a href="mailto:info@aixenvue.fr" class="mobile-nav-btn mobile-nav-btn--join" aria-label="Adhérer">
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span>Adhérer</span>
+  </a>
+  <a href="tel:+33744999438" class="mobile-nav-btn mobile-nav-btn--call" aria-label="Appeler">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.56 3.44 2 2 0 0 1 3.53 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>Appeler</span>
+  </a>
+</nav>
+
+<script>
+// ============================
+// CONFIGURATION — À METTRE À JOUR après déploiement Apps Script
+// ============================
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxCQz6Om1I1DNS6Twg-UB_1YnGkNt3KjzYJPLGzqve0Xcnu4f5ECDYhuCEfgZ-CfxboEA/exec';
+
+// ============================
+// NAVIGATION MULTI-ÉTAPES
+// ============================
+let currentStep = 1;
+let selectedCategory = 'Voirie';
+let selectedFile = null;
+
+function goTo(step) {
+  document.getElementById(`panel-${currentStep}`).classList.remove('active');
+  document.getElementById(`step-${currentStep}`).classList.remove('active');
+
+  if (step > currentStep) {
+    document.getElementById(`step-${currentStep}`).classList.add('done');
+    if (currentStep < 3) document.getElementById(`conn-${currentStep}`).classList.add('done');
+  } else {
+    document.getElementById(`step-${currentStep}`).classList.remove('done');
+    if (currentStep <= 3) document.getElementById(`conn-${currentStep}`) && document.getElementById(`conn-${currentStep}`).classList.remove('done');
+  }
+
+  currentStep = step;
+  const panel = document.getElementById(`panel-${currentStep}`);
+  if (panel) {
+    panel.classList.add('active');
+    panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  document.getElementById(`step-${currentStep}`).classList.add('active');
+
+  const progress = (currentStep / 3) * 100;
+  document.getElementById('progress-bar').style.width = progress + '%';
+  document.getElementById('progress-bar').setAttribute('aria-valuenow', Math.round(progress));
+}
+
+// ============================
+// CATÉGORIES
+// ============================
+document.querySelectorAll('.cat-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.cat-chip').forEach(c => {
+      c.classList.remove('selected');
+      c.setAttribute('aria-checked', 'false');
+    });
+    chip.classList.add('selected');
+    chip.setAttribute('aria-checked', 'true');
+    selectedCategory = chip.dataset.cat;
+  });
+  chip.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chip.click(); }
+  });
+});
+
+// ============================
+// GÉOLOCALISATION
+// ============================
+document.getElementById('btn-geolocate').addEventListener('click', () => {
+  if (!navigator.geolocation) return;
+  const btn = document.getElementById('btn-geolocate');
+  btn.textContent = '…';
+  navigator.geolocation.getCurrentPosition(pos => {
+    const { latitude: lat, longitude: lng } = pos.coords;
+    fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&accept-language=fr`)
+      .then(r => r.json())
+      .then(d => {
+        const addr = d.address;
+        const val = [addr.road, addr.suburb, addr.city || addr.town].filter(Boolean).join(', ');
+        document.getElementById('field-location').value = val;
+      })
+      .catch(() => {
+        document.getElementById('field-location').value = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
+      })
+      .finally(() => { btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:white;fill:none;stroke-width:2;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg> GPS'; });
+  }, () => {
+    btn.innerHTML = '<svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:white;fill:none;stroke-width:2;"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg> GPS';
+  });
+});
+
+// ============================
+// NAVIGATION BUTTONS
+// ============================
+document.getElementById('btn-next-1').addEventListener('click', () => goTo(2));
+document.getElementById('btn-prev-2').addEventListener('click', () => goTo(1));
+
+// ============================
+// COMPTEUR DESCRIPTION
+// ============================
+const descField = document.getElementById('field-desc');
+const charCount = document.getElementById('char-count');
+descField.addEventListener('input', () => {
+  const len = descField.value.length;
+  charCount.textContent = `${len} / 1000`;
+  charCount.className = 'char-count' + (len > 900 ? ' over' : len > 750 ? ' warn' : '');
+});
+
+// ============================
+// UPLOAD FICHIER
+// ============================
+const fileInput = document.getElementById('file-input');
+const uploadZone = document.getElementById('upload-zone');
+const uploadPreview = document.getElementById('upload-preview');
+const previewThumb = document.getElementById('preview-thumb');
+const previewIcon = document.getElementById('preview-icon');
+const previewName = document.getElementById('preview-name');
+const previewSize = document.getElementById('preview-size');
+
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' o';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + ' Ko';
+  return (bytes / (1024 * 1024)).toFixed(1) + ' Mo';
+}
+
+function showPreview(file) {
+  selectedFile = file;
+  previewName.textContent = file.name;
+  previewSize.textContent = formatSize(file.size);
+
+  if (file.type.startsWith('image/')) {
+    const reader = new FileReader();
+    reader.onload = e => {
+      previewThumb.src = e.target.result;
+      previewThumb.style.display = 'block';
+      previewIcon.style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  } else {
+    previewThumb.style.display = 'none';
+    previewIcon.style.display = 'flex';
+    previewIcon.textContent = file.type.includes('pdf') ? '📄' : '📋';
+  }
+  uploadPreview.classList.add('visible');
+}
+
+fileInput.addEventListener('change', e => {
+  if (e.target.files[0]) showPreview(e.target.files[0]);
+});
+
+uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+uploadZone.addEventListener('drop', e => {
+  e.preventDefault(); uploadZone.classList.remove('dragover');
+  if (e.dataTransfer.files[0]) showPreview(e.dataTransfer.files[0]);
+});
+
+document.getElementById('upload-remove').addEventListener('click', () => {
+  selectedFile = null;
+  fileInput.value = '';
+  uploadPreview.classList.remove('visible');
+  previewThumb.src = '';
+  previewThumb.style.display = 'none';
+});
+
+// ============================
+// HELPERS
+// ============================
+function generateUID() {
+  const now = new Date();
+  const d = now.toISOString().slice(2,10).replace(/-/g,'');
+  const r = Math.random().toString(36).substr(2,5).toUpperCase();
+  return `AEV-${d}-${r}`;
+}
+
+function toBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+// ============================
+// SOUMISSION
+// ============================
+document.getElementById('btn-submit').addEventListener('click', async () => {
+  const desc = descField.value.trim();
+  if (!desc) {
+    descField.focus();
+    descField.style.borderColor = 'var(--rouge)';
+    descField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  descField.style.borderColor = '';
+
+  const email = document.getElementById('field-email').value.trim();
+  const location = document.getElementById('field-location').value.trim();
+  const fullDesc = location ? `[${selectedCategory}] ${location} — ${desc}` : `[${selectedCategory}] ${desc}`;
+
+  const uid = generateUID();
+  const payload = { uid, description: fullDesc, email };
+
+  if (selectedFile) {
+    try {
+      payload.fileBase64 = await toBase64(selectedFile);
+      payload.fileName = selectedFile.name;
+      payload.fileMime = selectedFile.type;
+    } catch (e) { /* fichier ignoré si lecture échoue */ }
+  }
+
+  // UI : loading
+  const overlay = document.getElementById('loading-overlay');
+  const submitBtn = document.getElementById('btn-submit');
+  const errorBanner = document.getElementById('error-banner');
+  overlay.classList.add('visible');
+  submitBtn.disabled = true;
+  errorBanner.classList.remove('visible');
+
+  try {
+    const res = await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+
+    if (data.status === 'ok') {
+      // Succès
+      overlay.classList.remove('visible');
+      document.getElementById('panel-2').classList.remove('active');
+      document.getElementById('step-2').classList.remove('active');
+      document.getElementById('step-2').classList.add('done');
+      document.getElementById('conn-2').classList.add('done');
+      document.getElementById('step-3').classList.add('active');
+      document.getElementById('progress-bar').style.width = '100%';
+      document.getElementById('success-id').textContent = `Réf. #${uid}`;
+
+      const successPanel = document.getElementById('success-panel');
+      successPanel.classList.add('visible');
+      successPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      throw new Error(data.message || 'Erreur serveur');
+    }
+  } catch (err) {
+    overlay.classList.remove('visible');
+    submitBtn.disabled = false;
+    errorBanner.textContent = `Erreur : ${err.message || 'Vérifiez votre connexion et réessayez.'}`;
+    errorBanner.classList.add('visible');
+    errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+});
+
+// ============================
+// HAMBURGER MENU
+// ============================
+const hb = document.querySelector('.hamburger');
+const nl = document.querySelector('.nav-links');
+function closeMenu() { nl.removeAttribute('style'); nl.classList.remove('mobile-open'); hb.setAttribute('aria-expanded', 'false'); }
+hb.addEventListener('click', () => {
+  const isOpen = nl.classList.contains('mobile-open');
+  if (isOpen) { closeMenu(); } else {
+    nl.classList.add('mobile-open');
+    Object.assign(nl.style, {
+      display:'flex', position:'fixed', top:'68px', left:'0', right:'0',
+      flexDirection:'column', background:'var(--papier)', padding:'1.5rem 2rem',
+      borderBottom:'2px solid var(--rouge)', zIndex:'400', gap:'1.2rem'
+    });
+    hb.setAttribute('aria-expanded', 'true');
+  }
+});
+window.addEventListener('resize', () => { if (window.innerWidth >= 768) { nl.removeAttribute('style'); nl.classList.remove('mobile-open'); } });
+
+// NAV shadow on scroll
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,.07)' : 'none';
+});
+</script>
+</body>
+</html>
