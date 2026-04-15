@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M638S445');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T1DFJJD9ZV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -17,9 +13,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
   gtag('config', 'G-T1DFJJD9ZV');
 </script>
-<!-- End Google Analytics 4 -->
-
-<!-- Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16805184575"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -719,9 +712,9 @@ footer { background:#0D0D0D; color:var(--papier); padding:3rem 4rem 2rem; positi
   filter: brightness(1.12);
   box-shadow: 0 12px 36px rgba(0,0,0,.35);
 }
-.float-btn--donate { background: var(--rouge); }
-.float-btn--join   { background: var(--bleu); }
-.float-btn--call   { background: #2a2a2a; }
+.float-btn--donate  { background: var(--rouge); }
+.float-btn--contact { background: var(--bleu); }
+.float-btn--signal  { background: #2a2a2a; }
 
 /* ===== MOBILE BOTTOM NAVIGATION BAR ===== */
 nav.mobile-bottom-nav {
@@ -776,10 +769,10 @@ nav.mobile-bottom-nav::after { display: none !important; }
   stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
   flex-shrink: 0;
 }
-.mobile-nav-btn--donate { background: var(--rouge); }
-.mobile-nav-btn--join   { background: var(--bleu); }
-.mobile-nav-btn--call   { background: #1c1c1c; }
-.mobile-nav-btn:active  { filter: brightness(1.3); }
+.mobile-nav-btn--donate  { background: var(--rouge); }
+.mobile-nav-btn--contact { background: var(--bleu); }
+.mobile-nav-btn--signal  { background: #1c1c1c; }
+.mobile-nav-btn:active   { filter: brightness(1.3); }
 
 /* ===== RESPONSIVE OVERRIDES ===== */
 @media(min-width: 769px) {
@@ -843,11 +836,8 @@ nav.mobile-bottom-nav::after { display: none !important; }
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M638S445"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <nav role="navigation" aria-label="Navigation principale">
   <a href="#" class="nav-logo">
     <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
@@ -886,10 +876,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="hero-visual">
     <div class="hero-photo-frame" id="hero-frame">
-      <!--
-        preload="none" : le navigateur ne bloque pas le rendu pour charger la vidéo.
-        La vidéo démarre en opacity:0 et fade-in via JS dès que canplay se déclenche.
-      -->
       <video
         id="hero-video"
         src="https://res.cloudinary.com/dxt4ferj4/video/upload/v1773859834/AEV_video_w8m59g.mp4"
@@ -1134,7 +1120,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </footer>
 
-<!-- ===== MUSIC PLAYER ===== -->
 <audio id="ambient-audio" loop preload="auto">
   <source src="Chanson_aix_en_vue_KLICKAUD.mp3" type="audio/mpeg">
 </audio>
@@ -1149,7 +1134,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </svg>
 </button>
 
-<!-- ===== DESKTOP: FLOATING CTA (bottom-right, fixed) ===== -->
 <div class="floating-cta" role="complementary" aria-label="Actions rapides">
   <a href="https://www.helloasso.com/associations/aix-en-vue/collectes/aix-au-dela-du-regard-expo-de-photos-realisees-par-des-deficients-visuels"
      target="_blank" rel="noopener"
@@ -1157,25 +1141,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      onclick="return gtag_report_conversion('https://www.helloasso.com/associations/aix-en-vue/collectes/aix-au-dela-du-regard-expo-de-photos-realisees-par-des-deficients-visuels');"
      aria-label="Faire un don à Aix en Vue">
     <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-    <span>Donner</span>
+    <span>DONNER</span>
   </a>
-  <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20dessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F"
-     class="float-btn float-btn--join"
-     onclick="return gtag_report_conversion('mailto:info@aixenvue.fr?subject=demande%20d%27adh%C3%A9sion');"
-     aria-label="Adhérer à Aix en Vue">
-    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    <span>Adhérer</span>
+  <a href="#contact"
+     class="float-btn float-btn--contact"
+     aria-label="Nous contacter">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span>CONTACTER</span>
   </a>
-  <a href="tel:+33744999438"
-     class="float-btn float-btn--call"
-     onclick="return gtag_report_conversion('tel:+33744999438');"
-     aria-label="Appeler Aix en Vue">
-    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.56 3.44 2 2 0 0 1 3.53 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    <span>Appeler</span>
+  <a href="signalement.html"
+     class="float-btn float-btn--signal"
+     aria-label="Signaler un problème de voirie ou transport">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span>SIGNALER</span>
   </a>
 </div>
 
-<!-- ===== MOBILE: BOTTOM NAVIGATION BAR ===== -->
 <nav class="mobile-bottom-nav" role="navigation" aria-label="Actions rapides">
   <a href="https://www.helloasso.com/associations/aix-en-vue/collectes/aix-au-dela-du-regard-expo-de-photos-realisees-par-des-deficients-visuels"
      target="_blank" rel="noopener"
@@ -1183,21 +1164,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      onclick="return gtag_report_conversion('https://www.helloasso.com/associations/aix-en-vue/collectes/aix-au-dela-du-regard-expo-de-photos-realisees-par-des-deficients-visuels');"
      aria-label="Faire un don">
     <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-    <span>Donner</span>
+    <span>DONNER</span>
   </a>
-  <a href="mailto:info@aixenvue.fr?subject=demande%20d'adh%C3%A9sion&body=Bonjour%2C%0A%0AJe%20souhaite%20Adh%C3%A9rer%20%C3%A0%20l'association%20aix%20en%20vue%2C%20je%20d%C3%A9taille%20ma%20situation%20et%20mes%20informations%20ci%20cessous%20(pr%C3%A9nom%2C%20nom%2C%20adresse%2C%20t%C3%A9l%C3%A9phone).%20Pouvez-vous%20m'envoyer%20un%20bulletin%20d'adh%C3%A9sion%20%3F"
-     class="mobile-nav-btn mobile-nav-btn--join"
-     onclick="return gtag_report_conversion('mailto:info@aixenvue.fr?subject=demande%20d%27adh%C3%A9sion');"
-     aria-label="Adhérer">
-    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-    <span>Adhérer</span>
+  <a href="#contact"
+     class="mobile-nav-btn mobile-nav-btn--contact"
+     aria-label="Nous contacter">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    <span>CONTACTER</span>
   </a>
-  <a href="tel:+33744999438"
-     class="mobile-nav-btn mobile-nav-btn--call"
-     onclick="return gtag_report_conversion('tel:+33744999438');"
-     aria-label="Appeler">
-    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.56 3.44 2 2 0 0 1 3.53 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    <span>Appeler</span>
+  <a href="signalement.html"
+     class="mobile-nav-btn mobile-nav-btn--signal"
+     aria-label="Signaler un problème">
+    <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span>SIGNALER</span>
   </a>
 </nav>
 
