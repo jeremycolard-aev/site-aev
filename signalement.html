@@ -932,6 +932,7 @@ function toBase64(file) {
 }
 
 // ============================
+// ============================
 // SOUMISSION
 // ============================
 document.getElementById('btn-submit').addEventListener('click', async () => {
@@ -970,6 +971,12 @@ document.getElementById('btn-submit').addEventListener('click', async () => {
   try {
     const res = await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
+      // 👇 AJOUTS CRUCIAUX POUR iOS / SAFARI 👇
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8'
+      },
+      redirect: 'follow',
+      // 👆 FIN DES AJOUTS 👆
       body: JSON.stringify(payload)
     });
     const data = await res.json();
