@@ -306,26 +306,221 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
 .btn-outline:hover { color:var(--rouge); }
 .btn-outline:hover::before { border-color:var(--rouge); }
 
-/* ===== MANIFESTE ===== */
-.manifeste { background:var(--noir); color:var(--papier); padding:7rem 4rem; position:relative; overflow:hidden; }
-.manifeste-inner { max-width:1300px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:7rem; align-items:center; position:relative; z-index:1; }
-.manifeste-text blockquote {
-  font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.5vw,3rem); font-style:italic; line-height:1.4;
-  color: #FFFFFF; position:relative; padding-left:2.5rem; margin-bottom:2rem;
+/* ===== SECTION AGENDA — ACTIVITÉS DU MOMENT ===== */
+.agenda-section {
+  background: var(--noir);
+  color: var(--papier);
+  padding: 7rem 4rem;
+  position: relative;
+  overflow: hidden;
 }
-.manifeste-text blockquote::before {
-  content:''; position:absolute; left:0; top:0; bottom:0; width:5px;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5 200' preserveAspectRatio='none'%3E%3Cpath d='M2.5 0Q4 30 2 60Q0 90 3 120Q5 150 2.5 200' stroke='%23D80000' stroke-width='4' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+.agenda-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
+
+.agenda-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
-.manifeste-text blockquote em { color:var(--rouge); font-style:normal; }
-.manifeste-text p.citation-author { color:#E0E0E0; font-size:1rem; margin-top:1rem; font-style:italic; }
-.manifeste-text .section-label { color:var(--ocre-clair); margin-bottom:2rem; }
-.manifeste-text .manifeste-body { margin-top:2rem; color: #F0F0F0; line-height:1.8; font-size: 1.05rem; }
-.manifeste-photo { position:relative; }
-.manifeste-photo img { width:100%; height:420px; object-fit:cover; clip-path:polygon(0 0,100% 0,92% 100%,8% 100%); display:block; }
-.manifeste-photo::before {
-  content:''; position:absolute; top:-12px; left:-12px; right:12px; bottom:12px;
-  border:3px solid var(--rouge); z-index:-1; clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);
+.agenda-header-left {}
+.agenda-header-left .section-label { color: var(--ocre-clair); margin-bottom: 1.2rem; }
+.agenda-header-left .section-label::before {
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q9 1 18 3Q27 5 35 2' stroke='%23F0C060' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.agenda-header-left .section-title { color: var(--papier); font-size: clamp(2rem,4vw,3.2rem); }
+
+/* Badge EN DIRECT */
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  background: rgba(216,0,0,.15);
+  border: 1.5px solid rgba(216,0,0,.5);
+  color: var(--rouge);
+  padding: .5rem 1.1rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0,100% 0,96% 100%,4% 100%);
+  align-self: flex-start;
+  margin-top: .3rem;
+}
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--rouge);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .4; transform: scale(1.3); }
+}
+
+/* Grille des activités */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.agenda-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(244,242,235,.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s;
+  display: flex;
+  flex-direction: column;
+}
+.agenda-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.5);
+  border-color: rgba(216,0,0,.35);
+}
+.agenda-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--rouge);
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+.agenda-card:hover::after { width: 100%; }
+
+.agenda-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: rgba(255,255,255,.06);
+}
+.agenda-card-img-placeholder {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, rgba(200,134,10,.15) 0%, rgba(216,0,0,.1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.agenda-card-img-placeholder svg {
+  width: 40px;
+  height: 40px;
+  opacity: .25;
+}
+
+.agenda-card-body { padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1; }
+
+.agenda-card-date {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1rem;
+}
+.agenda-date-block {
+  background: var(--rouge);
+  color: white;
+  padding: .4rem .75rem;
+  clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
+  text-align: center;
+  flex-shrink: 0;
+}
+.agenda-date-day {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.agenda-date-month {
+  display: block;
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .9;
+}
+.agenda-card-time {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--ocre-clair);
+  letter-spacing: .06em;
+}
+
+.agenda-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: .6rem;
+  line-height: 1.25;
+}
+.agenda-card-desc {
+  font-size: .9rem;
+  color: #BBBBBB;
+  line-height: 1.65;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Aujourd'hui badge */
+.agenda-card.is-today .agenda-date-block { background: var(--ocre); }
+.agenda-today-tag {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ocre-clair);
+  border: 1px solid rgba(240,192,96,.3);
+  padding: .25rem .6rem;
+  margin-left: .5rem;
+  clip-path: polygon(0 0,100% 0,93% 100%,7% 100%);
+  align-self: center;
+}
+
+/* Skeleton loader */
+.agenda-skeleton {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  overflow: hidden;
+  height: 340px;
+  position: relative;
+}
+.agenda-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.05) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: agendaSkeleton 1.6s ease-in-out infinite;
+}
+@keyframes agendaSkeleton {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* État vide */
+.agenda-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #888;
+}
+.agenda-empty p { font-size: 1.1rem; margin-top: 1rem; }
+
+/* Bouton planning */
+.agenda-footer {
+  text-align: center;
+  margin-top: 3rem;
 }
 
 /* ===== SECTION LABELS ===== */
@@ -814,8 +1009,6 @@ nav.mobile-bottom-nav::after { display: none !important; }
   .hero-sub { margin-left:auto; margin-right:auto; }
   .hero-actions { justify-content:center; }
   .hero-visual { display:none; }
-  .manifeste-inner { grid-template-columns:1fr; gap:3rem; }
-  .manifeste-photo { display:none; }
   .act-grid { grid-template-columns:1fr 1fr; }
   .galerie-mosaic { grid-template-columns:1fr 1fr; grid-template-rows:280px 280px; }
   .galerie-mosaic .g-item:first-child { grid-row:1/3; }
@@ -824,6 +1017,7 @@ nav.mobile-bottom-nav::after { display: none !important; }
   .hero-stats-grid { grid-template-columns:1fr 1fr; }
   .projet-photo-layout { grid-template-columns:1fr; gap:3rem; }
   .axes-grid { grid-template-columns:1fr; }
+  .agenda-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media(max-width:768px){
@@ -831,7 +1025,7 @@ nav.mobile-bottom-nav::after { display: none !important; }
   .nav-links { display:none; }
   .hamburger { display:flex; }
   .hero { padding:6rem 1.5rem 3rem; }
-  .manifeste, .activites, .galerie-section, .engage-section, .cta-section, .projet-photo-section { padding:5rem 1.5rem; }
+  .manifeste, .activites, .galerie-section, .engage-section, .cta-section, .projet-photo-section, .agenda-section { padding:5rem 1.5rem; }
   .act-grid { grid-template-columns:1fr; }
   .galerie-mosaic { grid-template-columns:1fr; grid-template-rows:auto; padding:0 1.5rem; }
   .galerie-mosaic .g-item { height:250px; }
@@ -844,6 +1038,8 @@ nav.mobile-bottom-nav::after { display: none !important; }
   .hero-stats { padding:4rem 1.5rem; }
   .hero-stats-grid { grid-template-columns:1fr 1fr; gap:1rem; }
   .axes-grid { grid-template-columns:1fr; }
+  .agenda-grid { grid-template-columns: 1fr; }
+  .agenda-header { flex-direction: column; align-items: flex-start; }
 }
 </style>
 </head>
@@ -859,7 +1055,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="logo-vue"><span class="red-letter">V</span>ue</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#manifeste">L'association</a></li>
+    <li><a href="#agenda">L'association</a></li>
     <li><a href="missions.html">Nos missions</a></li>
     <li><a href="annonce.html">Actualités</a></li>
     <li><a href="#activites">Activité</a></li>
@@ -917,22 +1113,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section id="manifeste" class="manifeste" aria-labelledby="manifeste-h">
-  <div class="manifeste-inner">
-    <div class="manifeste-text reveal">
-      <p class="section-label">Notre conviction</p>
-      <blockquote>
-        « Ce n'est pas parce que nous voyons moins<br>
-        que nous <em>vivons moins.</em> »
-      </blockquote>
-      <p class="citation-author">— Karine Centeno, Présidente fondatrice d'Aix en Vue</p>
-      <p class="manifeste-body">
-        Née au printemps 2024 d'un constat simple — les personnes déficientes visuelles sont trop souvent isolées, trop rarement accompagnées — Aix en Vue est aujourd'hui une communauté de <strong style="color:white;">154 membres</strong> qui se retrouvent chaque semaine autour d'activités adaptées, de moments de joie et d'une ambition collective : changer le regard sur le handicap visuel dans notre ville.
-      </p>
-      <div style="margin-top:2.5rem;"><a href="missions.html" class="btn-outline-light"><span>NOS MISSIONS</span></a></div>
+<!-- ===== AGENDA — ACTIVITÉS DU MOMENT ===== -->
+<section id="agenda" class="agenda-section" aria-labelledby="agenda-h">
+  <div class="agenda-inner">
+    <div class="agenda-header reveal">
+      <div class="agenda-header-left">
+        <p class="section-label">Agenda</p>
+        <h2 class="section-title" id="agenda-h">Activités du <em style="color:var(--rouge);font-style:italic;">moment</em></h2>
+      </div>
+      <div class="live-badge" aria-label="Agenda mis à jour en direct">
+        <span class="live-dot" aria-hidden="true"></span>
+        En direct
+      </div>
     </div>
-    <div class="manifeste-photo reveal">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771435751/Caf%C3%A9_blabla_c4ut6c.png" alt="Café blabla — moments de convivialité entre adhérents">
+
+    <div class="agenda-grid" id="agenda-grid" aria-live="polite" aria-busy="true">
+      <!-- Skeletons affichés pendant le chargement -->
+      <div class="agenda-skeleton reveal" aria-hidden="true"></div>
+      <div class="agenda-skeleton reveal" aria-hidden="true"></div>
+      <div class="agenda-skeleton reveal" aria-hidden="true"></div>
+    </div>
+
+    <div class="agenda-footer reveal">
+      <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-outline-light">
+        Voir tout le planning
+      </a>
     </div>
   </div>
 </section>
@@ -1321,6 +1526,165 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
+// ===== AGENDA — CHARGEMENT activite.json =====
+(function() {
+  const grid = document.getElementById('agenda-grid');
+  if (!grid) return;
+
+  const MOIS_FR = ['jan.','fév.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+  const JOURS_FR = ['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
+
+  function formatHeure(h) {
+    // "14:00:00" → "14h00"
+    if (!h) return '';
+    const parts = h.split(':');
+    return parts[0] + 'h' + parts[1];
+  }
+
+  function isToday(dateStr) {
+    const today = new Date();
+    const d = new Date(dateStr + 'T00:00:00');
+    return d.getFullYear() === today.getFullYear()
+      && d.getMonth() === today.getMonth()
+      && d.getDate() === today.getDate();
+  }
+
+  function buildCard(act) {
+    const d = new Date(act.date + 'T00:00:00');
+    const jour = d.getDate();
+    const mois = MOIS_FR[d.getMonth()];
+    const jourSemaine = JOURS_FR[d.getDay()];
+    const todayFlag = isToday(act.date);
+
+    const heureDebut = formatHeure(act.heure_debut);
+    const heureFin = formatHeure(act.heure_fin);
+    const heureStr = heureDebut ? (heureFin ? heureDebut + ' – ' + heureFin : heureDebut) : '';
+
+    const card = document.createElement('article');
+    card.className = 'agenda-card reveal' + (todayFlag ? ' is-today' : '');
+
+    // Image ou placeholder
+    if (act.image_url) {
+      const img = document.createElement('img');
+      img.className = 'agenda-card-img';
+      img.src = act.image_url;
+      img.alt = act.titre;
+      img.loading = 'lazy';
+      img.onerror = function() {
+        this.replaceWith(makePlaceholder());
+      };
+      card.appendChild(img);
+    } else {
+      card.appendChild(makePlaceholder());
+    }
+
+    const body = document.createElement('div');
+    body.className = 'agenda-card-body';
+
+    // Date block
+    const dateRow = document.createElement('div');
+    dateRow.className = 'agenda-card-date';
+
+    const dateBlock = document.createElement('div');
+    dateBlock.className = 'agenda-date-block';
+    dateBlock.innerHTML = '<span class="agenda-date-day">' + jour + '</span><span class="agenda-date-month">' + mois + '</span>';
+    dateRow.appendChild(dateBlock);
+
+    if (todayFlag) {
+      const tag = document.createElement('span');
+      tag.className = 'agenda-today-tag';
+      tag.textContent = 'Aujourd\'hui';
+      dateRow.appendChild(tag);
+    } else {
+      const jourEl = document.createElement('span');
+      jourEl.className = 'agenda-card-time';
+      jourEl.textContent = jourSemaine + (heureStr ? ' · ' + heureStr : '');
+      dateRow.appendChild(jourEl);
+    }
+
+    body.appendChild(dateRow);
+
+    if (todayFlag && heureStr) {
+      const heureEl = document.createElement('div');
+      heureEl.className = 'agenda-card-time';
+      heureEl.style.marginBottom = '.6rem';
+      heureEl.textContent = heureStr;
+      body.appendChild(heureEl);
+    }
+
+    const title = document.createElement('h3');
+    title.className = 'agenda-card-title';
+    title.textContent = act.titre;
+    body.appendChild(title);
+
+    if (act.description) {
+      const desc = document.createElement('p');
+      desc.className = 'agenda-card-desc';
+      desc.textContent = act.description;
+      body.appendChild(desc);
+    }
+
+    card.appendChild(body);
+    return card;
+  }
+
+  function makePlaceholder() {
+    const ph = document.createElement('div');
+    ph.className = 'agenda-card-img-placeholder';
+    ph.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    return ph;
+  }
+
+  function renderEmpty() {
+    grid.innerHTML = '';
+    const empty = document.createElement('div');
+    empty.className = 'agenda-empty';
+    empty.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.5" width="48" height="48" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><p>Aucune activité programmée dans les prochains jours.<br>Consultez le planning complet pour toutes les dates.</p>';
+    grid.appendChild(empty);
+  }
+
+  // Chargement avec cache-busting (timestamp jour)
+  const today = new Date();
+  const cacheBust = today.getFullYear() + '' + (today.getMonth()+1) + '' + today.getDate();
+
+  fetch('./activite.json?v=' + cacheBust)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      grid.setAttribute('aria-busy', 'false');
+      grid.innerHTML = '';
+
+      if (!Array.isArray(data) || data.length === 0) {
+        renderEmpty();
+        return;
+      }
+
+      // Tri chronologique
+      const sorted = data.slice().sort(function(a, b) {
+        return new Date(a.date) - new Date(b.date);
+      });
+
+      sorted.forEach(function(act, i) {
+        const card = buildCard(act);
+        // Stagger d'animation
+        card.style.transitionDelay = (i * 0.1) + 's';
+        grid.appendChild(card);
+      });
+
+      // Enregistrer les nouvelles cartes dans l'IntersectionObserver
+      grid.querySelectorAll('.reveal').forEach(function(el) {
+        io.observe(el);
+      });
+    })
+    .catch(function(err) {
+      console.warn('activite.json introuvable ou invalide :', err);
+      grid.setAttribute('aria-busy', 'false');
+      renderEmpty();
+    });
+})();
+
 // ===== PWA =====
 let deferredPrompt;
 const pwaBanner = document.getElementById('pwa-install-banner');
@@ -1384,7 +1748,6 @@ if(closeBtn) {
 })();
 
 // ===== NEWSLETTER SUBMISSION =====
-// ---> REMPLACER CETTE URL PAR CELLE GÉNÉRÉE PAR APPS SCRIPT <---
 const NEWSLETTER_APP_URL = 'https://script.google.com/macros/s/AKfycbzBRNAM5HU12IjflX15Ix6T8PoU1_Nm8v1e9fi3XLpsblpCLuf9NeNduHPDvPYo31bA/exec'; 
 
 const nlForm = document.getElementById('nl-form');
@@ -1398,7 +1761,6 @@ if(nlForm) {
     const email = nlEmail.value.trim();
     if(!email) return;
 
-    // État de chargement
     nlSubmit.disabled = true;
     nlSubmit.textContent = 'Envoi...';
     nlMsg.className = 'nl-msg';
@@ -1423,7 +1785,6 @@ if(nlForm) {
       nlMsg.textContent = "Une erreur est survenue. Veuillez réessayer ultérieurement.";
       nlMsg.classList.add('error');
     } finally {
-      // Retour à l'état initial
       nlSubmit.disabled = false;
       nlSubmit.textContent = "S'inscrire";
     }
