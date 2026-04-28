@@ -1,29 +1,29 @@
 [
   {
-    "id": "688b7ed4",
-    "titre": "Piscine",
-    "description": "Natation",
-    "date": "2026-04-27",
-    "heure_debut": "14:00:00",
-    "heure_fin": "15:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
-  },
-  {
-    "id": "5f6e7b36",
-    "titre": "Cours espagnol",
+    "id": "387a782a",
+    "titre": "Atelier numérique",
     "description": "",
-    "date": "2026-04-27",
-    "heure_debut": "14:30:00",
-    "heure_fin": "15:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1W7em0YyV2-k2ydPuvY02zy5NZx7ExzMh&sz=w1000"
+    "date": "2026-04-28",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1_HvoR0OhVnNtD_lhmzZCV2nG5moPAddJ&sz=w1000"
   },
   {
-    "id": "30c7e9ba",
-    "titre": "Visite pavillon noir et rencontre avec le ballet junior Preljocaj - parcours musique et danse",
-    "description": "Visite du pavillon noir, présentation du ballet Prejlocaj et immersion au coeur de la répétition, moment dansé avec les danseurs.",
-    "date": "2026-04-28",
-    "heure_debut": "12:00:00",
-    "heure_fin": "14:00:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_3c11686c-03d1-4e63-b7a2-a4f0b921b091.png"
+    "id": "7aa1b785",
+    "titre": "Jardinage",
+    "description": "",
+    "date": "2026-04-29",
+    "heure_debut": "14:00:00",
+    "heure_fin": "17:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
+  },
+  {
+    "id": "a34cd4b5",
+    "titre": "Atelier jeux",
+    "description": "",
+    "date": "2026-04-30",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1ehjtqInqJXf8y-bdJKJefZBP3vhvwqxY&sz=w1000"
   }
 ]
