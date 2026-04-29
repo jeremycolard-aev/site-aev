@@ -1,21 +1,12 @@
 [
   {
-    "id": "387a782a",
-    "titre": "Atelier numérique",
-    "description": "",
-    "date": "2026-04-28",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1_HvoR0OhVnNtD_lhmzZCV2nG5moPAddJ&sz=w1000"
-  },
-  {
     "id": "7aa1b785",
     "titre": "Jardinage",
     "description": "",
     "date": "2026-04-29",
     "heure_debut": "14:00:00",
     "heure_fin": "17:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
+    "image_url": ""
   },
   {
     "id": "a34cd4b5",
@@ -24,6 +15,15 @@
     "date": "2026-04-30",
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1ehjtqInqJXf8y-bdJKJefZBP3vhvwqxY&sz=w1000"
+    "image_url": ""
+  },
+  {
+    "id": "7d4fddeb",
+    "titre": "The amazing Keystone big Band.",
+    "description": "places en galerie seulement.",
+    "date": "2026-04-30",
+    "heure_debut": "20:00:00",
+    "heure_fin": "21:30:00",
+    "image_url": ""
   }
 ]
