@@ -1,29 +1,29 @@
 [
   {
-    "id": "a34cd4b5",
-    "titre": "Atelier jeux",
+    "id": "43086bc6",
+    "titre": "Cours espagnol",
     "description": "",
-    "date": "2026-04-30",
+    "date": "2026-05-04",
+    "heure_debut": "14:30:00",
+    "heure_fin": "15:30:00",
+    "image_url": ""
+  },
+  {
+    "id": "4acbce62",
+    "titre": "Réunion CA",
+    "description": "",
+    "date": "2026-05-04",
+    "heure_debut": "9:00:00",
+    "heure_fin": "12:00:00",
+    "image_url": ""
+  },
+  {
+    "id": "4a9eec04",
+    "titre": "Café bla-bla",
+    "description": "",
+    "date": "2026-05-05",
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": ""
-  },
-  {
-    "id": "7d4fddeb",
-    "titre": "The amazing Keystone big Band",
-    "description": "places en galerie seulement.",
-    "date": "2026-04-30",
-    "heure_debut": "20:00:00",
-    "heure_fin": "21:30:00",
-    "image_url": ""
-  },
-  {
-    "id": "7422ae86",
-    "titre": "Modelage",
-    "description": "pour tous",
-    "date": "2026-04-30",
-    "heure_debut": "9:30:00",
-    "heure_fin": "12:00:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_34d572ee-7262-460a-b547-8f1f87dc5bae.png"
   }
 ]
