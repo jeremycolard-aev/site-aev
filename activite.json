@@ -1,23 +1,5 @@
 [
   {
-    "id": "43086bc6",
-    "titre": "Cours espagnol",
-    "description": "",
-    "date": "2026-05-04",
-    "heure_debut": "14:30:00",
-    "heure_fin": "15:30:00",
-    "image_url": ""
-  },
-  {
-    "id": "4acbce62",
-    "titre": "Réunion CA",
-    "description": "",
-    "date": "2026-05-04",
-    "heure_debut": "9:00:00",
-    "heure_fin": "12:00:00",
-    "image_url": ""
-  },
-  {
     "id": "4a9eec04",
     "titre": "Café bla-bla",
     "description": "",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": ""
+  },
+  {
+    "id": "c5d076ed",
+    "titre": "Jardinage",
+    "description": "",
+    "date": "2026-05-06",
+    "heure_debut": "14:00:00",
+    "heure_fin": "17:00:00",
+    "image_url": ""
+  },
+  {
+    "id": "f5b95e81",
+    "titre": "D AMOUR",
+    "description": "Spectacle au pavillon noir Preljocaj dans le cadre de notre parcours musique et danse. \nBienvenue sur RadioLove ! Une heure de spectacle pour parler d’amour dans une création musicale et chorégraphique où l’acceptation de soi et des autres est au cœur du propos.\n\nDe la chanson française aux comédies musicales de Broadway, du disco aux tubes des années 90, les quatre interprètes revisitent un siècle de mélodies romantiques. Le rock, le slow, le disco, le contemporain… Tous les registres musicaux et chorégraphiques se croisent, avec des costumes chatoyants, des paillettes et toujours ce cœur rouge qui scintille. Un éventail de scénettes nous plonge dans des romances tour à tour drôles et émouvantes",
+    "date": "2026-05-06",
+    "heure_debut": "9:45:00",
+    "heure_fin": "11:15:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_1ffc8cd7-08c6-431e-9695-0dba20ed74d3.png"
   }
 ]
