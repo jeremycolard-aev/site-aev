@@ -1,23 +1,5 @@
 [
   {
-    "id": "c5d076ed",
-    "titre": "Jardinage",
-    "description": "",
-    "date": "2026-05-06",
-    "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": ""
-  },
-  {
-    "id": "f5b95e81",
-    "titre": "D AMOUR",
-    "description": "Spectacle au pavillon noir Preljocaj dans le cadre de notre parcours musique et danse. \nBienvenue sur RadioLove ! Une heure de spectacle pour parler d’amour dans une création musicale et chorégraphique où l’acceptation de soi et des autres est au cœur du propos.\n\nDe la chanson française aux comédies musicales de Broadway, du disco aux tubes des années 90, les quatre interprètes revisitent un siècle de mélodies romantiques. Le rock, le slow, le disco, le contemporain… Tous les registres musicaux et chorégraphiques se croisent, avec des costumes chatoyants, des paillettes et toujours ce cœur rouge qui scintille. Un éventail de scénettes nous plonge dans des romances tour à tour drôles et émouvantes",
-    "date": "2026-05-06",
-    "heure_debut": "9:45:00",
-    "heure_fin": "11:15:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_1ffc8cd7-08c6-431e-9695-0dba20ed74d3.png"
-  },
-  {
     "id": "ae882d3f",
     "titre": "Modelage",
     "description": "",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:30:00",
     "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_83bcb297-10bd-4d7c-a665-07eecb053e2a.png"
+  },
+  {
+    "id": "01077ab0",
+    "titre": "Atelier numérique",
+    "description": "",
+    "date": "2026-05-07",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": ""
+  },
+  {
+    "id": "0c64f464",
+    "titre": "Piscine",
+    "description": "Natation",
+    "date": "2026-05-11",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:00:00",
+    "image_url": ""
   }
 ]
