@@ -1024,9 +1024,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="section-label">Agenda</p>
         <h2 class="section-title" id="agenda-h">Activités du <em style="color:var(--rouge);font-style:italic;">moment</em></h2>
       </div>
-      <div class="live-badge" aria-label="Agenda mis à jour en direct">
-        <span class="live-dot" aria-hidden="true"></span>
-        En direct
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:.75rem;">
+        <div class="live-badge" aria-label="Agenda mis à jour en direct">
+          <span class="live-dot" aria-hidden="true"></span>
+          En direct
+        </div>
+        <a href="https://www.assopage.fr" target="_blank" rel="noopener"
+           style="display:flex; align-items:center; gap:.5rem; text-decoration:none; opacity:.7; transition:opacity .2s;"
+           onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.7'"
+           aria-label="Propulsé par AssoPage">
+          <span style="font-family:'Manrope',sans-serif; font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#888;">Propulsé par</span>
+          <img src="assopage1.png" alt="AssoPage" style="height:22px; width:auto; display:block;">
+        </a>
       </div>
     </div>
 
@@ -1243,7 +1252,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
  <div class="footer-bottom">
     <span class="copy-year">© 2026 Aix en Vue — Association loi 1901</span>
-    <span>Pour et avec les déficients visuels</span>
+    <a href="https://www.assopage.fr" target="_blank" rel="noopener"
+       style="display:inline-flex; align-items:center; gap:.45rem; text-decoration:none; opacity:.6; transition:opacity .2s;"
+       onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.6'"
+       aria-label="Site propulsé par AssoPage">
+      <span style="font-size:.75rem; color:#888; font-family:'Manrope',sans-serif; font-weight:600;">Propulsé par</span>
+      <img src="assopage1.png" alt="AssoPage" style="height:16px; width:auto; display:block; filter:brightness(0) invert(.5);">
+    </a>
     <span>Site propulsé par <a href="https://www.assopage.fr" target="_blank" rel="noopener" style="color:#888; text-decoration:underline;">www.assopage.fr</a></span>
 </div>
 </footer>
