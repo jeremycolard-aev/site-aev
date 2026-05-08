@@ -6,7 +6,7 @@
     "date": "2026-05-11",
     "heure_debut": "14:00:00",
     "heure_fin": "15:00:00",
-    "image_url": ""
+    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
   },
   {
     "id": "b717e2a1",
@@ -15,7 +15,7 @@
     "date": "2026-05-11",
     "heure_debut": "14:30:00",
     "heure_fin": "15:30:00",
-    "image_url": ""
+    "image_url": "https://drive.google.com/thumbnail?id=1W7em0YyV2-k2ydPuvY02zy5NZx7ExzMh&sz=w1000"
   },
   {
     "id": "8b2e6f6e",
@@ -24,6 +24,6 @@
     "date": "2026-05-12",
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
-    "image_url": ""
+    "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
   }
 ]
