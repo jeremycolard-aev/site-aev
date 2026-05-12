@@ -1,23 +1,5 @@
 [
   {
-    "id": "0c64f464",
-    "titre": "Piscine",
-    "description": "Natation",
-    "date": "2026-05-11",
-    "heure_debut": "14:00:00",
-    "heure_fin": "15:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
-  },
-  {
-    "id": "b717e2a1",
-    "titre": "Cours espagnol",
-    "description": "",
-    "date": "2026-05-11",
-    "heure_debut": "14:30:00",
-    "heure_fin": "15:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1W7em0YyV2-k2ydPuvY02zy5NZx7ExzMh&sz=w1000"
-  },
-  {
     "id": "8b2e6f6e",
     "titre": "Les plumes légères",
     "description": "Atelier d'écriture",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
+  },
+  {
+    "id": "ba761bf1",
+    "titre": "Clochette a raté sa vie",
+    "description": "",
+    "date": "2026-05-12",
+    "heure_debut": "18:00:00",
+    "heure_fin": "18:45:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1joS1d4JN_lA-_S_coyDZE43kNtC-W31w&sz=w1000"
+  },
+  {
+    "id": "2c662c49",
+    "titre": "Parcours opéra Atelier chant",
+    "description": "Séance animée par la chanteuse lyrique et professeure de scène Marine Costa.",
+    "date": "2026-05-12",
+    "heure_debut": "9:45:00",
+    "heure_fin": "12:00:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_c6ee55ee-b450-48e9-8725-b0698856e4c7.png"
   }
 ]
