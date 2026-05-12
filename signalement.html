@@ -574,6 +574,19 @@ nav.mobile-bottom-nav::after { display: none !important; }
       </div>
 
       <div class="field-group">
+  <label class="field-label" for="field-phone">Votre téléphone<span>*</span></label>
+  <input
+    id="field-phone"
+    class="field-input"
+    type="tel"
+    placeholder="06 12 34 56 78"
+    autocomplete="tel"
+    inputmode="tel"
+    aria-required="true"
+  >
+</div>
+
+      <div class="field-group">
         <label class="field-label" for="field-email">Votre e-mail<span class="optional">(pour être recontacté)</span></label>
         <input
           id="field-email"
@@ -840,6 +853,10 @@ function toBase64(file) {
 // ============================
 document.getElementById('btn-submit').addEventListener('click', async () => {
   const desc = descField.value.trim();
+  const phoneField = document.getElementById('field-phone');
+  const phone = phoneField.value.trim();
+
+  // Validation description
   if (!desc) {
     descField.focus();
     descField.style.borderColor = 'var(--rouge)';
@@ -848,12 +865,25 @@ document.getElementById('btn-submit').addEventListener('click', async () => {
   }
   descField.style.borderColor = '';
 
+  // Validation téléphone : accepte +33, 0, espaces, points, tirets — entre 9 et 15 chiffres
+  const phoneDigits = phone.replace(/[^\d+]/g, '');
+  const phoneRegex = /^(\+?\d{9,15})$/;
+  if (!phone || !phoneRegex.test(phoneDigits)) {
+    phoneField.focus();
+    phoneField.style.borderColor = 'var(--rouge)';
+    phoneField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  phoneField.style.borderColor = '';
+
   const email = document.getElementById('field-email').value.trim();
   const location = document.getElementById('field-location').value.trim();
   const fullDesc = location ? `[${selectedCategory}] ${location} — ${desc}` : `[${selectedCategory}] ${desc}`;
 
   const uid = generateUID();
-  const payload = { uid, description: fullDesc, email };
+  const payload = { uid, description: fullDesc, email, phone };
+
+  // ... le reste (fichier, fetch, etc.) reste identique
 
   if (selectedFile) {
     try {
