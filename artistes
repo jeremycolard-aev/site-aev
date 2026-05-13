@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Des artistes malvoyants réinventent Cézanne</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;600&display=swap');
+
+    :root {
+      --bg:        #0a0705;
+      --surface:   #110e0b;
+      --gold:      #c9a45a;
+      --gold-dim:  #7a5e2e;
+      --cream:     #ede3d0;
+      --rust:      #8b3a1e;
+      --wave1:     rgba(201,164,90,0.18);
+      --wave2:     rgba(139,58,30,0.14);
+      --wave3:     rgba(201,164,90,0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: var(--bg);
+      color: var(--cream);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      overflow: hidden;
+    }
+
+    /* ── Canvas vagues ── */
+    #waveCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Grain texture ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    /* ── Conteneur central ── */
+    .scene {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 0;
+      padding: 2rem;
+    }
+
+    /* ── Titre ── */
+    .title-block {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      opacity: 0;
+      transform: translateY(-18px);
+      animation: fadeUp 1.2s cubic-bezier(.22,1,.36,1) 0.3s forwards;
+    }
+
+    .surtitle {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.55rem, 1.1vw, 0.75rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 0.9rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--cream);
+      max-width: 640px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .separator {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+      margin: 1.1rem auto 0;
+    }
+
+    /* ── Bouton Play ── */
+    .play-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeUp 1.2s cubic-bezier(.22,1,.36,1) 0.7s forwards;
+    }
+
+    /* Cercles pulsants autour du bouton */
+    .pulse-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid var(--gold-dim);
+      animation: ringPulse 2.8s ease-out infinite;
+      pointer-events: none;
+      opacity: 0;
+    }
+    .pulse-ring:nth-child(1) { width: 160px; height: 160px; animation-delay: 0s; }
+    .pulse-ring:nth-child(2) { width: 200px; height: 200px; animation-delay: 0.7s; }
+    .pulse-ring:nth-child(3) { width: 245px; height: 245px; animation-delay: 1.4s; }
+
+    .play-btn {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 1.5px solid var(--gold);
+      background: radial-gradient(circle at 38% 38%, #1d1710 0%, #0d0b08 100%);
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(.22,1,.36,1),
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease;
+      box-shadow:
+        0 0 0 0 rgba(201,164,90,0),
+        inset 0 0 30px rgba(201,164,90,0.04),
+        0 8px 40px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.06);
+      border-color: var(--gold);
+      box-shadow:
+        0 0 28px rgba(201,164,90,0.22),
+        inset 0 0 40px rgba(201,164,90,0.08),
+        0 12px 50px rgba(0,0,0,0.7);
+    }
+
+    .play-btn:active { transform: scale(0.97); }
+
+    /* Icône SVG play / pause */
+    .icon-play, .icon-pause {
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    .icon-pause { display: none; }
+
+    .play-btn.playing .icon-play  { display: none; }
+    .play-btn.playing .icon-pause { display: block; }
+
+    /* Anneau doré animé quand lecture */
+    .play-btn.playing {
+      animation: spinGlow 6s linear infinite;
+    }
+
+    /* ── Label état ── */
+    .status-label {
+      margin-top: 2.2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      font-family: 'Cinzel', serif;
+    }
+    .status-label.visible { opacity: 1; }
+
+    /* ── Barre de progression ── */
+    .progress-track {
+      margin-top: 1.6rem;
+      width: clamp(260px, 40vw, 460px);
+      height: 2px;
+      background: rgba(201,164,90,0.12);
+      border-radius: 2px;
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .progress-track.visible { opacity: 1; }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, var(--gold-dim), var(--gold));
+      border-radius: 2px;
+      transition: width 0.4s linear;
+    }
+
+    /* ── Keyframes ── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes ringPulse {
+      0%   { transform: scale(0.85); opacity: 0.6; }
+      70%  { opacity: 0.15; }
+      100% { transform: scale(1.35); opacity: 0; }
+    }
+
+    @keyframes spinGlow {
+      0%   { box-shadow: 0 0 32px rgba(201,164,90,0.3),  inset 0 0 40px rgba(201,164,90,0.07), 0 8px 40px rgba(0,0,0,0.6); }
+      50%  { box-shadow: 0 0 52px rgba(201,164,90,0.45), inset 0 0 60px rgba(201,164,90,0.12), 0 12px 50px rgba(0,0,0,0.7); }
+      100% { box-shadow: 0 0 32px rgba(201,164,90,0.3),  inset 0 0 40px rgba(201,164,90,0.07), 0 8px 40px rgba(0,0,0,0.6); }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="waveCanvas"></canvas>
+
+<div class="scene">
+
+  <div class="title-block">
+    <p class="surtitle">Exposition sonore</p>
+    <h1>Des artistes malvoyants<br><em>réinventent Cézanne</em></h1>
+    <div class="separator"></div>
+  </div>
+
+  <div class="play-wrapper">
+    <div class="pulse-ring"></div>
+    <div class="pulse-ring"></div>
+    <div class="pulse-ring"></div>
+
+    <button class="play-btn" id="playBtn" aria-label="Lecture / Pause">
+      <!-- Icône Play -->
+      <svg class="icon-play" width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <polygon points="11,7 29,17 11,27" fill="#c9a45a"/>
+      </svg>
+      <!-- Icône Pause -->
+      <svg class="icon-pause" width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <rect x="9"  y="7" width="5" height="20" rx="1.5" fill="#c9a45a"/>
+        <rect x="20" y="7" width="5" height="20" rx="1.5" fill="#c9a45a"/>
+      </svg>
+    </button>
+  </div>
+
+  <p class="status-label" id="statusLabel">Chargement…</p>
+  <div class="progress-track" id="progressTrack">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+</div>
+
+<!-- Audio -->
+<audio id="audioEl" src="Des_artistes_malvoyants_réinventent_Cézanne.m4a" preload="auto"></audio>
+
+<script>
+/* ═══════════════════════════════════════════
+   WAVES — canvas audio-réactif (ou animé)
+═══════════════════════════════════════════ */
+const canvas = document.getElementById('waveCanvas');
+const ctx    = canvas.getContext('2d');
+
+let W, H, t = 0;
+const WAVES = [
+  { amp: 0.022, freq: 0.0010, speed: 0.00018, color: 'rgba(201,164,90,0.09)', yBase: 0.72 },
+  { amp: 0.018, freq: 0.0008, speed: 0.00012, color: 'rgba(139,58,30,0.07)',  yBase: 0.78 },
+  { amp: 0.014, freq: 0.0012, speed: 0.00022, color: 'rgba(201,164,90,0.05)', yBase: 0.84 },
+];
+
+let audioCtx = null;
+
+function resize() {
+  W = canvas.width  = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+function drawWave(w) {
+  const baseY = H * w.yBase;
+  const amp   = H * w.amp;
+  ctx.beginPath();
+  ctx.moveTo(0, H);
+  for (let x = 0; x <= W; x += 3) {
+    const y = baseY + Math.sin(x * w.freq + t * w.speed * 1000) * amp;
+    ctx.lineTo(x, y);
+  }
+  ctx.lineTo(W, H);
+  ctx.closePath();
+  ctx.fillStyle = w.color;
+  ctx.fill();
+}
+
+function draw(ts) {
+  t = ts;
+  ctx.clearRect(0, 0, W, H);
+  WAVES.forEach(w => drawWave(w));
+  requestAnimationFrame(draw);
+}
+requestAnimationFrame(draw);
+
+/* ═══════════════════════════════════════════
+   AUDIO + UI
+═══════════════════════════════════════════ */
+const audio        = document.getElementById('audioEl');
+const playBtn      = document.getElementById('playBtn');
+const statusLabel  = document.getElementById('statusLabel');
+const progressTrack= document.getElementById('progressTrack');
+const progressFill = document.getElementById('progressFill');
+
+function setupWebAudio() {
+  if (audioCtx) return;
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const source = audioCtx.createMediaElementSource(audio);
+  source.connect(audioCtx.destination);
+}
+
+function setStatus(txt) {
+  statusLabel.textContent = txt;
+  statusLabel.classList.add('visible');
+}
+
+// Autoplay
+audio.addEventListener('canplaythrough', () => {
+  setStatus('Écouter');
+  progressTrack.classList.add('visible');
+  audio.play().then(() => {
+    setupWebAudio();
+    playBtn.classList.add('playing');
+    setStatus('En lecture');
+  }).catch(() => {
+    setStatus('Appuyer pour écouter');
+  });
+}, { once: true });
+
+audio.addEventListener('error', () => setStatus('Fichier audio introuvable'));
+
+// Bouton
+playBtn.addEventListener('click', () => {
+  setupWebAudio();
+  if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+
+  if (audio.paused) {
+    audio.play();
+    playBtn.classList.add('playing');
+    setStatus('En lecture');
+  } else {
+    audio.pause();
+    playBtn.classList.remove('playing');
+    setStatus('En pause');
+  }
+});
+
+// Progression
+audio.addEventListener('timeupdate', () => {
+  if (!audio.duration) return;
+  progressFill.style.width = (audio.currentTime / audio.duration * 100) + '%';
+});
+
+audio.addEventListener('ended', () => {
+  playBtn.classList.remove('playing');
+  setStatus('Terminé');
+  progressFill.style.width = '100%';
+});
+</script>
+</body>
+</html>
