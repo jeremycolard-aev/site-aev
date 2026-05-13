@@ -1,29 +1,29 @@
 [
   {
-    "id": "8b2e6f6e",
-    "titre": "Les plumes légères",
-    "description": "Atelier d'écriture",
-    "date": "2026-05-12",
+    "id": "d54cd14c",
+    "titre": "Cinéma Renoir Compostelle",
+    "description": "Film Compostelle",
+    "date": "2026-05-13",
+    "heure_debut": "10:00:00",
+    "heure_fin": "12:30:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_c7b95bfb-d82a-4a66-8e75-b3e3bb04371e.png"
+  },
+  {
+    "id": "923392ff",
+    "titre": "Atelier expression corporelle au Pavillon noir.",
+    "description": "Cet atelier fait partie du parcours musique et danse que nous avons créé avec notre partenaire le Pavillon noir. Il s’agit d’un atelier dirigé par Natalia, d’une heure et trente minutes qui se déroulera dans un studio du Pavillon noir. Merci d’arriver 15 mn avant la séance. Le prix est de 15€ pour 1 seul atelier, 25€ pour 2 ateliers et  30 euros pour les 3 ateliers. Payer à l'inscription.",
+    "date": "2026-05-13",
     "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
+    "heure_fin": "15:30:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_7ceead3d-ab4f-4af2-a31d-946ade58b82a.png"
   },
   {
-    "id": "ba761bf1",
-    "titre": "Clochette a raté sa vie",
-    "description": "",
-    "date": "2026-05-12",
-    "heure_debut": "18:00:00",
-    "heure_fin": "18:45:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1joS1d4JN_lA-_S_coyDZE43kNtC-W31w&sz=w1000"
-  },
-  {
-    "id": "2c662c49",
-    "titre": "Parcours opéra Atelier chant",
-    "description": "Séance animée par la chanteuse lyrique et professeure de scène Marine Costa.",
-    "date": "2026-05-12",
-    "heure_debut": "9:45:00",
-    "heure_fin": "12:00:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_c6ee55ee-b450-48e9-8725-b0698856e4c7.png"
+    "id": "5e6aa12b",
+    "titre": "Piscine",
+    "description": "Natation",
+    "date": "2026-05-18",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
   }
 ]
