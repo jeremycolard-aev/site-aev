@@ -441,6 +441,166 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
   margin-top: 3rem;
 }
 
+/* ===== SECTION ACTUALITÉS DU MOMENT ===== */
+.actu-section {
+  background: var(--papier);
+  padding: 7rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.actu-inner { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
+
+.actu-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.actu-header-left .section-label { margin-bottom: 1.2rem; }
+.actu-header-left .section-title { color: var(--noir); font-size: clamp(2rem,4vw,3.2rem); }
+
+/* Grille des actualités */
+.actu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.actu-card {
+  background: white;
+  border: 1px solid rgba(200,134,10,.15);
+  overflow: hidden;
+  position: relative;
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.actu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.12);
+  border-color: rgba(216,0,0,.25);
+}
+.actu-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 4px;
+  background: var(--rouge);
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+.actu-card:hover::after { width: 100%; }
+
+.actu-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: rgba(200,134,10,.07);
+}
+.actu-card-img-placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(200,134,10,.1) 0%, rgba(216,0,0,.07) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.actu-card-img-placeholder svg {
+  width: 40px;
+  height: 40px;
+  opacity: .2;
+}
+
+.actu-card-body { padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1; }
+
+.actu-card-meta {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+.actu-card-date-badge {
+  background: var(--rouge);
+  color: white;
+  padding: .35rem .85rem;
+  clip-path: polygon(0 0,100% 0,94% 100%,6% 100%);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.actu-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--noir);
+  margin-bottom: .75rem;
+  line-height: 1.25;
+}
+.actu-card-desc {
+  font-size: .92rem;
+  color: var(--gris);
+  line-height: 1.7;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.actu-card-readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: 1.2rem;
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--rouge);
+  text-decoration: none;
+  transition: gap .2s;
+}
+.actu-card:hover .actu-card-readmore { gap: .7rem; }
+.actu-card-readmore svg {
+  width: 14px; height: 14px;
+  stroke: var(--rouge); fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform .2s;
+}
+.actu-card:hover .actu-card-readmore svg { transform: translateX(3px); }
+
+/* Skeletons actualités */
+.actu-skeleton {
+  background: white;
+  border: 1px solid rgba(200,134,10,.1);
+  overflow: hidden;
+  height: 380px;
+  position: relative;
+}
+.actu-skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(200,134,10,.07) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: actuSkeleton 1.6s ease-in-out infinite;
+}
+@keyframes actuSkeleton {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* Footer de la section */
+.actu-footer {
+  text-align: center;
+  margin-top: 3rem;
+}
+
 /* ===== SECTION LABELS ===== */
 .section-label {
   font-size:.8rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase;
@@ -926,11 +1086,13 @@ nav.mobile-bottom-nav::after { display: none !important; }
   .projet-photo-layout { grid-template-columns:1fr; gap:3rem; }
   .axes-grid { grid-template-columns:1fr; }
   .agenda-grid { grid-template-columns: 1fr 1fr; }
+  .actu-grid { grid-template-columns: 1fr 1fr; }
+  .actu-header { flex-direction: column; }
 }
 
 @media(max-width:768px){
   .hero { padding:6rem 1.5rem 3rem; }
-  .manifeste, .activites, .galerie-section, .engage-section, .cta-section, .projet-photo-section, .agenda-section { padding:5rem 1.5rem; }
+  .manifeste, .activites, .galerie-section, .engage-section, .cta-section, .projet-photo-section, .agenda-section, .actu-section { padding:5rem 1.5rem; }
   .act-grid { grid-template-columns:1fr; }
   .galerie-mosaic { grid-template-columns:1fr; grid-template-rows:auto; padding:0 1.5rem; }
   .galerie-mosaic .g-item { height:250px; }
@@ -943,6 +1105,7 @@ nav.mobile-bottom-nav::after { display: none !important; }
   .axes-grid { grid-template-columns:1fr; }
   .agenda-grid { grid-template-columns: 1fr; }
   .agenda-header { flex-direction: column; align-items: flex-start; }
+  .actu-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1050,6 +1213,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-outline-light">
         Voir tout le planning
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACTUALITÉS DU MOMENT ===== -->
+<section id="actualites" class="actu-section" aria-labelledby="actu-h">
+  <div class="actu-inner">
+    <div class="actu-header reveal">
+      <div class="actu-header-left">
+        <p class="section-label">À la une</p>
+        <h2 class="section-title" id="actu-h">Actualités du <em style="color:var(--rouge);font-style:italic;">moment</em></h2>
+      </div>
+      <a href="annonce.html" class="btn-primary" style="align-self:center;">
+        Toutes nos actualités
+      </a>
+    </div>
+
+    <div class="actu-grid" id="actu-grid" aria-live="polite" aria-busy="true">
+      <!-- Skeletons pendant le chargement -->
+      <div class="actu-skeleton reveal" aria-hidden="true"></div>
+      <div class="actu-skeleton reveal" aria-hidden="true"></div>
+      <div class="actu-skeleton reveal" aria-hidden="true"></div>
+    </div>
+
+    <div class="actu-footer reveal">
+      <a href="annonce.html" class="btn-outline">Voir toutes nos actualités</a>
     </div>
   </div>
 </section>
@@ -1243,7 +1432,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer>
   <div style="max-width:1300px; margin:0 auto;">
     <div class="footer-brand">
-      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8uj.png" alt="Logo Aix en Vue" aria-hidden="true">
       <span class="logo-aix" style="font-size:2rem;"><span class="red-letter">A</span>ix</span>
       <span class="logo-en" style="font-size:1.5rem;"><span class="red-letter">E</span>n</span>
       <span class="logo-vue" style="font-size:1.1rem;"><span class="red-letter">V</span>ue</span>
@@ -1412,7 +1601,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   const JOURS_FR = ['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
 
   function formatHeure(h) {
-    // "14:00:00" → "14h00"
     if (!h) return '';
     const parts = h.split(':');
     return parts[0] + 'h' + parts[1];
@@ -1440,16 +1628,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const card = document.createElement('article');
     card.className = 'agenda-card reveal' + (todayFlag ? ' is-today' : '');
 
-    // Image ou placeholder
     if (act.image_url) {
       const img = document.createElement('img');
       img.className = 'agenda-card-img';
       img.src = act.image_url;
       img.alt = act.titre;
       img.loading = 'lazy';
-      img.onerror = function() {
-        this.replaceWith(makePlaceholder());
-      };
+      img.onerror = function() { this.replaceWith(makePlaceholder()); };
       card.appendChild(img);
     } else {
       card.appendChild(makePlaceholder());
@@ -1458,7 +1643,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const body = document.createElement('div');
     body.className = 'agenda-card-body';
 
-    // Date block
     const dateRow = document.createElement('div');
     dateRow.className = 'agenda-card-date';
 
@@ -1520,7 +1704,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     grid.appendChild(empty);
   }
 
-  // Chargement avec cache-busting (timestamp jour)
   const today = new Date();
   const cacheBust = today.getFullYear() + '' + (today.getMonth()+1) + '' + today.getDate();
 
@@ -1538,19 +1721,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         return;
       }
 
-      // Tri chronologique
       const sorted = data.slice().sort(function(a, b) {
         return new Date(a.date) - new Date(b.date);
       });
 
       sorted.forEach(function(act, i) {
         const card = buildCard(act);
-        // Stagger d'animation
         card.style.transitionDelay = (i * 0.1) + 's';
         grid.appendChild(card);
       });
 
-      // Enregistrer les nouvelles cartes dans l'IntersectionObserver
       grid.querySelectorAll('.reveal').forEach(function(el) {
         io.observe(el);
       });
@@ -1559,6 +1739,145 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       console.warn('activite.json introuvable ou invalide :', err);
       grid.setAttribute('aria-busy', 'false');
       renderEmpty();
+    });
+})();
+
+// ===== ACTUALITÉS — CHARGEMENT actualite.json =====
+(function() {
+  const grid = document.getElementById('actu-grid');
+  if (!grid) return;
+
+  const MOIS_FR = ['jan.','fév.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+
+  function formatDate(dateStr) {
+    if (!dateStr) return '';
+    const d = new Date(dateStr + 'T00:00:00');
+    if (isNaN(d)) return dateStr;
+    return d.getDate() + ' ' + MOIS_FR[d.getMonth()] + ' ' + d.getFullYear();
+  }
+
+  function cleanText(str) {
+    if (!str) return '';
+    // Supprimer les emojis et nettoyer les sauts de ligne
+    return str.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
+  }
+
+  function buildActuCard(item) {
+    const card = document.createElement('article');
+    card.className = 'actu-card reveal';
+    card.setAttribute('role', 'article');
+    card.addEventListener('click', function() {
+      window.location.href = 'annonce.html';
+    });
+
+    // Image
+    if (item.photo) {
+      const img = document.createElement('img');
+      img.className = 'actu-card-img';
+      img.src = item.photo;
+      img.alt = item.titre || 'Actualité Aix en Vue';
+      img.loading = 'lazy';
+      img.onerror = function() { this.replaceWith(makeActuPlaceholder()); };
+      card.appendChild(img);
+    } else {
+      card.appendChild(makeActuPlaceholder());
+    }
+
+    const body = document.createElement('div');
+    body.className = 'actu-card-body';
+
+    // Meta : badge date
+    const meta = document.createElement('div');
+    meta.className = 'actu-card-meta';
+
+    const dateBadge = document.createElement('span');
+    dateBadge.className = 'actu-card-date-badge';
+    dateBadge.textContent = formatDate(item.Date);
+    meta.appendChild(dateBadge);
+    body.appendChild(meta);
+
+    // Titre (sans emojis de tête)
+    const title = document.createElement('h3');
+    title.className = 'actu-card-title';
+    title.textContent = (item.titre || '').replace(/^[\p{Emoji}\s]+/u, '').trim();
+    body.appendChild(title);
+
+    // Extrait du contenu (200 caractères)
+    if (item.contenu) {
+      const desc = document.createElement('p');
+      desc.className = 'actu-card-desc';
+      const clean = cleanText(item.contenu);
+      desc.textContent = clean.length > 200 ? clean.substring(0, 200) + '…' : clean;
+      body.appendChild(desc);
+    }
+
+    // Lire la suite
+    const readmore = document.createElement('a');
+    readmore.className = 'actu-card-readmore';
+    readmore.href = 'annonce.html';
+    readmore.innerHTML = 'Lire la suite <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>';
+    readmore.addEventListener('click', function(e) { e.stopPropagation(); });
+    body.appendChild(readmore);
+
+    card.appendChild(body);
+    return card;
+  }
+
+  function makeActuPlaceholder() {
+    const ph = document.createElement('div');
+    ph.className = 'actu-card-img-placeholder';
+    ph.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--ocre);"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+    return ph;
+  }
+
+  function renderActuEmpty() {
+    grid.innerHTML = '';
+    const empty = document.createElement('div');
+    empty.style.cssText = 'grid-column:1/-1; text-align:center; padding:3rem; color:var(--gris);';
+    empty.innerHTML = '<p style="font-size:1rem;">Aucune actualité disponible pour le moment.</p>';
+    grid.appendChild(empty);
+  }
+
+  const today = new Date();
+  const cacheBust = today.getFullYear() + '' + (today.getMonth()+1) + '' + today.getDate();
+
+  fetch('./actualite.json?v=' + cacheBust)
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function(data) {
+      grid.setAttribute('aria-busy', 'false');
+      grid.innerHTML = '';
+
+      if (!Array.isArray(data) || data.length === 0) {
+        renderActuEmpty();
+        return;
+      }
+
+      // Tri décroissant par Date (les plus récentes en premier)
+      const sorted = data.slice().sort(function(a, b) {
+        return new Date(b.Date) - new Date(a.Date);
+      });
+
+      // Afficher les 3 dernières uniquement
+      const top3 = sorted.slice(0, 3);
+
+      top3.forEach(function(item, i) {
+        const card = buildActuCard(item);
+        card.style.transitionDelay = (i * 0.12) + 's';
+        grid.appendChild(card);
+      });
+
+      // Enregistrer dans l'IntersectionObserver
+      grid.querySelectorAll('.reveal').forEach(function(el) {
+        io.observe(el);
+      });
+    })
+    .catch(function(err) {
+      console.warn('actualite.json introuvable ou invalide :', err);
+      grid.setAttribute('aria-busy', 'false');
+      renderActuEmpty();
     });
 })();
 
