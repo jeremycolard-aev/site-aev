@@ -1,14 +1,5 @@
 [
   {
-    "id": "162b97d1",
-    "titre": "Journée sensibilisation handicap visuel",
-    "description": "Avec nos partenaires Hatmonie mutuelle et Écouter Voir nous sensibilisons le grand public au handicap visuel et donnons l’opportunité à notre association d’être visible et connue auprès des aixois. Mobilisez vous et venez nombteux pour témoigner, vous informer et surtout nous rendre visible!",
-    "date": "2026-05-19",
-    "heure_debut": "10:00:00",
-    "heure_fin": "17:15:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1miSe6G989FxTuYP6O99rj1RwhQ8RJqRo&sz=w1000"
-  },
-  {
     "id": "bc23b200",
     "titre": "Atelier expression corporelle au Pavillon noir",
     "description": "Cet atelier fait partie du parcours musique et danse que nous avons créé avec notre partenaire le Pavillon noir. Il s’agit d’un atelier dirigé par Natalia, d’une heure et trente minutes qui se déroulera dans un studio du Pavillon noir. Merci d’arriver 15 mn avant la séance. Le prix est de 15€ pour 1 seul atelier, 25€ pour 2 ateliers et  30 euros pour les 3 ateliers. Payer à l'inscription.",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "17:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
+  },
+  {
+    "id": "fc8bf101",
+    "titre": "Atelier trucs et astuces",
+    "description": "",
+    "date": "2026-05-21",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
   }
 ]
