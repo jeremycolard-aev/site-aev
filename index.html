@@ -1811,14 +1811,37 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       body.appendChild(desc);
     }
 
+    // Zone d'action (Lire la suite & Optionnellement le Document PDF)
+    const actionsWrapper = document.createElement('div');
+    actionsWrapper.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin-top: auto;';
+
     // Lire la suite
     const readmore = document.createElement('a');
     readmore.className = 'actu-card-readmore';
     readmore.href = 'annonce.html';
-    readmore.innerHTML = 'Lire la suite <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>';
+    readmore.innerHTML = 'Lire la suite <svg viewBox="0 0 24 24" style="width:14px; height:14px; stroke:var(--rouge); fill:none; stroke-width:2.5; stroke-linecap:round; stroke-linejoin:round;"><polyline points="9 18 15 12 9 6"/></svg>';
     readmore.addEventListener('click', function(e) { e.stopPropagation(); });
-    body.appendChild(readmore);
+    actionsWrapper.appendChild(readmore);
 
+    // Ajout dynamique du bouton PDF s'il existe et n'est pas vide
+    if (item.pdf && item.pdf.trim() !== "") {
+      const pdfLink = document.createElement('a');
+      pdfLink.href = item.pdf;
+      pdfLink.target = '_blank';
+      pdfLink.rel = 'noopener noreferrer';
+      pdfLink.style.cssText = 'font-size: 0.75rem; font-weight: 800; color: white; background: var(--ocre); padding: 0.4rem 0.8rem; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px); transition: background 0.2s;';
+      pdfLink.innerHTML = '📎 Doc';
+      
+      // Changement de couleur au survol pour le bouton PDF
+      pdfLink.addEventListener('mouseover', function() { this.style.background = 'var(--noir)'; });
+      pdfLink.addEventListener('mouseout', function() { this.style.background = 'var(--ocre)'; });
+      
+      // stopPropagation évite que le clic sur le PDF n'ouvre la page annonce.html en même temps
+      pdfLink.addEventListener('click', function(e) { e.stopPropagation(); });
+      actionsWrapper.appendChild(pdfLink);
+    }
+
+    body.appendChild(actionsWrapper);
     card.appendChild(body);
     return card;
   }
