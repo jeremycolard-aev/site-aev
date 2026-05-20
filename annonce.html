@@ -149,6 +149,34 @@
   margin-bottom: 2rem; border-bottom: 2px solid var(--papier-fonce); padding-bottom: 1rem;
 }
 .modal-text { font-size: 1.15rem; color: var(--gris); line-height: 1.8; }
+
+/* Nouveau style pour le bouton PDF/Lien */
+.modal-pdf-container {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--papier-fonce);
+}
+.modal-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--rouge);
+  color: white !important;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+.modal-pdf-link:hover {
+  background-color: var(--noir);
+  transform: translateY(-2px);
+}
+
 .close-btn {
   position: absolute; top: 20px; right: 20px;
   background: var(--rouge); color: white; border: none; width: 40px; height: 40px;
@@ -224,6 +252,8 @@
       <h2 id="m-title" class="modal-title"></h2>
       <div id="m-meta" class="modal-meta"></div>
       <div id="m-text" class="modal-text"></div>
+      <!-- Zone destinée à recevoir le bouton de téléchargement / lien externe -->
+      <div id="m-pdf-container" class="modal-pdf-container"></div>
     </div>
   </div>
 </div>
@@ -353,6 +383,20 @@
     document.getElementById('m-meta').innerHTML =
       `${auteur ? 'PAR ' + auteur + ' | ' : ''}LE ${date}`;
     document.getElementById('m-text').innerHTML = contenuHtml;
+
+    // Gestion de la variable "pdf" dynamique (Parfois vide ou absente)
+    const pdfContainer = document.getElementById('m-pdf-container');
+    if (ann.pdf && ann.pdf.trim() !== "") {
+      pdfContainer.innerHTML = `
+        <a href="${ann.pdf}" class="modal-pdf-link" target="_blank" rel="noopener noreferrer">
+          <span>📎</span> Voir le document associé
+        </a>
+      `;
+      pdfContainer.style.display = 'block';
+    } else {
+      pdfContainer.innerHTML = '';
+      pdfContainer.style.display = 'none';
+    }
 
     const overlay = document.getElementById('modal-overlay');
     overlay.style.display = 'flex';
