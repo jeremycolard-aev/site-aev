@@ -1,23 +1,5 @@
 [
   {
-    "id": "bc23b200",
-    "titre": "Atelier expression corporelle au Pavillon noir",
-    "description": "Cet atelier fait partie du parcours musique et danse que nous avons créé avec notre partenaire le Pavillon noir. Il s’agit d’un atelier dirigé par Natalia, d’une heure et trente minutes qui se déroulera dans un studio du Pavillon noir. Merci d’arriver 15 mn avant la séance. Le prix est de 15€ pour 1 seul atelier, 25€ pour 2 ateliers et  30 euros pour les 3 ateliers. Payer à l'inscription.",
-    "date": "2026-05-20",
-    "heure_debut": "10:00:00",
-    "heure_fin": "11:30:00",
-    "image_url": ""
-  },
-  {
-    "id": "d6bd44d8",
-    "titre": "Jardinage",
-    "description": "",
-    "date": "2026-05-20",
-    "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
-  },
-  {
     "id": "fc8bf101",
     "titre": "Atelier trucs et astuces",
     "description": "",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
+  },
+  {
+    "id": "bd687e72",
+    "titre": "Permanence aide au quotidien",
+    "description": "Permanence qui vous aide pour vos démarches administratives ou autre sujet, afin de regagner de l’autonomie dans votre vie",
+    "date": "2026-05-21",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1ehjtqInqJXf8y-bdJKJefZBP3vhvwqxY&sz=w1000"
+  },
+  {
+    "id": "c1cd7df1",
+    "titre": "Atelier peinture",
+    "description": "Atelier peinture déplacé",
+    "date": "2026-05-21",
+    "heure_debut": "14:00:00",
+    "heure_fin": "17:00:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_53b0eb2f-53c1-40e1-b791-1e643ae92b04.png"
   }
 ]
