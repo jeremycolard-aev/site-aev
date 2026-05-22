@@ -1,29 +1,29 @@
 [
   {
-    "id": "fc8bf101",
-    "titre": "Atelier trucs et astuces",
+    "id": "2f871672",
+    "titre": "Séjour à Saint-Etienne de Tinée",
+    "description": "Week End à la montagne pour changer d'air - Retour le lundi 25 mai en fin d'après midi",
+    "date": "2026-05-22",
+    "heure_debut": "13:30:00",
+    "heure_fin": "18:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1EZ1yMWWh_Pa3lu2rpf-ngxpCUQQ5TJ7I&sz=w1000"
+  },
+  {
+    "id": "e3295aa5",
+    "titre": "Feldenkrais cours collectif",
+    "description": "Cours collectif",
+    "date": "2026-05-22",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1vnA-oL8v5IW729hRWVdu16uLMss5ydzc&sz=w1000"
+  },
+  {
+    "id": "d93d205b",
+    "titre": "Gym douce avec Denis",
     "description": "",
-    "date": "2026-05-21",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
-  },
-  {
-    "id": "bd687e72",
-    "titre": "Permanence aide au quotidien",
-    "description": "Permanence qui vous aide pour vos démarches administratives ou autre sujet, afin de regagner de l’autonomie dans votre vie",
-    "date": "2026-05-21",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1ehjtqInqJXf8y-bdJKJefZBP3vhvwqxY&sz=w1000"
-  },
-  {
-    "id": "c1cd7df1",
-    "titre": "Atelier peinture",
-    "description": "Atelier peinture déplacé",
-    "date": "2026-05-21",
-    "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_53b0eb2f-53c1-40e1-b791-1e643ae92b04.png"
+    "date": "2026-05-22",
+    "heure_debut": "15:30:00",
+    "heure_fin": "16:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1clU6X750KNfJiI1i7cL6sNMrhzOSnRcn&sz=w1000"
   }
 ]
