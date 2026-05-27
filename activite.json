@@ -1,29 +1,29 @@
 [
   {
-    "id": "189adee7",
-    "titre": "Tandem",
-    "description": "",
-    "date": "2026-05-23",
-    "heure_debut": "9:00:00",
-    "heure_fin": "12:15:00",
-    "image_url": "https://drive.google.com/thumbnail?id=120Vk74m7unmMoMKfaqt2RRnPytqUbzF2&sz=w1000"
+    "id": "7e0cd346",
+    "titre": "Atelier expression corporelle au Pavillon noir.",
+    "description": "Cet atelier fait partie du parcours musique et danse que nous avons créé avec notre partenaire le Pavillon noir. Il s’agit d’un atelier dirigé par Natalia, d’une heure et trente minutes qui se déroulera dans un studio du Pavillon noir. Merci d’arriver 15 mn avant la séance. Le prix est de 15€ pour 1 seul atelier, 25€ pour 2 ateliers et  30 euros pour les 3 ateliers. Payer à l'inscription.",
+    "date": "2026-05-27",
+    "heure_debut": "10:00:00",
+    "heure_fin": "11:30:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_822525b8-9310-46b2-af19-6608938ab801.png"
   },
   {
-    "id": "b03b5ffd",
-    "titre": "Alex Kosta",
-    "description": "Exposition Musée Granet XXe",
-    "date": "2026-05-26",
-    "heure_debut": "10:30:00",
-    "heure_fin": "12:00:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_bc41fcfd-ed7c-415f-ad2e-98216933dcf1.png"
+    "id": "32b4f8d9",
+    "titre": "Repas Petites cantines",
+    "description": "Repas",
+    "date": "2026-05-27",
+    "heure_debut": "12:30:00",
+    "heure_fin": "13:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1xJfSrmxJYJ8dqEPZcUAI1aQA7DXwJgdo&sz=w1000"
   },
   {
-    "id": "4521d801",
-    "titre": "Goûter littéraire",
-    "description": "",
-    "date": "2026-05-26",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1UGearV3eRmkc4c6FwaGT7lLf_MNeZ34Y&sz=w1000"
+    "id": "25e51e9e",
+    "titre": "Réunion des bénévoles",
+    "description": "Réunion en Visio pour définir l’organisation de l’association et des missions à accomplir. Utilisation de l’application et mise en place de l’organisation pour répondre aux trois missions de l’association",
+    "date": "2026-05-27",
+    "heure_debut": "18:00:00",
+    "heure_fin": "19:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1EnMGoSFPVdG2Kz2MHbZHWW5pQ--sAQUn&sz=w1000"
   }
 ]
