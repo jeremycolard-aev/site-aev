@@ -1,29 +1,29 @@
 [
   {
-    "id": "7e0cd346",
-    "titre": "Atelier expression corporelle au Pavillon noir.",
-    "description": "Cet atelier fait partie du parcours musique et danse que nous avons créé avec notre partenaire le Pavillon noir. Il s’agit d’un atelier dirigé par Natalia, d’une heure et trente minutes qui se déroulera dans un studio du Pavillon noir. Merci d’arriver 15 mn avant la séance. Le prix est de 15€ pour 1 seul atelier, 25€ pour 2 ateliers et  30 euros pour les 3 ateliers. Payer à l'inscription.",
-    "date": "2026-05-27",
-    "heure_debut": "10:00:00",
-    "heure_fin": "11:30:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_822525b8-9310-46b2-af19-6608938ab801.png"
+    "id": "909eeb22",
+    "titre": "Atelier jeux",
+    "description": "",
+    "date": "2026-05-28",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1ErPCNUNl0ShW2La0gTbW1mvAth9f6qKD&sz=w1000"
   },
   {
-    "id": "32b4f8d9",
-    "titre": "Repas Petites cantines",
-    "description": "Repas",
-    "date": "2026-05-27",
-    "heure_debut": "12:30:00",
-    "heure_fin": "13:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1xJfSrmxJYJ8dqEPZcUAI1aQA7DXwJgdo&sz=w1000"
+    "id": "7dd6d7c9",
+    "titre": "UN GRAND CRI D'AMOUR",
+    "description": "Pièce de Josiane Balasko par la compagnie Le 4ème mur, Troupe de Théâtre amateur au Théâtre Ainsi de Suite à Aix-en-Provence.  Du rire, de l'émotion et un grand cri d'amour",
+    "date": "2026-05-30",
+    "heure_debut": "20:30:00",
+    "heure_fin": "22:15:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1ar5w5GNIMbLy8zWvcQBmElscQgXu4FGj&sz=w1000"
   },
   {
-    "id": "25e51e9e",
-    "titre": "Réunion des bénévoles",
-    "description": "Réunion en Visio pour définir l’organisation de l’association et des missions à accomplir. Utilisation de l’application et mise en place de l’organisation pour répondre aux trois missions de l’association",
-    "date": "2026-05-27",
-    "heure_debut": "18:00:00",
-    "heure_fin": "19:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1EnMGoSFPVdG2Kz2MHbZHWW5pQ--sAQUn&sz=w1000"
+    "id": "6a44b9c9",
+    "titre": "Tandem",
+    "description": "",
+    "date": "2026-05-30",
+    "heure_debut": "9:00:00",
+    "heure_fin": "12:15:00",
+    "image_url": "https://drive.google.com/thumbnail?id=120Vk74m7unmMoMKfaqt2RRnPytqUbzF2&sz=w1000"
   }
 ]
