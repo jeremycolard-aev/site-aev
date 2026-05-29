@@ -1,14 +1,5 @@
 [
   {
-    "id": "909eeb22",
-    "titre": "Atelier jeux",
-    "description": "",
-    "date": "2026-05-28",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1ErPCNUNl0ShW2La0gTbW1mvAth9f6qKD&sz=w1000"
-  },
-  {
     "id": "7dd6d7c9",
     "titre": "UN GRAND CRI D'AMOUR",
     "description": "Pièce de Josiane Balasko par la compagnie Le 4ème mur, Troupe de Théâtre amateur au Théâtre Ainsi de Suite à Aix-en-Provence.  Du rire, de l'émotion et un grand cri d'amour",
@@ -25,5 +16,14 @@
     "heure_debut": "9:00:00",
     "heure_fin": "12:15:00",
     "image_url": "https://drive.google.com/thumbnail?id=120Vk74m7unmMoMKfaqt2RRnPytqUbzF2&sz=w1000"
+  },
+  {
+    "id": "e45cb6ec",
+    "titre": "UN GRAND CRI D'AMOUR sans accompagnement",
+    "description": "Pièce de Josiane Balasko interprétée par une troupe amateur au théâtre Ainsi de Suite à Aix en Provence. Du rire, de l'émotion et un grand cri d'amour",
+    "date": "2026-05-31",
+    "heure_debut": "15:30:00",
+    "heure_fin": "17:15:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1HqDDIVzqSXxzWE4Fb5hF-a3RFkx0mZqQ&sz=w1000"
   }
 ]
