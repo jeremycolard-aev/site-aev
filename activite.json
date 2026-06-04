@@ -1,29 +1,29 @@
 [
   {
-    "id": "0fee48cf",
-    "titre": "Jardinage",
+    "id": "ab15dcf4",
+    "titre": "Journée rando et jeux",
+    "description": "Avec l’aide de 10 Benevoles de la Caisse d’Epargne, nous prévoyons de faire une journée randonnée de 10 heures à 14h et de poursuivre nos activités à la mairie du Pont de l’Arc pour faire des jeux ludiques dans la bonne humeur et la sympathie. Prévoir le picnic,  pourconnaître les bénévoles qui vous accompagneront durant la journée rendez vous à 9h30 au parking du parc du val de l’arc.",
+    "date": "2026-06-04",
+    "heure_debut": "9:30:00",
+    "heure_fin": "16:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1DoSE2R4ZYqIF8Glu4o8HeK5glsZ2j8oL&sz=w1000"
+  },
+  {
+    "id": "123e03d5",
+    "titre": "Feldenkrais cours individuel IF",
     "description": "",
-    "date": "2026-06-03",
+    "date": "2026-06-05",
     "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
+    "heure_fin": "15:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1vnA-oL8v5IW729hRWVdu16uLMss5ydzc&sz=w1000"
   },
   {
-    "id": "984118b0",
-    "titre": "LA DISTANCE",
+    "id": "e87d3690",
+    "titre": "Feldenkrais cours individuel IF",
     "description": "",
-    "date": "2026-06-03",
-    "heure_debut": "19:30:00",
-    "heure_fin": "21:30:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_68cb1568-e87b-477e-a4a2-b8efd5b11fe6.png"
-  },
-  {
-    "id": "be1df3d0",
-    "titre": "Atelier sensibilisation lycée Vauvenargues",
-    "description": "Atelier de sensibilisation pour des lycéens en bac professionnel dans le but de l’sensibiliser aux Handicap visuel, mais également au pouvoir qu’ils  peuvent avoir pour changer les choses en participant à la vie associative en leur montrant par des exemples concrets de ce que nous traversons mais qu’ils peuvent aider à améliorer la société",
-    "date": "2026-06-03",
-    "heure_debut": "9:00:00",
-    "heure_fin": "12:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1miSe6G989FxTuYP6O99rj1RwhQ8RJqRo&sz=w1000"
+    "date": "2026-06-05",
+    "heure_debut": "15:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1vnA-oL8v5IW729hRWVdu16uLMss5ydzc&sz=w1000"
   }
 ]
