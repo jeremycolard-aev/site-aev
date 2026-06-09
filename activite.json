@@ -1,14 +1,5 @@
 [
   {
-    "id": "32075c41",
-    "titre": "Piscine",
-    "description": "Natation",
-    "date": "2026-06-08",
-    "heure_debut": "14:00:00",
-    "heure_fin": "15:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
-  },
-  {
     "id": "72fcd693",
     "titre": "Goûter littéraire",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "10:30:00",
     "heure_fin": "12:00:00",
     "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_6d2401d7-8526-49ec-8718-fe57fab4068d.png"
+  },
+  {
+    "id": "697319f7",
+    "titre": "Atelier numérique",
+    "description": "Atelier, qui vise à vous aider pour vous adapter aux nouvelles technologies, téléphone, tablette, malgré la déficience visuelle",
+    "date": "2026-06-11",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1_HvoR0OhVnNtD_lhmzZCV2nG5moPAddJ&sz=w1000"
   }
 ]
