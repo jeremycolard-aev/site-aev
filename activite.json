@@ -1,23 +1,5 @@
 [
   {
-    "id": "85a3a601",
-    "titre": "Alex Kosta",
-    "description": "Exposition Granet XXe",
-    "date": "2026-06-11",
-    "heure_debut": "10:30:00",
-    "heure_fin": "12:00:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_6d2401d7-8526-49ec-8718-fe57fab4068d.png"
-  },
-  {
-    "id": "697319f7",
-    "titre": "Atelier numérique",
-    "description": "Atelier, qui vise à vous aider pour vous adapter aux nouvelles technologies, téléphone, tablette, malgré la déficience visuelle",
-    "date": "2026-06-11",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1_HvoR0OhVnNtD_lhmzZCV2nG5moPAddJ&sz=w1000"
-  },
-  {
     "id": "db49a22d",
     "titre": "Feldenkrais cours collectif",
     "description": "Cours collectif",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "15:30:00",
     "image_url": "https://drive.google.com/thumbnail?id=1vnA-oL8v5IW729hRWVdu16uLMss5ydzc&sz=w1000"
+  },
+  {
+    "id": "e2858fdc",
+    "titre": "Gym douce avec Denis",
+    "description": "",
+    "date": "2026-06-12",
+    "heure_debut": "15:30:00",
+    "heure_fin": "16:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1clU6X750KNfJiI1i7cL6sNMrhzOSnRcn&sz=w1000"
+  },
+  {
+    "id": "f5a13590",
+    "titre": "Expo : regards actuels sur la figuration narrative",
+    "description": "",
+    "date": "2026-06-13",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1ZLYem_qJiLbjf023bLDe2EbwOIa7jBHJ&sz=w1000"
   }
 ]
