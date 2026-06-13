@@ -1,23 +1,5 @@
 [
   {
-    "id": "db49a22d",
-    "titre": "Feldenkrais cours collectif",
-    "description": "Cours collectif",
-    "date": "2026-06-12",
-    "heure_debut": "14:00:00",
-    "heure_fin": "15:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1vnA-oL8v5IW729hRWVdu16uLMss5ydzc&sz=w1000"
-  },
-  {
-    "id": "e2858fdc",
-    "titre": "Gym douce avec Denis",
-    "description": "",
-    "date": "2026-06-12",
-    "heure_debut": "15:30:00",
-    "heure_fin": "16:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1clU6X750KNfJiI1i7cL6sNMrhzOSnRcn&sz=w1000"
-  },
-  {
     "id": "f5a13590",
     "titre": "Expo : regards actuels sur la figuration narrative",
     "description": "",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1ZLYem_qJiLbjf023bLDe2EbwOIa7jBHJ&sz=w1000"
+  },
+  {
+    "id": "16fe7963",
+    "titre": "La nuit du handicap",
+    "description": "Rassemblons toute nos forces bénévoles comme Beneficiaires pour montrer que notre Association et pleine de dynamisme, d’activités, et sensibilisons le public ou Handicap visuel",
+    "date": "2026-06-13",
+    "heure_debut": "15:00:00",
+    "heure_fin": "22:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1X_aMtOfWoQw3oY-6edJzM-jYClFLYWeF&sz=w1000"
+  },
+  {
+    "id": "53103bb6",
+    "titre": "Piscine",
+    "description": "",
+    "date": "2026-06-15",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
   }
 ]
