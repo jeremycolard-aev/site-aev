@@ -1,14 +1,5 @@
 [
   {
-    "id": "53103bb6",
-    "titre": "Piscine",
-    "description": "",
-    "date": "2026-06-15",
-    "heure_debut": "14:00:00",
-    "heure_fin": "15:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
-  },
-  {
     "id": "678867dc",
     "titre": "Cinéma Renoir - La Vénus électrique",
     "description": "En deux mots, \"La Vénus électrique\" nous plonge dans le Paris des années 1920. Antoine, un jeune peintre brisé par la perte de sa femme, croit consulter une voyante pour lui parler. Mais c’est Suzanne, une jeune foraine malicieuse, qui prend sa place, et ils se retrouvent entraînés dans un jeu de dupes où la romance n’est jamais loin. Entre imposture, humour et sentiments, le film promet une aventure pleine de charme et d’émotion. Ça donne envie, non ?",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "17:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
+  },
+  {
+    "id": "ec6c126f",
+    "titre": "Flâneries des arts installation",
+    "description": "Installation des tableaux, Barnum et tout le matériel pour les flâneries au jardin des étuves.",
+    "date": "2026-06-18",
+    "heure_debut": "10:00:00",
+    "heure_fin": "12:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1CU9hIExcR_4qJ06kSvp7i7IRsuqp3XFh&sz=w1000"
   }
 ]
