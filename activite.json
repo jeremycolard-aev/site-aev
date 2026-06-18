@@ -1,23 +1,5 @@
 [
   {
-    "id": "678867dc",
-    "titre": "Cinéma Renoir - La Vénus électrique",
-    "description": "En deux mots, \"La Vénus électrique\" nous plonge dans le Paris des années 1920. Antoine, un jeune peintre brisé par la perte de sa femme, croit consulter une voyante pour lui parler. Mais c’est Suzanne, une jeune foraine malicieuse, qui prend sa place, et ils se retrouvent entraînés dans un jeu de dupes où la romance n’est jamais loin. Entre imposture, humour et sentiments, le film promet une aventure pleine de charme et d’émotion. Ça donne envie, non ?",
-    "date": "2026-06-17",
-    "heure_debut": "10:30:00",
-    "heure_fin": "12:45:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_c7b95bfb-d82a-4a66-8e75-b3e3bb04371e.png"
-  },
-  {
-    "id": "57766bec",
-    "titre": "Jardinage",
-    "description": "",
-    "date": "2026-06-17",
-    "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
-  },
-  {
     "id": "ec6c126f",
     "titre": "Flâneries des arts installation",
     "description": "Installation des tableaux, Barnum et tout le matériel pour les flâneries au jardin des étuves.",
@@ -25,5 +7,23 @@
     "heure_debut": "10:00:00",
     "heure_fin": "12:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1CU9hIExcR_4qJ06kSvp7i7IRsuqp3XFh&sz=w1000"
+  },
+  {
+    "id": "b9d1bbaa",
+    "titre": "Aide au quotidien",
+    "description": "",
+    "date": "2026-06-18",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1ehjtqInqJXf8y-bdJKJefZBP3vhvwqxY&sz=w1000"
+  },
+  {
+    "id": "7a9152e6",
+    "titre": "Atelier prévention des chutes",
+    "description": "Un. Atelier est proposé par la maison de santé Situe dans le quartier Aix–Besson N’hésitez pas à vous inscrire, l’entrée est libre et l’atelier et mener par une personne professionnelle qui vous apprendra à éviter le risque de chute.",
+    "date": "2026-06-18",
+    "heure_debut": "14:00:00",
+    "heure_fin": "17:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1x1dhwU1bDakwbEKy2mX9Xcp6oL-QPbl0&sz=w1000"
   }
 ]
