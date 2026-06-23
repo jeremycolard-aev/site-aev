@@ -1,29 +1,29 @@
 [
   {
-    "id": "ec6c126f",
-    "titre": "Flâneries des arts installation",
-    "description": "Installation des tableaux, Barnum et tout le matériel pour les flâneries au jardin des étuves.",
-    "date": "2026-06-18",
-    "heure_debut": "10:00:00",
-    "heure_fin": "12:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1CU9hIExcR_4qJ06kSvp7i7IRsuqp3XFh&sz=w1000"
-  },
-  {
-    "id": "b9d1bbaa",
-    "titre": "Aide au quotidien",
-    "description": "",
-    "date": "2026-06-18",
+    "id": "9847a2b9",
+    "titre": "Les plumes légères",
+    "description": "Atelier d'écriture",
+    "date": "2026-06-23",
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1ehjtqInqJXf8y-bdJKJefZBP3vhvwqxY&sz=w1000"
+    "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
   },
   {
-    "id": "7a9152e6",
-    "titre": "Atelier prévention des chutes",
-    "description": "Un. Atelier est proposé par la maison de santé Situe dans le quartier Aix–Besson N’hésitez pas à vous inscrire, l’entrée est libre et l’atelier et mener par une personne professionnelle qui vous apprendra à éviter le risque de chute.",
-    "date": "2026-06-18",
+    "id": "61a67efc",
+    "titre": "Atelier Jeux",
+    "description": "",
+    "date": "2026-06-25",
     "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1x1dhwU1bDakwbEKy2mX9Xcp6oL-QPbl0&sz=w1000"
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1ErPCNUNl0ShW2La0gTbW1mvAth9f6qKD&sz=w1000"
+  },
+  {
+    "id": "6dd48351",
+    "titre": "Parcours Opéra \"la flûte enchantée\"",
+    "description": "Visite tactile des décors et des costumes",
+    "date": "2026-06-27",
+    "heure_debut": "19:30:00",
+    "heure_fin": "20:00:00",
+    "image_url": ""
   }
 ]
