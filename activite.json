@@ -1,14 +1,5 @@
 [
   {
-    "id": "9847a2b9",
-    "titre": "Les plumes légères",
-    "description": "Atelier d'écriture",
-    "date": "2026-06-23",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
-  },
-  {
     "id": "61a67efc",
     "titre": "Atelier Jeux",
     "description": "",
@@ -19,11 +10,20 @@
   },
   {
     "id": "6dd48351",
-    "titre": "Parcours Opéra \"la flûte enchantée\"",
-    "description": "Visite tactile des décors et des costumes",
+    "titre": "Opéra - \"la flûte enchantée\"",
+    "description": "Visite tactile des décors et des costumes puis représentation",
     "date": "2026-06-27",
-    "heure_debut": "19:30:00",
-    "heure_fin": "20:00:00",
-    "image_url": ""
+    "heure_debut": "18:15:00",
+    "heure_fin": "0:00:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_5f7f868e-12dc-4f65-883a-6fb82b0daa7c.png"
+  },
+  {
+    "id": "722e891f",
+    "titre": "Sortie baignade à Carro puis restau bord de mer",
+    "description": "",
+    "date": "2026-06-30",
+    "heure_debut": "17:00:00",
+    "heure_fin": "22:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1gM-5bXt1kr87YkUMBjm9vQ3LPfY8jgeS&sz=w1000"
   }
 ]
