@@ -1,14 +1,5 @@
 [
   {
-    "id": "61a67efc",
-    "titre": "Atelier Jeux",
-    "description": "",
-    "date": "2026-06-25",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1ErPCNUNl0ShW2La0gTbW1mvAth9f6qKD&sz=w1000"
-  },
-  {
     "id": "6dd48351",
     "titre": "Opéra - \"la flûte enchantée\"",
     "description": "Visite tactile des décors et des costumes puis représentation",
@@ -25,5 +16,14 @@
     "heure_debut": "17:00:00",
     "heure_fin": "22:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1gM-5bXt1kr87YkUMBjm9vQ3LPfY8jgeS&sz=w1000"
+  },
+  {
+    "id": "d624daca",
+    "titre": "Jardinage",
+    "description": "",
+    "date": "2026-07-01",
+    "heure_debut": "14:00:00",
+    "heure_fin": "17:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
   }
 ]
