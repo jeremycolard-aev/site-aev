@@ -1,14 +1,5 @@
 [
   {
-    "id": "6dd48351",
-    "titre": "Opéra - \"la flûte enchantée\"",
-    "description": "Visite tactile des décors et des costumes puis représentation",
-    "date": "2026-06-27",
-    "heure_debut": "18:15:00",
-    "heure_fin": "0:00:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_5f7f868e-12dc-4f65-883a-6fb82b0daa7c.png"
-  },
-  {
     "id": "722e891f",
     "titre": "Sortie baignade à Carro puis restau bord de mer",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "17:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
+  },
+  {
+    "id": "3c7c90ed",
+    "titre": "Cinéma Renoir - de la comédie française",
+    "description": "De la Comédie-Française est un film français réalisé par Bertrand Usclat et Martin Darondeau et sorti en 2026. Il est présenté en avant-première au Festival de l’Alpe d'Huez 2026 où il reçoit quatre prix : prix spécial du Jury, prix du public, prix Coup de cœur de la région et prix Canal+ du meilleur film.",
+    "date": "2026-07-15",
+    "heure_debut": "10:30:00",
+    "heure_fin": "12:45:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_c7b95bfb-d82a-4a66-8e75-b3e3bb04371e.png"
   }
 ]
