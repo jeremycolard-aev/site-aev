@@ -1,14 +1,5 @@
 [
   {
-    "id": "722e891f",
-    "titre": "Sortie baignade à Carro puis restau bord de mer",
-    "description": "",
-    "date": "2026-06-30",
-    "heure_debut": "17:00:00",
-    "heure_fin": "22:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1gM-5bXt1kr87YkUMBjm9vQ3LPfY8jgeS&sz=w1000"
-  },
-  {
     "id": "d624daca",
     "titre": "Jardinage",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "10:30:00",
     "heure_fin": "12:45:00",
     "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_c7b95bfb-d82a-4a66-8e75-b3e3bb04371e.png"
+  },
+  {
+    "id": "fcfa6c20",
+    "titre": "Festival les musicales de Cézanne\nConcert d’ouverture deux pianos",
+    "description": "Dans le cadre des musicales de la route Cézanne, nous avons été conviés comme partenaire et on nous propose des places pour différents concerts au domaine de Saint-Joseph et au château du Tholonet.\nOn nous propose des places en catégorie 2 au tarif exceptionnel de 10 euros .\nConcert  2 pianos face à face se font orchestre. La matière sonore brute du Sacre du Printemps est portée par une énergie rythmique incisive où chaque geste sculpte l’espace et la virtuosité lyrique de Rachmaninov et Ravel deviennent chant et déferlement.\nUn programme contrasté où les pianos déploient toute leur puissance orchestrale.\nI. STRAVINSKY Le Sacre du printemps\nS. RACHMANINOV Suites pour 2 pianos (extraits)\nM. RAVEL La valse\nChristophe BUKUDJIAN, piano Josquin OTAL, piano",
+    "date": "2026-07-22",
+    "heure_debut": "20:45:00",
+    "heure_fin": "22:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1tUNlPCmrMvW_pLSvlMkhzLwUN6F5JZwE&sz=w1000"
   }
 ]
