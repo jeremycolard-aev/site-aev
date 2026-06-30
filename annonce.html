@@ -202,6 +202,85 @@
   .modal-body { padding: 2rem; }
   .modal-title { font-size: 1.8rem; }
 }
+
+/* ===== LECTEUR AUDIO PREMIUM (ACCESSIBILITÉ) ===== */
+.modal-audio-container {
+  margin: 1.5rem 0 2rem 0;
+  padding: 1.5rem;
+  background: var(--papier-fonce);
+  border-left: 5px solid var(--rouge);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  display: none;
+}
+.audio-player-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.audio-btn-play {
+  background: var(--rouge);
+  color: white;
+  border: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 10px rgba(216, 0, 0, 0.2);
+}
+.audio-btn-play:hover {
+  background: var(--noir);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+.audio-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.audio-title {
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--noir);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.audio-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.audio-progress-bar {
+  flex-grow: 1;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+.audio-progress-fill {
+  height: 100%;
+  background: var(--rouge);
+  border-radius: 4px;
+  width: 0%;
+}
+.audio-time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gris);
+  min-width: 90px;
+  text-align: right;
+}
 </style>
 </head>
 <body>
@@ -251,6 +330,8 @@
     <div class="modal-body">
       <h2 id="m-title" class="modal-title"></h2>
       <div id="m-meta" class="modal-meta"></div>
+      <!-- Zone destinée à recevoir le lecteur audio -->
+      <div id="m-audio-container" class="modal-audio-container"></div>
       <div id="m-text" class="modal-text"></div>
       <!-- Zone destinée à recevoir le bouton de téléchargement / lien externe -->
       <div id="m-pdf-container" class="modal-pdf-container"></div>
@@ -384,6 +465,32 @@
       `${auteur ? 'PAR ' + auteur + ' | ' : ''}LE ${date}`;
     document.getElementById('m-text').innerHTML = contenuHtml;
 
+    // Gestion de la variable "audio" (GCP TTS MP3)
+    const audioContainer = document.getElementById('m-audio-container');
+    if (ann.audio && ann.audio.trim() !== "") {
+      audioContainer.innerHTML = `
+        <div class="audio-player-wrapper">
+          <button id="audio-play-btn" class="audio-btn-play" onclick="toggleAudio()" aria-label="Écouter l'article" aria-pressed="false">
+            <span id="audio-btn-icon">▶️</span>
+          </button>
+          <div class="audio-info">
+            <span class="audio-title">🔊 Écouter la version audio</span>
+            <div class="audio-progress-container">
+              <div class="audio-progress-bar" id="audio-progress-bar" onclick="seekAudio(event)" aria-label="Position de lecture">
+                <div class="audio-progress-fill" id="audio-progress-fill"></div>
+              </div>
+              <span class="audio-time" id="audio-time-display">00:00 / 00:00</span>
+            </div>
+          </div>
+          <audio id="modal-audio" src="${ann.audio}" ontimeupdate="updateAudioProgress()" onended="onAudioEnded()" onloadedmetadata="initAudioDuration()"></audio>
+        </div>
+      `;
+      audioContainer.style.display = 'block';
+    } else {
+      audioContainer.innerHTML = '';
+      audioContainer.style.display = 'none';
+    }
+
     // Gestion de la variable "pdf" dynamique (Parfois vide ou absente)
     const pdfContainer = document.getElementById('m-pdf-container');
     if (ann.pdf && ann.pdf.trim() !== "") {
@@ -405,6 +512,11 @@
   }
 
   function hardCloseModal() {
+    const audio = document.getElementById('modal-audio');
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
     document.getElementById('modal-overlay').style.display = 'none';
     document.body.style.overflow = 'auto';
   }
@@ -415,6 +527,82 @@
 
   function handleEnter(e, index) {
     if (e.key === 'Enter') openModal(index);
+  }
+
+  // --- FONCTIONS LECTEUR AUDIO MODAL ---
+  function toggleAudio() {
+    const audio = document.getElementById('modal-audio');
+    const playBtn = document.getElementById('audio-play-btn');
+    const btnIcon = document.getElementById('audio-btn-icon');
+    
+    if (!audio) return;
+    
+    if (audio.paused) {
+      audio.play();
+      if (btnIcon) btnIcon.textContent = '⏸️';
+      if (playBtn) {
+        playBtn.setAttribute('aria-pressed', 'true');
+        playBtn.setAttribute('aria-label', 'Mettre en pause l\'article');
+      }
+    } else {
+      audio.pause();
+      if (btnIcon) btnIcon.textContent = '▶️';
+      if (playBtn) {
+        playBtn.setAttribute('aria-pressed', 'false');
+        playBtn.setAttribute('aria-label', 'Écouter l\'article');
+      }
+    }
+  }
+
+  function formatTime(seconds) {
+    if (isNaN(seconds) || seconds === Infinity) return "00:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return (mins < 10 ? "0" : "") + mins + ":" + (secs < 10 ? "0" : "") + secs;
+  }
+
+  function initAudioDuration() {
+    const audio = document.getElementById('modal-audio');
+    const display = document.getElementById('audio-time-display');
+    if (audio && display) {
+      display.textContent = `00:00 / ${formatTime(audio.duration)}`;
+    }
+  }
+
+  function updateAudioProgress() {
+    const audio = document.getElementById('modal-audio');
+    const fill = document.getElementById('audio-progress-fill');
+    const display = document.getElementById('audio-time-display');
+    
+    if (audio && fill && display) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      fill.style.width = pct + '%';
+      display.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+    }
+  }
+
+  function onAudioEnded() {
+    const playBtn = document.getElementById('audio-play-btn');
+    const btnIcon = document.getElementById('audio-btn-icon');
+    if (playBtn && btnIcon) {
+      btnIcon.textContent = '▶️';
+      playBtn.setAttribute('aria-pressed', 'false');
+      playBtn.setAttribute('aria-label', 'Écouter l\'article');
+    }
+    const fill = document.getElementById('audio-progress-fill');
+    if (fill) fill.style.width = '0%';
+  }
+
+  function seekAudio(event) {
+    const audio = document.getElementById('modal-audio');
+    const bar = document.getElementById('audio-progress-bar');
+    if (audio && bar) {
+      const rect = bar.getBoundingClientRect();
+      const clickX = event.clientX - rect.left;
+      const width = rect.width;
+      const pct = clickX / width;
+      audio.currentTime = pct * audio.duration;
+    }
   }
 </script>
 </body>

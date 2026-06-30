@@ -573,6 +573,29 @@ body.loaded .hero-visual { opacity:1; transform:translateY(0) translateX(0); }
   transition: transform .2s;
 }
 .actu-card:hover .actu-card-readmore svg { transform: translateX(3px); }
+.actu-card-audio-btn {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: white;
+  background: var(--rouge);
+  padding: 0.4rem 0.8rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.actu-card-audio-btn:hover {
+  background: var(--noir);
+  transform: scale(1.05);
+}
+.actu-card-audio-btn:active {
+  transform: scale(0.95);
+}
 
 /* Skeletons actualités */
 .actu-skeleton {
@@ -1840,6 +1863,56 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       pdfLink.addEventListener('click', function(e) { e.stopPropagation(); });
       actionsWrapper.appendChild(pdfLink);
     }
+
+    // Ajout dynamique du bouton Audio s'il existe et n'est pas vide
+    if (item.audio && item.audio.trim() !== "") {
+      const audioBtn = document.createElement('button');
+      audioBtn.className = 'actu-card-audio-btn';
+      audioBtn.innerHTML = '🔊 Écouter';
+      
+      let playing = false;
+      let audioObj = null;
+      
+      audioBtn.addEventListener('click', function(e) {
+        e.stopPropagation(); // Évite la redirection vers annonce.html
+        
+        // Arrêter tous les autres audios qui pourraient jouer sur la page
+        document.querySelectorAll('audio').forEach(function(aud) {
+          if (aud !== audioObj) {
+            aud.pause();
+            aud.currentTime = 0;
+            // Déclencher l'événement 'ended' sur l'autre audio pour réinitialiser le bouton associé
+            const event = new Event('ended');
+            aud.dispatchEvent(event);
+          }
+        });
+        
+        if (!audioObj) {
+          audioObj = new Audio(item.audio);
+          audioObj.className = 'card-audio-element'; // pour identification
+          audioObj.addEventListener('ended', function() {
+            audioBtn.innerHTML = '🔊 Écouter';
+            audioBtn.style.background = 'var(--rouge)';
+            playing = false;
+          });
+        }
+        
+        if (!playing) {
+          audioObj.play();
+          audioBtn.innerHTML = '⏸️ Pause';
+          audioBtn.style.background = 'var(--noir)';
+          playing = true;
+        } else {
+          audioObj.pause();
+          audioBtn.innerHTML = '🔊 Écouter';
+          audioBtn.style.background = 'var(--rouge)';
+          playing = false;
+        }
+      });
+      
+      actionsWrapper.appendChild(audioBtn);
+    }
+
 
     body.appendChild(actionsWrapper);
     card.appendChild(body);
