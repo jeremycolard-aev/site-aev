@@ -1,14 +1,5 @@
 [
   {
-    "id": "d624daca",
-    "titre": "Jardinage",
-    "description": "",
-    "date": "2026-07-01",
-    "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1-rwbhMItT3gvkPEJT5OKiw1Ss5pF6a9K&sz=w1000"
-  },
-  {
     "id": "3c7c90ed",
     "titre": "Cinéma Renoir - de la comédie française",
     "description": "De la Comédie-Française est un film français réalisé par Bertrand Usclat et Martin Darondeau et sorti en 2026. Il est présenté en avant-première au Festival de l’Alpe d'Huez 2026 où il reçoit quatre prix : prix spécial du Jury, prix du public, prix Coup de cœur de la région et prix Canal+ du meilleur film.",
@@ -24,6 +15,15 @@
     "date": "2026-07-22",
     "heure_debut": "20:45:00",
     "heure_fin": "22:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1tUNlPCmrMvW_pLSvlMkhzLwUN6F5JZwE&sz=w1000"
+  },
+  {
+    "id": "69e638cc",
+    "titre": "Festival les musicales de Cézanne\nA Dream",
+    "description": "Dans le cadre des musical de la route de Cézanne, nous avons été conviés comme partenaire et on nous propose des places pour différents concerts au domaine de Saint-Joseph et au château du Tholonet.\nPour l’ouverture du festival, des places en catégorie 2 au tarif exceptionnel de 10 euros . \nL’ensemble I Giardini invite le public à traverser un paysage musical où les époques se répondent, se reflètent et se réinventent. Ce programme est conçu comme une expérience immersive, onirique. Ainsi se dessine ce concert : un rêve qui circule librement entre les siècles, où les voix anciennes inspirent les nouvelles, et où chaque œuvre devient une porte ouverte vers un territoire de résonance et d’émotion.\n\nDomaine Saint-Joseph\n\nŒuvres de BACH, HÄNDEL, RAMEAU, SHAW, CERROE, DESSNER, BURHANS, TOUCHARD...\n\nV. PEIRANI The last Moon (commande des Musicales de la route Cézanne)\n\nI GIARDINI Pauline BUET, violoncelle David VIOLI, piano",
+    "date": "2026-07-23",
+    "heure_debut": "20:45:00",
+    "heure_fin": "22:30:00",
     "image_url": "https://drive.google.com/thumbnail?id=1tUNlPCmrMvW_pLSvlMkhzLwUN6F5JZwE&sz=w1000"
   }
 ]
