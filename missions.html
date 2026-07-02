@@ -628,7 +628,7 @@ body.loaded .page-hero-visual { opacity:1; transform:translateY(0) translateX(0)
 <script src="shared.js"></script>
 <script>
 // LOAD
-window.addEventListener('load', () => setTimeout(() => document.body.classList.add('loaded'), 80));
+window.addEventListener('DOMContentLoaded', () => setTimeout(() => document.body.classList.add('loaded'), 80));
 
 // REVEAL
 const io = new IntersectionObserver(e => e.forEach(x => {

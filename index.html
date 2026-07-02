@@ -1544,7 +1544,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="shared.js"></script>
 <script>
 // ===== PAGE LOAD =====
-window.addEventListener('load', () => setTimeout(() => document.body.classList.add('loaded'), 80));
+window.addEventListener('DOMContentLoaded', () => setTimeout(() => document.body.classList.add('loaded'), 80));
 
 // ===== HERO VIDEO LAZY LOADING =====
 (function() {
