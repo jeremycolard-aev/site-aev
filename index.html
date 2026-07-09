@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -92,157 +93,66 @@ function gtag_report_conversion(url) {
 }
 .hero-actions { display:flex; gap:1.5rem; flex-wrap:wrap; opacity:0; transform:translateY(20px); transition:all .9s ease .5s; }
 
-/* ===== HERO AUDIO PLAYER ===== */
-.hero-audio-player {
-  display: flex;
+/* ===== HERO AUDIO BUTTON ===== */
+.btn-play-simple {
+  display: inline-flex;
   align-items: center;
-  gap: 1.2rem;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(200, 134, 10, 0.2);
-  border-left: 4px solid var(--ocre);
-  padding: 1rem 1.4rem;
-  margin-bottom: 2.5rem;
-  max-width: 520px;
-  width: 100%;
-  box-sizing: border-box;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all .9s ease .42s;
-}
-body.loaded .hero-audio-player {
-  opacity: 1;
-  transform: translateY(0);
-}
-.audio-play-btn {
+  gap: 0.8rem;
   background: var(--rouge);
   color: white;
   border: none;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.25s;
-  flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(216, 0, 0, 0.25);
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 15px rgba(216, 0, 0, 0.2);
   outline: none;
+  opacity: 0;
+  transform: translateY(15px);
 }
-.audio-play-btn:hover {
+body.loaded .btn-play-simple {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .9s ease .42s;
+}
+.btn-play-simple:hover {
   background: var(--noir);
-  transform: scale(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
-.audio-play-btn:focus-visible {
+.btn-play-simple:focus-visible {
   outline: 3px solid var(--ocre);
   outline-offset: 2px;
 }
-.audio-play-btn svg {
-  width: 18px;
-  height: 18px;
-}
-.audio-play-btn .play-icon {
-  margin-left: 2px;
-}
-.audio-info {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-.audio-header-row {
+.btn-play-simple .play-icon-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
 }
-.audio-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  font-size: 1.05rem;
-  color: var(--noir);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.audio-subtitle {
-  font-size: 0.78rem;
-  color: var(--gris);
-  font-weight: 600;
-  opacity: 0.85;
-  margin-bottom: 0.35rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.audio-controls-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-.audio-time {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--gris);
-  min-width: 32px;
-  text-align: center;
-}
-.audio-progress-bar {
-  flex-grow: 1;
-  height: 6px;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 3px;
-  cursor: pointer;
-  position: relative;
-  outline: none;
-}
-.audio-progress-bar:focus-visible {
-  outline: 2px solid var(--ocre);
-  outline-offset: 1px;
-}
-.audio-progress {
-  height: 100%;
-  background: var(--rouge);
-  border-radius: 3px;
-  width: 0;
-}
-.audio-visualizer {
-  display: flex;
-  align-items: flex-end;
-  gap: 3px;
+.btn-play-simple svg {
+  width: 14px;
   height: 14px;
-  flex-shrink: 0;
-  margin-right: 0.2rem;
 }
-.audio-visualizer span {
-  display: inline-block;
-  width: 3px;
-  height: 3px;
-  background: var(--ocre);
-  border-radius: 1px;
-  transition: height 0.15s ease;
-}
-.hero-audio-player.playing .audio-visualizer span {
-  animation: equalize 1.2s ease-in-out infinite alternate;
-}
-.hero-audio-player.playing .audio-visualizer span:nth-child(1) { animation-duration: 0.8s; }
-.hero-audio-player.playing .audio-visualizer span:nth-child(2) { animation-duration: 1.1s; animation-delay: 0.15s; }
-.hero-audio-player.playing .audio-visualizer span:nth-child(3) { animation-duration: 0.9s; animation-delay: 0.3s; }
-.hero-audio-player.playing .audio-visualizer span:nth-child(4) { animation-duration: 1.2s; animation-delay: 0.05s; }
-
-@keyframes equalize {
-  0% { height: 3px; }
-  100% { height: 14px; }
+.btn-play-simple.playing {
+  background: var(--noir);
 }
 
 @media(max-width:1050px) {
-  .hero-audio-player {
+  .btn-play-simple {
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+  }
+}o;
   }
 }
 
@@ -1270,7 +1180,6 @@ nav.mobile-bottom-nav::after { display: none !important; }
 
 @media(max-width:768px){
   .hero { padding:6rem 1.5rem 3rem; }
-  .hero-audio-player { padding: 0.8rem 1rem; gap: 0.8rem; }
   .manifeste, .activites, .galerie-section, .engage-section, .cta-section, .projet-photo-section, .agenda-section, .actu-section { padding:5rem 1.5rem; }
   .act-grid { grid-template-columns:1fr; }
   .galerie-mosaic { grid-template-columns:1fr; grid-template-rows:auto; padding:0 1.5rem; }
@@ -1322,45 +1231,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-sub">
       Aix en Vue réunit malvoyants, non-voyants et bénévoles autour d'activités culturelles, sportives et créatives.
       <strong>Parce que voir moins ne signifie pas vivre moins.</strong>
+      Découvrez l'interview radio de notre présidente Karine (du 15 juin 2026 sur Radio Culture en Provence) présentant notre association en cliquant sur le bouton de lecture ci-dessous.
     </p>
 
-    <!-- Interview de la Présidente (Lecteur Audio) -->
-    <div class="hero-audio-player" role="region" aria-label="Interview audio de la présidente">
-      <button class="audio-play-btn" id="hero-audio-play" aria-label="Écouter l'interview de la présidente (15 juin 2026)">
+    <!-- Interview de la Présidente (Bouton de lecture simple) -->
+    <button class="btn-play-simple" id="hero-audio-play" aria-label="Écouter l'interview de la présidente (15 juin 2026)">
+      <span class="play-icon-wrapper">
         <!-- Play Icon -->
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <polygon points="6 3 20 12 6 21 6 3"/>
         </svg>
         <!-- Pause Icon -->
-        <svg class="pause-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;">
-          <line x1="8" y1="5" x2="8" y2="19"/>
-          <line x1="16" y1="5" x2="16" y2="19"/>
+        <svg class="pause-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none;">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
         </svg>
-      </button>
-      
-      <div class="audio-info">
-        <div class="audio-header-row">
-          <span class="audio-title">Interview de la présidente (15 juin 2026)</span>
-          <!-- Mini Égaliseur Visuel -->
-          <div class="audio-visualizer" id="hero-audio-visualizer">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <span class="audio-subtitle">Présentation de l'asso sur Radio Culture en Provence</span>
-        
-        <div class="audio-controls-row">
-          <span class="audio-time current" id="hero-audio-current">0:00</span>
-          <div class="audio-progress-bar" id="hero-audio-progress-bar" role="slider" aria-label="Progression de l'audio" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-            <div class="audio-progress" id="hero-audio-progress"></div>
-          </div>
-          <span class="audio-time duration" id="hero-audio-duration">--:--</span>
-        </div>
-      </div>
+      </span>
+      <span class="btn-play-text">Écouter l'interview</span>
       <audio id="hero-audio" src="audiokarine.mp3" preload="metadata"></audio>
-    </div>
+    </button>
 
     <div class="hero-actions">
       <a href="https://www.appsheet.com/start/732b3c01-876f-4658-a597-2f0d193288fc" target="_blank" rel="noopener" class="btn-primary"><span>Accéder au planning</span></a>
@@ -2242,52 +2130,26 @@ if(closeBtn) {
 (function() {
   const audio = document.getElementById('hero-audio');
   const playBtn = document.getElementById('hero-audio-play');
-  const player = document.querySelector('.hero-audio-player');
-  const progressBar = document.getElementById('hero-audio-progress-bar');
-  const progress = document.getElementById('hero-audio-progress');
-  const currentTimeEl = document.getElementById('hero-audio-current');
-  const durationTimeEl = document.getElementById('hero-audio-duration');
   
-  if (!audio || !playBtn || !player) return;
+  if (!audio || !playBtn) return;
 
   const playIcon = playBtn.querySelector('.play-icon');
   const pauseIcon = playBtn.querySelector('.pause-icon');
-
-  function formatTime(secs) {
-    if (isNaN(secs)) return '0:00';
-    const m = Math.floor(secs / 60);
-    const s = Math.floor(secs % 60);
-    return m + ':' + (s < 10 ? '0' : '') + s;
-  }
-
-  audio.addEventListener('loadedmetadata', function() {
-    durationTimeEl.textContent = formatTime(audio.duration);
-  });
-
-  if (audio.readyState >= 1) {
-    durationTimeEl.textContent = formatTime(audio.duration);
-  }
-
-  audio.addEventListener('timeupdate', function() {
-    if (audio.duration) {
-      const pct = (audio.currentTime / audio.duration) * 100;
-      progress.style.width = pct + '%';
-      progressBar.setAttribute('aria-valuenow', Math.round(pct));
-      currentTimeEl.textContent = formatTime(audio.currentTime);
-    }
-  });
+  const btnText = playBtn.querySelector('.btn-play-text');
 
   audio.addEventListener('play', function() {
-    player.classList.add('playing');
+    playBtn.classList.add('playing');
     playIcon.style.display = 'none';
     pauseIcon.style.display = 'block';
+    if (btnText) btnText.textContent = "Pause";
     playBtn.setAttribute('aria-label', "Mettre en pause l'interview");
   });
 
   audio.addEventListener('pause', function() {
-    player.classList.remove('playing');
+    playBtn.classList.remove('playing');
     playIcon.style.display = 'block';
     pauseIcon.style.display = 'none';
+    if (btnText) btnText.textContent = "Écouter l'interview";
     playBtn.setAttribute('aria-label', "Écouter l'interview de la présidente");
   });
 
@@ -2312,26 +2174,6 @@ if(closeBtn) {
       audio.play().catch(() => {});
     } else {
       audio.pause();
-    }
-  });
-
-  progressBar.addEventListener('click', function(e) {
-    const rect = progressBar.getBoundingClientRect();
-    const pos = (e.clientX - rect.left) / rect.width;
-    if (audio.duration) {
-      audio.currentTime = pos * audio.duration;
-    }
-  });
-
-  progressBar.addEventListener('keydown', function(e) {
-    if (!audio.duration) return;
-    let step = 5;
-    if (e.key === 'ArrowRight') {
-      audio.currentTime = Math.min(audio.currentTime + step, audio.duration);
-      e.preventDefault();
-    } else if (e.key === 'ArrowLeft') {
-      audio.currentTime = Math.max(audio.currentTime - step, 0);
-      e.preventDefault();
     }
   });
 })();
