@@ -1,14 +1,5 @@
 [
   {
-    "id": "90f95234",
-    "titre": "Festival les musicales de Cézanne\nLes quatre saisons de Vivaldi, à Piazzolla",
-    "description": "Dans le cadre des musical de la route de Cézanne, nous avons été conviés comme partenaire et on nous propose des places pour différents concerts au domaine de Saint-Joseph et au château du Tholonet.\nCes places sont en catégorie 2 au prix exceptionnel de 10 €.\nEntre Venise et Buenos Aires, entre ordre et vertige, ces saisons en miroir offrent moins une opposition qu’une traversée siècles après leur création — les Quatre Saisons de Vivaldi fêtent cette année leurs 301 ans — cette œuvre emblématique conserve une force d’évocation intacte. Véritable théâtre des éléments, elle traverse le temps avec une étonnante modernité. En regard, les Estaciones porteñas d’Astor Piazzolla en prolongent l’élan dans un langage incandescent, où le tango nuevo fait vibrer à son tour le cycle des saisons. Porté par neuf musiciens issus de grands orchestres nationaux, ce programme prend la forme d’une lecture virtuose et intensément incarnée, à la croisée des styles et des énergies.\n\nA. VIVALDI Les Quatre Saisons\n\nA. PIAZZOLLA Estaciones porteñas\n\nFanny ROBILLARD, violon solo Sebastien SUREL, violon solo\n\nDoriane GABLE, violon Florent BRANNENS violon Amandine LEY, violon Issey NADO, alto Pauline BUET, violoncelle Laurene DURANTEL, contrebasse",
-    "date": "2026-07-25",
-    "heure_debut": "20:45:00",
-    "heure_fin": "22:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1tUNlPCmrMvW_pLSvlMkhzLwUN6F5JZwE&sz=w1000"
-  },
-  {
     "id": "3c902831",
     "titre": "Festival les musicales de Cézanne\nJULIE FUCHS JE TE VEUX",
     "description": "Dans le cadre des musical de la route de Cézanne, nous avons été conviés comme partenaire et on nous propose des places pour différents concerts au domaine de Saint-Joseph et au château du Tholonet.\nCes places sont en catégorie 2 au prix exceptionnel de 10 €.\nFigure majeure de la scène lyrique actuelle, Julie Fuchs propose un programme libre et accessible, porté par une forte présence scénique.\n\n21h00\n\nAvec légèreté et fantaisie, ce programme célèbre une certaine idée de la liberté — celle d’Erik Satie, insaisissable, et celle d’un Paris bohème, vibrant et multiple.\n\nChâteau du Tholonet\n\nEntre chansons de cabaret, mélodies délicates et élans virtuoses, il esquisse une promenade musicale où se croisent humour, poésie et mélancolie, de Chabrier à Poulenc.\n\nPorté par des arrangements sur mesure et une complicité de plateau, ce concert invite à une flânerie libre, sensible et profondément vivante.\n\nŒuvres de SATIE, POULENC, DEBUSSY, FAURÉ, STRAVINSKY, CHAMINADE…\n\nJulie FUCHS, soprano Alphonse CERNIN, piano Félicien BRUT, accordéon Alexis CARDENAS, violon Davide VITTONE, contrebasse",
@@ -25,5 +16,14 @@
     "heure_debut": "20:45:00",
     "heure_fin": "22:30:00",
     "image_url": "https://drive.google.com/thumbnail?id=1tUNlPCmrMvW_pLSvlMkhzLwUN6F5JZwE&sz=w1000"
+  },
+  {
+    "id": "9324b496",
+    "titre": "Forum des associations",
+    "description": "",
+    "date": "2026-09-13",
+    "heure_debut": "9:00:00",
+    "heure_fin": "17:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1lPOh_FBm489bjfJRlBIbXjiYwBd7HxMt&sz=w1000"
   }
 ]
