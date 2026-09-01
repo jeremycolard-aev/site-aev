@@ -1,5 +1,14 @@
 [
   {
+    "id": "90dae339",
+    "titre": "Jardinage",
+    "description": "",
+    "date": "2026-09-09",
+    "heure_debut": "14:00:00",
+    "heure_fin": "17:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1DoSE2R4ZYqIF8Glu4o8HeK5glsZ2j8oL&sz=w1000"
+  },
+  {
     "id": "9324b496",
     "titre": "Forum des associations",
     "description": "",
@@ -7,5 +16,14 @@
     "heure_debut": "9:00:00",
     "heure_fin": "17:30:00",
     "image_url": "https://drive.google.com/thumbnail?id=1lPOh_FBm489bjfJRlBIbXjiYwBd7HxMt&sz=w1000"
+  },
+  {
+    "id": "c921ad1e",
+    "titre": "Café bla-bla",
+    "description": "Pour se raconter nos vacances et pour le plaisir de se retrouver",
+    "date": "2026-09-15",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": ""
   }
 ]
