@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M638S445');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1DFJJD9ZV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-T1DFJJD9ZV');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adhésion — Aix en Vue</title>
+<meta name="description" content="Rejoignez l'association Aix en Vue en remplissant notre formulaire d'adhésion en ligne pour les personnes déficientes visuelles et les bénévoles.">
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#D80000">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+
+<style>
+/* ===== PAGE HEADER ===== */
+.page-header {
+  padding: 8.5rem 2rem 4rem;
+  background: var(--creme);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.page-header::before {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0; height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q180 0 360 3Q540 6 720 2Q900 0 1080 4Q1260 6 1440 3' stroke='%23D80000' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.header-eyebrow {
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: 1.2rem;
+}
+.brush-dash {
+  display: inline-block;
+  height: 4px;
+  width: 38px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 6' preserveAspectRatio='none'%3E%3Cpath d='M0 3Q13 1 26 3Q39 5 52 2' stroke='%23C8860A' stroke-width='3.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/cover;
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  letter-spacing: -.03em;
+  line-height: 1.15;
+  color: var(--noir);
+  margin-bottom: 1.4rem;
+}
+.page-header h1 em {
+  color: var(--rouge);
+  font-style: italic;
+  position: relative;
+}
+.page-header h1 em::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: -4px;
+  right: -4px;
+  height: 12px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 14' preserveAspectRatio='none'%3E%3Cpath d='M4 8Q45 2 90 8Q135 14 176 5' stroke='%23D80000' stroke-width='4.5' fill='none' stroke-linecap='round' opacity='.5'/%3E%3C/svg%3E") no-repeat center/100% 100%;
+}
+.page-header p {
+  font-size: 1.05rem;
+  color: var(--gris);
+  max-width: 620px;
+  margin: 0 auto 1.8rem;
+  line-height: 1.75;
+  font-weight: 500;
+}
+
+/* Badges d'information */
+.info-badges {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--noir);
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+}
+.info-badge span.icon {
+  font-size: 1rem;
+}
+
+/* Bouton ouverture plein écran alternatif */
+.alt-link-bar {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+}
+.btn-alt-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--bleu);
+  text-decoration: none;
+  background: rgba(26, 58, 92, 0.08);
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-alt-open:hover {
+  background: var(--bleu);
+  color: white;
+}
+
+/* ===== CONTENEUR FORMULAIRE (RESPONSIVE EMBED) ===== */
+.adhesion-section {
+  padding: 2rem 1.5rem 5rem;
+  background: var(--papier);
+}
+.adhesion-container {
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-wrapper {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  width: 100%;
+  min-height: 520px;
+}
+.form-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #ffffff;
+  z-index: 1;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.form-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--papier-fonce);
+  border-top-color: var(--rouge);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Iframe Google Form optimisé Mobile & Desktop */
+.gform-iframe {
+  display: block;
+  width: 100% !important;
+  min-width: 100% !important;
+  max-width: 100% !important;
+  height: 2200px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* ===== BLOC ASSISTANCE ===== */
+.adhesion-help {
+  margin-top: 3.5rem;
+  background: var(--creme);
+  border-left: 5px solid var(--rouge);
+  padding: 2.2rem 2.5rem;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+.adhesion-help h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--noir);
+  margin-bottom: 0.6rem;
+}
+.adhesion-help p {
+  font-size: 0.95rem;
+  color: var(--gris);
+  line-height: 1.65;
+  margin-bottom: 1.4rem;
+}
+.help-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.help-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--noir);
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.75rem 1.4rem;
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  transition: background 0.2s, transform 0.2s;
+}
+.help-btn:hover {
+  background: var(--rouge);
+  transform: translateY(-2px);
+}
+.help-btn--outline {
+  background: transparent;
+  color: var(--noir);
+  border: 1.5px solid var(--noir);
+}
+.help-btn--outline:hover {
+  background: var(--noir);
+  color: white;
+}
+
+/* ===== ADAPTATIONS MOBILE ===== */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 6.5rem 1.2rem 3rem;
+  }
+  .adhesion-section {
+    padding: 1.5rem 0.6rem 4rem;
+  }
+  .adhesion-container {
+    padding: 0;
+  }
+  .form-wrapper {
+    border-radius: 8px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+  .gform-iframe {
+    height: 2550px;
+  }
+  .adhesion-help {
+    padding: 1.6rem 1.2rem;
+    margin-top: 2.5rem;
+  }
+  .help-actions {
+    flex-direction: column;
+  }
+  .help-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .adhesion-section {
+    padding: 1rem 0.2rem 3rem;
+  }
+  .gform-iframe {
+    height: 2800px;
+  }
+}
+</style>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M638S445"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+    <span class="logo-aix"><span class="red-letter">A</span>ix</span>
+    <span class="logo-en"><span class="red-letter">E</span>n</span>
+    <span class="logo-vue"><span class="red-letter">V</span>ue</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#agenda">L'association</a></li>
+    <li><a href="missions.html">Nos missions</a></li>
+    <li><a href="annonce.html">Actualités</a></li>
+    <li><a href="index.html#activites">Activité</a></li>
+    <li><a href="index.html#galerie">Projets</a></li>
+    <li><a href="adhesion.html" class="active" aria-current="page">Adhérer</a></li>
+    <li><a href="https://www.helloasso.com/associations/aix-en-vue/collectes/aix-au-dela-du-regard-expo-de-photos-realisees-par-des-deficients-visuels" target="_blank" rel="noopener">Nous soutenir</a></li>
+    <li><a href="https://www.appsheet.com/start/cd603802-fda8-494d-8bb6-f647afb5f712" target="_blank" rel="noopener" class="nav-cta">Espace bénévole</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- En-tête de page -->
+<header class="page-header">
+  <span class="header-eyebrow"><span class="brush-dash"></span>Rejoindre l'aventure</span>
+  <h1>Bulletin d'<em>Adhésion</em></h1>
+  <p>
+    Que vous soyez une personne déficiente visuelle (malvoyante ou non-voyante), un bénévole accompagnateur ou un sympathisant, vous êtes les bienvenus au sein d'Aix en Vue.
+  </p>
+
+  <div class="info-badges">
+    <div class="info-badge"><span class="icon">👥</span> Personnes déficientes visuelles & bénévoles</div>
+    <div class="info-badge"><span class="icon">📝</span> Formulaire simple en ligne</div>
+    <div class="info-badge"><span class="icon">🔒</span> Données protégées et confidentielles</div>
+  </div>
+</header>
+
+<!-- Section Formulaire -->
+<section class="adhesion-section">
+  <div class="adhesion-container">
+
+    <div class="alt-link-bar">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScWwYCgl6SLtGn3JVeuCZ9IFMHCf0mVi-lLNAdbOw9ULJH-XQ/viewform?usp=header"
+         target="_blank"
+         rel="noopener"
+         class="btn-alt-open"
+         aria-label="Ouvrir le formulaire d'adhésion dans un nouvel onglet">
+        <span>Ouvrir en plein écran</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Wrapper du formulaire avec loader et iframe responsive -->
+    <div class="form-wrapper">
+      <div class="form-loader" id="form-loader" aria-live="polite">
+        <div class="spinner"></div>
+        <p style="font-weight: 700; color: var(--ocre); font-size: 0.95rem;">Chargement du bulletin d'adhésion...</p>
+      </div>
+
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLScWwYCgl6SLtGn3JVeuCZ9IFMHCf0mVi-lLNAdbOw9ULJH-XQ/viewform?embedded=true"
+        class="gform-iframe"
+        id="gform-frame"
+        title="Bulletin d'adhésion officiel Aix en Vue"
+        onload="document.getElementById('form-loader').classList.add('hidden');"
+        loading="lazy">
+        Chargement du formulaire en cours…
+      </iframe>
+    </div>
+
+    <!-- Bloc d'assistance -->
+    <div class="adhesion-help">
+      <h3>Besoin d'accompagnement pour adhérer ?</h3>
+      <p>
+        Si vous rencontrez une quelconque difficulté avec le formulaire en ligne ou si vous préférez adhérer directement par téléphone ou par e-mail, notre équipe associative est à votre entière disposition.
+      </p>
+      <div class="help-actions">
+        <a href="tel:+33744999438" class="help-btn">
+          <span>📞 Appeler le 07 44 99 94 38</span>
+        </a>
+        <a href="mailto:info@aixenvue.fr?subject=Demande%20d'aide%20adh%C3%A9sion" class="help-btn help-btn--outline">
+          <span>✉️ Écrire à info@aixenvue.fr</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div style="max-width:1300px; margin:0 auto;">
+    <div class="footer-brand">
+      <img src="https://res.cloudinary.com/dxt4ferj4/image/upload/v1771440843/oeil_logo_dhc8yj.png" alt="Logo Aix en Vue" aria-hidden="true">
+      <span class="logo-aix" style="font-size:2rem;"><span class="red-letter">A</span>ix</span>
+      <span class="logo-en" style="font-size:1.5rem;"><span class="red-letter">E</span>n</span>
+      <span class="logo-vue" style="font-size:1.1rem;"><span class="red-letter">V</span>ue</span>
+    </div>
+    <p class="footer-desc">Association loi 1901 basée à Aix-en-Provence, dédiée à l'autonomie, à l'inclusion et à l'épanouissement des personnes déficientes visuelles du pays d'Aix depuis 2024.</p>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Aix en Vue — Association loi 1901</span>
+    <span>Pour et avec les déficients visuels</span>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+</body>
+</html>
