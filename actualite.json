@@ -166,5 +166,13 @@
     "Date": "2026-09-07",
     "pdf": "",
     "audio": "https://storage.googleapis.com/annonces-audio-infraaev/exposition_aix_en_vue_sens_cache_1788813812.mp3"
+  },
+  {
+    "titre": "test",
+    "contenu": "test",
+    "photo": "https://drive.google.com/thumbnail?id=1NXg8u52fKKK7Jrx5IO6ZgW1B54JYW8j3&sz=w800",
+    "Date": "2026-09-08",
+    "pdf": "https://drive.google.com/file/d/19cwwAaFkTlw-I0bs7r4MvNEEpQ8ahg2u/view?usp=drivesdk",
+    "audio": "https://storage.googleapis.com/annonces-audio-infraaev/test_1788882750.mp3"
   }
 ]
