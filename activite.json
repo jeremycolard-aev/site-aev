@@ -1,14 +1,5 @@
 [
   {
-    "id": "9324b496",
-    "titre": "Forum des associations",
-    "description": "",
-    "date": "2026-09-13",
-    "heure_debut": "9:00:00",
-    "heure_fin": "17:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1lPOh_FBm489bjfJRlBIbXjiYwBd7HxMt&sz=w1000"
-  },
-  {
     "id": "c921ad1e",
     "titre": "Café bla-bla",
     "description": "Pour se raconter nos vacances et pour le plaisir de se retrouver",
@@ -23,7 +14,16 @@
     "description": "Ernest Pignon-Ernest, né en 1942 est un artiste pionnier de l’air urbain qui intervient dans l’espace public avec des images fortes souvent engagées qui interrogent la mémoire, l’histoire et les lieux. La conférence est donnée par Celine Laudin, conservatrice au musée Ziem de Martigues, une exposition des travaux d’Ernest Pignon-Ernest aura lieu à Carpentras et nous projetons de vous y accompagner. Ce sera au mois de novembre, on vous en reparlera.",
     "date": "2026-09-15",
     "heure_debut": "17:00:00",
-    "heure_fin": "18:00:00",
+    "heure_fin": "8:45:00",
     "image_url": ""
+  },
+  {
+    "id": "dbe004c1",
+    "titre": "Cinéma histoires de la nuit",
+    "description": "Histoires de la nuit : durée 114 min,\n\nSynopsis : Nora, Thomas et leur fille Ida vivent dans une ferme isolée avec pour seule voisine, Cristina, une peintre italienne. Alors que tout le monde prépare une soirée d’anniversaire surprise pour Nora, trois hommes rôdent autour de la maison et s’invitent à la fête, faisant surgir des secrets bien gardés…\nCasting : Hafsia Herzi, Benoît Magimel, Bastien Bouillon, Monica Belluci\nInterdit aux moins de 12 ans",
+    "date": "2026-09-16",
+    "heure_debut": "10:30:00",
+    "heure_fin": "12:45:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1a2ZGH1i_Y97189KbkFTryHxMvbJVCP2m&sz=w1000"
   }
 ]
