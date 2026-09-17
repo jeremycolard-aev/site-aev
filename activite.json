@@ -1,14 +1,5 @@
 [
   {
-    "id": "dbe004c1",
-    "titre": "Cinéma histoires de la nuit",
-    "description": "Histoires de la nuit : durée 114 min,\n\nSynopsis : Nora, Thomas et leur fille Ida vivent dans une ferme isolée avec pour seule voisine, Cristina, une peintre italienne. Alors que tout le monde prépare une soirée d’anniversaire surprise pour Nora, trois hommes rôdent autour de la maison et s’invitent à la fête, faisant surgir des secrets bien gardés…\nCasting : Hafsia Herzi, Benoît Magimel, Bastien Bouillon, Monica Belluci\nInterdit aux moins de 12 ans",
-    "date": "2026-09-16",
-    "heure_debut": "10:30:00",
-    "heure_fin": "12:45:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1a2ZGH1i_Y97189KbkFTryHxMvbJVCP2m&sz=w1000"
-  },
-  {
     "id": "3cbbe45e",
     "titre": "Atelier Jeux",
     "description": "Jeux de société",
@@ -25,5 +16,14 @@
     "heure_debut": "10:00:00",
     "heure_fin": "14:00:00",
     "image_url": ""
+  },
+  {
+    "id": "d6d1c378",
+    "titre": "Feldenkrais",
+    "description": "Session cours collectif",
+    "date": "2026-09-18",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1vnA-oL8v5IW729hRWVdu16uLMss5ydzc&sz=w1000"
   }
 ]
