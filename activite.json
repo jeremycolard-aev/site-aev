@@ -1,29 +1,29 @@
 [
   {
-    "id": "f201eb7f",
-    "titre": "Exposition peinture Aix en Vue",
-    "description": "Expo du 18/09 au 05/10\nLe mardi, jeudi et vendredi de 10h à 14 h et de 17h à 20h\nLe samedi et dimanche de 10h à 18h",
-    "date": "2026-09-18",
-    "heure_debut": "10:00:00",
-    "heure_fin": "14:00:00",
+    "id": "ffc329cd",
+    "titre": "Natation",
+    "description": "",
+    "date": "2026-09-21",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:00:00",
     "image_url": ""
   },
   {
-    "id": "d6d1c378",
-    "titre": "Feldenkrais",
-    "description": "Session cours collectif",
-    "date": "2026-09-18",
-    "heure_debut": "14:00:00",
+    "id": "5cb357de",
+    "titre": "Cours d'espagnol",
+    "description": "Venez apprendre l’espagnol avec Irene",
+    "date": "2026-09-21",
+    "heure_debut": "14:30:00",
     "heure_fin": "15:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1vnA-oL8v5IW729hRWVdu16uLMss5ydzc&sz=w1000"
+    "image_url": "https://drive.google.com/thumbnail?id=1W7em0YyV2-k2ydPuvY02zy5NZx7ExzMh&sz=w1000"
   },
   {
-    "id": "e991356c",
-    "titre": "Gymnastique douce",
-    "description": "Gym avec Denis pour se remuscler et travailler le renforcement musculaire !",
-    "date": "2026-09-18",
-    "heure_debut": "15:30:00",
-    "heure_fin": "16:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1clU6X750KNfJiI1i7cL6sNMrhzOSnRcn&sz=w1000"
+    "id": "88f7eef4",
+    "titre": "Atelier écriture",
+    "description": "Les plumes légères vous attendent pour partager un moment d’écriture. A vos plumes!!",
+    "date": "2026-09-22",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
   }
 ]
