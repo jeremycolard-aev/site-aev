@@ -1,14 +1,5 @@
 [
   {
-    "id": "88f7eef4",
-    "titre": "Atelier écriture",
-    "description": "Les plumes légères vous attendent pour partager un moment d’écriture. A vos plumes!!",
-    "date": "2026-09-22",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
-  },
-  {
     "id": "18969908",
     "titre": "Jardinage",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1EnMGoSFPVdG2Kz2MHbZHWW5pQ--sAQUn&sz=w1000"
+  },
+  {
+    "id": "75e3e238",
+    "titre": "Atelier trucs et astuces",
+    "description": "La thématique de l’atelier comment reprendre la lecture en Livres audio en tablette à travers quelques applications. Eric et Odile seront là pour répondre à vos questions. Venez nombreux pour redécouvrir la lecture si vous l’avez perdu.",
+    "date": "2026-09-24",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
   }
 ]
