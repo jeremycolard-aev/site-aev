@@ -1,23 +1,5 @@
 [
   {
-    "id": "9671e94b",
-    "titre": "Aide au quotidien",
-    "description": "Aide administrative",
-    "date": "2026-09-24",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1EnMGoSFPVdG2Kz2MHbZHWW5pQ--sAQUn&sz=w1000"
-  },
-  {
-    "id": "75e3e238",
-    "titre": "Atelier trucs et astuces",
-    "description": "La thématique de l’atelier comment reprendre la lecture en Livres audio en tablette à travers quelques applications. Eric et Odile seront là pour répondre à vos questions. Venez nombreux pour redécouvrir la lecture si vous l’avez perdu.",
-    "date": "2026-09-24",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
-  },
-  {
     "id": "65e0759b",
     "titre": "Natation",
     "description": "",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "15:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
+  },
+  {
+    "id": "e2da9557",
+    "titre": "Cours d'espagnol",
+    "description": "avec Irène",
+    "date": "2026-09-28",
+    "heure_debut": "14:30:00",
+    "heure_fin": "15:30:00",
+    "image_url": ""
+  },
+  {
+    "id": "65eed38f",
+    "titre": "Concert : Gautier Capuçon et les Capucelli",
+    "description": "Figure incontournable du violoncelle français, Gautier Capuçon place la transmission au cœur de son art.\nEntouré de six lauréats, le violoncelliste revient au Grand Théâtre pour un formidable moment de musique et de partage. L’occasion de fêter le violoncelle, avec un programme réjouissant de transcriptions ou créations qui passe de la musique contemporaine à Bizet de Tchaïkovski à Ravel.\n4 places G1- A44-38\n6 places G1-B46-36",
+    "date": "2026-09-28",
+    "heure_debut": "20:00:00",
+    "heure_fin": "22:00:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_7f0103dd-5b55-4815-a1ca-7c2ea64d3067.png"
   }
 ]
