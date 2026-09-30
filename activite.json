@@ -1,14 +1,5 @@
 [
   {
-    "id": "d251e0b2",
-    "titre": "Goûter littéraire de la rentrée",
-    "description": "",
-    "date": "2026-09-29",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1UGearV3eRmkc4c6FwaGT7lLf_MNeZ34Y&sz=w1000"
-  },
-  {
     "id": "437f661a",
     "titre": "Atelier jeux",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "9:00:00",
     "heure_fin": "12:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1I7Q2-mZOhVsnNSxQyuxDvSFQEpTUuMih&sz=w1000"
+  },
+  {
+    "id": "9dc3289f",
+    "titre": "Natation",
+    "description": "",
+    "date": "2026-10-05",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
   }
 ]
