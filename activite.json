@@ -1,14 +1,5 @@
 [
   {
-    "id": "437f661a",
-    "titre": "Atelier jeux",
-    "description": "",
-    "date": "2026-10-01",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1ErPCNUNl0ShW2La0gTbW1mvAth9f6qKD&sz=w1000"
-  },
-  {
     "id": "16c03217",
     "titre": "Atelier peinture",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "15:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
+  },
+  {
+    "id": "a3308d2a",
+    "titre": "Cours d'espagnol",
+    "description": "Venez apprendre l’espagnol avec Irene",
+    "date": "2026-10-05",
+    "heure_debut": "14:30:00",
+    "heure_fin": "15:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1W7em0YyV2-k2ydPuvY02zy5NZx7ExzMh&sz=w1000"
   }
 ]
