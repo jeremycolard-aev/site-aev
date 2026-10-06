@@ -1,23 +1,5 @@
 [
   {
-    "id": "9dc3289f",
-    "titre": "Natation",
-    "description": "",
-    "date": "2026-10-05",
-    "heure_debut": "14:00:00",
-    "heure_fin": "15:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1oQKF103Qu9q4f_6RaMbAXlVu6COXyMLX&sz=w1000"
-  },
-  {
-    "id": "a3308d2a",
-    "titre": "Cours d'espagnol",
-    "description": "Venez apprendre l’espagnol avec Irene",
-    "date": "2026-10-05",
-    "heure_debut": "14:30:00",
-    "heure_fin": "15:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1W7em0YyV2-k2ydPuvY02zy5NZx7ExzMh&sz=w1000"
-  },
-  {
     "id": "3607a968",
     "titre": "Atelier écriture",
     "description": "Les plumes légères vous attendent pour partager un moment d’écriture. A vos plumes!!",
@@ -25,5 +7,23 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
+  },
+  {
+    "id": "4c622661",
+    "titre": "Jardinage",
+    "description": "",
+    "date": "2026-10-07",
+    "heure_debut": "14:00:00",
+    "heure_fin": "17:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1DoSE2R4ZYqIF8Glu4o8HeK5glsZ2j8oL&sz=w1000"
+  },
+  {
+    "id": "e689c9ef",
+    "titre": "Atelier trucs et astuces",
+    "description": "Explication pour regarder la télévision en audio description et paramétrer la télévision en mode vocale.",
+    "date": "2026-10-08",
+    "heure_debut": "14:00:00",
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
   }
 ]
