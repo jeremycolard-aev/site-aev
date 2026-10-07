@@ -1,14 +1,5 @@
 [
   {
-    "id": "3607a968",
-    "titre": "Atelier écriture",
-    "description": "Les plumes légères vous attendent pour partager un moment d’écriture. A vos plumes!!",
-    "date": "2026-10-06",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1v3pkl4mVHJr_BkUq7-BGvfk9JqFCLdc3&sz=w1000"
-  },
-  {
     "id": "4c622661",
     "titre": "Jardinage",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
+  },
+  {
+    "id": "6984f7ba",
+    "titre": "Marche des aidants",
+    "description": "Nous aurons l’occasion d’informer les gens sur le handicap visuel au gymnase du Val de l’arc, une marche sera organisée le long de l’arc. Cette manifestation pourra être animé par des ateliers de sensibilisation au handicap visuel.",
+    "date": "2026-10-08",
+    "heure_debut": "9:30:00",
+    "heure_fin": "14:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1miSe6G989FxTuYP6O99rj1RwhQ8RJqRo&sz=w1000"
   }
 ]
