@@ -1,14 +1,5 @@
 [
   {
-    "id": "4c622661",
-    "titre": "Jardinage",
-    "description": "",
-    "date": "2026-10-07",
-    "heure_debut": "14:00:00",
-    "heure_fin": "17:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1DoSE2R4ZYqIF8Glu4o8HeK5glsZ2j8oL&sz=w1000"
-  },
-  {
     "id": "e689c9ef",
     "titre": "Atelier trucs et astuces",
     "description": "Explication pour regarder la télévision en audio description et paramétrer la télévision en mode vocale.",
@@ -25,5 +16,14 @@
     "heure_debut": "9:30:00",
     "heure_fin": "14:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1miSe6G989FxTuYP6O99rj1RwhQ8RJqRo&sz=w1000"
+  },
+  {
+    "id": "e289ad4a",
+    "titre": "Yoga séance découverte essai gratuit",
+    "description": "",
+    "date": "2026-10-09",
+    "heure_debut": "14:30:00",
+    "heure_fin": "15:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1clU6X750KNfJiI1i7cL6sNMrhzOSnRcn&sz=w1000"
   }
 ]
