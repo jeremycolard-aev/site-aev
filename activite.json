@@ -1,23 +1,5 @@
 [
   {
-    "id": "e689c9ef",
-    "titre": "Atelier trucs et astuces",
-    "description": "Explication pour regarder la télévision en audio description et paramétrer la télévision en mode vocale.",
-    "date": "2026-10-08",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=10Uoz2iuw7weEKfPbxF45E-bpqqGIUshS&sz=w1000"
-  },
-  {
-    "id": "6984f7ba",
-    "titre": "Marche des aidants",
-    "description": "Nous aurons l’occasion d’informer les gens sur le handicap visuel au gymnase du Val de l’arc, une marche sera organisée le long de l’arc. Cette manifestation pourra être animé par des ateliers de sensibilisation au handicap visuel.",
-    "date": "2026-10-08",
-    "heure_debut": "9:30:00",
-    "heure_fin": "14:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1miSe6G989FxTuYP6O99rj1RwhQ8RJqRo&sz=w1000"
-  },
-  {
     "id": "e289ad4a",
     "titre": "Yoga séance découverte essai gratuit",
     "description": "",
@@ -25,5 +7,23 @@
     "heure_debut": "14:30:00",
     "heure_fin": "15:30:00",
     "image_url": "https://drive.google.com/thumbnail?id=1clU6X750KNfJiI1i7cL6sNMrhzOSnRcn&sz=w1000"
+  },
+  {
+    "id": "e5067b38",
+    "titre": "Gymnastique douce",
+    "description": "Gym avec Denis pour se remuscler et travailler le renforcement musculaire !",
+    "date": "2026-10-09",
+    "heure_debut": "15:30:00",
+    "heure_fin": "16:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1clU6X750KNfJiI1i7cL6sNMrhzOSnRcn&sz=w1000"
+  },
+  {
+    "id": "e75ebce7",
+    "titre": "Exposition photo de Marie Laure de Decker, visite et atelier",
+    "description": "L’espace culturel départemental 21BIS Mirabeau (Aix-en-Provence) accueille une exposition des œuvres de la photoreporter Marie-Laure de Decker et en particulier, sur son travail lors de la guerre civile au Tchad (1975-1978). Venez découvrir cette photographe d’exception qui a passé 4 décennies à documenter le monde et ses grands bouleversements.",
+    "date": "2026-10-10",
+    "heure_debut": "10:00:00",
+    "heure_fin": "12:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1lad3GvJ7Sg-qiS_FU-lRZIBslwRgcjOH&sz=w1000"
   }
 ]
