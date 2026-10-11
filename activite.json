@@ -1,14 +1,5 @@
 [
   {
-    "id": "e75ebce7",
-    "titre": "Exposition photo de Marie Laure de Decker, visite et atelier",
-    "description": "L’espace culturel départemental 21BIS Mirabeau (Aix-en-Provence) accueille une exposition des œuvres de la photoreporter Marie-Laure de Decker et en particulier, sur son travail lors de la guerre civile au Tchad (1975-1978). Venez découvrir cette photographe d’exception qui a passé 4 décennies à documenter le monde et ses grands bouleversements.",
-    "date": "2026-10-10",
-    "heure_debut": "10:00:00",
-    "heure_fin": "12:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1lad3GvJ7Sg-qiS_FU-lRZIBslwRgcjOH&sz=w1000"
-  },
-  {
     "id": "41817351",
     "titre": "THÉÂTRE Une journée particulière.",
     "description": "RV au théâtre Ainsi de Suite pour Une journée particulière  en Italie, Rome, 1938 : deux solitudes face au fascisme. \nUne pièce d’Ettore Scola et Ruggero Maccari. Cette pièce tirée de l’adaptation d’un des films cultes du cinéma italien nous plonge dans une Italie vouée à Mussolini, un jour de 1938 lors d’une visite d’Hitler à Rome.\nAlors que toutes les familles se sont rendues au défilé, les destins d’un homme et d’une femme restés seuls dans leur immeuble vont se croiser.",
@@ -25,5 +16,14 @@
     "heure_debut": "12:00:00",
     "heure_fin": "13:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1_HvoR0OhVnNtD_lhmzZCV2nG5moPAddJ&sz=w1000"
+  },
+  {
+    "id": "79594d19",
+    "titre": "Natation",
+    "description": "",
+    "date": "2026-10-12",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:00:00",
+    "image_url": ""
   }
 ]
