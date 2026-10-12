@@ -1,14 +1,5 @@
 [
   {
-    "id": "41817351",
-    "titre": "THÉÂTRE Une journée particulière.",
-    "description": "RV au théâtre Ainsi de Suite pour Une journée particulière  en Italie, Rome, 1938 : deux solitudes face au fascisme. \nUne pièce d’Ettore Scola et Ruggero Maccari. Cette pièce tirée de l’adaptation d’un des films cultes du cinéma italien nous plonge dans une Italie vouée à Mussolini, un jour de 1938 lors d’une visite d’Hitler à Rome.\nAlors que toutes les familles se sont rendues au défilé, les destins d’un homme et d’une femme restés seuls dans leur immeuble vont se croiser.",
-    "date": "2026-10-11",
-    "heure_debut": "17:00:00",
-    "heure_fin": "18:15:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1ruDbtoS9iTVwT4TDDnTe9e9ugof1sIdb&sz=w1000"
-  },
-  {
     "id": "8d901fd8",
     "titre": "Atelier Apple",
     "description": "Découverte VoiceOver sur I Phone",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "15:00:00",
     "image_url": ""
+  },
+  {
+    "id": "e2b02c2c",
+    "titre": "Spectacle Tandem",
+    "description": "spectacle de danse de Josette BAIZ\nDeux interprètes, deux parcours, une scène. Tandem fait dialoguer les corps et les mots de deux interprètes de la Compagnie Grenade dans une traversée intime, dynamique et à partager.\n\n« Ils sont charismatiques, n’ont peur de rien et parlent avec naturel de leur vie. » Ainsi la chorégraphe Josette Baïz présente les deux interprètes à qui elle a offert une carte blanche. Avec grâce et énergie, Yam Omer et Maxime Bordessoules livrent le récit de leur parcours, mêlant parole et mouvement dans un dialogue complice. Sur scène, ils retracent leurs débuts, leurs élans, leurs doutes, entre confidences et performances. Du classique au hip-hop en passant par le contemporain, leurs gestes portent l’influence des grandes figures de la danse, de William Forsythe à Ohad Naharin, révélant la richesse de leur formation et dessinant, en creux, une mémoire vivante de leur art. Généreux et proche du public, le duo invite même les spectateurs à le rejoindre pour un final partagé, transformant la scène en lieu de rencontre.",
+    "date": "2026-10-12",
+    "heure_debut": "14:30:00",
+    "heure_fin": "15:30:00",
+    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_cd9ee9d0-c207-4e30-9ade-f40584bd5e11.png"
   }
 ]
