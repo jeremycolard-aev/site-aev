@@ -1,29 +1,29 @@
 [
   {
-    "id": "8d901fd8",
-    "titre": "Atelier Apple",
-    "description": "Découverte VoiceOver sur I Phone",
-    "date": "2026-10-12",
-    "heure_debut": "12:00:00",
-    "heure_fin": "13:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1_HvoR0OhVnNtD_lhmzZCV2nG5moPAddJ&sz=w1000"
+    "id": "efdcc206",
+    "titre": "Cinéma Garance",
+    "description": "Garance est un drame de Jeanne Herry (1h48).\nCasting principal : Adèle Exarchopoulos, Sara Giraudeau et Jérôme Kircher.\nRésumé : Dans les Cévennes des années 1970, Garance vit au sein d'une communauté utopique. Leur quotidien idéaliste vole en éclats lorsqu'ils décident d'héberger un militant d'extrême gauche en cavale, plongeant le groupe entre dilemmes moraux, paranoïa et pression policière.\nFilm en compétition à Cannes.",
+    "date": "2026-10-13",
+    "heure_debut": "10:30:00",
+    "heure_fin": "12:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1VgT37t_vCaWuTDVquR1MOCbHQG5z38ci&sz=w1000"
   },
   {
-    "id": "79594d19",
-    "titre": "Natation",
+    "id": "c10e06ac",
+    "titre": "Goûter littéraire",
     "description": "",
-    "date": "2026-10-12",
+    "date": "2026-10-13",
     "heure_debut": "14:00:00",
-    "heure_fin": "15:00:00",
-    "image_url": ""
+    "heure_fin": "16:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1UGearV3eRmkc4c6FwaGT7lLf_MNeZ34Y&sz=w1000"
   },
   {
-    "id": "e2b02c2c",
-    "titre": "Spectacle Tandem",
-    "description": "spectacle de danse de Josette BAIZ\nDeux interprètes, deux parcours, une scène. Tandem fait dialoguer les corps et les mots de deux interprètes de la Compagnie Grenade dans une traversée intime, dynamique et à partager.\n\n« Ils sont charismatiques, n’ont peur de rien et parlent avec naturel de leur vie. » Ainsi la chorégraphe Josette Baïz présente les deux interprètes à qui elle a offert une carte blanche. Avec grâce et énergie, Yam Omer et Maxime Bordessoules livrent le récit de leur parcours, mêlant parole et mouvement dans un dialogue complice. Sur scène, ils retracent leurs débuts, leurs élans, leurs doutes, entre confidences et performances. Du classique au hip-hop en passant par le contemporain, leurs gestes portent l’influence des grandes figures de la danse, de William Forsythe à Ohad Naharin, révélant la richesse de leur formation et dessinant, en creux, une mémoire vivante de leur art. Généreux et proche du public, le duo invite même les spectateurs à le rejoindre pour un final partagé, transformant la scène en lieu de rencontre.",
-    "date": "2026-10-12",
-    "heure_debut": "14:30:00",
-    "heure_fin": "15:30:00",
-    "image_url": "https://storage.googleapis.com/aix-en-vue-media/image_cd9ee9d0-c207-4e30-9ade-f40584bd5e11.png"
+    "id": "9c588c28",
+    "titre": "Concert de musique de chambre par Les cordes de Shams",
+    "description": "Les Cordes de Shams, ensemble fondé par le violoniste syrien Bilal Alnemr. À travers la transmission, l’accompagnement artistique et le concert, l’ensemble fait de la musique un pont entre les cultures, un espace de dialogue et d’espoir. Né de l’histoire personnelle de Bilal Alnemr, Les Cordes de Shams porte une vision profondément humaniste : créer du lien au-delà des frontières et faire vivre l’art comme un langage universel.\nRéunissant deux chefs-d’œuvre majeurs de la musique de chambre, ce programme explore toute l’étendue des émotions humaines, de la douleur la plus intime à une lumineuse sérénité. Il met à l’honneur le Quintette à deux violoncelles en ut majeur, D. 956 de Franz Schubert, œuvre d’une profonde intensité et d’une richesse expressive exceptionnelle, ainsi que le Quatuor à cordes n° 6 en fa mineur, op. 80 de Felix Mendelssohn, composé dans un élan de douleur et de bouleversement, mais porté par une énergie musicale saisissante.",
+    "date": "2026-10-13",
+    "heure_debut": "19:30:00",
+    "heure_fin": "21:00:00",
+    "image_url": ""
   }
 ]
