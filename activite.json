@@ -1,29 +1,29 @@
 [
   {
-    "id": "efdcc206",
-    "titre": "Cinéma Garance",
-    "description": "Garance est un drame de Jeanne Herry (1h48).\nCasting principal : Adèle Exarchopoulos, Sara Giraudeau et Jérôme Kircher.\nRésumé : Dans les Cévennes des années 1970, Garance vit au sein d'une communauté utopique. Leur quotidien idéaliste vole en éclats lorsqu'ils décident d'héberger un militant d'extrême gauche en cavale, plongeant le groupe entre dilemmes moraux, paranoïa et pression policière.\nFilm en compétition à Cannes.",
-    "date": "2026-10-13",
-    "heure_debut": "10:30:00",
-    "heure_fin": "12:30:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1VgT37t_vCaWuTDVquR1MOCbHQG5z38ci&sz=w1000"
+    "id": "18a18910",
+    "titre": "Exposition Mossi Traoré, la mode aussi",
+    "description": "Le Mucem consacre une exposition à Mossi Traoré, créateur atypique de la scène française pour qui la couture est à la fois terrain d’expérimentation, outil de transmission et langage collectif.\nPensée en étroite collaboration avec le styliste, « Mossi Traoré, la mode aussi » propose une immersion dans un univers où la mode dialogue autant avec les cultures populaires qu’avec les arts urbains et les savoir-faire traditionnels. Silhouettes sculpturales, vidéos, textiles en interaction avec les collections du musée et gestes artisanaux jalonnent un parcours en partie immersif, invitant le visiteur à se projeter dans la reconstitution de l’atelier de Mossi Traoré et dans les réserves du Mucem, en l’incitant à toucher les matières, écouter et ressentir.\nVisite guidée adaptée, à coup sûr un régal !",
+    "date": "2026-10-14",
+    "heure_debut": "10:00:00",
+    "heure_fin": "15:00:00",
+    "image_url": ""
   },
   {
-    "id": "c10e06ac",
-    "titre": "Goûter littéraire",
+    "id": "7b0a0538",
+    "titre": "Atelier numérique",
     "description": "",
-    "date": "2026-10-13",
+    "date": "2026-10-15",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:30:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1_HvoR0OhVnNtD_lhmzZCV2nG5moPAddJ&sz=w1000"
+  },
+  {
+    "id": "3ca45b07",
+    "titre": "Aide au quotidien",
+    "description": "Aide administrative",
+    "date": "2026-10-15",
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1UGearV3eRmkc4c6FwaGT7lLf_MNeZ34Y&sz=w1000"
-  },
-  {
-    "id": "9c588c28",
-    "titre": "Concert de musique de chambre par Les cordes de Shams",
-    "description": "Les Cordes de Shams, ensemble fondé par le violoniste syrien Bilal Alnemr. À travers la transmission, l’accompagnement artistique et le concert, l’ensemble fait de la musique un pont entre les cultures, un espace de dialogue et d’espoir. Né de l’histoire personnelle de Bilal Alnemr, Les Cordes de Shams porte une vision profondément humaniste : créer du lien au-delà des frontières et faire vivre l’art comme un langage universel.\nRéunissant deux chefs-d’œuvre majeurs de la musique de chambre, ce programme explore toute l’étendue des émotions humaines, de la douleur la plus intime à une lumineuse sérénité. Il met à l’honneur le Quintette à deux violoncelles en ut majeur, D. 956 de Franz Schubert, œuvre d’une profonde intensité et d’une richesse expressive exceptionnelle, ainsi que le Quatuor à cordes n° 6 en fa mineur, op. 80 de Felix Mendelssohn, composé dans un élan de douleur et de bouleversement, mais porté par une énergie musicale saisissante.",
-    "date": "2026-10-13",
-    "heure_debut": "19:30:00",
-    "heure_fin": "21:00:00",
-    "image_url": ""
+    "image_url": "https://drive.google.com/thumbnail?id=1EnMGoSFPVdG2Kz2MHbZHWW5pQ--sAQUn&sz=w1000"
   }
 ]
