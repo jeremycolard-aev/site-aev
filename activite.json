@@ -1,14 +1,5 @@
 [
   {
-    "id": "18a18910",
-    "titre": "Exposition Mossi Traoré, la mode aussi",
-    "description": "Le Mucem consacre une exposition à Mossi Traoré, créateur atypique de la scène française pour qui la couture est à la fois terrain d’expérimentation, outil de transmission et langage collectif.\nPensée en étroite collaboration avec le styliste, « Mossi Traoré, la mode aussi » propose une immersion dans un univers où la mode dialogue autant avec les cultures populaires qu’avec les arts urbains et les savoir-faire traditionnels. Silhouettes sculpturales, vidéos, textiles en interaction avec les collections du musée et gestes artisanaux jalonnent un parcours en partie immersif, invitant le visiteur à se projeter dans la reconstitution de l’atelier de Mossi Traoré et dans les réserves du Mucem, en l’incitant à toucher les matières, écouter et ressentir.\nVisite guidée adaptée, à coup sûr un régal !",
-    "date": "2026-10-14",
-    "heure_debut": "10:00:00",
-    "heure_fin": "15:00:00",
-    "image_url": ""
-  },
-  {
     "id": "7b0a0538",
     "titre": "Atelier numérique",
     "description": "",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "16:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1EnMGoSFPVdG2Kz2MHbZHWW5pQ--sAQUn&sz=w1000"
+  },
+  {
+    "id": "41817572",
+    "titre": "Atelier de sensibilisation lycée, Vauvenargues",
+    "description": "Atelier de sensibilisation dans le cadre de la semaine de la mobilité accessibilité, nous prévoyons de faire trois ateliers, les lunettes, les odeurs, le toucher, Les Cannes Blanches.",
+    "date": "2026-10-15",
+    "heure_debut": "9:00:00",
+    "heure_fin": "13:00:00",
+    "image_url": "https://drive.google.com/thumbnail?id=1miSe6G989FxTuYP6O99rj1RwhQ8RJqRo&sz=w1000"
   }
 ]
