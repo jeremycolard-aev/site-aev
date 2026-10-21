@@ -1,14 +1,5 @@
 [
   {
-    "id": "c521549f",
-    "titre": "Café bla-bla",
-    "description": "",
-    "date": "2026-10-20",
-    "heure_debut": "14:00:00",
-    "heure_fin": "16:00:00",
-    "image_url": "https://drive.google.com/thumbnail?id=1MJyol5OGlK_06hXRim716ZL49qqvPCZB&sz=w1000"
-  },
-  {
     "id": "754e900e",
     "titre": "Randonnée tranquille en forêt, jolie boucle ombragée d'environ 6km",
     "description": "2 h30 de marche + pique-nique à mi-chemin",
@@ -25,5 +16,14 @@
     "heure_debut": "14:00:00",
     "heure_fin": "17:00:00",
     "image_url": "https://drive.google.com/thumbnail?id=1DoSE2R4ZYqIF8Glu4o8HeK5glsZ2j8oL&sz=w1000"
+  },
+  {
+    "id": "91d34217",
+    "titre": "L'arnaqueuse",
+    "description": "La nouvelle comédie de Thom Trondel, entre Pretty Woman et le Dîner de Cons !\nQuand Luc, à la recherche du grand amour, rencontre Clara, love coach séductrice et un brin malhonnête, rien ne se passe comme prévu !\n\nEntre un dîner déjanté dans un grand restaurant, une leçon de drague hilarante, un accident de bilboquet, des allergies multiples ou encore une scène de danse mythique… Trouver l’amour n’est pas si simple, surtout lorsqu’on a affaire à une arnaqueuse !",
+    "date": "2026-10-30",
+    "heure_debut": "21:30:00",
+    "heure_fin": "23:00:00",
+    "image_url": ""
   }
 ]
