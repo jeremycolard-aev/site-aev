@@ -1,14 +1,5 @@
 [
   {
-    "id": "754e900e",
-    "titre": "Randonnée tranquille en forêt, jolie boucle ombragée d'environ 6km",
-    "description": "2 h30 de marche + pique-nique à mi-chemin",
-    "date": "2026-10-21",
-    "heure_debut": "10:30:00",
-    "heure_fin": "14:30:00",
-    "image_url": ""
-  },
-  {
     "id": "ea4282cf",
     "titre": "Jardinage",
     "description": "",
@@ -24,6 +15,15 @@
     "date": "2026-10-30",
     "heure_debut": "21:30:00",
     "heure_fin": "23:00:00",
+    "image_url": ""
+  },
+  {
+    "id": "732c2040",
+    "titre": "Natation",
+    "description": "",
+    "date": "2026-11-02",
+    "heure_debut": "14:00:00",
+    "heure_fin": "15:00:00",
     "image_url": ""
   }
 ]
